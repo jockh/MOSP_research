@@ -1,0 +1,52 @@
+{
+  "autoDeploy": "yes",
+  "autoDeployTrigger": "commit",
+  "branch": "main",
+  "createdAt": "2026-10-01T05:01:38.915146Z",
+  "dashboardUrl": "https://dashboard.render.com/web/srv-dauuick1nsns73fpl0o0",
+  "id": "srv-dauuick1nsns73fpl0o0",
+  "name": "mosp-taipei-api",
+  "notifyOnFail": "default",
+  "ownerId": "tea-d3ug6u6uk2gs73drs6jg",
+  "repo": "https://github.com/jockh/MOSP_research",
+  "rootDir": "",
+  "serviceDetails": {
+    "buildPlan": "starter",
+    "cache": {
+      "profile": "no-cache"
+    },
+    "env": "python",
+    "envSpecificDetails": {
+      "buildCommand": "python -m pip install -e . -r web/taipei-pareto-explorer/backend/requirements.txt",
+      "startCommand": "python -m uvicorn main:app --app-dir web/taipei-pareto-explorer/backend --host 0.0.0.0 --port $PORT"
+    },
+    "healthCheckPath": "/api/health",
+    "ipAllowList": [
+      {
+        "cidrBlock": "0.0.0.0/0",
+        "description": "everywhere"
+      }
+    ],
+    "maintenanceMode": {
+      "enabled": false,
+      "uri": ""
+    },
+    "numInstances": 1,
+    "openPorts": [],
+    "plan": "free",
+    "previews": {
+      "generation": "off"
+    },
+    "pullRequestPreviewsEnabled": "no",
+    "region": "singapore",
+    "renderSubdomainPolicy": "enabled",
+    "runtime": "python",
+    "sshAddress": "srv-dauuick1nsns73fpl0o0@ssh.singapore.render.com",
+    "url": "https://mosp-taipei-api.onrender.com"
+  },
+  "slug": "mosp-taipei-api",
+  "suspended": "not_suspended",
+  "suspenders": [],
+  "type": "web_service",
+  "updatedAt": "2026-10-01T05:01:38.915146Z"
+}

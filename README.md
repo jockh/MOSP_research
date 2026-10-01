@@ -161,4 +161,6 @@ Python 3.13 package installation, external-cwd execution and unchanged-result ch
 
 ## Web deployment
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for Render Static Site + FastAPI Web Service settings, local checks and pending CLI authentication. See [RESPONSIVE_REPORT.md](RESPONSIVE_REPORT.md) for responsive changes and the limits of device verification.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for Render Static Site + FastAPI Web Service settings, live URLs, deployment commands and verification evidence. See [RESPONSIVE_REPORT.md](RESPONSIVE_REPORT.md) for responsive changes and the limits of device verification.
+
+Public explorer: [https://taipei-pareto-explorer.onrender.com](https://taipei-pareto-explorer.onrender.com). Public backend health: [https://mosp-taipei-api.onrender.com/api/health](https://mosp-taipei-api.onrender.com/api/health). Production browser UI/device verification is still pending access permission; public APIs and infrastructure are verified.

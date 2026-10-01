@@ -1,0 +1,36 @@
+# Recorded from the live services. Web compute is free; static sites have no plan field.
+# URLs below are verified public, non-secret configuration. Never put credentials here.
+services:
+- type: web
+  name: mosp-taipei-api
+  runtime: python
+  plan: free
+  region: singapore
+  repo: https://github.com/jockh/MOSP_research
+  branch: main
+  autoDeployTrigger: commit
+  buildCommand: python -m pip install -e . -r web/taipei-pareto-explorer/backend/requirements.txt
+  startCommand: python -m uvicorn main:app --app-dir web/taipei-pareto-explorer/backend
+    --host 0.0.0.0 --port $PORT
+  healthCheckPath: /api/health
+  envVars:
+  - key: PYTHON_VERSION
+    value: 3.13.15
+  - key: FRONTEND_ORIGIN
+    value: https://taipei-pareto-explorer.onrender.com
+- type: web
+  name: taipei-pareto-explorer
+  runtime: static
+  repo: https://github.com/jockh/MOSP_research
+  branch: main
+  autoDeployTrigger: commit
+  rootDir: web/taipei-pareto-explorer/frontend
+  buildCommand: npm ci && npm run build
+  staticPublishPath: dist
+  envVars:
+  - key: NODE_VERSION
+    value: 24.19.0
+  - key: SKIP_INSTALL_DEPS
+    value: 'true'
+  - key: VITE_API_BASE_URL
+    value: https://mosp-taipei-api.onrender.com

@@ -1,80 +1,74 @@
-# Render deployment guide
+# MOSP Pareto Explorer: Render deployment
 
-Status: local deployment preparation and smoke tests passed. Full public deployment is now authorized; GitHub/Render CLI authentication is complete; public deployment is in progress. No public services have been created yet.
+Backend and frontend are live. Public health, data APIs, frontend assets and production CORS passed. Browser UI verification is pending because the browser access permission system explicitly denied this site's domain. This document does not claim physical iPhone/Android or production playback verification.
 
-This guide assumes the Git repository root is **MOSP_research/**, containing `pyproject.toml`, `src/`, `data/`, `results/`, and `web/`. Preserve the formal CSVs in Git; neither backend installation nor deployment regenerates research results.
+## Live resources
 
-## 1. Review the repository
-
-Commit the deployment changes and required input/output files to the repository you intend to connect to Render. Exclude `.venv/`, `node_modules/`, `.env*` secrets, caches, and generated build output. `.env.example` templates may be committed. Do not remove the original projects while preparing this repository. The canonical root is now initialized on Git branch `main`; it has no remote or commit until authenticated GitHub account/repository discovery is completed.
-
-Required runtime files include:
-
-- `results/experiment_05_all_od/all_od_pareto_routes.csv`
-- All existing formal Taipei Metro inputs in `data/taipei_metro/`
-- `data/taipei_metro/taipei_metro_station_positions.csv`
-- The canonical `src` package and root `pyproject.toml`
-
-All backend file paths are anchored to `Path(__file__)` through `src.paths`; relative environment overrides resolve against the canonical project root. There are no workstation-specific data paths or `os.getcwd()` dependencies in the backend. The local coordinate CSV avoids a download during normal startup.
-
-## 2. Backend: Render Web Service
-
-Connect the repository and choose the Python runtime. Use:
-
-| Setting | Value |
+| Resource | Verified URL / ID |
 | --- | --- |
-| Root Directory | Leave blank (canonical repository root) |
+| GitHub repository | https://github.com/jockh/MOSP_research |
+| Branch | `main` (automatic deployment enabled) |
+| Frontend | https://taipei-pareto-explorer.onrender.com |
+| Static Site ID | `srv-dauukhk1nsns73fptjc0` |
+| Backend | https://mosp-taipei-api.onrender.com |
+| Web Service ID | `srv-dauuick1nsns73fpl0o0` |
+| Health | https://mosp-taipei-api.onrender.com/api/health |
+| FastAPI docs | https://mosp-taipei-api.onrender.com/docs |
+| Backend plan / region | **free** / Singapore |
+| Frontend type | Free Static Site; no paid compute plan |
+
+The existing unrelated Render service was not changed. No paid service, disk, database, worker, or other paid resource was created.
+
+## Architecture and canonical root
+
+The Git repository root is `MOSP_research/`. React/Vite static assets are served by Render's CDN. They call the separate FastAPI Web Service over HTTPS. The backend reads the committed research CSVs; deployment does not execute MOSP experiments or regenerate results.
+
+The backend's Root Directory is the **repository root**, because `src/`, `data/` and `results/` must be available. Render excludes files outside the configured Root Directory from build/runtime. Do not select only the nested backend directory.
+
+Every backend data/result path uses `pathlib` and `__file__` via `src.paths`. Relative `PARETO_CSV` or `STATION_POSITION_CSV` overrides resolve against the canonical root. Normal deployment needs no overrides. Committed runtime data includes all existing formal `data/taipei_metro/` inputs, its separate station-coordinate CSV, and `results/experiment_05_all_od/all_od_pareto_routes.csv`.
+
+Health diagnostics expose repository-relative dataset names; full unexpected exceptions are logged server-side. The route-state model, Circular Line coordinate fallback, route ordering, API cost values and research CSV contents are unchanged.
+
+## Backend configuration
+
+| Setting | Actual value |
+| --- | --- |
+| Root Directory | Empty (repository root) |
 | Build Command | `python -m pip install -e . -r web/taipei-pareto-explorer/backend/requirements.txt` |
 | Start Command | `python -m uvicorn main:app --app-dir web/taipei-pareto-explorer/backend --host 0.0.0.0 --port $PORT` |
 | Health Check Path | `/api/health` |
-| Environment | `PYTHON_VERSION=3.13.15` |
-| Environment | `FRONTEND_ORIGIN=https://YOUR-FRONTEND.onrender.com` |
+| `PYTHON_VERSION` | `3.13.15` |
+| `FRONTEND_ORIGIN` | `https://taipei-pareto-explorer.onrender.com` |
 
-The root `.python-version` also pins 3.13.15. The requirements pin FastAPI, Uvicorn with standard extras, pandas, requests, and python-dotenv. Editable installation installs the canonical research package and its declared dependencies; it fixes `from src.paths import ...` without changing `sys.path`.
+Root `.python-version` pins the same tested version. `pip install -e .` installs the canonical `src`, `experiments`, `validation` and `analysis` packages without `sys.path` edits. Backend requirements pin FastAPI, Uvicorn with standard extras, pandas, requests and python-dotenv; research package dependencies are installed through root `pyproject.toml` in the same pip transaction.
 
-**Do not set backend Root Directory to `web/taipei-pareto-explorer/backend`.** Render excludes files outside the configured Root Directory from build/runtime; that would hide `src`, `data`, and `results`. If your Git repository instead has an outer `MOSP_project/` root, set backend Root Directory to `MOSP_research` and frontend Root Directory to `MOSP_research/web/taipei-pareto-explorer/frontend`; commands above remain relative to the canonical root.
+Render provides `$PORT`. Use the Linux-shell start command above and bind `0.0.0.0`; do not use `--reload` in production. The committed CSVs are read-only; the optional existing coordinate cache is disposable, and no persistent disk is needed.
 
-Render supplies `$PORT`; the command is for Render's Linux shell. Do not use `--reload` in production. No persistent disk is needed for the committed, read-only research CSVs. The existing optional coordinate cache is disposable; canonical local coordinate data is supplied.
+CORS permits the exact origin configured in `FRONTEND_ORIGIN` plus `http://localhost:5173`. Unexpected origins and `http://127.0.0.1:5173` are not allowed. Additional custom frontend origins can be comma-separated explicitly. CORS is not API authentication: public GET endpoints are deliberately public research data.
 
-`FRONTEND_ORIGIN` accepts one origin (or comma-separated origins for an additional custom domain). Include scheme and hostname, omit URL paths. Only `http://localhost:5173` is always allowed for local development, alongside the origins configured in `FRONTEND_ORIGIN`. Unknown origins receive no CORS allow-origin header; wildcard origins are not accepted. CORS changes require a backend restart/redeploy.
+## Frontend configuration
 
-## 3. Frontend: Render Static Site
-
-Use the same repository and configure:
-
-| Setting | Value |
+| Setting | Actual value |
 | --- | --- |
 | Root Directory | `web/taipei-pareto-explorer/frontend` |
 | Build Command | `npm ci && npm run build` |
 | Publish Directory | `dist` |
-| Environment | `NODE_VERSION=24.19.0` |
-| Environment | `VITE_API_BASE_URL=https://YOUR-BACKEND.onrender.com` |
+| `NODE_VERSION` | `24.19.0` |
+| `SKIP_INSTALL_DEPS` | `true` (the build command runs npm ci itself) |
+| `VITE_API_BASE_URL` | `https://mosp-taipei-api.onrender.com` |
 
-The frontend `.node-version` also pins the tested Node version. The lockfile is supplied for `npm ci`. `dist` is relative to the frontend Root Directory.
+`dist` is relative to the frontend Root Directory. All four API calls use `import.meta.env.VITE_API_BASE_URL`; endpoints retain their `/api/...` paths. Trailing slashes are normalized. This non-secret value is embedded at **build time**; rebuild the Static Site after changing it. Never place secrets in `VITE_` variables.
 
-Set `VITE_API_BASE_URL` **before building** to the backend's actual HTTPS origin, without `/api`. All four frontend API calls append their existing `/api/...` paths. Trailing slashes are normalized. This public variable is embedded in JavaScript at build time; rebuild the static site whenever its value changes. Never put secrets in a `VITE_` variable.
+The empty local fallback sends same-origin `/api` requests through Vite's development/preview proxy to localhost port 8000. That proxy also supports phones opening the frontend's LAN URL. Render Static Sites do not run Vite's proxy, so production must have the real HTTPS backend origin configured. `MOSP_API_PROXY_TARGET` is local server configuration only. The app currently has no client-side URL routes, so its existing root page needs no SPA rewrite.
 
-An empty value intentionally supports local Vite development/preview through the `/api` proxy. **Render Static Sites do not run that Vite proxy**, so a production site must have the backend URL configured. Neither a localhost URL nor `MOSP_API_PROXY_TARGET` should be configured on the Static Site. HTTPS prevents mixed-content requests from the HTTPS frontend.
+## Local reproduction
 
-The current app has no client-side URL routes; no SPA rewrite is needed for its existing root page. If client-side routing is added later, add Render's `/*` → `/index.html` rewrite. Do not rewrite API calls to HTML.
-
-## 4. Connect the two services when you choose to deploy
-
-1. Create the backend Web Service with the settings above and record its HTTPS URL.
-2. Create the Static Site with that URL in `VITE_API_BASE_URL`, then record the frontend HTTPS URL.
-3. Set the backend `FRONTEND_ORIGIN` to the exact frontend origin and restart/redeploy the backend.
-4. For a custom domain, update the frontend API origin if needed and include the frontend custom-domain origin in CORS.
-5. Verify health, browser requests and route display before announcing availability.
-
-These steps will be executed automatically after CLI authentication. Only free resources are authorized; if a free Web Service or free Static Site is unavailable, stop rather than select a paid plan. Do not delete existing resources or force-push.
-
-## 5. Local installation and smoke tests
-
-From the canonical repository root, using an activated Python 3.13 environment:
+Use an activated Python 3.13 environment from the canonical root:
 
 ```powershell
 python -m pip install -e . -r web/taipei-pareto-explorer/backend/requirements.txt
-python -c "import src; from src.paths import PROJECT_ROOT; print(src.__file__); print(PROJECT_ROOT)"
+python -c "import src; print(src.__file__)"
+python -c "from src.graph import Graph; from src.mosp import mosp; print('Graph OK; MOSP OK')"
 python -m uvicorn main:app --app-dir web/taipei-pareto-explorer/backend --host 127.0.0.1 --port 8000
 ```
 
@@ -87,46 +81,64 @@ npm run build
 npm run dev -- --host 0.0.0.0
 ```
 
-Leave local `VITE_API_BASE_URL` empty to use the proxy. Optionally set `MOSP_API_PROXY_TARGET` when the local backend uses another port. Phones opening the frontend's LAN URL then request the frontend's `/api`, rather than the phone's localhost. Local phone access requires the host firewall/network to permit the frontend port.
+Leave local `VITE_API_BASE_URL` empty. `.env.example` templates are supplied. For physical phone testing, permit the frontend port through the local firewall/network; backend traffic goes through the frontend proxy.
 
-Check `http://127.0.0.1:8000/api/health`:
-
-```json
-{"ok": true, "pareto_csv_found": true}
-```
-
-The endpoint includes existing coordinate/file diagnostics as well. Check the JSON booleans, not only HTTP 200: its existing diagnostic behavior returns HTTP 200 even if the JSON reports `ok: false`. In that case check committed files, environment overrides and logs. The route lookup endpoint remains `/api/routes?origin=東湖站&destination=中原站`.
-
-## 6. Deployment verification checklist
-
-- Backend `/api/health` reports both booleans true and no missing station coordinates.
-- The Static Site loads with no console/CORS/mixed-content errors.
-- Requests go to the configured backend HTTPS origin and return JSON.
-- Stations, the complete network and the existing five 東湖站 → 中原站 routes display.
-- Playback, route cards and the tradeoff plot remain synchronized.
-- Validate iPhone Safari and Android Chrome on physical devices, including browser address-bar expansion/collapse, safe areas, native selects, touch zoom/pan and portrait/landscape. Local Chromium viewport checks do not establish real iOS Safari compatibility.
-
-## 7. Verification evidence and limits
-
-See `regression/deployment/verification.json` for installation, frontend build, environment injection, backend import/path, live HTTP health/CORS and protected-file checks. See `RESPONSIVE_REPORT.md` for responsive viewport checks and physical-device checks still pending.
-
-No MOSP algorithm, Taipei Metro model, Pareto route data, or formal research result is changed by deployment configuration. Health diagnostics expose repository-relative dataset names instead of absolute workstation paths; unexpected errors go to backend logs. Local smoke tests do not certify Render's Linux runtime or an actual hosted service; those are verified after you authorize deployment.
-
-References: [Render FastAPI](https://render.com/docs/deploy-fastapi), [Render monorepos](https://render.com/docs/monorepo-support), [Render Static Sites](https://render.com/docs/static-sites), [Python versions](https://render.com/docs/python-version), [Node versions](https://render.com/docs/node-version), [Vite environment variables](https://vite.dev/guide/env-and-mode.html).
-
-## 8. Authentication and continuation
-
-Official Git 2.56.0, GitHub CLI 2.102.0 and Render CLI 2.28.0 were installed from their upstream release assets with SHA-256 checks. Their user PATH folders are under `%LOCALAPPDATA%/MOSPDeploymentTools`. Five official Render skills are installed for Codex under the user's `.agents/skills/` directory.
-
-In a new PowerShell, complete only the two required logins:
+For correctness validation without overwriting formal research outputs, use a separate output location:
 
 ```powershell
-& "$env:LOCALAPPDATA\MOSPDeploymentTools\gh\bin\gh.exe" auth login
-& "$env:LOCALAPPDATA\MOSPDeploymentTools\render\render.exe" login
+$env:MOSP_RESULTS_DIR = 'regression/runs'
+python -m validation.test_correctness
 ```
 
-Choose HTTPS for GitHub and complete browser authorization. Choose your Render workspace when prompted. Do not paste credentials into chat, source files, or `render.yaml`.
+This preserves all 1000 cases, 7 nodes, objectives 2–5, cost range 1–20 and seed 20260930. It changes the output directory only.
 
-After authentication, the remaining automatic steps are: discover/reuse the correct GitHub repository (create a public repository only if absent); derive commit author from the authenticated account; review/stage/commit/push `main`; create a free backend and verify its actual returned HTTPS URL; create a free Static Site using that URL; configure CORS with the actual frontend origin; redeploy and wait for both services to be live; verify public API and browser interactions; record actual IDs/URLs and a validated `render.yaml`; commit/push final deployment documentation; verify clean Git status. No URLs or deploy statuses are assumed in advance.
+## Redeploy and monitor
 
-Actual GitHub URL, backend URL, frontend URL, service IDs, production build/runtime logs, free-plan eligibility and Blueprint validation remain **pending resource creation/deployment**. This repository must not be described as deployed until those checks succeed.
+Global GitHub/Render CLI commands are used; no stored token, password or API key is committed. Authenticate only through `gh auth login` and `render login` when needed.
+
+```powershell
+gh auth status
+render workspace current --output json
+git status
+git diff
+git add <reviewed-files>
+git commit -m "Describe the production fix"
+git push origin main
+render deploys list srv-dauuick1nsns73fpl0o0 --output json
+render deploys list srv-dauukhk1nsns73fptjc0 --output json
+render logs --resources srv-dauuick1nsns73fpl0o0 --limit 100 --output json
+```
+
+Both services automatically deploy `main`. Wait for each latest deploy to be **live**, inspect build/runtime logs, then test health and the frontend. Manual redeploy: `render deploys create SERVICE_ID --output json --confirm`.
+
+Environment-variable changes require redeployment; frontend build-time variables require a rebuild. The production CORS variable was updated with Render's official single-variable API, preserving other variables, then the backend was redeployed and verified. Never expose CLI credentials in logs/chat or source code.
+
+## Blueprint / infrastructure record
+
+Root `render.yaml` records the actual services, commands and public environment values, using Render's official schema. `render blueprints validate render.yaml --output json` returned **valid: true**. It was validated but not applied, to avoid creating duplicate resources alongside the CLI-created services.
+
+The backend explicitly uses `plan: free`; the frontend uses `type: web`, `runtime: static` and has no plan field. If reproducing in a different workspace, obtain its actual returned service URLs and update the two public origin variables; URL suffixes are not assumed. Do not choose a paid resource if free capacity is unavailable.
+
+## Verification and troubleshooting
+
+- Local correctness: **1000 passed / 0 failed**, 7481 simple paths; unchanged research settings.
+- Fresh Python 3.13 editable install, canonical imports from an external cwd and `pip check`: passed.
+- Local `npm ci`, production build and environment injection: passed.
+- Render backend and frontend builds/runtime: live; logs captured.
+- Public frontend HTML/JS: HTTP 200; compiled API base equals the actual HTTPS backend; no localhost backend URLs.
+- Public health: HTTP 200, `ok: true`, `pareto_csv_found: true`, 119 model stations matched, zero missing coordinates.
+- Public stations/network/routes: HTTP 200; response bytes equal the pre-change local API.
+- 東湖站 → 中原站: **5 Pareto routes**, unchanged costs.
+- Production origin and localhost:5173 CORS/preflight: allowed. Unexpected origins and 127.0.0.1:5173: denied.
+- 87 core/model/input/formal-result files: SHA-256 unchanged.
+- Production browser interactions/console/responsive matrix: **pending browser access permission**. Physical iPhone Safari, Android Chrome and iPad Safari remain pending; Chromium viewport checks do not establish real Safari compatibility.
+
+Evidence is in `regression/deployment/verification.json` and associated logs. Responsive implementation/limitations are recorded in `RESPONSIVE_REPORT.md`.
+
+If imports fail, confirm repository-root build scope and editable installation in the same interpreter as Uvicorn. If files are missing, confirm the formal CSVs are tracked; no local absolute path is required. If the frontend reports fetch/CORS errors, verify `VITE_API_BASE_URL`, rebuild, verify `FRONTEND_ORIGIN`, redeploy backend, then inspect network/console and logs. Mixed content means an HTTP API origin was configured under the HTTPS site.
+
+The health endpoint retains its diagnostic HTTP-200 behavior even when JSON reports `ok: false`; always check both JSON booleans rather than treating HTTP status alone as readiness. Free Web Services can sleep after inactivity and take time on the next request. Free-tier usage allowances apply; no paid resource or upgrade was authorized or created.
+
+Did deployment change any MOSP algorithm, experimental setting, Taipei Metro assumption, or research result? **No.**
+
+References: [Render FastAPI](https://render.com/docs/deploy-fastapi), [monorepo root scope](https://render.com/docs/monorepo-support), [Static Sites](https://render.com/docs/static-sites), [CLI deployment](https://render.com/docs/your-first-deploy), [single environment variable API](https://api-docs.render.com/reference/update-env-var), [Vite environment variables](https://vite.dev/guide/env-and-mode.html).

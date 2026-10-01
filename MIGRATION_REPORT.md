@@ -384,3 +384,7 @@ Frontend changes add responsive CSS/layout, viewport/safe-area handling, map res
 Local fresh-environment installation, imports, live health/CORS, representative API data equality, frontend clean installation/build and 1000/1000 correctness checks passed. Actual public deployment is authorized but in progress after successful GitHub and Render CLI authentication. See `DEPLOYMENT.md`, `RESPONSIVE_REPORT.md` and `regression/deployment/verification.json`. Remaining device/browser tests are explicitly pending.
 
 Did this refactor change any algorithm, experimental setting, or research result? **No.**
+
+## Public Render deployment (2026-10-01)
+
+GitHub: https://github.com/jockh/MOSP_research; frontend: https://taipei-pareto-explorer.onrender.com; backend: https://mosp-taipei-api.onrender.com. Backend free and Static Site live; public health/CORS/data API and five-route OD checks passed. render.yaml validated without application. Browser UI tests are blocked by the explicit domain access denial and remain pending. Research bytes/settings/algorithm remain unchanged.

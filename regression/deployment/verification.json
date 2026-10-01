@@ -100,7 +100,7 @@
     "count": 87,
     "changed": []
   },
-  "deployed": false,
+  "deployed": true,
   "frontend": {
     "node": "v24.19.0",
     "commands": {
@@ -162,5 +162,138 @@
     "Render": "authenticated",
     "workspace_selected": true
   },
-  "public_deployment": "in progress; no service created yet"
+  "public_deployment": "backend and frontend live; public API and CORS verified; browser UI verification pending permission",
+  "GitHub": {
+    "url": "https://github.com/jockh/MOSP_research",
+    "branch": "main",
+    "commit": "65f1d7f7a7b328af3ce9813b6eb0ffc570bfe8ce",
+    "public": true,
+    "staged_files_reviewed": 363,
+    "secret_matches": [],
+    "staged_bytes_match_worktree": true,
+    "deployment_whitespace_check": "passed",
+    "remote_main_matches_HEAD": true,
+    "git_status_clean": true,
+    "gh_command": "gh"
+  },
+  "production": {
+    "frontend_url": "https://taipei-pareto-explorer.onrender.com",
+    "backend_url": "https://mosp-taipei-api.onrender.com",
+    "health_url": "https://mosp-taipei-api.onrender.com/api/health",
+    "frontend_HTTP_status": 200,
+    "frontend_JS_bundle": "https://taipei-pareto-explorer.onrender.com/assets/index-Ul6itRLM.js",
+    "frontend_JS_sha256": "1bfc0ac529e8018531a0eff67407ce0e1407f31d81b27bd65adaad91c425fabb",
+    "VITE_API_BASE_URL_is_actual_backend": true,
+    "no_localhost_API_in_public_bundle": true,
+    "HTTPS_only_app_API_configuration": true,
+    "health": {
+      "ok": true,
+      "pareto_csv_found": true,
+      "pareto_csv": "results/experiment_05_all_od/all_od_pareto_routes.csv",
+      "station_coordinate_file": "data/taipei_metro/taipei_metro_station_positions.csv",
+      "coordinate_source_count": 119,
+      "taipei_coordinate_count": 109,
+      "circular_fallback_count": 10,
+      "model_station_count": 119,
+      "matched_station_count": 119,
+      "missing_station_count": 0,
+      "missing_stations": [],
+      "station_error": null
+    },
+    "cors": [
+      {
+        "origin": "https://taipei-pareto-explorer.onrender.com",
+        "allowed": true,
+        "preflight_status": 200
+      },
+      {
+        "origin": "http://localhost:5173",
+        "allowed": true,
+        "preflight_status": 200
+      },
+      {
+        "origin": "http://127.0.0.1:5173",
+        "allowed": false,
+        "preflight_status": 400
+      },
+      {
+        "origin": "https://unexpected.example.test",
+        "allowed": false,
+        "preflight_status": 400
+      }
+    ],
+    "data_APIs": {
+      "/api/stations": {
+        "status": 200,
+        "unchanged_sha256": "dc8f0016e33e7682de78ab07545318346c486e7a4d225a41028f43706ea354d7"
+      },
+      "/api/network": {
+        "status": 200,
+        "unchanged_sha256": "8dadac5b80e8ca0dbdb95e7a5c77ea3403bcdd60fd071c5ecbdee4d054075eed"
+      },
+      "/api/routes?origin=%E6%9D%B1%E6%B9%96%E7%AB%99&destination=%E4%B8%AD%E5%8E%9F%E7%AB%99": {
+        "status": 200,
+        "unchanged_sha256": "0600a76ac597a810dc174e1ee5b1cfcabd816dc492df16f581c0c619f301ac7c",
+        "pareto_count": 5
+      }
+    },
+    "public_API_bytes_equal_prechange_local_API": true
+  },
+  "Render": {
+    "backend": {
+      "id": "srv-dauuick1nsns73fpl0o0",
+      "plan": "free",
+      "live_deploy": {
+        "commit": {
+          "createdAt": "2026-10-01T04:59:12Z",
+          "id": "65f1d7f7a7b328af3ce9813b6eb0ffc570bfe8ce",
+          "message": "Prepare MOSP Pareto Explorer for production deployment"
+        },
+        "createdAt": "2026-10-01T05:08:24.925496Z",
+        "finishedAt": "2026-10-01T05:10:06.971146Z",
+        "id": "dep-dauuli59fdbs73afg95g",
+        "startedAt": "2026-10-01T05:08:24.904957Z",
+        "status": "live",
+        "trigger": "api",
+        "updatedAt": "2026-10-01T05:10:06.971319Z"
+      }
+    },
+    "frontend": {
+      "id": "srv-dauukhk1nsns73fptjc0",
+      "type": "static_site",
+      "live_deploy": {
+        "commit": {
+          "createdAt": "2026-10-01T04:59:12Z",
+          "id": "65f1d7f7a7b328af3ce9813b6eb0ffc570bfe8ce",
+          "message": "Prepare MOSP Pareto Explorer for production deployment"
+        },
+        "createdAt": "2026-10-01T05:06:17.195267Z",
+        "finishedAt": "2026-10-01T05:06:33.097674Z",
+        "id": "dep-dauukic1nsns73fptnr0",
+        "startedAt": "2026-10-01T05:06:17.193908Z",
+        "status": "live",
+        "trigger": "manual",
+        "updatedAt": "2026-10-01T05:06:33.097845Z"
+      }
+    }
+  },
+  "blueprint_validation": {
+    "plan": {
+      "totalActions": 2
+    },
+    "valid": true
+  },
+  "browser_UI": {
+    "status": "blocked by explicit browser access denial",
+    "domain": "https://taipei-pareto-explorer.onrender.com",
+    "not_verified": [
+      "production selectors",
+      "individual route animation",
+      "Play All",
+      "production map/chart interactions",
+      "production responsive matrix",
+      "browser console"
+    ]
+  },
+  "Did_deployment_change_any_algorithm_setting_assumption_or_result": "No."
 }

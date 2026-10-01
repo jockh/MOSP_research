@@ -1,0 +1,14 @@
+{
+  "commit": {
+    "createdAt": "2026-10-01T04:59:12Z",
+    "id": "65f1d7f7a7b328af3ce9813b6eb0ffc570bfe8ce",
+    "message": "Prepare MOSP Pareto Explorer for production deployment"
+  },
+  "createdAt": "2026-10-01T05:06:17.195267Z",
+  "finishedAt": "2026-10-01T05:06:33.097674Z",
+  "id": "dep-dauukic1nsns73fptnr0",
+  "startedAt": "2026-10-01T05:06:17.193908Z",
+  "status": "live",
+  "trigger": "manual",
+  "updatedAt": "2026-10-01T05:06:33.097845Z"
+}

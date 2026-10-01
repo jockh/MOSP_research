@@ -1,0 +1,35 @@
+{
+  "autoDeploy": "yes",
+  "autoDeployTrigger": "commit",
+  "branch": "main",
+  "createdAt": "2026-10-01T05:06:15.455893Z",
+  "dashboardUrl": "https://dashboard.render.com/static/srv-dauukhk1nsns73fptjc0",
+  "id": "srv-dauukhk1nsns73fptjc0",
+  "name": "taipei-pareto-explorer",
+  "notifyOnFail": "default",
+  "ownerId": "tea-d3ug6u6uk2gs73drs6jg",
+  "repo": "https://github.com/jockh/MOSP_research",
+  "rootDir": "web/taipei-pareto-explorer/frontend",
+  "serviceDetails": {
+    "buildCommand": "npm ci && npm run build",
+    "buildPlan": "starter",
+    "ipAllowList": [
+      {
+        "cidrBlock": "0.0.0.0/0",
+        "description": "everywhere"
+      }
+    ],
+    "previews": {
+      "generation": "off"
+    },
+    "publishPath": "dist",
+    "pullRequestPreviewsEnabled": "no",
+    "renderSubdomainPolicy": "enabled",
+    "url": "https://taipei-pareto-explorer.onrender.com"
+  },
+  "slug": "taipei-pareto-explorer",
+  "suspended": "not_suspended",
+  "suspenders": [],
+  "type": "static_site",
+  "updatedAt": "2026-10-01T05:06:15.455893Z"
+}
