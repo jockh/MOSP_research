@@ -1,0 +1,17 @@
+{
+  "target": "af3e520730ef92d2893d50fbe5297a31c6051532",
+  "last": {
+    "backend": [
+      "dep-dauura41nsns73fqnll0",
+      "live",
+      "8720e90db41637899b42027816a27f743c5d7420",
+      "api"
+    ],
+    "frontend": [
+      "dep-dauuram0tbcc73cr0c5g",
+      "live",
+      "8720e90db41637899b42027816a27f743c5d7420",
+      "api"
+    ]
+  }
+}

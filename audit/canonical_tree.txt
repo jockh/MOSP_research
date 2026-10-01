@@ -184,6 +184,8 @@ MOSP_research/
   regression/deployment/frontend_build_runtime.log
   regression/deployment/frontend_live_deploy.json
   regression/deployment/frontend_service.json
+  regression/deployment/git_provider_reconnection.json
+  regression/deployment/native_autodeploy_failure.json
   regression/deployment/npm_build.log
   regression/deployment/npm_ci.log
   regression/deployment/npm_render_env_build.log

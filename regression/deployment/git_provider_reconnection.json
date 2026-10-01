@@ -1,0 +1,14 @@
+{
+  "backend": {
+    "id": "srv-dauuick1nsns73fpl0o0",
+    "repo": "https://github.com/jockh/MOSP_research",
+    "autoDeploy": "yes",
+    "rootDir": ""
+  },
+  "frontend": {
+    "id": "srv-dauukhk1nsns73fptjc0",
+    "repo": "https://github.com/jockh/MOSP_research",
+    "autoDeploy": "yes",
+    "rootDir": "web/taipei-pareto-explorer/frontend"
+  }
+}

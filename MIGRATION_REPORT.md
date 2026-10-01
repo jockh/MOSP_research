@@ -388,3 +388,6 @@ Did this refactor change any algorithm, experimental setting, or research result
 ## Public Render deployment (2026-10-01)
 
 GitHub: https://github.com/jockh/MOSP_research; frontend: https://taipei-pareto-explorer.onrender.com; backend: https://mosp-taipei-api.onrender.com. Backend free and Static Site live; public health/CORS/data API and five-route OD checks passed. render.yaml validated without application. Browser UI tests are blocked by the explicit domain access denial and remain pending. Research bytes/settings/algorithm remain unchanged.
+
+
+GitHub repository OAuth was completed by the user. Reconnecting both existing free services using the CLI and pushing actual-origin env examples did not trigger native deployment during ten minutes of monitoring. The public services remain live and tested; native auto-deploy and production UI checks remain pending browser access to Render Dashboard and the explorer. No research file changed.

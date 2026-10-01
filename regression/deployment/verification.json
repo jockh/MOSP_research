@@ -174,7 +174,8 @@
     "deployment_whitespace_check": "passed",
     "remote_main_matches_HEAD": true,
     "git_status_clean": true,
-    "gh_command": "gh"
+    "gh_command": "gh",
+    "latest_env_example_commit": "af3e520730ef92d2893d50fbe5297a31c6051532"
   },
   "production": {
     "frontend_url": "https://taipei-pareto-explorer.onrender.com",
@@ -245,17 +246,17 @@
       "plan": "free",
       "live_deploy": {
         "commit": {
-          "createdAt": "2026-10-01T04:59:12Z",
-          "id": "65f1d7f7a7b328af3ce9813b6eb0ffc570bfe8ce",
-          "message": "Prepare MOSP Pareto Explorer for production deployment"
+          "createdAt": "2026-10-01T05:17:58Z",
+          "id": "8720e90db41637899b42027816a27f743c5d7420",
+          "message": "Record verified free Render deployment and infrastructure"
         },
-        "createdAt": "2026-10-01T05:08:24.925496Z",
-        "finishedAt": "2026-10-01T05:10:06.971146Z",
-        "id": "dep-dauuli59fdbs73afg95g",
-        "startedAt": "2026-10-01T05:08:24.904957Z",
+        "createdAt": "2026-10-01T05:20:40.998241Z",
+        "finishedAt": "2026-10-01T05:22:30.705075Z",
+        "id": "dep-dauura41nsns73fqnll0",
+        "startedAt": "2026-10-01T05:20:40.978041Z",
         "status": "live",
         "trigger": "api",
-        "updatedAt": "2026-10-01T05:10:06.971319Z"
+        "updatedAt": "2026-10-01T05:23:03.112093Z"
       }
     },
     "frontend": {
@@ -263,17 +264,42 @@
       "type": "static_site",
       "live_deploy": {
         "commit": {
-          "createdAt": "2026-10-01T04:59:12Z",
-          "id": "65f1d7f7a7b328af3ce9813b6eb0ffc570bfe8ce",
-          "message": "Prepare MOSP Pareto Explorer for production deployment"
+          "createdAt": "2026-10-01T05:17:58Z",
+          "id": "8720e90db41637899b42027816a27f743c5d7420",
+          "message": "Record verified free Render deployment and infrastructure"
         },
-        "createdAt": "2026-10-01T05:06:17.195267Z",
-        "finishedAt": "2026-10-01T05:06:33.097674Z",
-        "id": "dep-dauukic1nsns73fptnr0",
-        "startedAt": "2026-10-01T05:06:17.193908Z",
+        "createdAt": "2026-10-01T05:20:42.517041Z",
+        "finishedAt": "2026-10-01T05:21:01.795582Z",
+        "id": "dep-dauuram0tbcc73cr0c5g",
+        "startedAt": "2026-10-01T05:20:42.515677Z",
         "status": "live",
-        "trigger": "manual",
-        "updatedAt": "2026-10-01T05:06:33.097845Z"
+        "trigger": "api",
+        "updatedAt": "2026-10-01T05:21:01.795793Z"
+      }
+    },
+    "native_auto_deploy": {
+      "configured": true,
+      "push_trigger_verified": false,
+      "monitoring_seconds": 600,
+      "manual_trigger_used_for_this_test": false,
+      "repo_authorization_completed_by_user": true,
+      "existing_Git_credentials_check_pending_browser_access": true,
+      "observed": {
+        "target": "af3e520730ef92d2893d50fbe5297a31c6051532",
+        "last": {
+          "backend": [
+            "dep-dauura41nsns73fqnll0",
+            "live",
+            "8720e90db41637899b42027816a27f743c5d7420",
+            "api"
+          ],
+          "frontend": [
+            "dep-dauuram0tbcc73cr0c5g",
+            "live",
+            "8720e90db41637899b42027816a27f743c5d7420",
+            "api"
+          ]
+        }
       }
     }
   },
@@ -284,7 +310,7 @@
     "valid": true
   },
   "browser_UI": {
-    "status": "blocked by explicit browser access denial",
+    "status": "blocked by explicit domain access denial; permission requested",
     "domain": "https://taipei-pareto-explorer.onrender.com",
     "not_verified": [
       "production selectors",
@@ -293,7 +319,8 @@
       "production map/chart interactions",
       "production responsive matrix",
       "browser console"
-    ]
+    ],
+    "dashboard_domain": "https://dashboard.render.com"
   },
   "Did_deployment_change_any_algorithm_setting_assumption_or_result": "No."
 }
