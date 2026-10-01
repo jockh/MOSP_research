@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:startup": "node --test tests/startup.test.js"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

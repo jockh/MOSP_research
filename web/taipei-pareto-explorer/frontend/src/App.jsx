@@ -4,6 +4,8 @@ import { getHealth, getNetwork, getRoutes, getStations } from './api.js';
 import MetroMap from './components/MetroMap.jsx';
 import RoutePanel from './components/RoutePanel.jsx';
 import TradeoffPlot from './components/TradeoffPlot.jsx';
+import StartupStatus from './components/StartupStatus.jsx';
+import { loadInitialData } from './startup.js';
 import { useViewportHeightFallback } from './hooks/useResponsiveViewport.js';
 
 const COLORS = ['#ef4444', '#2563eb', '#10b981', '#8b5cf6', '#f97316', '#ec4899', '#06b6d4', '#84cc16'];
@@ -53,6 +55,10 @@ export default function App() {
   const [speed, setSpeed] = useState(2);
   const [finalComparison, setFinalComparison] = useState(false);
   const [error, setError] = useState('');
+  const [startup, setStartup] = useState({ phase: 'connecting', attempt: 1 });
+  const [startupRetry, setStartupRetry] = useState(0);
+  const skipInitialSearch = useRef(false);
+  const backendReady = startup.phase === 'ready';
 
   const colors = useMemo(
     () => routes.map((_, i) => COLORS[i % COLORS.length]),
@@ -99,19 +105,32 @@ export default function App() {
   const destinationStations = destinationLine ? (stationsByLine[destinationLine] || []) : [];
 
   useEffect(() => {
-    (async () => {
-      try {
-        const h = await getHealth();
-        setHealth(h);
-        if (!h.ok) throw new Error(h.station_error || 'Backend data not ready');
-        const [s, n] = await Promise.all([getStations(), getNetwork()]);
-        setStations(s.stations);
-        setNetwork(n);
-      } catch (e) {
-        setError(e.message);
+    const controller = new AbortController();
+    setStartup({ phase: 'connecting', attempt: 1 });
+    // OD controls stay disabled throughout startup, including manual retries.
+    loadInitialData({ getHealth, getStations, getNetwork, getRoutes }, {
+      origin,
+      destination,
+      signal: controller.signal,
+      onProgress: state => {
+        if (!controller.signal.aborted) setStartup(state);
+      },
+    }).then(initial => {
+      if (controller.signal.aborted) return;
+      skipInitialSearch.current = true;
+      setHealth(initial.health);
+      setStations(initial.stations.stations);
+      setNetwork(initial.network);
+      setRoutes(initial.routes.routes);
+      if (initial.routes.missing_coordinate_stations?.length) {
+        setError('缺少座標：' + initial.routes.missing_coordinate_stations.join('、'));
       }
-    })();
-  }, []);
+      setStartup({ phase: 'ready', attempt: 0 });
+    }).catch(() => {
+      if (!controller.signal.aborted) setStartup({ phase: 'error', attempt: 0 });
+    });
+    return () => controller.abort();
+  }, [startupRetry]);
 
   const clearRouteDisplay = useCallback(() => {
     setRoutes([]);
@@ -123,7 +142,7 @@ export default function App() {
   }, []);
 
   const search = useCallback(async () => {
-    if (!origin || !destination || origin === destination) return;
+    if (!backendReady || !origin || !destination || origin === destination) return;
     try {
       setError('');
       mapRef.current?.reset();
@@ -139,14 +158,18 @@ export default function App() {
       setRoutes([]);
       setError(e.message);
     }
-  }, [origin, destination]);
+  }, [backendReady, origin, destination]);
 
   // Search automatically after both station selections are complete.
   useEffect(() => {
-    if (!stations.length || !origin || !destination || origin === destination) return;
+    if (!backendReady || !stations.length || !origin || !destination || origin === destination) return;
+    if (skipInitialSearch.current) {
+      skipInitialSearch.current = false;
+      return;
+    }
     const timer = setTimeout(() => search(), 60);
     return () => clearTimeout(timer);
-  }, [stations.length, origin, destination, search]);
+  }, [backendReady, stations.length, origin, destination, search]);
 
   useEffect(() => {
     if (!routes.length) return;
@@ -296,13 +319,19 @@ export default function App() {
           <h1>Taipei Pareto Route Explorer</h1>
           <p>旅行時間 × 轉乘次數 × 轉乘步行時間</p>
         </div>
-        <div className={`status ${health?.ok ? 'ok' : ''}`}>
+        <div className={`status ${backendReady && health?.ok ? 'ok' : startup.phase === 'error' ? '' : 'waiting'}`}>
           <i />
-          {health?.ok ? 'All-OD Pareto data ready' : 'Data not ready'}
+          {backendReady ? 'All-OD Pareto data ready' : startup.phase === 'error' ? '連線暫未完成' : '伺服器啟動／資料載入中'}
         </div>
       </header>
 
-      <div className="controls od-controls">
+      {!backendReady && (
+        <div className="startup-region">
+          <StartupStatus {...startup} onRetry={() => setStartupRetry(value => value + 1)} />
+        </div>
+      )}
+
+      <div className="controls od-controls" aria-busy={!backendReady && startup.phase !== 'error'}>
         <div className="od-block">
           <div className="od-block-title">
             <span>Origin</span>
@@ -319,7 +348,7 @@ export default function App() {
           <div className="od-block-fields">
             <label className="line-field">
               <span>1 · Line</span>
-              <select aria-label="Origin line" value={originLine} onChange={handleOriginLineChange} disabled={playing}>
+              <select aria-label="Origin line" value={originLine} onChange={handleOriginLineChange} disabled={!backendReady || playing}>
                 <option value="">選路線</option>
                 {availableLines.map(line => (
                   <option key={line} value={line}>
@@ -335,7 +364,7 @@ export default function App() {
                 aria-label="Origin station"
                 value={origin}
                 onChange={handleOriginStationChange}
-                disabled={!originLine || playing}
+                disabled={!backendReady || !originLine || playing}
               >
                 <option value="">{originLine ? '選起點車站' : '請先選路線'}</option>
                 {originStations.map(station => (
@@ -366,7 +395,7 @@ export default function App() {
           <div className="od-block-fields">
             <label className="line-field">
               <span>1 · Line</span>
-              <select aria-label="Destination line" value={destinationLine} onChange={handleDestinationLineChange} disabled={playing}>
+              <select aria-label="Destination line" value={destinationLine} onChange={handleDestinationLineChange} disabled={!backendReady || playing}>
                 <option value="">選路線</option>
                 {availableLines.map(line => (
                   <option key={line} value={line}>
@@ -382,7 +411,7 @@ export default function App() {
                 aria-label="Destination station"
                 value={destination}
                 onChange={handleDestinationStationChange}
-                disabled={!destinationLine || playing}
+                disabled={!backendReady || !destinationLine || playing}
               >
                 <option value="">{destinationLine ? '選終點車站' : '請先選路線'}</option>
                 {destinationStations.map(station => (
@@ -398,7 +427,7 @@ export default function App() {
         <button
           className="search"
           onClick={search}
-          disabled={playing || !origin || !destination || origin === destination}
+          disabled={!backendReady || playing || !origin || !destination || origin === destination}
         >
           <Search size={16} /> Find Pareto Routes
         </button>
@@ -407,7 +436,7 @@ export default function App() {
 
       {error && <div className="error" role="alert">{error}</div>}
 
-      <main aria-label="Pareto route results">
+      {backendReady && <main aria-label="Pareto route results">
         <section className="mapcol">
           <div className="maphead">
             <div>
@@ -527,7 +556,7 @@ export default function App() {
             finalComparison={finalComparison}
           />
         </aside>
-      </main>
+      </main>}
 
       <footer>
         <span>Pareto-optimal ≠ universally preferred.</span>

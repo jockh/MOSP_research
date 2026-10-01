@@ -49,6 +49,18 @@ header p { margin: 0; color: #cbd5e1; font-size: clamp(12px, 1.4vw, 14px); line-
 .status { align-self: flex-start; max-width: 100%; border: 1px solid #334155; border-radius: 999px; padding: 8px 12px; font-size: 12px; color: #cbd5e1; display: flex; align-items: center; gap: 8px; }
 .status i { flex: 0 0 8px; width: 8px; height: 8px; border-radius: 50%; background: #ef4444; }
 .status.ok i { background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.12); }
+.status.waiting i { background: #fbbf24; }
+
+.startup-region { padding: 8px var(--space); padding-left: calc(var(--space) + env(safe-area-inset-left, 0px)); padding-right: calc(var(--space) + env(safe-area-inset-right, 0px)); }
+.startup-card { grid-column: 1 / -1; display: flex; align-items: flex-start; gap: 16px; width: 100%; max-width: 640px; min-width: 0; margin: 12px auto; padding: clamp(18px, 4vw, 28px); border: 1px solid #dce4ed; border-radius: 14px; background: #fff; box-shadow: 0 10px 35px rgba(15,23,42,.05); }
+.startup-copy { min-width: 0; overflow-wrap: anywhere; }
+.startup-copy h2 { margin: 0; font-size: 17px; font-weight: 500; line-height: 1.6; }
+.startup-copy p { margin: 8px 0 0; color: #475569; font-size: 14px; line-height: 1.7; }
+.startup-copy .startup-detail { color: #64748b; font-size: 13px; }
+.startup-spinner { flex: 0 0 28px; width: 28px; height: 28px; margin-top: 3px; border: 3px solid #e2e8f0; border-top-color: #2563eb; border-radius: 50%; animation: startupSpin 1s linear infinite; }
+.startup-retry { margin-top: 16px; }
+select:disabled { color: #64748b; opacity: .65; cursor: not-allowed; }
+@keyframes startupSpin { to { transform: rotate(360deg); } }
 
 /* Mobile first: each OD is a group, and each native select has its own row. */
 .controls { padding-top: 16px; padding-bottom: 16px; background: #fff; border-bottom: 1px solid #dbe3ec; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
@@ -231,6 +243,7 @@ footer { padding-top: 8px; padding-bottom: 20px; padding-bottom: calc(20px + env
 @keyframes plotPulse { 0% { opacity: .75; transform: scale(.78); } 100% { opacity: 0; transform: scale(1.28); } }
 @keyframes hudIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
+  .startup-spinner { animation: none; }
   .route-card, .progress-fill { transition: none; }
   .playback-hud { animation: none; }
 }

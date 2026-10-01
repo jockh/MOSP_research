@@ -6,10 +6,10 @@ async function json(response) {
   if (!response.ok) throw new Error(body.detail || `HTTP ${response.status}`);
   return body;
 }
-export const getHealth = () => fetch(`${API}/api/health`).then(json);
-export const getStations = () => fetch(`${API}/api/stations`).then(json);
-export const getNetwork = () => fetch(`${API}/api/network`).then(json);
-export const getRoutes = (origin, destination) => {
+export const getHealth = options => fetch(`${API}/api/health`, options).then(json);
+export const getStations = options => fetch(`${API}/api/stations`, options).then(json);
+export const getNetwork = options => fetch(`${API}/api/network`, options).then(json);
+export const getRoutes = (origin, destination, options) => {
   const q = new URLSearchParams({origin, destination});
-  return fetch(`${API}/api/routes?${q}`).then(json);
+  return fetch(`${API}/api/routes?${q}`, options).then(json);
 };
