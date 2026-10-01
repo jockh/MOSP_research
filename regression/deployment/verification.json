@@ -175,7 +175,8 @@
     "remote_main_matches_HEAD": true,
     "git_status_clean": true,
     "gh_command": "gh",
-    "latest_env_example_commit": "af3e520730ef92d2893d50fbe5297a31c6051532"
+    "latest_env_example_commit": "af3e520730ef92d2893d50fbe5297a31c6051532",
+    "verified_native_deploy_commit": "485f781064977e771450ab38c3d1a37ef21957fb"
   },
   "production": {
     "frontend_url": "https://taipei-pareto-explorer.onrender.com",
@@ -246,17 +247,17 @@
       "plan": "free",
       "live_deploy": {
         "commit": {
-          "createdAt": "2026-10-01T05:17:58Z",
-          "id": "8720e90db41637899b42027816a27f743c5d7420",
-          "message": "Record verified free Render deployment and infrastructure"
+          "createdAt": "2026-10-01T06:02:09Z",
+          "id": "485f781064977e771450ab38c3d1a37ef21957fb",
+          "message": "Clarify public origin examples and verify push deployment"
         },
-        "createdAt": "2026-10-01T05:20:40.998241Z",
-        "finishedAt": "2026-10-01T05:22:30.705075Z",
-        "id": "dep-dauura41nsns73fqnll0",
-        "startedAt": "2026-10-01T05:20:40.978041Z",
+        "createdAt": "2026-10-01T06:02:14.072932Z",
+        "finishedAt": "2026-10-01T06:04:02.98933Z",
+        "id": "dep-dauvephsrm7s73bgbj3g",
+        "startedAt": "2026-10-01T06:02:14.045485Z",
         "status": "live",
-        "trigger": "api",
-        "updatedAt": "2026-10-01T05:23:03.112093Z"
+        "trigger": "new_commit",
+        "updatedAt": "2026-10-01T06:04:02.98959Z"
       }
     },
     "frontend": {
@@ -264,43 +265,60 @@
       "type": "static_site",
       "live_deploy": {
         "commit": {
-          "createdAt": "2026-10-01T05:17:58Z",
-          "id": "8720e90db41637899b42027816a27f743c5d7420",
-          "message": "Record verified free Render deployment and infrastructure"
+          "createdAt": "2026-10-01T06:02:09Z",
+          "id": "485f781064977e771450ab38c3d1a37ef21957fb",
+          "message": "Clarify public origin examples and verify push deployment"
         },
-        "createdAt": "2026-10-01T05:20:42.517041Z",
-        "finishedAt": "2026-10-01T05:21:01.795582Z",
-        "id": "dep-dauuram0tbcc73cr0c5g",
-        "startedAt": "2026-10-01T05:20:42.515677Z",
+        "createdAt": "2026-10-01T06:02:14.124386Z",
+        "finishedAt": "2026-10-01T06:02:28.309881Z",
+        "id": "dep-dauvephsrm7s73bgbj6g",
+        "startedAt": "2026-10-01T06:02:14.122769Z",
         "status": "live",
-        "trigger": "api",
-        "updatedAt": "2026-10-01T05:21:01.795793Z"
+        "trigger": "new_commit",
+        "updatedAt": "2026-10-01T06:02:28.310221Z"
       }
     },
     "native_auto_deploy": {
       "configured": true,
-      "push_trigger_verified": false,
-      "monitoring_seconds": 600,
+      "push_trigger_verified": true,
       "manual_trigger_used_for_this_test": false,
       "repo_authorization_completed_by_user": true,
-      "existing_Git_credentials_check_pending_browser_access": true,
-      "observed": {
-        "target": "af3e520730ef92d2893d50fbe5297a31c6051532",
-        "last": {
-          "backend": [
-            "dep-dauura41nsns73fqnll0",
-            "live",
-            "8720e90db41637899b42027816a27f743c5d7420",
-            "api"
-          ],
-          "frontend": [
-            "dep-dauuram0tbcc73cr0c5g",
-            "live",
-            "8720e90db41637899b42027816a27f743c5d7420",
-            "api"
-          ]
-        }
-      }
+      "proof": {
+        "expected_main_commit": "485f781064977e771450ab38c3d1a37ef21957fb",
+        "deploys": {
+          "frontend": {
+            "commit": {
+              "createdAt": "2026-10-01T06:02:09Z",
+              "id": "485f781064977e771450ab38c3d1a37ef21957fb",
+              "message": "Clarify public origin examples and verify push deployment"
+            },
+            "createdAt": "2026-10-01T06:02:14.124386Z",
+            "finishedAt": "2026-10-01T06:02:28.309881Z",
+            "id": "dep-dauvephsrm7s73bgbj6g",
+            "startedAt": "2026-10-01T06:02:14.122769Z",
+            "status": "live",
+            "trigger": "new_commit",
+            "updatedAt": "2026-10-01T06:02:28.310221Z"
+          },
+          "backend": {
+            "commit": {
+              "createdAt": "2026-10-01T06:02:09Z",
+              "id": "485f781064977e771450ab38c3d1a37ef21957fb",
+              "message": "Clarify public origin examples and verify push deployment"
+            },
+            "createdAt": "2026-10-01T06:02:14.072932Z",
+            "finishedAt": "2026-10-01T06:04:02.98933Z",
+            "id": "dep-dauvephsrm7s73bgbj3g",
+            "startedAt": "2026-10-01T06:02:14.045485Z",
+            "status": "live",
+            "trigger": "new_commit",
+            "updatedAt": "2026-10-01T06:04:02.98959Z"
+          }
+        },
+        "both_live_at_main": true,
+        "manual_trigger": false
+      },
+      "dashboard_access_no_longer_required_for_this_task": true
     }
   },
   "blueprint_validation": {

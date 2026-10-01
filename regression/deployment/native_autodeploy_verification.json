@@ -1,0 +1,35 @@
+{
+  "expected_main_commit": "485f781064977e771450ab38c3d1a37ef21957fb",
+  "deploys": {
+    "frontend": {
+      "commit": {
+        "createdAt": "2026-10-01T06:02:09Z",
+        "id": "485f781064977e771450ab38c3d1a37ef21957fb",
+        "message": "Clarify public origin examples and verify push deployment"
+      },
+      "createdAt": "2026-10-01T06:02:14.124386Z",
+      "finishedAt": "2026-10-01T06:02:28.309881Z",
+      "id": "dep-dauvephsrm7s73bgbj6g",
+      "startedAt": "2026-10-01T06:02:14.122769Z",
+      "status": "live",
+      "trigger": "new_commit",
+      "updatedAt": "2026-10-01T06:02:28.310221Z"
+    },
+    "backend": {
+      "commit": {
+        "createdAt": "2026-10-01T06:02:09Z",
+        "id": "485f781064977e771450ab38c3d1a37ef21957fb",
+        "message": "Clarify public origin examples and verify push deployment"
+      },
+      "createdAt": "2026-10-01T06:02:14.072932Z",
+      "finishedAt": "2026-10-01T06:04:02.98933Z",
+      "id": "dep-dauvephsrm7s73bgbj3g",
+      "startedAt": "2026-10-01T06:02:14.045485Z",
+      "status": "live",
+      "trigger": "new_commit",
+      "updatedAt": "2026-10-01T06:04:02.98959Z"
+    }
+  },
+  "both_live_at_main": true,
+  "manual_trigger": false
+}

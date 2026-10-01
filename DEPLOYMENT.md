@@ -7,7 +7,7 @@ Backend and frontend are live. Public health, data APIs, frontend assets and pro
 | Resource | Verified URL / ID |
 | --- | --- |
 | GitHub repository | https://github.com/jockh/MOSP_research |
-| Branch | `main` (auto-deploy configured; push trigger verification pending) |
+| Branch | `main` (native push-triggered automatic deployment verified) |
 | Frontend | https://taipei-pareto-explorer.onrender.com |
 | Static Site ID | `srv-dauukhk1nsns73fptjc0` |
 | Backend | https://mosp-taipei-api.onrender.com |
@@ -109,7 +109,7 @@ render deploys list srv-dauukhk1nsns73fptjc0 --output json
 render logs --resources srv-dauuick1nsns73fpl0o0 --limit 100 --output json
 ```
 
-Both services have `autoDeployTrigger: commit` configured, but the native push trigger has **not been verified**. A push changing both services' environment examples did not trigger a new deploy during ten minutes of monitoring. The user completed GitHub repository authorization; reconnecting the same repository with the CLI did not resolve this. Existing Git Credentials must be checked in the Render Dashboard. Dashboard access is currently denied by the browser permission system. Until this is resolved, explicitly deploy each pushed revision and verify it becomes **live**, inspect build/runtime logs, then test health and the frontend. Manual redeploy: `render deploys create SERVICE_ID --output json --confirm`.
+Both services now automatically deploy `main` through the authorized GitHub provider. A comment-only push affecting each service's environment example was deployed by both services with `trigger: new_commit`, and both became **live** at commit `485f781064977e771450ab38c3d1a37ef21957fb` without a manual trigger. The frontend root directory filters out changes outside `web/taipei-pareto-explorer/frontend`; repository-root documentation changes therefore need not rebuild it. The earlier unsuccessful probe is retained as historical evidence and is superseded by `regression/deployment/native_autodeploy_verification.json`. Wait for each relevant deploy to become **live**, inspect logs, and test health and the frontend. Manual redeploy: `render deploys create SERVICE_ID --output json --confirm`.
 
 Environment-variable changes require redeployment; frontend build-time variables require a rebuild. The production CORS variable was updated with Render's official single-variable API, preserving other variables, then the backend was redeployed and verified. Never expose CLI credentials in logs/chat or source code.
 

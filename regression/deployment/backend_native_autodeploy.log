@@ -1,0 +1,1901 @@
+{
+  "id": "1ab4f240-00da-43c6-af4c-4dc8b51f5e29",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "  Using cached wrapt-2.5.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.6 kB)",
+  "timestamp": "2026-10-01T06:02:36.038645575Z"
+}{
+  "id": "f96a4390-c895-417b-a0ff-781b39dbee95",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached fastapi-0.115.6-py3-none-any.whl (94 kB)",
+  "timestamp": "2026-10-01T06:02:36.045327631Z"
+}{
+  "id": "c9c58ec1-6676-4ad5-b2a2-46d594eb4671",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached uvicorn-0.34.0-py3-none-any.whl (62 kB)",
+  "timestamp": "2026-10-01T06:02:36.046329366Z"
+}{
+  "id": "ab4fdb5c-2d66-414e-9c4f-aa28deef0e5f",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)",
+  "timestamp": "2026-10-01T06:02:36.047345343Z"
+}{
+  "id": "035c877b-9f64-4b3c-b495-072e5083c059",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached requests-2.32.3-py3-none-any.whl (64 kB)",
+  "timestamp": "2026-10-01T06:02:36.05281931Z"
+}{
+  "id": "c13b1379-5315-42bf-bf8a-21be89775116",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached python_dotenv-1.0.1-py3-none-any.whl (19 kB)",
+  "timestamp": "2026-10-01T06:02:36.053813258Z"
+}{
+  "id": "3b2e7599-11a8-4876-bcde-47c87e4da4d1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)",
+  "timestamp": "2026-10-01T06:02:36.054785201Z"
+}{
+  "id": "fe52c40a-80bf-43da-b1a3-0d2753035cdb",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached idna-3.20-py3-none-any.whl (69 kB)",
+  "timestamp": "2026-10-01T06:02:36.055855304Z"
+}{
+  "id": "5e56d68e-eb95-49dd-96e1-f2adbc1de361",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached pydantic-2.13.5-py3-none-any.whl (472 kB)",
+  "timestamp": "2026-10-01T06:02:36.056808486Z"
+}{
+  "id": "1f5a79ce-0d1c-4e3d-91ff-8f02a1e905b2",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)",
+  "timestamp": "2026-10-01T06:02:36.058014495Z"
+}{
+  "id": "6bea5410-bbe9-4042-b7db-7425e8afcecb",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached starlette-0.41.3-py3-none-any.whl (73 kB)",
+  "timestamp": "2026-10-01T06:02:36.059667886Z"
+}{
+  "id": "2870385a-fd49-4ff6-ac1f-0723adbcb9fd",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached anyio-4.15.1-py3-none-any.whl (132 kB)",
+  "timestamp": "2026-10-01T06:02:36.060672599Z"
+}{
+  "id": "ead11c76-60e1-4211-8ac5-ce95617ca616",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)",
+  "timestamp": "2026-10-01T06:02:36.061696408Z"
+}{
+  "id": "5fb95b9e-114c-4a87-9f7a-72ef2eff2575",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)",
+  "timestamp": "2026-10-01T06:02:36.062681762Z"
+}{
+  "id": "3364d2b8-2700-45de-b991-c947c7c1d855",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)",
+  "timestamp": "2026-10-01T06:02:36.063644195Z"
+}{
+  "id": "b6d5ba06-68eb-4b85-9d7a-933817971436",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached click-8.5.0-py3-none-any.whl (125 kB)",
+  "timestamp": "2026-10-01T06:02:36.064612217Z"
+}{
+  "id": "9838cc95-899b-4e19-b0cd-09ff75ef105d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached h11-0.16.0-py3-none-any.whl (37 kB)",
+  "timestamp": "2026-10-01T06:02:36.065598605Z"
+}{
+  "id": "ad17b042-c1e6-4dc0-9cf5-d14eb4c48f13",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached httptools-0.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (486 kB)",
+  "timestamp": "2026-10-01T06:02:36.066625203Z"
+}{
+  "id": "34c225eb-d1e2-4722-954c-1f8e28bc7046",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)",
+  "timestamp": "2026-10-01T06:02:36.067785487Z"
+}{
+  "id": "1c301596-189a-40c0-84fe-19bffa00ba71",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)",
+  "timestamp": "2026-10-01T06:02:36.074368736Z"
+}{
+  "id": "e47d819c-3b62-4b34-acaf-86f7d7b704d1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached pytz-2026.4-py2.py3-none-any.whl (506 kB)",
+  "timestamp": "2026-10-01T06:02:36.075447866Z"
+}{
+  "id": "d41d6895-73fd-4083-a887-0c7ffafdc031",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)",
+  "timestamp": "2026-10-01T06:02:36.076592426Z"
+}{
+  "id": "aaf23ca4-aabf-4366-9da3-d94c2ecee008",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)",
+  "timestamp": "2026-10-01T06:02:36.077826777Z"
+}{
+  "id": "e8187d53-7cf3-4f1f-a347-f2bc11e523f4",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)",
+  "timestamp": "2026-10-01T06:02:36.078769896Z"
+}{
+  "id": "b4999c1a-7282-488e-9543-88c1e93de449",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached typing_inspection-0.4.4-py3-none-any.whl (14 kB)",
+  "timestamp": "2026-10-01T06:02:36.079750545Z"
+}{
+  "id": "e00f561f-b638-4a96-b7a0-15c598b9c9e3",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached tzdata-2026.4-py2.py3-none-any.whl (347 kB)",
+  "timestamp": "2026-10-01T06:02:36.080702323Z"
+}{
+  "id": "64011c72-2c3b-4fb5-af2c-4f4749a77e0c",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached uvloop-0.23.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.5 MB)",
+  "timestamp": "2026-10-01T06:02:36.08178336Z"
+}{
+  "id": "24d61384-a114-4afc-ab65-d63071489981",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)",
+  "timestamp": "2026-10-01T06:02:36.084243572Z"
+}{
+  "id": "1a45f8a6-dc8b-41fa-b930-62637ce6f7e1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached websockets-17.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (224 kB)",
+  "timestamp": "2026-10-01T06:02:36.085354582Z"
+}{
+  "id": "f3d2166f-6556-4927-9fb8-a5ce83055a83",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)",
+  "timestamp": "2026-10-01T06:02:36.086412938Z"
+}{
+  "id": "b701bbc4-2563-4fa7-8d5e-20797b3de8b8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)",
+  "timestamp": "2026-10-01T06:02:36.090777039Z"
+}{
+  "id": "6c2d6aa7-9df2-41cd-ac8b-6cc1224b41e0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)",
+  "timestamp": "2026-10-01T06:02:36.091867685Z"
+}{
+  "id": "4feacbf9-6fda-426d-a9d7-7863d057d69e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached fonttools-4.66.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)",
+  "timestamp": "2026-10-01T06:02:36.092890865Z"
+}{
+  "id": "5f016722-f392-4da4-b6ca-f5b5a8175400",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)",
+  "timestamp": "2026-10-01T06:02:36.095680561Z"
+}{
+  "id": "42a18afa-69a0-437b-b45c-ad81d6eaea44",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached packaging-26.3-py3-none-any.whl (129 kB)",
+  "timestamp": "2026-10-01T06:02:36.097161794Z"
+}{
+  "id": "6225c0d3-fcc2-4219-ba64-b9edde4a9b64",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)",
+  "timestamp": "2026-10-01T06:02:36.098191822Z"
+}{
+  "id": "34b8136d-dd26-42ee-b377-5cff4d6119e2",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)",
+  "timestamp": "2026-10-01T06:02:36.10153605Z"
+}{
+  "id": "0b8cca14-20f0-457a-9318-ca49a1b3bf5b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached networkx-3.7-py3-none-any.whl (2.1 MB)",
+  "timestamp": "2026-10-01T06:02:36.102522317Z"
+}{
+  "id": "c4701339-4794-4200-b825-8a6ba1ed4ee4",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)",
+  "timestamp": "2026-10-01T06:02:36.104232241Z"
+}{
+  "id": "3891d406-0b5a-43dd-823a-f6414620a623",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached statsmodels-0.15.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (12.1 MB)",
+  "timestamp": "2026-10-01T06:02:36.117303512Z"
+}{
+  "id": "098cf35e-8235-4e4e-8319-bc3d4a81145e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached formulaic-1.2.2-py3-none-any.whl (118 kB)",
+  "timestamp": "2026-10-01T06:02:36.122521603Z"
+}{
+  "id": "0afafc2f-034a-4a96-b643-ed2a44b49858",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached interface_meta-2.0.1-py3-none-any.whl (15 kB)",
+  "timestamp": "2026-10-01T06:02:36.123589864Z"
+}{
+  "id": "d9858404-ad64-4f2a-8840-5205dc2150a9",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached narwhals-2.26.0-py3-none-any.whl (474 kB)",
+  "timestamp": "2026-10-01T06:02:36.124557495Z"
+}{
+  "id": "a37188f0-55fc-493d-aa62-ecec85caeff6",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached patsy-1.0.3-py2.py3-none-any.whl (233 kB)",
+  "timestamp": "2026-10-01T06:02:36.125753797Z"
+}{
+  "id": "b65210a6-b745-476c-b67c-12b3d88f7df5",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Using cached wrapt-2.5.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (248 kB)",
+  "timestamp": "2026-10-01T06:02:36.126790612Z"
+}{
+  "id": "2ca842d7-0b7d-4235-a0a5-7596f2747981",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Building wheels for collected packages: mosp-research",
+  "timestamp": "2026-10-01T06:02:36.401393214Z"
+}{
+  "id": "52cda972-b23f-4e31-9711-6467590f055c",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "  Building editable for mosp-research (pyproject.toml): started",
+  "timestamp": "2026-10-01T06:02:36.402038969Z"
+}{
+  "id": "2b7abc13-2a8c-4f07-a1f3-9d6365546a35",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "  Building editable for mosp-research (pyproject.toml): finished with status 'done'",
+  "timestamp": "2026-10-01T06:02:36.656183163Z"
+}{
+  "id": "9bffa1f9-cce7-4833-a3e7-d0ae50ef9efc",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "  Created wheel for mosp-research: filename=mosp_research-1.0.0-0.editable-py3-none-any.whl size=2959 sha256=21b2bd709e3a2c1c709c469e9d641bf74f95d1b34e42420252d19aa9eed4ce2a",
+  "timestamp": "2026-10-01T06:02:36.656612726Z"
+}{
+  "id": "ccf042e7-3a05-4d3b-a9ba-d2381eec7cf7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "  Stored in directory: /tmp/pip-ephem-wheel-cache-sa7rmlyv/wheels/1c/18/96/930df1a110960b4a459d1a233bf0ebe2bb31145f3377b2d3b0",
+  "timestamp": "2026-10-01T06:02:36.65672811Z"
+}{
+  "id": "bebcb8a7-c35f-44b4-be00-80b7d4facaa1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Successfully built mosp-research",
+  "timestamp": "2026-10-01T06:02:36.658026071Z"
+}{
+  "id": "94257f29-f84d-427e-901e-a29ed79b5549",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Installing collected packages: pytz, wrapt, websockets, uvloop, urllib3, tzdata, typing-extensions, six, pyyaml, python-dotenv, pyparsing, pillow, packaging, numpy, networkx, narwhals, kiwisolver, interface-meta, idna, httptools, h11, fonttools, cycler, click, charset-normalizer, certifi, annotated-types, uvicorn, typing-inspection, scipy, requests, python-dateutil, pydantic-core, patsy, contourpy, anyio, watchfiles, starlette, pydantic, pandas, matplotlib, formulaic, fastapi, statsmodels, mosp-research",
+  "timestamp": "2026-10-01T06:02:36.781905777Z"
+}{
+  "id": "39fe9d99-5e66-458e-b898-756fbfab3b60",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:41794 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:02:40.08562305Z"
+}{
+  "id": "d141fe47-0a30-48e5-8833-42b365999aaa",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:41806 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:02:45.087193629Z"
+}{
+  "id": "a73cd1f4-31e3-4bfd-9466-001e151ceb8b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:50468 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:02:50.085733801Z"
+}{
+  "id": "7c7635ec-a633-45c7-bf57-54560450b4d1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:50474 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:02:55.086008341Z"
+}{
+  "id": "ae9f49dc-1a5a-4a3e-a1f8-b5f9fc56a9f7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T06:02:55.839750435Z"
+}{
+  "id": "a3e4caca-f401-47ec-8c32-9f0aebea3488",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Successfully installed annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 charset-normalizer-3.5.2 click-8.5.0 contourpy-1.4.0 cycler-0.12.1 fastapi-0.115.6 fonttools-4.66.1 formulaic-1.2.2 h11-0.16.0 httptools-0.8.0 idna-3.20 interface-meta-2.0.1 kiwisolver-1.5.1 matplotlib-3.11.2 mosp-research-1.0.0 narwhals-2.26.0 networkx-3.7 numpy-2.5.3 packaging-26.3 pandas-2.2.3 patsy-1.0.3 pillow-12.3.0 pydantic-2.13.5 pydantic-core-2.46.5 pyparsing-3.3.3 python-dateutil-2.9.0.post0 python-dotenv-1.0.1 pytz-2026.4 pyyaml-6.0.3 requests-2.32.3 scipy-1.18.1 six-1.17.0 starlette-0.41.3 statsmodels-0.15.0 typing-extensions-4.16.0 typing-inspection-0.4.4 tzdata-2026.4 urllib3-2.8.0 uvicorn-0.34.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.1 wrapt-2.5.0",
+  "timestamp": "2026-10-01T06:02:55.843332867Z"
+}{
+  "id": "153942ad-3c5a-4c86-8e1f-94cf4cad7a0d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUploading build...\u001b[22m",
+  "timestamp": "2026-10-01T06:02:57.474396702Z"
+}{
+  "id": "3ca27931-bf84-4014-960a-f865c81218a0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:35576 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:02:58.175162683Z"
+}{
+  "id": "2c5cf67e-06b8-4500-84bf-82c6de22d1f0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:35590 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:00.086394044Z"
+}{
+  "id": "003e9c51-25d7-4f5d-9d1a-73f8044d803e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:35596 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:05.086174354Z"
+}{
+  "id": "2e56daec-c1da-440d-8fbe-600049fce190",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUploaded in 7.2s. Compression took 3.3s\u001b[22m",
+  "timestamp": "2026-10-01T06:03:07.966351868Z"
+}{
+  "id": "41f49535-19d5-4fcc-8b4d-f2216ae79831",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32;1m==\u003e\u001b[0;22m \u001b[1mBuild successful 🎉\u001b[22m",
+  "timestamp": "2026-10-01T06:03:07.975064721Z"
+}{
+  "id": "a42b6cda-930a-4635-92b1-c7c4d0074b3b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:44286 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:10.08669769Z"
+}{
+  "id": "dauvfm0u01pc73ceghog",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;34m\u001b[1m==\u003e \u001b[0m\u001b[1mDeploying...\u001b[0m",
+  "timestamp": "2026-10-01T06:03:10.386691707Z"
+}{
+  "id": "dauvfm0u01pc73cegho0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;34m\u001b[1m==\u003e \u001b[0m\u001b[1mSetting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance\u001b[0m",
+  "timestamp": "2026-10-01T06:03:10.811264844Z"
+}{
+  "id": "3dca3fcd-5c00-4dea-b36b-258949a1df6a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:44292 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:15.086283125Z"
+}{
+  "id": "90665957-d540-4296-8952-89bebec6c15b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:51606 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:20.085505332Z"
+}{
+  "id": "f432c711-0e41-457b-93af-2d966b14d4dc",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:51608 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:25.086494228Z"
+}{
+  "id": "cad5ad12-1bf2-4f6e-b717-36a0e9b18f91",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:59124 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:28.179182438Z"
+}{
+  "id": "226aec20-0b82-4482-b174-134cbec95f7c",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:59138 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:30.089002808Z"
+}{
+  "id": "b4928440-f945-4657-ae2c-558be163c1e7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning 'python -m uvicorn main:app --app-dir web/taipei-pareto-explorer/backend --host 0.0.0.0 --port $PORT'\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:03:34.315744938Z"
+}{
+  "id": "2e45b4e7-dd2a-4992-8297-be51aac39e5c",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:59142 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:35.086004597Z"
+}{
+  "id": "303f8e46-61da-4406-9b9e-d7ed31331b45",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:60660 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:40.086286338Z"
+}{
+  "id": "5b5e8279-aaa9-477e-a8bf-aa1899e3c5ec",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:60664 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:45.086586619Z"
+}{
+  "id": "237d5ae4-18fc-4685-bc42-0f4e84f9c3f8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:36654 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:50.086683956Z"
+}{
+  "id": "8e0922b5-3793-4044-aa8c-83796be53323",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Started server process [59]",
+  "timestamp": "2026-10-01T06:03:54.318425502Z"
+}{
+  "id": "f22d4838-bd0a-4524-be2f-001707312cd3",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Waiting for application startup.",
+  "timestamp": "2026-10-01T06:03:54.318445612Z"
+}{
+  "id": "ae9d8e39-46cc-496d-b6b5-5c0c28c84137",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Application startup complete.",
+  "timestamp": "2026-10-01T06:03:54.318492203Z"
+}{
+  "id": "b0cd05dc-7662-4ddf-b113-f1627ea1193e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Uvicorn running on http://0.0.0.0:10000 (Press CTRL+C to quit)",
+  "timestamp": "2026-10-01T06:03:54.320119682Z"
+}{
+  "id": "2868f7f3-fab1-4975-8b29-935e321f8b67",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:36658 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:55.085514455Z"
+}{
+  "id": "c3da3048-e0a9-49dd-a44b-2f6e2f97216e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     127.0.0.1:36724 - \"HEAD / HTTP/1.1\" 405 Method Not Allowed",
+  "timestamp": "2026-10-01T06:03:55.309362171Z"
+}{
+  "id": "4f745770-554a-49c6-baa7-763735a7eaa0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:41262 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:03:58.174303089Z"
+}{
+  "id": "a21c4b83-b201-41a3-b6ce-3b670a7574f7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.24.168:41270 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:04:00.088448275Z"
+}{
+  "id": "f88b55fc-3ff7-4b36-b436-377166785f55",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.27.80:49056 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:04:01.816248544Z"
+}{
+  "id": "707a1898-270e-46e3-9a91-c5cda45a3f59",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.27.80:49066 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:04:01.821842047Z"
+}{
+  "id": "7e1890dc-5231-4b72-8274-8711034dd07a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Shutting down",
+  "timestamp": "2026-10-01T06:04:02.293177632Z"
+}{
+  "id": "e97a0c02-e46f-43df-8764-7d8ea0afbfe1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Waiting for application shutdown.",
+  "timestamp": "2026-10-01T06:04:02.39366501Z"
+}{
+  "id": "34a45ef5-cb4d-4181-acb6-4848b68036d6",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Application shutdown complete.",
+  "timestamp": "2026-10-01T06:04:02.393800763Z"
+}{
+  "id": "f5b57933-31cc-4f98-a2dc-21a5d25bb52f",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-cfb66"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     Finished server process [59]",
+  "timestamp": "2026-10-01T06:04:02.393873125Z"
+}{
+  "id": "dauvfm0u01pc73ceghng",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1mYour service is live 🎉\u001b[0m",
+  "timestamp": "2026-10-01T06:04:03.290338502Z"
+}{
+  "id": "4db048a4-8df8-438d-a07a-9586973523d7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     35.230.28.204:0 - \"GET / HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:04:03.325621508Z"
+}{
+  "id": "dauvfm0u01pc73ceghn0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m\u001b[0m",
+  "timestamp": "2026-10-01T06:04:03.618215064Z"
+}{
+  "id": "dauvfm0u01pc73ceghmg",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m///////////////////////////////////////////////////////////\u001b[0m",
+  "timestamp": "2026-10-01T06:04:03.620971306Z"
+}{
+  "id": "dauvfm0u01pc73ceghm0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m\u001b[0m",
+  "timestamp": "2026-10-01T06:04:03.624089148Z"
+}{
+  "id": "dauvfm0u01pc73ceghlg",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1mAvailable at your primary URL https://mosp-taipei-api.onrender.com\u001b[0m",
+  "timestamp": "2026-10-01T06:04:03.627261122Z"
+}{
+  "id": "dauvfm0u01pc73ceghl0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m\u001b[0m",
+  "timestamp": "2026-10-01T06:04:03.630444148Z"
+}{
+  "id": "dauvfm0u01pc73ceghkg",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m///////////////////////////////////////////////////////////\u001b[0m",
+  "timestamp": "2026-10-01T06:04:03.639982184Z"
+}{
+  "id": "d2ab490d-4d11-45f2-bf90-d9c338dc0be2",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauuick1nsns73fpl0o0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-dauuick1nsns73fpl0o0-nwxdk"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "INFO:     10.209.27.80:49078 - \"GET /api/health HTTP/1.1\" 200 OK",
+  "timestamp": "2026-10-01T06:04:06.825257084Z"
+}

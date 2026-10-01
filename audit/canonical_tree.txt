@@ -178,14 +178,17 @@ MOSP_research/
   regression/checks.json
   regression/deployment/backend_build_runtime.log
   regression/deployment/backend_live_deploy.json
+  regression/deployment/backend_native_autodeploy.log
   regression/deployment/backend_service.json
   regression/deployment/blueprint_validation.json
   regression/deployment/correctness_validation_summary.txt
   regression/deployment/frontend_build_runtime.log
   regression/deployment/frontend_live_deploy.json
+  regression/deployment/frontend_native_autodeploy.log
   regression/deployment/frontend_service.json
   regression/deployment/git_provider_reconnection.json
   regression/deployment/native_autodeploy_failure.json
+  regression/deployment/native_autodeploy_verification.json
   regression/deployment/npm_build.log
   regression/deployment/npm_ci.log
   regression/deployment/npm_render_env_build.log

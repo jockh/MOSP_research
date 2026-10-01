@@ -390,4 +390,6 @@ Did this refactor change any algorithm, experimental setting, or research result
 GitHub: https://github.com/jockh/MOSP_research; frontend: https://taipei-pareto-explorer.onrender.com; backend: https://mosp-taipei-api.onrender.com. Backend free and Static Site live; public health/CORS/data API and five-route OD checks passed. render.yaml validated without application. Browser UI tests are blocked by the explicit domain access denial and remain pending. Research bytes/settings/algorithm remain unchanged.
 
 
-GitHub repository OAuth was completed by the user. Reconnecting both existing free services using the CLI and pushing actual-origin env examples did not trigger native deployment during ten minutes of monitoring. The public services remain live and tested; native auto-deploy and production UI checks remain pending browser access to Render Dashboard and the explorer. No research file changed.
+GitHub repository OAuth was completed by the user. Native auto-deploy is now verified: a comment-only push to both service directories triggered `new_commit` deployments, and both became live at 485f781064977e771450ab38c3d1a37ef21957fb without a manual deploy. The initial failed probe is retained as superseded historical evidence. Production browser UI checks remain pending explorer domain permission. No research file changed.
+
+Did deployment change any MOSP algorithm, experimental setting, Taipei Metro assumption, or research result? **No.**

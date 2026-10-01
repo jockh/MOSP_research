@@ -1,0 +1,1801 @@
+{
+  "id": "a080ba5b-db00-49c1-89e7-25556bcc4bc7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "found 0 vulnerabilities",
+  "timestamp": "2026-10-01T05:06:28.94409836Z"
+}{
+  "id": "7533181b-ab2d-471e-a05e-7b362824f222",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:06:29.093987373Z"
+}{
+  "id": "dbab5c8c-ec0d-4054-bd19-e1bb20f2deec",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e taipei-pareto-route-explorer@0.2.0 build",
+  "timestamp": "2026-10-01T05:06:29.094006703Z"
+}{
+  "id": "ceacebc0-630e-4aff-aecc-9bd8d7c8802e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e vite build",
+  "timestamp": "2026-10-01T05:06:29.094008653Z"
+}{
+  "id": "e69fab63-35df-48cc-a70d-8e3f56b23527",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:06:29.09400997Z"
+}{
+  "id": "403692ac-c22e-4c84-8013-cc402ec941fe",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "vite v6.4.3 building for production...",
+  "timestamp": "2026-10-01T05:06:29.289607524Z"
+}{
+  "id": "c66d3f0a-9433-4bd5-9fc3-b94927a4b16b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "transforming...",
+  "timestamp": "2026-10-01T05:06:29.350916922Z"
+}{
+  "id": "c1bc99fc-26a5-48b1-91e9-4539b2b9fcc2",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ 1627 modules transformed.",
+  "timestamp": "2026-10-01T05:06:31.298796708Z"
+}{
+  "id": "0da8cc34-478d-4d11-9cc9-11fa75369389",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "rendering chunks...",
+  "timestamp": "2026-10-01T05:06:31.439122611Z"
+}{
+  "id": "1c24cf9f-f248-4ee0-a345-39854ba4b9d1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "computing gzip size...",
+  "timestamp": "2026-10-01T05:06:31.44651152Z"
+}{
+  "id": "07c766bf-7adc-4b8a-b180-c95e193717a7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/index.html                   0.43 kB │ gzip:   0.30 kB",
+  "timestamp": "2026-10-01T05:06:31.457054513Z"
+}{
+  "id": "872a871f-8a36-4736-85d2-ee533652aac2",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-D0p5wVi8.css   31.40 kB │ gzip:  10.54 kB",
+  "timestamp": "2026-10-01T05:06:31.457080033Z"
+}{
+  "id": "629b73d0-b737-4c81-a658-80d660ef8fe9",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-Ul6itRLM.js   330.57 kB │ gzip: 101.83 kB",
+  "timestamp": "2026-10-01T05:06:31.457096565Z"
+}{
+  "id": "eca34bc1-41f4-4b84-a04c-2e7e818cfc79",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ built in 2.14s",
+  "timestamp": "2026-10-01T05:06:31.457281069Z"
+}{
+  "id": "bd7acdee-ec1f-4af5-80ea-9cb6f62ad24b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUsing Node.js version 24.19.0 via environment variable NODE_VERSION\u001b[22m",
+  "timestamp": "2026-10-01T05:06:31.576587454Z"
+}{
+  "id": "cbe54bba-e9ae-44a1-8805-63e1b168599c",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mDocs on specifying a Node.js version: https://render.com/docs/node-version\u001b[22m",
+  "timestamp": "2026-10-01T05:06:31.576590271Z"
+}{
+  "id": "94d5462a-67c8-4d91-b081-5325ad442d53",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mUploading build...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:06:32.582131683Z"
+}{
+  "id": "f5fdcc91-a03b-4743-a080-2d81e0c57251",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mYour site is live 🎉\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:06:32.703532888Z"
+}{
+  "id": "e30e44c7-2490-4a41-af1a-69bde9cb71dd",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "found 0 vulnerabilities",
+  "timestamp": "2026-10-01T05:20:57.330441142Z"
+}{
+  "id": "f921c7fa-68dd-4b22-b23b-84e6014ad5c0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:20:57.470738069Z"
+}{
+  "id": "99fce388-4cd7-40e6-8392-7d0faeeac998",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e taipei-pareto-route-explorer@0.2.0 build",
+  "timestamp": "2026-10-01T05:20:57.47075473Z"
+}{
+  "id": "8c12f528-f27f-41d3-b50d-a8bd7859f5c7",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e vite build",
+  "timestamp": "2026-10-01T05:20:57.470756475Z"
+}{
+  "id": "fc11f09d-9163-4c2c-a078-1d9235f67c01",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:20:57.470757757Z"
+}{
+  "id": "c633aa28-0558-4146-9a34-16d23198bfe5",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "vite v6.4.3 building for production...",
+  "timestamp": "2026-10-01T05:20:57.641180375Z"
+}{
+  "id": "1e1ceab1-c6db-4892-ad1f-9627dc215561",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "transforming...",
+  "timestamp": "2026-10-01T05:20:57.693352647Z"
+}{
+  "id": "e9b2dbe9-b809-4b79-b5b7-5366fceadd9a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ 1627 modules transformed.",
+  "timestamp": "2026-10-01T05:20:59.529658508Z"
+}{
+  "id": "569bdc3a-48d4-48f8-83a3-bf5f67e393b5",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "rendering chunks...",
+  "timestamp": "2026-10-01T05:20:59.665285081Z"
+}{
+  "id": "aaaebebe-6048-4a06-a9f4-b90ec78a2040",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "computing gzip size...",
+  "timestamp": "2026-10-01T05:20:59.673533606Z"
+}{
+  "id": "c6bb5ccf-ed47-46ec-bb07-f0c0a66fa964",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/index.html                   0.43 kB │ gzip:   0.30 kB",
+  "timestamp": "2026-10-01T05:20:59.684362023Z"
+}{
+  "id": "c2d0917d-1fd0-4802-ba77-5ea86b25c689",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-D0p5wVi8.css   31.40 kB │ gzip:  10.54 kB",
+  "timestamp": "2026-10-01T05:20:59.684409213Z"
+}{
+  "id": "749af4f0-a593-4eec-8a14-6f9da2dd002f",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-Ul6itRLM.js   330.57 kB │ gzip: 101.83 kB",
+  "timestamp": "2026-10-01T05:20:59.684464319Z"
+}{
+  "id": "da8c15b2-0d19-43a8-9b09-acd655bdcbaa",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ built in 2.02s",
+  "timestamp": "2026-10-01T05:20:59.684685714Z"
+}{
+  "id": "f496fddb-f1af-4413-8d87-989a8f7e6a58",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUsing Node.js version 24.19.0 via environment variable NODE_VERSION\u001b[22m",
+  "timestamp": "2026-10-01T05:20:59.809109223Z"
+}{
+  "id": "d5cc6f08-9576-46e6-8f05-794f565d6419",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mDocs on specifying a Node.js version: https://render.com/docs/node-version\u001b[22m",
+  "timestamp": "2026-10-01T05:20:59.809116926Z"
+}{
+  "id": "9d2f0155-8a28-4117-a8e2-4c937137a991",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mUploading build...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:21:01.070835621Z"
+}{
+  "id": "e5ac1aa1-99f9-4f6a-9908-fc08ba00b509",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mYour site is live 🎉\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:21:01.184913549Z"
+}{
+  "id": "1971fdd7-2853-40a2-8b2a-81cc39bb3638",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mDownloading cache...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:59:23.200560475Z"
+}{
+  "id": "22030969-fada-4f05-b788-5080fdf1a813",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mCloning from https://github.com/jockh/MOSP_research\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:59:23.228572696Z"
+}{
+  "id": "46a91403-c04c-4f2f-bb92-76933893c62e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mChecking out commit 9984f95101dd19b2e475bc4afd88d9a4788497ce in branch main\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:59:29.112753439Z"
+}{
+  "id": "f199ed49-afd8-4381-a72c-c8e3ee091f2d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mDownloaded 32MB in 5s. Extraction took 1s.\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:59:30.126560021Z"
+}{
+  "id": "b8840b5c-4c87-43d5-89d7-f0d76d20095a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning build command 'npm ci \u0026\u0026 npm run build'...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:59:30.42659282Z"
+}{
+  "id": "3568bf74-6cc1-4fee-ae0e-1b06f831c48b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUsing Node.js version 24.19.0 via environment variable NODE_VERSION\u001b[22m",
+  "timestamp": "2026-10-01T05:59:30.506674904Z"
+}{
+  "id": "8ae44668-e41d-477a-8238-6010734019e8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mDocs on specifying a Node.js version: https://render.com/docs/node-version\u001b[22m",
+  "timestamp": "2026-10-01T05:59:30.506682684Z"
+}{
+  "id": "afae96cd-085d-489c-9fe1-7395224e1f25",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mInstalling Node.js version 24.19.0...\u001b[22m",
+  "timestamp": "2026-10-01T05:59:30.506816724Z"
+}{
+  "id": "712d6a15-1d9e-44b5-8d4d-9c1ef1f02bd4",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:59:33.535624769Z"
+}{
+  "id": "b0142ae2-8bec-4592-a904-a17fe7f9eb60",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "added 70 packages, and audited 71 packages in 2s",
+  "timestamp": "2026-10-01T05:59:33.535644484Z"
+}{
+  "id": "f4f3be8b-bc10-4d42-8c9d-876bf68effb1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:59:33.535646979Z"
+}{
+  "id": "7a535ca4-7022-43d2-8e21-92ca7d032561",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "9 packages are looking for funding",
+  "timestamp": "2026-10-01T05:59:33.535701481Z"
+}{
+  "id": "69ee6f04-c3c7-4fc1-9f4e-ae0762bc2268",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "  run `npm fund` for details",
+  "timestamp": "2026-10-01T05:59:33.535749097Z"
+}{
+  "id": "d264705e-b8df-462e-8609-dca9eb2da6bb",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:59:33.536712803Z"
+}{
+  "id": "db42d62e-6921-42db-b4aa-79926f60fd46",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "found 0 vulnerabilities",
+  "timestamp": "2026-10-01T05:59:33.536719563Z"
+}{
+  "id": "1a11209e-2552-470f-a147-17c01fda76f3",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:59:33.677812189Z"
+}{
+  "id": "2710f119-95cf-43a7-8b25-7c3ff91100ee",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e taipei-pareto-route-explorer@0.2.0 build",
+  "timestamp": "2026-10-01T05:59:33.677822728Z"
+}{
+  "id": "063ce251-9bbb-4af9-a50e-138bfd8d8ca4",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e vite build",
+  "timestamp": "2026-10-01T05:59:33.677824412Z"
+}{
+  "id": "579ee29f-4156-417a-9518-7fd9d7192b53",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T05:59:33.677825846Z"
+}{
+  "id": "b83f643c-3930-4e46-84e9-53e5a4df4177",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "vite v6.4.3 building for production...",
+  "timestamp": "2026-10-01T05:59:33.846607071Z"
+}{
+  "id": "d952fbb7-560d-49b7-a8e9-acfda54b4421",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "transforming...",
+  "timestamp": "2026-10-01T05:59:33.899279577Z"
+}{
+  "id": "64c253dc-c0dd-4770-ac97-daf66ec1155b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ 1627 modules transformed.",
+  "timestamp": "2026-10-01T05:59:35.520706033Z"
+}{
+  "id": "dc39dc1b-66f1-4868-a03b-d707ecc10ba9",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "rendering chunks...",
+  "timestamp": "2026-10-01T05:59:35.666518606Z"
+}{
+  "id": "19253e05-f07b-4ab9-9265-de16c58457fc",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "computing gzip size...",
+  "timestamp": "2026-10-01T05:59:35.673743678Z"
+}{
+  "id": "09a29d5e-195c-4f67-8c00-face56d0b0a6",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/index.html                   0.43 kB │ gzip:   0.30 kB",
+  "timestamp": "2026-10-01T05:59:35.684248132Z"
+}{
+  "id": "2bec7f65-3d45-4730-9bb5-13f86842d5a8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-D0p5wVi8.css   31.40 kB │ gzip:  10.54 kB",
+  "timestamp": "2026-10-01T05:59:35.684270928Z"
+}{
+  "id": "bfb1b90e-d7f4-4c01-aaec-84130c4fde92",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-Ul6itRLM.js   330.57 kB │ gzip: 101.83 kB",
+  "timestamp": "2026-10-01T05:59:35.684277973Z"
+}{
+  "id": "35e93e82-9364-44fe-a2f0-e5db09e88b71",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ built in 1.81s",
+  "timestamp": "2026-10-01T05:59:35.68449833Z"
+}{
+  "id": "5184526f-ebfb-4522-87f6-b9c14401714e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUsing Node.js version 24.19.0 via environment variable NODE_VERSION\u001b[22m",
+  "timestamp": "2026-10-01T05:59:35.800138028Z"
+}{
+  "id": "d485a6ad-f81f-47e5-80f0-f7873f0cda51",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mDocs on specifying a Node.js version: https://render.com/docs/node-version\u001b[22m",
+  "timestamp": "2026-10-01T05:59:35.800146678Z"
+}{
+  "id": "8e038141-1890-4806-86f1-7abf0deb615e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mUploading build...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:59:36.314187226Z"
+}{
+  "id": "f46bed7d-d120-4e61-9468-a422eb5a4a37",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mYour site is live 🎉\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T05:59:36.439441594Z"
+}{
+  "id": "4cb94c05-7bb9-4019-aa09-9881b0abf365",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mDownloading cache...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:02:17.505702469Z"
+}{
+  "id": "13ae3fcc-25ce-47d3-b0ee-57e48a77c225",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mCloning from https://github.com/jockh/MOSP_research\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:02:17.53403136Z"
+}{
+  "id": "8ca9f338-6e10-42c7-aee2-41ec7d85341c",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mChecking out commit 485f781064977e771450ab38c3d1a37ef21957fb in branch main\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:02:19.03560098Z"
+}{
+  "id": "24bad235-efad-4224-ba43-c6f61694cccb",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mDownloaded 32MB in 1s. Extraction took 1s.\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:02:20.288566784Z"
+}{
+  "id": "a671cb87-253d-439b-a147-428b630f4b69",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning build command 'npm ci \u0026\u0026 npm run build'...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:02:21.039042368Z"
+}{
+  "id": "4aa5e9c4-f8e7-46a2-bc78-c8d7b4822882",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUsing Node.js version 24.19.0 via environment variable NODE_VERSION\u001b[22m",
+  "timestamp": "2026-10-01T06:02:21.110843296Z"
+}{
+  "id": "4e5da78c-66da-42d7-825b-dde3427f0349",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mDocs on specifying a Node.js version: https://render.com/docs/node-version\u001b[22m",
+  "timestamp": "2026-10-01T06:02:21.110847726Z"
+}{
+  "id": "2c1d2e6d-45fe-4909-bd75-8a1ec7cd1755",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mInstalling Node.js version 24.19.0...\u001b[22m",
+  "timestamp": "2026-10-01T06:02:21.110980083Z"
+}{
+  "id": "5709c1a9-9689-4f81-8c72-d5601427bcb1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T06:02:24.218892505Z"
+}{
+  "id": "ecdb6965-a376-4d8b-bb42-7ffe59acd77d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "added 70 packages, and audited 71 packages in 2s",
+  "timestamp": "2026-10-01T06:02:24.218907057Z"
+}{
+  "id": "9dad649e-bb16-47e9-99e7-6cf61f0b58da",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T06:02:24.2189208Z"
+}{
+  "id": "86c4cca2-45a3-4f20-8075-be54e2e66041",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "9 packages are looking for funding",
+  "timestamp": "2026-10-01T06:02:24.218979176Z"
+}{
+  "id": "fc1d1f29-dcb9-4e6b-b54b-8f1f833f5169",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "  run `npm fund` for details",
+  "timestamp": "2026-10-01T06:02:24.2190358Z"
+}{
+  "id": "84ccb541-c641-4984-bf80-fbf95e098730",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T06:02:24.219925281Z"
+}{
+  "id": "e242730f-cc0b-4854-ab5a-1ad1d03e1b7a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "found 0 vulnerabilities",
+  "timestamp": "2026-10-01T06:02:24.219929879Z"
+}{
+  "id": "c48d37a9-67a5-40b9-9e7a-3ed8da39f355",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T06:02:24.371700733Z"
+}{
+  "id": "a6f68f52-db92-4fb7-a5bf-2f20ea2e10f4",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e taipei-pareto-route-explorer@0.2.0 build",
+  "timestamp": "2026-10-01T06:02:24.37171373Z"
+}{
+  "id": "d1e7ee5e-01d0-4972-bbaf-2972373e0882",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u003e vite build",
+  "timestamp": "2026-10-01T06:02:24.371715483Z"
+}{
+  "id": "7bec39f8-3f0c-418b-a4b6-a26da402832e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "",
+  "timestamp": "2026-10-01T06:02:24.371716738Z"
+}{
+  "id": "fb500e42-ac6b-4c33-a05d-d854dcac3323",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "vite v6.4.3 building for production...",
+  "timestamp": "2026-10-01T06:02:24.542181006Z"
+}{
+  "id": "130c869c-5884-4ce8-90c3-c7b2404b3c67",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "transforming...",
+  "timestamp": "2026-10-01T06:02:24.596199147Z"
+}{
+  "id": "22ed3516-1493-4a42-b576-b353cad35c1f",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ 1627 modules transformed.",
+  "timestamp": "2026-10-01T06:02:26.271043071Z"
+}{
+  "id": "c50f3217-e47a-4b7b-b27e-ad87b9db315d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "rendering chunks...",
+  "timestamp": "2026-10-01T06:02:26.409639487Z"
+}{
+  "id": "28eff916-3645-4515-96d6-9325f347320f",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "computing gzip size...",
+  "timestamp": "2026-10-01T06:02:26.416955479Z"
+}{
+  "id": "3ad4d63b-a70f-4c8e-b995-318247bc02e0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/index.html                   0.43 kB │ gzip:   0.30 kB",
+  "timestamp": "2026-10-01T06:02:26.427925893Z"
+}{
+  "id": "00c6364a-5e3a-44fd-b1f1-fae9e2978a60",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-D0p5wVi8.css   31.40 kB │ gzip:  10.54 kB",
+  "timestamp": "2026-10-01T06:02:26.427959458Z"
+}{
+  "id": "1f8b6da9-2c21-46b4-a46b-faae3d602319",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "dist/assets/index-Ul6itRLM.js   330.57 kB │ gzip: 101.83 kB",
+  "timestamp": "2026-10-01T06:02:26.427976659Z"
+}{
+  "id": "ef91223c-1e37-47ea-98c9-c4444fc32427",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "✓ built in 1.86s",
+  "timestamp": "2026-10-01T06:02:26.428160198Z"
+}{
+  "id": "8fcf367f-c1fb-4601-8aa5-694cb5e0ee7d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUsing Node.js version 24.19.0 via environment variable NODE_VERSION\u001b[22m",
+  "timestamp": "2026-10-01T06:02:26.548822885Z"
+}{
+  "id": "47d7ab26-01c0-4428-99ed-a0a0e9d27fc8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mDocs on specifying a Node.js version: https://render.com/docs/node-version\u001b[22m",
+  "timestamp": "2026-10-01T06:02:26.548824581Z"
+}{
+  "id": "2e82bc76-3d57-433d-9abd-7df588a58eae",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mUploading build...\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:02:27.81991945Z"
+}{
+  "id": "9c30a002-3224-4ffa-858d-a0681091ded8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-dauukhk1nsns73fptjc0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mYour site is live 🎉\u001b(B\u001b[m",
+  "timestamp": "2026-10-01T06:02:27.917512614Z"
+}
