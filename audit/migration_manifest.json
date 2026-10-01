@@ -1,0 +1,1738 @@
+[
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_01.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/analyze_experiment_01.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "491b4f96f9a7eec56ebcc64922fb885f66196022108bbcc9fbef08510d8637fc",
+    "destination_sha256": "491b4f96f9a7eec56ebcc64922fb885f66196022108bbcc9fbef08510d8637fc",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_02a.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/analyze_experiment_02a.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "103310218f2971daa4a70d4304b06acace6063690b425ad37567253a760b914f",
+    "destination_sha256": "103310218f2971daa4a70d4304b06acace6063690b425ad37567253a760b914f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_02b.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/analyze_experiment_02b.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "cb408e18a5a9817e81be3e6740c673e151bc70d274c6066c64e7a550da7984a2",
+    "destination_sha256": "cb408e18a5a9817e81be3e6740c673e151bc70d274c6066c64e7a550da7984a2",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_03.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/analyze_experiment_03.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "93b679e8cd9db6cbc16f78a8ad50dce20163b011e97e9db35a8affe7ded0c6a5",
+    "destination_sha256": "93b679e8cd9db6cbc16f78a8ad50dce20163b011e97e9db35a8affe7ded0c6a5",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_03a.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/analyze_experiment_03a.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "8ad0008d404cd083bae3a0fd025c723aef21ccda4dc8a9994c4a87a8cfebdcf9",
+    "destination_sha256": "8ad0008d404cd083bae3a0fd025c723aef21ccda4dc8a9994c4a87a8cfebdcf9",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_03b.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/analyze_experiment_03b.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "b8972effad69d6e9b761bc5d550cf5d6293284eeae51831932f0edfd7ab7a242",
+    "destination_sha256": "b8972effad69d6e9b761bc5d550cf5d6293284eeae51831932f0edfd7ab7a242",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_01_objectives.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/experiment_01_objectives.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "2674665fed4856a7258bec488e07c6549b629fb35ea7de21042c5e950a2ec92b",
+    "destination_sha256": "2674665fed4856a7258bec488e07c6549b629fb35ea7de21042c5e950a2ec92b",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_02a_correlation.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/experiment_02a_correlation.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "91c8cafe96f6ef9087a52dcd9c79840f49ae59969fb36f50294b4988966857e7",
+    "destination_sha256": "91c8cafe96f6ef9087a52dcd9c79840f49ae59969fb36f50294b4988966857e7",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_02b_dependence_3d.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/experiment_02b_dependence_3d.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "ff5dee7568089be9643e6a8c69c2aad3c66c3a3c1aee2c831f3fecbb78974dfc",
+    "destination_sha256": "ff5dee7568089be9643e6a8c69c2aad3c66c3a3c1aee2c831f3fecbb78974dfc",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03_redundancy.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/experiment_03_redundancy.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "99067ef3d4681650db0642ba8252762c00edf0a19c61c6166699098efc21b00e",
+    "destination_sha256": "99067ef3d4681650db0642ba8252762c00edf0a19c61c6166699098efc21b00e",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03_route_diversity.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/experiment_03_route_diversity.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "55df7dbd9df700e82d23c64eede4c14aa2a34f3e161f27165aa7a4d4b25a77be",
+    "destination_sha256": "55df7dbd9df700e82d23c64eede4c14aa2a34f3e161f27165aa7a4d4b25a77be",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03a_route_quantity.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/experiment_03a_route_quantity.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "afa27eb40b0c691f06f98e7dac1d456c3cdc409c788c5af4f0c636f0b62d9c31",
+    "destination_sha256": "afa27eb40b0c691f06f98e7dac1d456c3cdc409c788c5af4f0c636f0b62d9c31",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03b_route_overlap.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/experiment_03b_route_overlap.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "53859ad9bb6a68e38d87651c2eb99c0df9cf8cbf704020765276c1446bc49d4e",
+    "destination_sha256": "53859ad9bb6a68e38d87651c2eb99c0df9cf8cbf704020765276c1446bc49d4e",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\figures\\experiment_03\\fig_01_route_count_vs_pareto.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/figures/experiment_03/fig_01_route_count_vs_pareto.png",
+    "role": "historical duplicate figure",
+    "source_sha256": "eee7b48911d71c61a6b09f914681c8bbbdf8974a8188d251fc4e241bd0a440d5",
+    "destination_sha256": "eee7b48911d71c61a6b09f914681c8bbbdf8974a8188d251fc4e241bd0a440d5",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\figures\\experiment_03\\fig_02_route_count_vs_generated.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/figures/experiment_03/fig_02_route_count_vs_generated.png",
+    "role": "historical duplicate figure",
+    "source_sha256": "ce1e8a7534d715980f774d1618a25c8f7e9fae7b570b2921e818599aa7caf107",
+    "destination_sha256": "ce1e8a7534d715980f774d1618a25c8f7e9fae7b570b2921e818599aa7caf107",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\figures\\experiment_03\\fig_03_route_count_vs_checks.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/figures/experiment_03/fig_03_route_count_vs_checks.png",
+    "role": "historical duplicate figure",
+    "source_sha256": "cd12cd22e3b8a75c30820da50349a171af299acbdbd13c6646ad62f4fb2af12c",
+    "destination_sha256": "cd12cd22e3b8a75c30820da50349a171af299acbdbd13c6646ad62f4fb2af12c",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\figures\\experiment_03\\fig_04_route_count_vs_runtime.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/figures/experiment_03/fig_04_route_count_vs_runtime.png",
+    "role": "historical duplicate figure",
+    "source_sha256": "9685a0aa23d1f3206c446a1db78428337f56d4a99d794060aee69ce98729b545",
+    "destination_sha256": "9685a0aa23d1f3206c446a1db78428337f56d4a99d794060aee69ce98729b545",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\figures\\experiment_03\\fig_05_mean_diversity_vs_pareto.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/figures/experiment_03/fig_05_mean_diversity_vs_pareto.png",
+    "role": "historical duplicate figure",
+    "source_sha256": "ff45d2700b2e53eb4c3484016a55c6752b63271ceefed92e4cf679fcf7e98fe9",
+    "destination_sha256": "ff45d2700b2e53eb4c3484016a55c6752b63271ceefed92e4cf679fcf7e98fe9",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_01.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/plot_experiment_01.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "eb4a67cdf467230c816ca03707ad90f907970231b1995b7d5dfd17f551c315aa",
+    "destination_sha256": "eb4a67cdf467230c816ca03707ad90f907970231b1995b7d5dfd17f551c315aa",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_02a.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/plot_experiment_02a.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "8672c0b4dcfb169bd8d3535d26a3e10e3f58e40327111c8121516acc44e6f6bc",
+    "destination_sha256": "8672c0b4dcfb169bd8d3535d26a3e10e3f58e40327111c8121516acc44e6f6bc",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_02b.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/plot_experiment_02b.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "a2fd0f8dd08746eaf5cb352166ba1d4d1c96ea6f151ee1153cf32b059cc21611",
+    "destination_sha256": "a2fd0f8dd08746eaf5cb352166ba1d4d1c96ea6f151ee1153cf32b059cc21611",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_03.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/plot_experiment_03.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "dd0009d4b1705723829a30afc4948562a458072e875c69ecd4e6ad5f0105c401",
+    "destination_sha256": "dd0009d4b1705723829a30afc4948562a458072e875c69ecd4e6ad5f0105c401",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\correctness_validation\\correctness_validation_cases.csv",
+    "destination": "results/correctness_validation/correctness_validation_cases.csv",
+    "role": "saved result",
+    "source_sha256": "4e8fe4eb5edb80cfc1b8cfc6f5eb4b568e56762e6c92c0df480b983e28a5a703",
+    "destination_sha256": "4e8fe4eb5edb80cfc1b8cfc6f5eb4b568e56762e6c92c0df480b983e28a5a703",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\correctness_validation\\correctness_validation_summary.txt",
+    "destination": "results/correctness_validation/correctness_validation_summary.txt",
+    "role": "saved result",
+    "source_sha256": "f3d111383d37942e78e40779bd021a3d06a32b21380d9520fd610edd681babcd",
+    "destination_sha256": "f3d111383d37942e78e40779bd021a3d06a32b21380d9520fd610edd681babcd",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_figures\\fig1_pareto_labels.png",
+    "destination": "results/experiment_01/figures/fig1_pareto_labels.png",
+    "role": "saved result",
+    "source_sha256": "f47a52ac01b9cac97ebc579877f17afb3529c598a4240ecbd65bd6eefc05104a",
+    "destination_sha256": "f47a52ac01b9cac97ebc579877f17afb3529c598a4240ecbd65bd6eefc05104a",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_figures\\fig2_generated_labels.png",
+    "destination": "results/experiment_01/figures/fig2_generated_labels.png",
+    "role": "saved result",
+    "source_sha256": "5c510d00217704e045db6e3b631fec49c3ad6a9550c6021eaf52e3bbc11fb390",
+    "destination_sha256": "5c510d00217704e045db6e3b631fec49c3ad6a9550c6021eaf52e3bbc11fb390",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_figures\\fig3_dominance_checks.png",
+    "destination": "results/experiment_01/figures/fig3_dominance_checks.png",
+    "role": "saved result",
+    "source_sha256": "f9dff5f6cbed87f209b38e33b254906e82a8aaed3562098b5da7036e9df56c56",
+    "destination_sha256": "f9dff5f6cbed87f209b38e33b254906e82a8aaed3562098b5da7036e9df56c56",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_figures\\fig4_runtime.png",
+    "destination": "results/experiment_01/figures/fig4_runtime.png",
+    "role": "saved result",
+    "source_sha256": "300ff0012f6d3f1d5b3bd93271d5c2c4f7174207b4957128206f042da70bf54c",
+    "destination_sha256": "300ff0012f6d3f1d5b3bd93271d5c2c4f7174207b4957128206f042da70bf54c",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_figures\\fig5_checks_vs_runtime.png",
+    "destination": "results/experiment_01/figures/fig5_checks_vs_runtime.png",
+    "role": "saved result",
+    "source_sha256": "c1b96ef40926a2dac82643fe9d18c5371de4701623e911b6b076d0b1b2be2bf6",
+    "destination_sha256": "c1b96ef40926a2dac82643fe9d18c5371de4701623e911b6b076d0b1b2be2bf6",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_figures\\objective_growth.pdf",
+    "destination": "results/experiment_01/figures/objective_growth.pdf",
+    "role": "saved result",
+    "source_sha256": "b8a5ea2e90b67427a3b25c534f7772a425ae2bb1bac000e18d5584f36452a4f8",
+    "destination_sha256": "b8a5ea2e90b67427a3b25c534f7772a425ae2bb1bac000e18d5584f36452a4f8",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_figures\\objective_growth.png",
+    "destination": "results/experiment_01/figures/objective_growth.png",
+    "role": "saved result",
+    "source_sha256": "52d0ed36b360d9d61b17ef1d045cc5b22776af687ab90cf17c525df01c10250d",
+    "destination_sha256": "52d0ed36b360d9d61b17ef1d045cc5b22776af687ab90cf17c525df01c10250d",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_01_formal_raw.csv",
+    "destination": "results/experiment_01/experiment_01_formal_raw.csv",
+    "role": "saved result",
+    "source_sha256": "6030e0975dd32e4694029402f9870336a061a0c10840dea0df8c792f45101fca",
+    "destination_sha256": "6030e0975dd32e4694029402f9870336a061a0c10840dea0df8c792f45101fca",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_correlation_check.csv",
+    "destination": "results/experiment_02a/experiment_02a_correlation_check.csv",
+    "role": "saved result",
+    "source_sha256": "aa350cb643033d3d7ed67407980cc922d6f8950d2405d5985b372ead3b9cdb80",
+    "destination_sha256": "aa350cb643033d3d7ed67407980cc922d6f8950d2405d5985b372ead3b9cdb80",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_correlation_raw.csv",
+    "destination": "results/experiment_02a/experiment_02a_correlation_raw.csv",
+    "role": "saved result",
+    "source_sha256": "c01dddb3ae19bfc0072b18c4086e042bd727fb13209c495795477587d87a89fe",
+    "destination_sha256": "c01dddb3ae19bfc0072b18c4086e042bd727fb13209c495795477587d87a89fe",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_figures\\fig1_pareto_vs_correlation.png",
+    "destination": "results/experiment_02a/figures/fig1_pareto_vs_correlation.png",
+    "role": "saved result",
+    "source_sha256": "05a189354b7bd5b2be0303df1f937b2861d8995eae1b79f90f18f7b097769526",
+    "destination_sha256": "05a189354b7bd5b2be0303df1f937b2861d8995eae1b79f90f18f7b097769526",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_figures\\fig2_generated_vs_correlation.png",
+    "destination": "results/experiment_02a/figures/fig2_generated_vs_correlation.png",
+    "role": "saved result",
+    "source_sha256": "6cab3558c5e9135a3e19c1d6e231290f54085c0067a763aeb5aa9e542e9fb8d2",
+    "destination_sha256": "6cab3558c5e9135a3e19c1d6e231290f54085c0067a763aeb5aa9e542e9fb8d2",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_figures\\fig3_checks_vs_correlation.png",
+    "destination": "results/experiment_02a/figures/fig3_checks_vs_correlation.png",
+    "role": "saved result",
+    "source_sha256": "b8f0d70649ce076a23c42c9e242af3140354f09a0e7d3ddd910221b848d0754f",
+    "destination_sha256": "b8f0d70649ce076a23c42c9e242af3140354f09a0e7d3ddd910221b848d0754f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_figures\\fig4_runtime_vs_correlation.png",
+    "destination": "results/experiment_02a/figures/fig4_runtime_vs_correlation.png",
+    "role": "saved result",
+    "source_sha256": "d6280e0c317bfd5de62594edf95914230c30de4a8006099cbe91695e248d4819",
+    "destination_sha256": "d6280e0c317bfd5de62594edf95914230c30de4a8006099cbe91695e248d4819",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_figures\\fig5_checks_vs_runtime.png",
+    "destination": "results/experiment_02a/figures/fig5_checks_vs_runtime.png",
+    "role": "saved result",
+    "source_sha256": "7714d5a60cc2fda0fe589233714043ed668e41857f7063b40ad95253ffce3a0b",
+    "destination_sha256": "7714d5a60cc2fda0fe589233714043ed668e41857f7063b40ad95253ffce3a0b",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_figures\\objective_correlation_workload.pdf",
+    "destination": "results/experiment_02a/figures/objective_correlation_workload.pdf",
+    "role": "saved result",
+    "source_sha256": "2e8492ebd6975b87529422583c60b970e159214c9852213bf0897b2778c7730d",
+    "destination_sha256": "2e8492ebd6975b87529422583c60b970e159214c9852213bf0897b2778c7730d",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_figures\\objective_correlation_workload.png",
+    "destination": "results/experiment_02a/figures/objective_correlation_workload.png",
+    "role": "saved result",
+    "source_sha256": "9851f203b11a21051aa5509e74cf5e8ec402b1244c6142bbe26b85611d68df33",
+    "destination_sha256": "9851f203b11a21051aa5509e74cf5e8ec402b1244c6142bbe26b85611d68df33",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02a_summary.csv",
+    "destination": "results/experiment_02a/experiment_02a_summary.csv",
+    "role": "saved result",
+    "source_sha256": "02afdf6fce09a2941f3954aaf6eefb0916877c171d8ba7d7bf282a65ced9db28",
+    "destination_sha256": "02afdf6fce09a2941f3954aaf6eefb0916877c171d8ba7d7bf282a65ced9db28",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b\\fig_01_pareto_labels.png",
+    "destination": "results/experiment_02b/figures/fig_01_pareto_labels.png",
+    "role": "saved result",
+    "source_sha256": "78100c938a0be630f3a1b5d1018fb963b893adc0622d3e53d71f66266b9bb8d7",
+    "destination_sha256": "78100c938a0be630f3a1b5d1018fb963b893adc0622d3e53d71f66266b9bb8d7",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b\\fig_02_generated_labels.png",
+    "destination": "results/experiment_02b/figures/fig_02_generated_labels.png",
+    "role": "saved result",
+    "source_sha256": "7181c6458df1ce8a776b47e636758f68959a58c36a061a796bf2549db698e136",
+    "destination_sha256": "7181c6458df1ce8a776b47e636758f68959a58c36a061a796bf2549db698e136",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b\\fig_03_dominance_checks.png",
+    "destination": "results/experiment_02b/figures/fig_03_dominance_checks.png",
+    "role": "saved result",
+    "source_sha256": "da1cae8fada9548fefa434ec221fcdfe5649a584e1de40019a901b2405c1f7a8",
+    "destination_sha256": "da1cae8fada9548fefa434ec221fcdfe5649a584e1de40019a901b2405c1f7a8",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b\\fig_04_runtime.png",
+    "destination": "results/experiment_02b/figures/fig_04_runtime.png",
+    "role": "saved result",
+    "source_sha256": "9e68881dfd9af147fe4814489039fdb1a8b070750f726abac0396758e77901e4",
+    "destination_sha256": "9e68881dfd9af147fe4814489039fdb1a8b070750f726abac0396758e77901e4",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b\\fig_05_mixed_vs_independent_paired.png",
+    "destination": "results/experiment_02b/figures/fig_05_mixed_vs_independent_paired.png",
+    "role": "saved result",
+    "source_sha256": "e90cb376c81b9109b514231054fbca233d3841fac47da618611231df537adef6",
+    "destination_sha256": "e90cb376c81b9109b514231054fbca233d3841fac47da618611231df537adef6",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b_dependence_3d_check.csv",
+    "destination": "results/experiment_02b/experiment_02b_dependence_3d_check.csv",
+    "role": "saved result",
+    "source_sha256": "2de39f79c5495c7f38766db4d6e68e893b474d9875f251e05241d486c31e4df7",
+    "destination_sha256": "2de39f79c5495c7f38766db4d6e68e893b474d9875f251e05241d486c31e4df7",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b_dependence_3d_raw.csv",
+    "destination": "results/experiment_02b/experiment_02b_dependence_3d_raw.csv",
+    "role": "saved result",
+    "source_sha256": "7a266bd054886f827039b9d86d0cc678a218c75dd076c4598324c8f12d3a2b35",
+    "destination_sha256": "7a266bd054886f827039b9d86d0cc678a218c75dd076c4598324c8f12d3a2b35",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b_mixed_vs_independent.csv",
+    "destination": "results/experiment_02b/experiment_02b_mixed_vs_independent.csv",
+    "role": "saved result",
+    "source_sha256": "68a8e3801eabf9b86227edb556d664b0e506b68dbe4455a0ea4a2341064dfae9",
+    "destination_sha256": "68a8e3801eabf9b86227edb556d664b0e506b68dbe4455a0ea4a2341064dfae9",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_02b_summary.csv",
+    "destination": "results/experiment_02b/experiment_02b_summary.csv",
+    "role": "saved result",
+    "source_sha256": "6b42ea2622739496ec2e91ddf1d78d95fcbc58c5a41d5da338d356c028caa011",
+    "destination_sha256": "6b42ea2622739496ec2e91ddf1d78d95fcbc58c5a41d5da338d356c028caa011",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\experiment_03_correlations.csv",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/experiment_03_correlations.csv",
+    "role": "saved result",
+    "source_sha256": "f8609c1b7e7ce94ec07e0019fbaeee0a1650470467c5e12b9c0d21905bc4fd6d",
+    "destination_sha256": "f8609c1b7e7ce94ec07e0019fbaeee0a1650470467c5e12b9c0d21905bc4fd6d",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\experiment_03_descriptive_summary.csv",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/experiment_03_descriptive_summary.csv",
+    "role": "saved result",
+    "source_sha256": "c8b581e5e646344b26a6f26999f619846db4af0c549a87e33b878dabf751f900",
+    "destination_sha256": "c8b581e5e646344b26a6f26999f619846db4af0c549a87e33b878dabf751f900",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\experiment_03_predictor_correlations.csv",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/experiment_03_predictor_correlations.csv",
+    "role": "saved result",
+    "source_sha256": "84f0ff392a40139898222b645fb471a731b91208dac5b0065105757c31166a67",
+    "destination_sha256": "84f0ff392a40139898222b645fb471a731b91208dac5b0065105757c31166a67",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\experiment_03_regression_results.csv",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/experiment_03_regression_results.csv",
+    "role": "saved result",
+    "source_sha256": "dd0a4448e12823500442838fd0ccfbd7e8e0ee9df1eb281259b6ee93f09ec551",
+    "destination_sha256": "dd0a4448e12823500442838fd0ccfbd7e8e0ee9df1eb281259b6ee93f09ec551",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\experiment_03_route_count_groups.csv",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/experiment_03_route_count_groups.csv",
+    "role": "saved result",
+    "source_sha256": "bf189b63813cb71beb955f610aa29bc26569fd002a3b7614229675321a915f64",
+    "destination_sha256": "bf189b63813cb71beb955f610aa29bc26569fd002a3b7614229675321a915f64",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\fig_01_route_count_vs_pareto.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/fig_01_route_count_vs_pareto.png",
+    "role": "saved result",
+    "source_sha256": "eee7b48911d71c61a6b09f914681c8bbbdf8974a8188d251fc4e241bd0a440d5",
+    "destination_sha256": "eee7b48911d71c61a6b09f914681c8bbbdf8974a8188d251fc4e241bd0a440d5",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\fig_02_route_count_vs_generated.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/fig_02_route_count_vs_generated.png",
+    "role": "saved result",
+    "source_sha256": "ce1e8a7534d715980f774d1618a25c8f7e9fae7b570b2921e818599aa7caf107",
+    "destination_sha256": "ce1e8a7534d715980f774d1618a25c8f7e9fae7b570b2921e818599aa7caf107",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\fig_03_route_count_vs_checks.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/fig_03_route_count_vs_checks.png",
+    "role": "saved result",
+    "source_sha256": "cd12cd22e3b8a75c30820da50349a171af299acbdbd13c6646ad62f4fb2af12c",
+    "destination_sha256": "cd12cd22e3b8a75c30820da50349a171af299acbdbd13c6646ad62f4fb2af12c",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\fig_04_route_count_vs_runtime.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/fig_04_route_count_vs_runtime.png",
+    "role": "saved result",
+    "source_sha256": "12cd71ec082719b867f98836277b483d7c9445629831f688cec487d70bb3d74a",
+    "destination_sha256": "12cd71ec082719b867f98836277b483d7c9445629831f688cec487d70bb3d74a",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03\\fig_05_mean_diversity_vs_pareto.png",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03/fig_05_mean_diversity_vs_pareto.png",
+    "role": "saved result",
+    "source_sha256": "ff45d2700b2e53eb4c3484016a55c6752b63271ceefed92e4cf679fcf7e98fe9",
+    "destination_sha256": "ff45d2700b2e53eb4c3484016a55c6752b63271ceefed92e4cf679fcf7e98fe9",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03_route_diversity_raw.csv",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/results/experiment_03_route_diversity_raw.csv",
+    "role": "saved result",
+    "source_sha256": "8089ccb2cdc05bec8d55a2913f3d6f3bc311c88885add150bc7f34a1736fa92f",
+    "destination_sha256": "8089ccb2cdc05bec8d55a2913f3d6f3bc311c88885add150bc7f34a1736fa92f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03a_route_quantity_raw.csv",
+    "destination": "results/experiment_03a/experiment_03a_route_quantity_raw.csv",
+    "role": "saved result",
+    "source_sha256": "ceeaf80c08b1ac78166c628a8e3eb551bb0495ca29546c287d9845885b697268",
+    "destination_sha256": "ceeaf80c08b1ac78166c628a8e3eb551bb0495ca29546c287d9845885b697268",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03a_route_quantity_summary.csv",
+    "destination": "results/experiment_03a/experiment_03a_route_quantity_summary.csv",
+    "role": "saved result",
+    "source_sha256": "5875daaf8071a61f2748c70ebdf7033240ac7b788e9ca2798fdd85eb30ee6a3a",
+    "destination_sha256": "5875daaf8071a61f2748c70ebdf7033240ac7b788e9ca2798fdd85eb30ee6a3a",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03b_overlap_position_analysis.csv",
+    "destination": "results/experiment_03b/experiment_03b_overlap_position_analysis.csv",
+    "role": "saved result",
+    "source_sha256": "18bef426146c179ce35eb4389975b7ac6f11043d8f657cdd342c4c8ab6979147",
+    "destination_sha256": "18bef426146c179ce35eb4389975b7ac6f11043d8f657cdd342c4c8ab6979147",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03b_overlap_position_paired_analysis.csv",
+    "destination": "results/experiment_03b/experiment_03b_overlap_position_paired_analysis.csv",
+    "role": "saved result",
+    "source_sha256": "3be1d7b4a7a8426e6a149333827b2761c30f771d34791f0c873417a7245062c6",
+    "destination_sha256": "3be1d7b4a7a8426e6a149333827b2761c30f771d34791f0c873417a7245062c6",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03b_overlap_position_raw.csv",
+    "destination": "results/experiment_03b/experiment_03b_overlap_position_raw.csv",
+    "role": "saved result",
+    "source_sha256": "42ff37b8b61b2085ae0d17d3a197eb606025f12f43765a885ad50af425c0d4d7",
+    "destination_sha256": "42ff37b8b61b2085ae0d17d3a197eb606025f12f43765a885ad50af425c0d4d7",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\results\\experiment_03b_overlap_position_summary.csv",
+    "destination": "results/experiment_03b/experiment_03b_overlap_position_summary.csv",
+    "role": "saved result",
+    "source_sha256": "9cadfc1fc12fd13a85000bb3811acbabea3082463127616afb76b50f0d43d6cc",
+    "destination_sha256": "9cadfc1fc12fd13a85000bb3811acbabea3082463127616afb76b50f0d43d6cc",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\route_diversity_test.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/experiments/route_diversity_test.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "c8859efb1a7c96233cc3a7d0655d56e612b8ef09611081c57a38c415e2e789f2",
+    "destination_sha256": "c8859efb1a7c96233cc3a7d0655d56e612b8ef09611081c57a38c415e2e789f2",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\figures\\prefix_suffix_dominance_checks.pdf",
+    "destination": "results/experiment_03_comparison/figures/prefix_suffix_dominance_checks.pdf",
+    "role": "saved figure",
+    "source_sha256": "c84da1c5b63b3744e1ac95ac124de33a4ca131747b1189f96c4bbcd284daa88b",
+    "destination_sha256": "c84da1c5b63b3744e1ac95ac124de33a4ca131747b1189f96c4bbcd284daa88b",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\figures\\prefix_suffix_structure.pdf",
+    "destination": "results/experiment_03_comparison/figures/prefix_suffix_structure.pdf",
+    "role": "saved figure",
+    "source_sha256": "1af241b7641157a265c6f72b7ed6abe438b09da6882321a1b3d50e3d21f1d996",
+    "destination_sha256": "1af241b7641157a265c6f72b7ed6abe438b09da6882321a1b3d50e3d21f1d996",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\figures\\route_quantity_growth.pdf",
+    "destination": "results/experiment_03_comparison/figures/route_quantity_growth.pdf",
+    "role": "saved figure",
+    "source_sha256": "3f7e4af2d8f8dee5697adb45b1dc1916daa29dd0def3ac539f0eb382e80aeabb",
+    "destination_sha256": "3f7e4af2d8f8dee5697adb45b1dc1916daa29dd0def3ac539f0eb382e80aeabb",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\brute_force.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/src/brute_force.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "920753b452ab23bb882c7e458bfc4107a98df429f221fa9ff9fa9fa2d66e53f5",
+    "destination_sha256": "920753b452ab23bb882c7e458bfc4107a98df429f221fa9ff9fa9fa2d66e53f5",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\dominance.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/src/dominance.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "2c386a885c92949a23f2111766478cf6970f5c19a2a021d9d1566c629c69f770",
+    "destination_sha256": "2c386a885c92949a23f2111766478cf6970f5c19a2a021d9d1566c629c69f770",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\graph.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/src/graph.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "f528ca4b7132902582f49e5ef59386a10e7c31e5ece17e65b217858a32f8e976",
+    "destination_sha256": "f528ca4b7132902582f49e5ef59386a10e7c31e5ece17e65b217858a32f8e976",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\label.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/src/label.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "a01e17d1c72f89b0c39d9b9aea296b6bc1cfb55f6906671640444ddaa03bbd3f",
+    "destination_sha256": "a01e17d1c72f89b0c39d9b9aea296b6bc1cfb55f6906671640444ddaa03bbd3f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\mosp.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/src/mosp.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "74b510cdb8ab4f2223ddf28951872d4744d520c190fa318ce016d3a62ec89f56",
+    "destination_sha256": "74b510cdb8ab4f2223ddf28951872d4744d520c190fa318ce016d3a62ec89f56",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\test_correctness.py",
+    "destination": "archive/original_sources/Mosp_vr1.1/test_correctness.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "9d7eac33496167469dc46fbc7a1cd74fe0e367ac8037f03990663ec91e01bee6",
+    "destination_sha256": "9d7eac33496167469dc46fbc7a1cd74fe0e367ac8037f03990663ec91e01bee6",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\check_stop_times.py",
+    "destination": "archive/original_sources/Real_case1/check_stop_times.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "dae6dd0fe911ad20c999ab37d6ee320c33fae7712fc9b78423426d31ec614674",
+    "destination_sha256": "dae6dd0fe911ad20c999ab37d6ee320c33fae7712fc9b78423426d31ec614674",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\data\\臺北捷運相鄰兩站間之行駛時間及停靠站時間(1150830).csv",
+    "destination": "data/taipei_metro/臺北捷運相鄰兩站間之行駛時間及停靠站時間(1150830).csv",
+    "role": "formal model input",
+    "source_sha256": "2f90d1901f3c4533b1dc2f21e01ccfebf8761552ccbd92751724997aa9ffd296",
+    "destination_sha256": "2f90d1901f3c4533b1dc2f21e01ccfebf8761552ccbd92751724997aa9ffd296",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\data\\臺北捷運路線車站資料服務_NEW_fixed (1).csv",
+    "destination": "data/taipei_metro/臺北捷運路線車站資料服務_NEW_fixed (1).csv",
+    "role": "formal model input",
+    "source_sha256": "68c5c58e2a574d79e4dee32181dde678cb16be72df097cbf318ba95d4d02221b",
+    "destination_sha256": "68c5c58e2a574d79e4dee32181dde678cb16be72df097cbf318ba95d4d02221b",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\data\\臺北捷運轉乘車站轉乘步行時間資料.csv",
+    "destination": "data/taipei_metro/臺北捷運轉乘車站轉乘步行時間資料.csv",
+    "role": "formal model input",
+    "source_sha256": "5f5129274536a55ad8c01ffbe6518f5a1f3a442e5068bf2bfe2f1c31ce4c9351",
+    "destination_sha256": "5f5129274536a55ad8c01ffbe6518f5a1f3a442e5068bf2bfe2f1c31ce4c9351",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\diagnose_taipei_route.py",
+    "destination": "archive/original_sources/Real_case1/diagnose_taipei_route.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "075500927a39f31a8cb4facd4b87507c143dc7cbcd321e564fed1fdec3adfd4b",
+    "destination_sha256": "075500927a39f31a8cb4facd4b87507c143dc7cbcd321e564fed1fdec3adfd4b",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiment_05_all_od.py",
+    "destination": "archive/original_sources/Real_case1/experiment_05_all_od.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "981bf7c997f88d6fa270ce5ca13c89bdc35d99aed4a593844e7ee02ed4029c32",
+    "destination_sha256": "981bf7c997f88d6fa270ce5ca13c89bdc35d99aed4a593844e7ee02ed4029c32",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\analyze_experiment_04b_route_patterns.py",
+    "destination": "archive/original_sources/Real_case1/experiments/analyze_experiment_04b_route_patterns.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "7caf2cec546d4c6d9ad9ffb5009dac3ea4988cbf57c6dcbeda935288a5fe22a0",
+    "destination_sha256": "7caf2cec546d4c6d9ad9ffb5009dac3ea4988cbf57c6dcbeda935288a5fe22a0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\analyze_experiment_05_all.py",
+    "destination": "archive/original_sources/Real_case1/experiments/analyze_experiment_05_all.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "4a3f7d4dcbb8a10b1c80475f3457eb4f3806bc7e5f869950fc8423bfd13c3f1e",
+    "destination_sha256": "4a3f7d4dcbb8a10b1c80475f3457eb4f3806bc7e5f869950fc8423bfd13c3f1e",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\analyze_experiment_05b_objective_correlation.py",
+    "destination": "archive/original_sources/Real_case1/experiments/analyze_experiment_05b_objective_correlation.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "b53bdf4bcf003860dc47bd4729023c46a88d42ad7caaaf1268eec3c7221382aa",
+    "destination_sha256": "b53bdf4bcf003860dc47bd4729023c46a88d42ad7caaaf1268eec3c7221382aa",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_04_taipei_main.py",
+    "destination": "archive/original_sources/Real_case1/experiments/experiment_04_taipei_main.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "2d3895ed376fe0ded235aa8b79bf01d60b64fe7b7401fe6547af7bb95d58d1cd",
+    "destination_sha256": "2d3895ed376fe0ded235aa8b79bf01d60b64fe7b7401fe6547af7bb95d58d1cd",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_04_taipei_main_all.py",
+    "destination": "archive/original_sources/Real_case1/experiments/experiment_04_taipei_main_all.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "df0f6cb4b968d01199132b86861a50784a73a1215280188bdf42b5e79e4e189c",
+    "destination_sha256": "df0f6cb4b968d01199132b86861a50784a73a1215280188bdf42b5e79e4e189c",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_06_bruteforce_simple_paths.py",
+    "destination": "archive/original_sources/Real_case1/experiments/experiment_06_bruteforce_simple_paths.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "065bf92967442041bcd0d1b8ecc195265a1d1e24e5bdac9d01f4dc1a7589c5a7",
+    "destination_sha256": "065bf92967442041bcd0d1b8ecc195265a1d1e24e5bdac9d01f4dc1a7589c5a7",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_06b_all_od_dfs.py",
+    "destination": "archive/original_sources/Real_case1/experiments/experiment_06b_all_od_dfs.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "499cbd04258432909d857fed12bf227f60b7b8c13b1dfbc3a4e4cf23f03b50db",
+    "destination_sha256": "499cbd04258432909d857fed12bf227f60b7b8c13b1dfbc3a4e4cf23f03b50db",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_07_origin_level_dfs_vs_mosp.py",
+    "destination": "archive/original_sources/Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "9c27c3649c1ce9eaf4a42d65416ec931af5991ff19408211a4e09ae34b1d75fe",
+    "destination_sha256": "9c27c3649c1ce9eaf4a42d65416ec931af5991ff19408211a4e09ae34b1d75fe",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\plot_chapter5.py",
+    "destination": "archive/original_sources/Real_case1/experiments/plot_chapter5.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "f1534f31d9d5c55d2119eb0cbb0b601ca3560c7648fccc1163a23d72f3cccd5a",
+    "destination_sha256": "f1534f31d9d5c55d2119eb0cbb0b601ca3560c7648fccc1163a23d72f3cccd5a",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\plot_chapter5_thesis.py",
+    "destination": "archive/original_sources/Real_case1/experiments/plot_chapter5_thesis.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "b21ac1fbddee019d50fe01e59981cd8fd4d7130654bb389c1a25a87673ebcf86",
+    "destination_sha256": "b21ac1fbddee019d50fe01e59981cd8fd4d7130654bb389c1a25a87673ebcf86",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\plot_chapter5_thesis_final (1).py",
+    "destination": "archive/original_sources/Real_case1/experiments/plot_chapter5_thesis_final (1).py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "c23a6ae5475ec5cda7d634bdc3ee27b01d265f1395c1376c92eb37c07da67f53",
+    "destination_sha256": "c23a6ae5475ec5cda7d634bdc3ee27b01d265f1395c1376c92eb37c07da67f53",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\all_od_pareto_routes.csv",
+    "destination": "results/experiment_05_all_od/all_od_pareto_routes.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "ae2227de58cdf92372f33458afb912cd81ff7f5968d97171eb1d6039f47899ef",
+    "destination_sha256": "ae2227de58cdf92372f33458afb912cd81ff7f5968d97171eb1d6039f47899ef",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\all_od_summary.csv",
+    "destination": "results/experiment_05_all_od/all_od_summary.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "cff296bda1a2fd556b90af1c4f7e0dd508f7bb23a11957536d4a6f5648b7bd34",
+    "destination_sha256": "cff296bda1a2fd556b90af1c4f7e0dd508f7bb23a11957536d4a6f5648b7bd34",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\analysis\\max_pareto_od_pairs.csv",
+    "destination": "results/experiment_05_all_od/analysis/max_pareto_od_pairs.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "5077609bc7bbfaaa8c5ee7efed1b8f10e30d1617695952277e57979900c19245",
+    "destination_sha256": "5077609bc7bbfaaa8c5ee7efed1b8f10e30d1617695952277e57979900c19245",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\analysis\\max_pareto_routes.csv",
+    "destination": "results/experiment_05_all_od/analysis/max_pareto_routes.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "ec9cf0a1393101e92430ddd0b9373e575c63eabba1017c15e7851eb8f3292f15",
+    "destination_sha256": "ec9cf0a1393101e92430ddd0b9373e575c63eabba1017c15e7851eb8f3292f15",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\analysis\\pareto_validation.csv",
+    "destination": "results/experiment_05_all_od/analysis/pareto_validation.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "54583877c16791eafb41e94c1d83964e9b796645e2b384125907fc14a2be2c18",
+    "destination_sha256": "54583877c16791eafb41e94c1d83964e9b796645e2b384125907fc14a2be2c18",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\analysis\\representative_case_candidates.csv",
+    "destination": "results/experiment_05_all_od/analysis/representative_case_candidates.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "783ed2f63e24b93097368173f948a8df5f92f255f62bc88d9c84c74cb6de783f",
+    "destination_sha256": "783ed2f63e24b93097368173f948a8df5f92f255f62bc88d9c84c74cb6de783f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\analysis\\suspected_duplicate_routes.csv",
+    "destination": "results/experiment_05_all_od/analysis/suspected_duplicate_routes.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "913f057d217278a79da84ba39ccd544c9c03eb38657a9e6db965d7f406b5d939",
+    "destination_sha256": "913f057d217278a79da84ba39ccd544c9c03eb38657a9e6db965d7f406b5d939",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures\\figure_5_2_pareto_set_distribution.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures/figure_5_2_pareto_set_distribution.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "71a07d50d0d90ec2b6fc7baf96db7a52d92d96072af0f060afd78b3ee3b7148e",
+    "destination_sha256": "71a07d50d0d90ec2b6fc7baf96db7a52d92d96072af0f060afd78b3ee3b7148e",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures\\figure_5_3_station_multi_pareto_rate.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures/figure_5_3_station_multi_pareto_rate.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "ae473271e4fa3c34e4da3c764d91c8bef94db78ecf881ad873744935e4cdd80c",
+    "destination_sha256": "ae473271e4fa3c34e4da3c764d91c8bef94db78ecf881ad873744935e4cdd80c",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures\\figure_5_4_frequency_vs_richness.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures/figure_5_4_frequency_vs_richness.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "58862f9fc0756a798403539af1b928eef2da73534b4ba93076b975b453acfd20",
+    "destination_sha256": "58862f9fc0756a798403539af1b928eef2da73534b4ba93076b975b453acfd20",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures\\figure_5_5_pareto_size_vs_time_range.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures/figure_5_5_pareto_size_vs_time_range.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "0b9705ccd35aef2ff039bbeb915142f67499370d9c10dc3030141ac05508da83",
+    "destination_sha256": "0b9705ccd35aef2ff039bbeb915142f67499370d9c10dc3030141ac05508da83",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures\\figure_5_6_pareto_size_vs_walking_range.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures/figure_5_6_pareto_size_vs_walking_range.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "da088626a79a6d4816fc76120f3ca618f16dcb5be378cfbc1a486e1256e4cec6",
+    "destination_sha256": "da088626a79a6d4816fc76120f3ca618f16dcb5be378cfbc1a486e1256e4cec6",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures\\figure_5_6_pareto_size_vs_walking_range_thesis.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures/figure_5_6_pareto_size_vs_walking_range_thesis.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "e41e166844dd5f409c55c7164a89158465f75c927dd87cb06ccfbdacc15bc30f",
+    "destination_sha256": "e41e166844dd5f409c55c7164a89158465f75c927dd87cb06ccfbdacc15bc30f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures\\pareto_tradeoff_summary.csv",
+    "destination": "results/experiment_05_all_od/chapter5_figures/pareto_tradeoff_summary.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "2a39459d9a415c6841a0bf386c4a4ff999ea0c57b121db50526bbab955aa8fa1",
+    "destination_sha256": "2a39459d9a415c6841a0bf386c4a4ff999ea0c57b121db50526bbab955aa8fa1",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_2_pareto_set_distribution.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_2_pareto_set_distribution.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "26adab117173459a955cd6153e601203261ebd23d75e2b5e8784f3c95d4a338b",
+    "destination_sha256": "26adab117173459a955cd6153e601203261ebd23d75e2b5e8784f3c95d4a338b",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_2_pareto_set_distribution.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_2_pareto_set_distribution.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "062fdae379ec6d46d788c7eba04ae07518a2c197ef1a60ee66754b13cd016d33",
+    "destination_sha256": "062fdae379ec6d46d788c7eba04ae07518a2c197ef1a60ee66754b13cd016d33",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_3_station_multi_pareto_rate.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_3_station_multi_pareto_rate.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "a9bfef25d09a2b82f2371b356d2cc85774fc2521fa427c3ffa1d6fed49b611f1",
+    "destination_sha256": "a9bfef25d09a2b82f2371b356d2cc85774fc2521fa427c3ffa1d6fed49b611f1",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_3_station_multi_pareto_rate.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_3_station_multi_pareto_rate.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "23331cfae4ad37b32bb26094d9300974f4b8ef94b4f00a2ccbcc59598369dc88",
+    "destination_sha256": "23331cfae4ad37b32bb26094d9300974f4b8ef94b4f00a2ccbcc59598369dc88",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_4_frequency_vs_richness.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_4_frequency_vs_richness.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "178d0fc7f7cb4855f38fd7b0e3a8e76f730add484d262577441643328cc082cd",
+    "destination_sha256": "178d0fc7f7cb4855f38fd7b0e3a8e76f730add484d262577441643328cc082cd",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_4_frequency_vs_richness.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_4_frequency_vs_richness.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "fe6569b480af727cf551eff2a93fb6ed60660547a6d1c95490a4041998b23dd1",
+    "destination_sha256": "fe6569b480af727cf551eff2a93fb6ed60660547a6d1c95490a4041998b23dd1",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_5_pareto_size_vs_time_range.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_5_pareto_size_vs_time_range.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "d104177a747cf1e30fe97aa26c4cb4c633afc02f21113aec5e67e5f394777f90",
+    "destination_sha256": "d104177a747cf1e30fe97aa26c4cb4c633afc02f21113aec5e67e5f394777f90",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_5_pareto_size_vs_time_range.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_5_pareto_size_vs_time_range.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "975097bb074a76718dcebd728618b7f3be1e8fb76160e9ad063fd17f3757544e",
+    "destination_sha256": "975097bb074a76718dcebd728618b7f3be1e8fb76160e9ad063fd17f3757544e",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_6_pareto_size_vs_walking_range.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_6_pareto_size_vs_walking_range.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "997a832ff8abca1786c0dda41c543bf7372881c700f7743a4ae72a8b903e8f89",
+    "destination_sha256": "997a832ff8abca1786c0dda41c543bf7372881c700f7743a4ae72a8b903e8f89",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_6_pareto_size_vs_walking_range.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_6_pareto_size_vs_walking_range.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "3e6ec5435be54424184c3e324ec1d21ea1c9b1dd66ff52864a602bda7f8776ab",
+    "destination_sha256": "3e6ec5435be54424184c3e324ec1d21ea1c9b1dd66ff52864a602bda7f8776ab",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_7_donghu_zhongyuan_route_schematic.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_7_donghu_zhongyuan_route_schematic.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "f34e605af3874986b957de5f802af6a173a94fd1a88843e8262dc7df1ece71fe",
+    "destination_sha256": "f34e605af3874986b957de5f802af6a173a94fd1a88843e8262dc7df1ece71fe",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_7_donghu_zhongyuan_route_schematic.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_7_donghu_zhongyuan_route_schematic.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "d36c065885dd2e3963230548941bc838b7ec064752e8b2152809ea92d70912e6",
+    "destination_sha256": "d36c065885dd2e3963230548941bc838b7ec064752e8b2152809ea92d70912e6",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_8_donghu_zhongyuan_tradeoff.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_8_donghu_zhongyuan_tradeoff.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "6c4ea3a81097e0d16f2ef1d2e7ed0128b43e7859a882a3ef5890cbb669f055d9",
+    "destination_sha256": "6c4ea3a81097e0d16f2ef1d2e7ed0128b43e7859a882a3ef5890cbb669f055d9",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_8_donghu_zhongyuan_tradeoff.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_8_donghu_zhongyuan_tradeoff.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "b8e922b854fd2519e8e07fe4e4cf0d563b17a0e2bf042ba4c443d8c53df98785",
+    "destination_sha256": "b8e922b854fd2519e8e07fe4e4cf0d563b17a0e2bf042ba4c443d8c53df98785",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_9_network_practical_tradeoff.pdf",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_9_network_practical_tradeoff.pdf",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "68e2a1ed7eae708de045d3cc7b75f983e7a930e4c7769fb928a804b667807db3",
+    "destination_sha256": "68e2a1ed7eae708de045d3cc7b75f983e7a930e4c7769fb928a804b667807db3",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_9_network_practical_tradeoff.png",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_9_network_practical_tradeoff.png",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "8264bab17da9e4c1c3a8137190721fbd85f2726c90212adbe321c188157a7c48",
+    "destination_sha256": "8264bab17da9e4c1c3a8137190721fbd85f2726c90212adbe321c188157a7c48",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\figure_5_9_network_tradeoff_data.csv",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/figure_5_9_network_tradeoff_data.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "0904064ffe4ec0016efe8c8a6a4045681f82c9481b15e4cc2eb488ab4752cc42",
+    "destination_sha256": "0904064ffe4ec0016efe8c8a6a4045681f82c9481b15e4cc2eb488ab4752cc42",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\chapter5_figures_thesis\\pareto_tradeoff_summary.csv",
+    "destination": "results/experiment_05_all_od/chapter5_figures_thesis/pareto_tradeoff_summary.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "eb608487e74b136f001fc7b085b232a941ff59217edfdf3330f74842a603dd53",
+    "destination_sha256": "eb608487e74b136f001fc7b085b232a941ff59217edfdf3330f74842a603dd53",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\destination_summary.csv",
+    "destination": "results/experiment_05_all_od/destination_summary.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "ded587649926fae54aa90e48bde1c8109f8b07d50b81504735c4fd09d368c9b2",
+    "destination_sha256": "ded587649926fae54aa90e48bde1c8109f8b07d50b81504735c4fd09d368c9b2",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\multi_pareto_od_pairs.csv",
+    "destination": "results/experiment_05_all_od/multi_pareto_od_pairs.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "4669abbf07fabeed2122d268fe8c650e4e29407dcf0f6233956f08a41018a10b",
+    "destination_sha256": "4669abbf07fabeed2122d268fe8c650e4e29407dcf0f6233956f08a41018a10b",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\origin_summary.csv",
+    "destination": "results/experiment_05_all_od/origin_summary.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "5f8fefb871f802bdecd66a26e88e504fe1727f262356d974ab6f5bbfc9ac8ddf",
+    "destination_sha256": "5f8fefb871f802bdecd66a26e88e504fe1727f262356d974ab6f5bbfc9ac8ddf",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\pareto_set_size_distribution.csv",
+    "destination": "results/experiment_05_all_od/pareto_set_size_distribution.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "edbe2b7a4a654b94a2524649386942f12ce8f1e3531d6f65f46d2aff5f2325c7",
+    "destination_sha256": "edbe2b7a4a654b94a2524649386942f12ce8f1e3531d6f65f46d2aff5f2325c7",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\results\\experiment_05_all_od\\source_mosp_statistics.csv",
+    "destination": "results/experiment_05_all_od/source_mosp_statistics.csv",
+    "role": "saved All-OD result/analysis/figure",
+    "source_sha256": "1f14b3a7801552e83e3ed9f5a8490d57d98c2f862125b64fdb6b5aff9dfd21c6",
+    "destination_sha256": "1f14b3a7801552e83e3ed9f5a8490d57d98c2f862125b64fdb6b5aff9dfd21c6",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\plot_chapter5_figures_7_9.py",
+    "destination": "archive/original_sources/Real_case1/plot_chapter5_figures_7_9.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "a4f96ff50c4e1128a65c2636982c188d446341c55d8943f45ef5c36c6cd1c352",
+    "destination_sha256": "a4f96ff50c4e1128a65c2636982c188d446341c55d8943f45ef5c36c6cd1c352",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\plot_chapter5_figures_7_9_final.py",
+    "destination": "archive/original_sources/Real_case1/plot_chapter5_figures_7_9_final.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "6cc1a8b908eaa3b59c4c3734db2204fabae2ad9fb44afb2dd40fa53b237d14bf",
+    "destination_sha256": "6cc1a8b908eaa3b59c4c3734db2204fabae2ad9fb44afb2dd40fa53b237d14bf",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\src\\brute_force.py",
+    "destination": "archive/original_sources/Real_case1/src/brute_force.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "920753b452ab23bb882c7e458bfc4107a98df429f221fa9ff9fa9fa2d66e53f5",
+    "destination_sha256": "920753b452ab23bb882c7e458bfc4107a98df429f221fa9ff9fa9fa2d66e53f5",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\src\\dominance.py",
+    "destination": "archive/original_sources/Real_case1/src/dominance.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "2c386a885c92949a23f2111766478cf6970f5c19a2a021d9d1566c629c69f770",
+    "destination_sha256": "2c386a885c92949a23f2111766478cf6970f5c19a2a021d9d1566c629c69f770",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\src\\graph.py",
+    "destination": "archive/original_sources/Real_case1/src/graph.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "f528ca4b7132902582f49e5ef59386a10e7c31e5ece17e65b217858a32f8e976",
+    "destination_sha256": "f528ca4b7132902582f49e5ef59386a10e7c31e5ece17e65b217858a32f8e976",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\src\\label.py",
+    "destination": "archive/original_sources/Real_case1/src/label.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "a01e17d1c72f89b0c39d9b9aea296b6bc1cfb55f6906671640444ddaa03bbd3f",
+    "destination_sha256": "a01e17d1c72f89b0c39d9b9aea296b6bc1cfb55f6906671640444ddaa03bbd3f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\src\\mosp.py",
+    "destination": "archive/original_sources/Real_case1/src/mosp.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "74b510cdb8ab4f2223ddf28951872d4744d520c190fa318ce016d3a62ec89f56",
+    "destination_sha256": "74b510cdb8ab4f2223ddf28951872d4744d520c190fa318ce016d3a62ec89f56",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\src\\taipei_metro.py",
+    "destination": "archive/original_sources/Real_case1/src/taipei_metro.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "54a6b2ea111381528ac98a9ef9c08347ac41cd4be6d86d80cde1bc21a89e80d0",
+    "destination_sha256": "54a6b2ea111381528ac98a9ef9c08347ac41cd4be6d86d80cde1bc21a89e80d0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\.gitignore",
+    "destination": "web/taipei-pareto-explorer/.gitignore",
+    "role": "website",
+    "source_sha256": "bb024d47200ad51094001cef9b51f38a10fefe3d02e857efa82a80a35ae645d2",
+    "destination_sha256": "bb024d47200ad51094001cef9b51f38a10fefe3d02e857efa82a80a35ae645d2",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\backend\\.env.example",
+    "destination": "web/taipei-pareto-explorer/backend/.env.example",
+    "role": "website",
+    "source_sha256": "995967d5b022056c9b2a9b72adf38484fc7e97193d1a654fb2fffd759c800946",
+    "destination_sha256": "dad02e3214a167baefa5852fe307cdf6f05c97b3bc1ad88988220cc276999829",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\backend\\cache\\taipei_metro_station_positions.csv",
+    "destination": "data/taipei_metro/taipei_metro_station_positions.csv",
+    "role": "website coordinate input (not a model input)",
+    "source_sha256": "dc2a2e5070eba123621190621d135f6cde55459c1042d7f942b9ef4a66146ab0",
+    "destination_sha256": "dc2a2e5070eba123621190621d135f6cde55459c1042d7f942b9ef4a66146ab0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\backend\\main.py",
+    "destination": "archive/original_sources/Real_case1/taipei-pareto-explorer/backend/main.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "b287eac2e7ead045f5014dd5c46810329f184f9b41bf1ad46a16ac8bcee8b4b1",
+    "destination_sha256": "b287eac2e7ead045f5014dd5c46810329f184f9b41bf1ad46a16ac8bcee8b4b1",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\backend\\main.py",
+    "destination": "web/taipei-pareto-explorer/backend/main.py",
+    "role": "website",
+    "source_sha256": "b287eac2e7ead045f5014dd5c46810329f184f9b41bf1ad46a16ac8bcee8b4b1",
+    "destination_sha256": "6419ac35f99755df4061a2f9c6673373fea1f49ed59e4fa38b96b993dab3d251",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\backend\\requirements.txt",
+    "destination": "web/taipei-pareto-explorer/backend/requirements.txt",
+    "role": "website",
+    "source_sha256": "1132b4178da12c6ccee1a459a842b7c4a4f2d6812a8e691122fb6422de157d6d",
+    "destination_sha256": "1132b4178da12c6ccee1a459a842b7c4a4f2d6812a8e691122fb6422de157d6d",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\index.html",
+    "destination": "web/taipei-pareto-explorer/frontend/index.html",
+    "role": "website",
+    "source_sha256": "fd76c50e2eae6909e64641fbaf606487ad3d686350e764a81650854dbe089130",
+    "destination_sha256": "552ac85c50d8befa500ed7a8c3fa5b401c558b0d6750b41766a0df7fa5a0588d",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\package-lock.json",
+    "destination": "web/taipei-pareto-explorer/frontend/package-lock.json",
+    "role": "website",
+    "source_sha256": "7babb677496dbbcab3e768d8a0ff3c22a09dac509588121b21c8d3b662be4d0a",
+    "destination_sha256": "7babb677496dbbcab3e768d8a0ff3c22a09dac509588121b21c8d3b662be4d0a",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\package.json",
+    "destination": "web/taipei-pareto-explorer/frontend/package.json",
+    "role": "website",
+    "source_sha256": "4e12cf211ae8c185d80748d5e27e8b7134cf3d198a25815925c82589e53c6812",
+    "destination_sha256": "4e12cf211ae8c185d80748d5e27e8b7134cf3d198a25815925c82589e53c6812",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\src\\api.js",
+    "destination": "web/taipei-pareto-explorer/frontend/src/api.js",
+    "role": "website",
+    "source_sha256": "9a08a028f911d257c4ed9f6db149cee230df49d8e967d287861f2f67f5a18f02",
+    "destination_sha256": "3bba18d8f09bfb51f46878d29bc4a118a9836a3b5092486c50c8bcf0064bb5ba",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\src\\App.jsx",
+    "destination": "web/taipei-pareto-explorer/frontend/src/App.jsx",
+    "role": "website",
+    "source_sha256": "751513328c36a64ddd74c2acef7ebe174dc70409797bfdfb335f748cbbd9b719",
+    "destination_sha256": "03620eed168d90ead04f77e201b4cc749cf67c3753cb7bf1badd8b3563771588",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\src\\components\\MetroMap.jsx",
+    "destination": "web/taipei-pareto-explorer/frontend/src/components/MetroMap.jsx",
+    "role": "website",
+    "source_sha256": "bbfb43db5a3bb18f57b9ab199b4f9208f36e4fb9dae024603cbc14f0cfda4ffe",
+    "destination_sha256": "ca7fa2e32acd761420634d5ff5fb84675f0b42d7dc78e404984f8a66a55dc2b6",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\src\\components\\RoutePanel.jsx",
+    "destination": "web/taipei-pareto-explorer/frontend/src/components/RoutePanel.jsx",
+    "role": "website",
+    "source_sha256": "cc113d45c4fd4a01f7db42d6bebabf1befc3eaaf40894faa0014b5de8fca793b",
+    "destination_sha256": "0ae923a26b66e57643f578c91c3c921dcb02440ea5ee2df33fe91e4134e4261e",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\src\\components\\TradeoffPlot.jsx",
+    "destination": "web/taipei-pareto-explorer/frontend/src/components/TradeoffPlot.jsx",
+    "role": "website",
+    "source_sha256": "39dd206c899b5d96bda5064208db52bd7923c38c91b6bcbcbb2d35cbfd8d1fd5",
+    "destination_sha256": "d197f6eea7a3b782d1da3b512b53bba7bf91c1b7cada71344bb49c52d4c4a993",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\src\\main.jsx",
+    "destination": "web/taipei-pareto-explorer/frontend/src/main.jsx",
+    "role": "website",
+    "source_sha256": "8cd7b88874fb467c289e8c5df1c8456a3883e9424d9174d808d030427314bf0f",
+    "destination_sha256": "8cd7b88874fb467c289e8c5df1c8456a3883e9424d9174d808d030427314bf0f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\src\\styles.css",
+    "destination": "web/taipei-pareto-explorer/frontend/src/styles.css",
+    "role": "website",
+    "source_sha256": "94d7f06e608c4e1c2485c72fd6ed0e088aa8a6b538f833bb2f69361bdf35c924",
+    "destination_sha256": "9bec53cfa7d1df2cfbb3b0698c041549c9342a9d9ab5d2725efd70839fec56a9",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\frontend\\vite.config.js",
+    "destination": "web/taipei-pareto-explorer/frontend/vite.config.js",
+    "role": "website",
+    "source_sha256": "8fb0caf94889fdaa88314f2cc54002ffbb921557e53cdd9071ecc83e2eeaab0e",
+    "destination_sha256": "59c17afe65c0fb6f7aa9d333484342ce01d70b0571887769abb5a85d73869bb5",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\README.md",
+    "destination": "web/taipei-pareto-explorer/README.md",
+    "role": "website",
+    "source_sha256": "e0771ecee5413c40ca2117cdf6c596ac6d14ee645bae87603480b187b4387155",
+    "destination_sha256": "02eea826a9b5f7c77011a7a6532b5fe3797af03a9cc43623ada6e72e0a8a8d8f",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\start_backend.ps1",
+    "destination": "web/taipei-pareto-explorer/start_backend.ps1",
+    "role": "website",
+    "source_sha256": "3aedb7347abc5fa16fd2fe51b7c3424d97ef3b881530c7b18daf0d7021276ff7",
+    "destination_sha256": "aee7da939b274f841cfddc0c84a0e3efed8297af6e2f0175149c41d8397f38fb",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\taipei-pareto-explorer\\start_frontend.ps1",
+    "destination": "web/taipei-pareto-explorer/start_frontend.ps1",
+    "role": "website",
+    "source_sha256": "6859222394f4417ca4181458b894c899f37a023947545b22a8bcf02ec5a444f2",
+    "destination_sha256": "6859222394f4417ca4181458b894c899f37a023947545b22a8bcf02ec5a444f2",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\test_taipei_case.py",
+    "destination": "archive/original_sources/Real_case1/test_taipei_case.py",
+    "role": "original source snapshot (not executable canonical code)",
+    "source_sha256": "0bdd75792f8a733a89da287ce1e302653408f0f04630398965a187eba3aaa8a9",
+    "destination_sha256": "0bdd75792f8a733a89da287ce1e302653408f0f04630398965a187eba3aaa8a9",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\graph.py",
+    "destination": "src/graph.py",
+    "role": "canonical shared core, identical in both sources",
+    "source_sha256": "f528ca4b7132902582f49e5ef59386a10e7c31e5ece17e65b217858a32f8e976",
+    "destination_sha256": "f528ca4b7132902582f49e5ef59386a10e7c31e5ece17e65b217858a32f8e976",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\label.py",
+    "destination": "src/label.py",
+    "role": "canonical shared core, identical in both sources",
+    "source_sha256": "a01e17d1c72f89b0c39d9b9aea296b6bc1cfb55f6906671640444ddaa03bbd3f",
+    "destination_sha256": "a01e17d1c72f89b0c39d9b9aea296b6bc1cfb55f6906671640444ddaa03bbd3f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\dominance.py",
+    "destination": "src/dominance.py",
+    "role": "canonical shared core, identical in both sources",
+    "source_sha256": "2c386a885c92949a23f2111766478cf6970f5c19a2a021d9d1566c629c69f770",
+    "destination_sha256": "2c386a885c92949a23f2111766478cf6970f5c19a2a021d9d1566c629c69f770",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\mosp.py",
+    "destination": "src/mosp.py",
+    "role": "canonical shared core, identical in both sources",
+    "source_sha256": "74b510cdb8ab4f2223ddf28951872d4744d520c190fa318ce016d3a62ec89f56",
+    "destination_sha256": "74b510cdb8ab4f2223ddf28951872d4744d520c190fa318ce016d3a62ec89f56",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\src\\brute_force.py",
+    "destination": "src/brute_force.py",
+    "role": "canonical shared core, identical in both sources",
+    "source_sha256": "920753b452ab23bb882c7e458bfc4107a98df429f221fa9ff9fa9fa2d66e53f5",
+    "destination_sha256": "920753b452ab23bb882c7e458bfc4107a98df429f221fa9ff9fa9fa2d66e53f5",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\src\\taipei_metro.py",
+    "destination": "src/taipei_metro.py",
+    "role": "only route-state model source; byte-preserved",
+    "source_sha256": "54a6b2ea111381528ac98a9ef9c08347ac41cd4be6d86d80cde1bc21a89e80d0",
+    "destination_sha256": "54a6b2ea111381528ac98a9ef9c08347ac41cd4be6d86d80cde1bc21a89e80d0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_01_objectives.py",
+    "destination": "experiments/synthetic/experiment_01.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "2674665fed4856a7258bec488e07c6549b629fb35ea7de21042c5e950a2ec92b",
+    "destination_sha256": "fbd5dfed7920fe4d8706d8703a415397f40d6b63d28e98c4eedb9828136fdbf0",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_02a_correlation.py",
+    "destination": "experiments/synthetic/experiment_02a.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "91c8cafe96f6ef9087a52dcd9c79840f49ae59969fb36f50294b4988966857e7",
+    "destination_sha256": "8a87b416ba3fc3b9d9301b0ad08e7238f31b261d56b5a8d0b81857e9bcc4fdaf",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_02b_dependence_3d.py",
+    "destination": "experiments/synthetic/experiment_02b.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "ff5dee7568089be9643e6a8c69c2aad3c66c3a3c1aee2c831f3fecbb78974dfc",
+    "destination_sha256": "fb2a74eac98a4c917128141adb9938356529bc7d0450e65369eb6985ef36b021",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03a_route_quantity.py",
+    "destination": "experiments/synthetic/experiment_03a.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "afa27eb40b0c691f06f98e7dac1d456c3cdc409c788c5af4f0c636f0b62d9c31",
+    "destination_sha256": "5dba4f66d4a8ed4277b8ef297aa41e4f04d7ec7a60214a0b45cfce29188e8378",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03b_route_overlap.py",
+    "destination": "experiments/synthetic/experiment_03b.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "53859ad9bb6a68e38d87651c2eb99c0df9cf8cbf704020765276c1446bc49d4e",
+    "destination_sha256": "65555bdf273635bb3b8db3c1d9c62d48664e6079e809d1a533eb3bfdca0dd5ee",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_01.py",
+    "destination": "analysis/synthetic/analyze_experiment_01.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "491b4f96f9a7eec56ebcc64922fb885f66196022108bbcc9fbef08510d8637fc",
+    "destination_sha256": "87a22926ca6f23a0084e721e1e92109addfc619fca42cce69f2c05ccab53ab49",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_02a.py",
+    "destination": "analysis/synthetic/analyze_experiment_02a.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "103310218f2971daa4a70d4304b06acace6063690b425ad37567253a760b914f",
+    "destination_sha256": "264d581eb8bf6de045bb96908ef247fdfe1790e2cc1a53478844d57badeb3154",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_02b.py",
+    "destination": "analysis/synthetic/analyze_experiment_02b.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "cb408e18a5a9817e81be3e6740c673e151bc70d274c6066c64e7a550da7984a2",
+    "destination_sha256": "302e3050b5dbb8c535c248435c12b19af84683c74d94f82608f7703cdf01233f",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_03.py",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/analyze_experiment_03.py",
+    "role": "historical experiment; no canonical selection inferred",
+    "source_sha256": "93b679e8cd9db6cbc16f78a8ad50dce20163b011e97e9db35a8affe7ded0c6a5",
+    "destination_sha256": "93b679e8cd9db6cbc16f78a8ad50dce20163b011e97e9db35a8affe7ded0c6a5",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_03a.py",
+    "destination": "analysis/synthetic/analyze_experiment_03a.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "8ad0008d404cd083bae3a0fd025c723aef21ccda4dc8a9994c4a87a8cfebdcf9",
+    "destination_sha256": "445564fc88e2f563f6b31145e1e5edd5904d018a56b57d907923b9c5f3c23892",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\analyze_experiment_03b.py",
+    "destination": "analysis/synthetic/analyze_experiment_03b.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "b8972effad69d6e9b761bc5d550cf5d6293284eeae51831932f0edfd7ab7a242",
+    "destination_sha256": "8404d049f6d8011cd1fb1ea57a8a1e70df99bcd00fcee25dd201a73e0cd41868",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03_redundancy.py",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/experiment_03_redundancy.py",
+    "role": "historical experiment; no canonical selection inferred",
+    "source_sha256": "99067ef3d4681650db0642ba8252762c00edf0a19c61c6166699098efc21b00e",
+    "destination_sha256": "99067ef3d4681650db0642ba8252762c00edf0a19c61c6166699098efc21b00e",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\experiment_03_route_diversity.py",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/experiment_03_route_diversity.py",
+    "role": "historical experiment; no canonical selection inferred",
+    "source_sha256": "55df7dbd9df700e82d23c64eede4c14aa2a34f3e161f27165aa7a4d4b25a77be",
+    "destination_sha256": "55df7dbd9df700e82d23c64eede4c14aa2a34f3e161f27165aa7a4d4b25a77be",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_01.py",
+    "destination": "analysis/synthetic/plot_experiment_01.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "eb4a67cdf467230c816ca03707ad90f907970231b1995b7d5dfd17f551c315aa",
+    "destination_sha256": "8e2d50a6b9499e5690e8a68de3e82f767c9f0c358d49981d84e960badae1c01b",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_02a.py",
+    "destination": "analysis/synthetic/plot_experiment_02a.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "8672c0b4dcfb169bd8d3535d26a3e10e3f58e40327111c8121516acc44e6f6bc",
+    "destination_sha256": "9ef86515cb885522bd1380a3dba34d108558af1f44fa4251c6ad00d51ab07cea",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_02b.py",
+    "destination": "analysis/synthetic/plot_experiment_02b.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "a2fd0f8dd08746eaf5cb352166ba1d4d1c96ea6f151ee1153cf32b059cc21611",
+    "destination_sha256": "b5536d6ff700b92c88547cea99f29e826af38b8e082b8f03bd925887ac6caf35",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\plot_experiment_03.py",
+    "destination": "analysis/synthetic/plot_experiment_03.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "dd0009d4b1705723829a30afc4948562a458072e875c69ecd4e6ad5f0105c401",
+    "destination_sha256": "29a2eac85a250b82ca061b1dd5fdb86c3688ae48f83272d42985ce17cfbeac13",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\experiments\\route_diversity_test.py",
+    "destination": "archive/deprecated_candidates/Mosp_vr1.1/experiments/route_diversity_test.py",
+    "role": "historical experiment; no canonical selection inferred",
+    "source_sha256": "c8859efb1a7c96233cc3a7d0655d56e612b8ef09611081c57a38c415e2e789f2",
+    "destination_sha256": "c8859efb1a7c96233cc3a7d0655d56e612b8ef09611081c57a38c415e2e789f2",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Mosp_vr1.1\\test_correctness.py",
+    "destination": "validation/test_correctness.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "9d7eac33496167469dc46fbc7a1cd74fe0e367ac8037f03990663ec91e01bee6",
+    "destination_sha256": "fd87a43a48c9913305f29ad82538d428bc2708716444e89dd13ea979368e2e51",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\check_stop_times.py",
+    "destination": "analysis/real_case/check_stop_times.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "dae6dd0fe911ad20c999ab37d6ee320c33fae7712fc9b78423426d31ec614674",
+    "destination_sha256": "e644065e625baecbfa426e8feffa016deca75c27eb37fb1a3e1deae15ade6a61",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\diagnose_taipei_route.py",
+    "destination": "analysis/real_case/diagnose_taipei_route.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "075500927a39f31a8cb4facd4b87507c143dc7cbcd321e564fed1fdec3adfd4b",
+    "destination_sha256": "7a513c8423851bb5e438f20d184eeb50f7df25ad8c265ac138a2ef1d7f39e156",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiment_05_all_od.py",
+    "destination": "experiments/real_case/experiment_05_all_od.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "981bf7c997f88d6fa270ce5ca13c89bdc35d99aed4a593844e7ee02ed4029c32",
+    "destination_sha256": "18a19014160df77af22dde530e248c47be849b173c1337fef56029d8755b09c1",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\plot_chapter5_figures_7_9.py",
+    "destination": "analysis/real_case/plot_chapter5_figures_7_9.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "a4f96ff50c4e1128a65c2636982c188d446341c55d8943f45ef5c36c6cd1c352",
+    "destination_sha256": "30bdb4481f89acb753915a60229435bc44f1f132a64e56d7ed34f21593c2716e",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\plot_chapter5_figures_7_9_final.py",
+    "destination": "analysis/real_case/plot_chapter5_figures_7_9_final.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "6cc1a8b908eaa3b59c4c3734db2204fabae2ad9fb44afb2dd40fa53b237d14bf",
+    "destination_sha256": "0a364839e6977125eaafd2ec0f736850e8fa60804da3ede325829c0aead64ee6",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\test_taipei_case.py",
+    "destination": "analysis/real_case/test_taipei_case.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "0bdd75792f8a733a89da287ce1e302653408f0f04630398965a187eba3aaa8a9",
+    "destination_sha256": "4f5ef0d6857342dc46ed7d40a393374dc82592df0787edeaa5822005f00e8fd1",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\analyze_experiment_04b_route_patterns.py",
+    "destination": "analysis/real_case/analyze_experiment_04b_route_patterns.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "7caf2cec546d4c6d9ad9ffb5009dac3ea4988cbf57c6dcbeda935288a5fe22a0",
+    "destination_sha256": "cf53d7e5d9b58c2bf7a34b137dad7358cf5d7b1550a263af5c15fab98a5a3573",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\analyze_experiment_05b_objective_correlation.py",
+    "destination": "analysis/real_case/analyze_experiment_05b_objective_correlation.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "b53bdf4bcf003860dc47bd4729023c46a88d42ad7caaaf1268eec3c7221382aa",
+    "destination_sha256": "ec840c7c845e3875d8e0a5cfe846fd033765a28bfbc3ea4d7c9ca1005d384e71",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\analyze_experiment_05_all.py",
+    "destination": "analysis/real_case/analyze_experiment_05_all.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "4a3f7d4dcbb8a10b1c80475f3457eb4f3806bc7e5f869950fc8423bfd13c3f1e",
+    "destination_sha256": "f60e8d63ad02db3a9ff4dba93f7b1b86160711abbc235dfbb4b6192e14a1114f",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_04_taipei_main.py",
+    "destination": "experiments/real_case/experiment_04_taipei_main.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "2d3895ed376fe0ded235aa8b79bf01d60b64fe7b7401fe6547af7bb95d58d1cd",
+    "destination_sha256": "279a50ab3dcccf13f5f0d3382b32998713c056494ecfb211d2e2d23059ad8038",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_04_taipei_main_all.py",
+    "destination": "experiments/real_case/experiment_04_taipei_main_all.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "df0f6cb4b968d01199132b86861a50784a73a1215280188bdf42b5e79e4e189c",
+    "destination_sha256": "f6813b9c76a6af631e628d44c95efb185153ae0ac38473f790e5a7e64d99c8b6",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_06b_all_od_dfs.py",
+    "destination": "experiments/real_case/experiment_06b_all_od_dfs.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "499cbd04258432909d857fed12bf227f60b7b8c13b1dfbc3a4e4cf23f03b50db",
+    "destination_sha256": "080c2ac287163c51d21091cc583f3a38e0f193dd0efa7206bc63fcd8e1995f79",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_06_bruteforce_simple_paths.py",
+    "destination": "experiments/real_case/experiment_06_bruteforce_simple_paths.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "065bf92967442041bcd0d1b8ecc195265a1d1e24e5bdac9d01f4dc1a7589c5a7",
+    "destination_sha256": "65aad03fa89f6575ed88b8c780736b20b48a44b65869551559b6a9866ba5d30c",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\experiment_07_origin_level_dfs_vs_mosp.py",
+    "destination": "experiments/real_case/experiment_07_origin_level_dfs_vs_mosp.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "9c27c3649c1ce9eaf4a42d65416ec931af5991ff19408211a4e09ae34b1d75fe",
+    "destination_sha256": "e1ea542a15431a9d06b970fb9186b7492d8c866e8be6ae36789e5122299df125",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\plot_chapter5.py",
+    "destination": "analysis/real_case/plot_chapter5.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "f1534f31d9d5c55d2119eb0cbb0b601ca3560c7648fccc1163a23d72f3cccd5a",
+    "destination_sha256": "8a93bac46aab8dbad037e08d7af7398841c4a15c38c23e3cf7247e745f8f364b",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\plot_chapter5_thesis.py",
+    "destination": "analysis/real_case/plot_chapter5_thesis.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "b21ac1fbddee019d50fe01e59981cd8fd4d7130654bb389c1a25a87673ebcf86",
+    "destination_sha256": "2387d768738ebbe198783fa55adeaedd2644ad5e8ce3123f1186858094a2a83f",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\MOSP_project\\Real_case1\\experiments\\plot_chapter5_thesis_final (1).py",
+    "destination": "analysis/real_case/plot_chapter5_thesis_final.py",
+    "role": "canonical script; only imports/paths/entry point changed",
+    "source_sha256": "c23a6ae5475ec5cda7d634bdc3ee27b01d265f1395c1376c92eb37c07da67f53",
+    "destination_sha256": "c8bef6087c121730ecb2532cc257aa237ef3cbf0180c11f20026bddd269f06ac",
+    "modified": true
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\brute_force.py.diff",
+    "destination": "audit/brute_force.py.diff",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "destination_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\dependencies.json",
+    "destination": "audit/dependencies.json",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "e7e662b4545d96d15617f6916466219ffd3ef3581e5f1fca43984a64bd89a80e",
+    "destination_sha256": "e7e662b4545d96d15617f6916466219ffd3ef3581e5f1fca43984a64bd89a80e",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\dominance.py.diff",
+    "destination": "audit/dominance.py.diff",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "destination_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\duplicates.json",
+    "destination": "audit/duplicates.json",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "29b157b1ab75182550d631c7a7e69c77375fa3d57bc1a1efb283c5fb8cb26ecf",
+    "destination_sha256": "29b157b1ab75182550d631c7a7e69c77375fa3d57bc1a1efb283c5fb8cb26ecf",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\graph.py.diff",
+    "destination": "audit/graph.py.diff",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "destination_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\inventory.csv",
+    "destination": "audit/inventory.csv",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "4b20eeb040fe627eb4e1b813a449114c27b9ec8fd84789c502bec04a84a52155",
+    "destination_sha256": "4b20eeb040fe627eb4e1b813a449114c27b9ec8fd84789c502bec04a84a52155",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\inventory.json",
+    "destination": "audit/inventory.json",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "e63d99987c55cf87bcc8b7e096565408c9c44e905d03d10d7726de4755a235cc",
+    "destination_sha256": "e63d99987c55cf87bcc8b7e096565408c9c44e905d03d10d7726de4755a235cc",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\label.py.diff",
+    "destination": "audit/label.py.diff",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "destination_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\mosp.py.diff",
+    "destination": "audit/mosp.py.diff",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "destination_sha256": "adca28c6b503a6bb3c8588d8690b9f07f2bc69975f20c1c7369661ffa731d4f0",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\Mosp_vr1.1_tree.txt",
+    "destination": "audit/Mosp_vr1.1_tree.txt",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "0c721f905089dedc1bac0aeb44dbe497fe6d63da17c87874214c12b344b27366",
+    "destination_sha256": "0c721f905089dedc1bac0aeb44dbe497fe6d63da17c87874214c12b344b27366",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\path_audit.json",
+    "destination": "audit/path_audit.json",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "f6757c77d6f518676ba242ea273ce835e65e20c2643cb37b7f1af33065e188fe",
+    "destination_sha256": "f6757c77d6f518676ba242ea273ce835e65e20c2643cb37b7f1af33065e188fe",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\preflight.json",
+    "destination": "audit/preflight.json",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "9ff432e5471fa45534d4fb68e530b0a35808e86613de35f7fb2f79e9ab91329f",
+    "destination_sha256": "9ff432e5471fa45534d4fb68e530b0a35808e86613de35f7fb2f79e9ab91329f",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\preflight_routes.json",
+    "destination": "audit/preflight_routes.json",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "2611bcffa13bacf642908fb43b5cfd3b124d4253897ba99441a935baba4a5ab3",
+    "destination_sha256": "2611bcffa13bacf642908fb43b5cfd3b124d4253897ba99441a935baba4a5ab3",
+    "modified": false
+  },
+  {
+    "source": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\audit\\Real_case1_tree.txt",
+    "destination": "audit/Real_case1_tree.txt",
+    "role": "pre-migration audit evidence",
+    "source_sha256": "6db62503a9e94f45ff7c5650418f03fa06b0e0556902f1fe9192a4fc26e3d793",
+    "destination_sha256": "6db62503a9e94f45ff7c5650418f03fa06b0e0556902f1fe9192a4fc26e3d793",
+    "modified": false
+  }
+]

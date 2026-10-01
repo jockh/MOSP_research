@@ -1,0 +1,227 @@
+import numpy as np
+import pandas as pd
+
+
+# ============================================================
+# Load data
+# ============================================================
+
+df = pd.read_csv(
+    "experiments/results/experiment_01_formal_raw.csv"
+)
+
+print("Total rows:", len(df))
+
+print("\nColumns:")
+print(df.columns.tolist())
+
+
+# ============================================================
+# Derived metrics
+# ============================================================
+
+# Pruning rate
+df["pruning_rate"] = np.where(
+    df["generated_labels"] > 0,
+    df["pruned_labels"] / df["generated_labels"],
+    0.0
+)
+
+# IMPORTANT:
+# Calculate this for EACH experimental case first,
+# then summarize across cases.
+df["comparisons_per_generated_label"] = np.where(
+    df["generated_labels"] > 0,
+    df["dominance_checks"] / df["generated_labels"],
+    0.0
+)
+
+
+# ============================================================
+# Summary by objectives
+# ============================================================
+
+metrics = [
+    "runtime_seconds",
+    "target_pareto_labels",
+    "generated_labels",
+    "kept_labels",
+    "pruned_labels",
+    "dominance_checks",
+    "comparisons_per_generated_label",
+    "max_labels_per_node"
+]
+
+summary = (
+    df.groupby("objectives")[metrics]
+    .agg(["mean", "median", "std", "max"])
+)
+
+print("\n===== EXPERIMENT 1 SUMMARY =====")
+print(summary.to_string())
+
+
+# ============================================================
+# Pruning rate summary
+# ============================================================
+
+pruning_summary = (
+    df.groupby("objectives")["pruning_rate"]
+    .agg(["mean", "median", "std", "count"])
+)
+
+pruning_summary["se"] = (
+    pruning_summary["std"]
+    / np.sqrt(pruning_summary["count"])
+)
+
+pruning_summary["ci95"] = (
+    1.96 * pruning_summary["se"]
+)
+
+print("\n===== PRUNING RATE =====")
+print(pruning_summary.to_string())
+
+
+# ============================================================
+# Comparisons per generated label
+# Case-level ratio summary
+# ============================================================
+
+comparison_summary = (
+    df.groupby("objectives")[
+        "comparisons_per_generated_label"
+    ]
+    .agg(["mean", "median", "std", "count"])
+)
+
+comparison_summary["se"] = (
+    comparison_summary["std"]
+    / np.sqrt(comparison_summary["count"])
+)
+
+comparison_summary["ci95"] = (
+    1.96 * comparison_summary["se"]
+)
+
+print(
+    "\n===== COMPARISONS PER GENERATED LABEL ====="
+)
+
+print(
+    comparison_summary.to_string()
+)
+
+
+# ============================================================
+# Compact summary
+# ============================================================
+
+compact = (
+    df.groupby("objectives")
+    .agg(
+        pareto_labels=(
+            "target_pareto_labels",
+            "mean"
+        ),
+
+        generated=(
+            "generated_labels",
+            "mean"
+        ),
+
+        dominance_checks=(
+            "dominance_checks",
+            "mean"
+        ),
+
+        comparisons_per_generated_label=(
+            "comparisons_per_generated_label",
+            "mean"
+        ),
+
+        max_labels_per_node=(
+            "max_labels_per_node",
+            "mean"
+        ),
+
+        runtime=(
+            "runtime_seconds",
+            "mean"
+        ),
+
+        pruning_rate=(
+            "pruning_rate",
+            "mean"
+        )
+    )
+)
+
+print("\n===== COMPACT SUMMARY =====")
+print(compact.to_string())
+
+
+# ============================================================
+# Relative growth from m = 2 to m = 5
+# ============================================================
+
+m2 = compact.loc[2]
+m5 = compact.loc[5]
+
+print("\n===== m = 5 RELATIVE TO m = 2 =====")
+
+print(
+    "Pareto labels:",
+    f"{m5['pareto_labels'] / m2['pareto_labels']:.3f}x"
+)
+
+print(
+    "Generated labels:",
+    f"{m5['generated'] / m2['generated']:.3f}x"
+)
+
+print(
+    "Dominance checks:",
+    f"{m5['dominance_checks'] / m2['dominance_checks']:.3f}x"
+)
+
+print(
+    "Comparisons per generated label:",
+    f"{m5['comparisons_per_generated_label'] / m2['comparisons_per_generated_label']:.3f}x"
+)
+
+print(
+    "Max labels per node:",
+    f"{m5['max_labels_per_node'] / m2['max_labels_per_node']:.3f}x"
+)
+
+print(
+    "Runtime:",
+    f"{m5['runtime'] / m2['runtime']:.3f}x"
+)
+
+
+# ============================================================
+# Workload-runtime correlations
+# ============================================================
+
+print("\n===== WORKLOAD-RUNTIME CORRELATIONS =====")
+
+correlation_metrics = [
+    "target_pareto_labels",
+    "generated_labels",
+    "dominance_checks",
+    "comparisons_per_generated_label",
+    "max_labels_per_node"
+]
+
+for metric in correlation_metrics:
+
+    r = df[
+        [metric, "runtime_seconds"]
+    ].corr().iloc[0, 1]
+
+    print(
+        f"{metric} vs runtime: "
+        f"r = {r:.4f}"
+    )

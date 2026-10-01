@@ -1,0 +1,63 @@
+{
+  "files": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "bdad413369f97be368957cadb893b8835bfe8d3435b33d67f79e2ef24c733ee0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0bc408e2ac3ad60a3fccc3414d6f5804549df66622cf8d0d459a46b0d34ade45"
+    },
+    {
+      "path": "setup_windows.ps1",
+      "sha256": "cb9bb8b2d739063b16df96489b3d7daf8746fc84780b9be4e227d52dc451b44f"
+    },
+    {
+      "path": "validation/check_installation.py",
+      "sha256": "9722769a9aacf04886996d96b3a8dd88aed77440feea08cedbd4a4c7bcf721eb"
+    },
+    {
+      "path": "experiments/synthetic/experiment_01.py",
+      "sha256": "fbd5dfed7920fe4d8706d8703a415397f40d6b63d28e98c4eedb9828136fdbf0"
+    },
+    {
+      "path": "experiments/synthetic/experiment_02a.py",
+      "sha256": "8a87b416ba3fc3b9d9301b0ad08e7238f31b261d56b5a8d0b81857e9bcc4fdaf"
+    },
+    {
+      "path": "experiments/synthetic/experiment_02b.py",
+      "sha256": "fb2a74eac98a4c917128141adb9938356529bc7d0450e65369eb6985ef36b021"
+    },
+    {
+      "path": "experiments/synthetic/experiment_03a.py",
+      "sha256": "5dba4f66d4a8ed4277b8ef297aa41e4f04d7ec7a60214a0b45cfce29188e8378"
+    },
+    {
+      "path": "experiments/synthetic/experiment_03b.py",
+      "sha256": "65555bdf273635bb3b8db3c1d9c62d48664e6079e809d1a533eb3bfdca0dd5ee"
+    },
+    {
+      "path": "experiments/synthetic/_cli.py",
+      "sha256": "335f84dbcc8227d5dd6cccfb64262b42f2323e5b7f06eb6ec226892510273c9e"
+    },
+    {
+      "path": "PACKAGE_IMPORT_REPORT.md",
+      "sha256": "2142b4d28ec4b53945a0761c7cb51e34721985034cdf76dfa52930a5402e4d20"
+    },
+    {
+      "path": "MIGRATION_REPORT.md",
+      "sha256": "2404cbc0a59f2f0f02a8f5764057b691d4e05ffdccddaeb79fd6fe0fc4f405bd"
+    },
+    {
+      "path": "audit/migration_manifest.json",
+      "sha256": "b1b7a07ffd6b8f9542eb909f5acfb980ec29a3db774840e356404bfd8a4ab6d1"
+    }
+  ],
+  "migration_destinations_updated": [
+    "experiments/synthetic/experiment_01.py",
+    "experiments/synthetic/experiment_02a.py",
+    "experiments/synthetic/experiment_02b.py",
+    "experiments/synthetic/experiment_03a.py",
+    "experiments/synthetic/experiment_03b.py"
+  ]
+}

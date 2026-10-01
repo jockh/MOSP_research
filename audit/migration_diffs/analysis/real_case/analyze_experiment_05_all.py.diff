@@ -1,0 +1,2744 @@
+--- C:\Users\xAdmin\MOSP_project\Real_case1\experiments\analyze_experiment_05_all.py
++++ analysis/real_case/analyze_experiment_05_all.py
+@@ -1,1396 +1,1383 @@
++from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+ from pathlib import Path
+ import re
+-
+ import pandas as pd
+ 
+-
+-# =========================================================
+-# FIND PROJECT ROOT
+-# =========================================================
+-
+-SCRIPT_DIR = Path(__file__).resolve().parent
+-
+-ROOT = None
+-
+-for candidate in [
+-    SCRIPT_DIR,
+-    *SCRIPT_DIR.parents
+-]:
+-    if (
+-        candidate
+-        / "experiments"
+-        / "results"
+-        / "experiment_05_all_od"
+-    ).exists():
+-
+-        ROOT = candidate
+-        break
+-
+-
+-if ROOT is None:
+-    raise FileNotFoundError(
+-        "\n找不到專案根目錄。\n"
+-        "需要找到：\n"
+-        "experiments/results/experiment_05_all_od/\n"
+-    )
+-
+-
+-# =========================================================
+-# PATHS
+-# =========================================================
+-
+-RESULT_DIR = (
+-    ROOT
+-    / "experiments"
+-    / "results"
+-    / "experiment_05_all_od"
+-)
+-
+-OD_FILE = (
+-    RESULT_DIR
+-    / "all_od_summary.csv"
+-)
+-
+-ROUTE_FILE = (
+-    RESULT_DIR
+-    / "all_od_pareto_routes.csv"
+-)
+-
+-ANALYSIS_DIR = (
+-    RESULT_DIR
+-    / "analysis"
+-)
+-
+-ANALYSIS_DIR.mkdir(
+-    parents=True,
+-    exist_ok=True
+-)
+-
+-
+-# =========================================================
+-# OUTPUT FILES
+-# =========================================================
+-
+-MAX_OD_FILE = (
+-    ANALYSIS_DIR
+-    / "max_pareto_od_pairs.csv"
+-)
+-
+-MAX_ROUTE_FILE = (
+-    ANALYSIS_DIR
+-    / "max_pareto_routes.csv"
+-)
+-
+-DUPLICATE_FILE = (
+-    ANALYSIS_DIR
+-    / "suspected_duplicate_routes.csv"
+-)
+-
+-VALIDATION_FILE = (
+-    ANALYSIS_DIR
+-    / "pareto_validation.csv"
+-)
+-
+-CANDIDATE_FILE = (
+-    ANALYSIS_DIR
+-    / "representative_case_candidates.csv"
+-)
+-
+-
+-# =========================================================
+-# LOAD DATA
+-# =========================================================
+-
+-if not OD_FILE.exists():
+-    raise FileNotFoundError(
+-        f"找不到：{OD_FILE}"
+-    )
+-
+-if not ROUTE_FILE.exists():
+-    raise FileNotFoundError(
+-        f"找不到：{ROUTE_FILE}"
+-    )
+-
+-
+-od_df = pd.read_csv(
+-    OD_FILE,
+-    encoding="utf-8-sig"
+-)
+-
+-routes_df = pd.read_csv(
+-    ROUTE_FILE,
+-    encoding="utf-8-sig"
+-)
+-
+-
+-# =========================================================
+-# BASIC CHECK
+-# =========================================================
+-
+-required_od_columns = {
+-    "origin",
+-    "destination",
+-    "pareto_route_count",
+-    "fastest_travel_time_minutes",
+-    "minimum_transfers",
+-    "minimum_walking_minutes",
+-    "pareto_time_range_minutes",
+-    "pareto_transfer_range",
+-    "pareto_walking_range_minutes",
+-}
+-
+-required_route_columns = {
+-    "origin",
+-    "destination",
+-    "route_id",
+-    "travel_time_seconds",
+-    "travel_time_minutes",
+-    "transfers",
+-    "walking_seconds",
+-    "walking_minutes",
+-    "path",
+-}
+-
+-
+-missing_od = (
+-    required_od_columns
+-    - set(od_df.columns)
+-)
+-
+-missing_route = (
+-    required_route_columns
+-    - set(routes_df.columns)
+-)
+-
+-
+-if missing_od:
+-    raise ValueError(
+-        "all_od_summary.csv 缺少欄位："
+-        + ", ".join(sorted(missing_od))
+-    )
+-
+-if missing_route:
+-    raise ValueError(
+-        "all_od_pareto_routes.csv 缺少欄位："
+-        + ", ".join(sorted(missing_route))
+-    )
+-
+-
+-print("=" * 100)
+-print("EXPERIMENT 5 ANALYSIS")
+-print("=" * 100)
+-
+-print(
+-    f"OD rows       : {len(od_df)}"
+-)
+-
+-print(
+-    f"Route rows    : {len(routes_df)}"
+-)
+-
+-
+-# =========================================================
+-# HELPER FUNCTIONS
+-# =========================================================
+-
+-def physical_path(path):
+-    """
+-    Convert:
+-
+-    亞東醫院站[BL] -> 板橋站[BL] -> ...
+-
+-    into:
+-
+-    亞東醫院站 -> 板橋站 -> ...
+-
+-    This removes line/service-state labels.
+-
+-    Useful for detecting routes that are physically identical
+-    but represented by O#4 / O#5 or other internal states.
+-    """
+-
+-    if pd.isna(path):
+-        return ""
+-
+-    parts = [
+-        item.strip()
+-        for item in str(path).split("->")
+-    ]
+-
+-    cleaned = []
+-
+-    for item in parts:
+-
+-        item = re.sub(
+-            r"\[[^\]]*\]",
+-            "",
+-            item
+-        )
+-
+-        cleaned.append(
++if __name__ == "__main__":
++
++
++
++
++
++
++
++    # =========================================================
++    # FIND PROJECT ROOT
++    # =========================================================
++
++    SCRIPT_DIR = PROJECT_ROOT
++
++    ROOT = PROJECT_ROOT
++
++    pass  # canonical root is explicit
++
++
++    pass  # canonical root is explicit
++
++
++    # =========================================================
++    # PATHS
++    # =========================================================
++
++    RESULT_DIR = (
++        CANONICAL_RESULTS_DIR / 'experiment_05_all_od'
++    )
++
++    OD_FILE = (
++        RESULT_DIR
++        / "all_od_summary.csv"
++    )
++
++    ROUTE_FILE = (
++        RESULT_DIR
++        / "all_od_pareto_routes.csv"
++    )
++
++    ANALYSIS_DIR = (
++        RESULT_DIR
++        / "analysis"
++    )
++
++    ANALYSIS_DIR.mkdir(
++        parents=True,
++        exist_ok=True
++    )
++
++
++    # =========================================================
++    # OUTPUT FILES
++    # =========================================================
++
++    MAX_OD_FILE = (
++        ANALYSIS_DIR
++        / "max_pareto_od_pairs.csv"
++    )
++
++    MAX_ROUTE_FILE = (
++        ANALYSIS_DIR
++        / "max_pareto_routes.csv"
++    )
++
++    DUPLICATE_FILE = (
++        ANALYSIS_DIR
++        / "suspected_duplicate_routes.csv"
++    )
++
++    VALIDATION_FILE = (
++        ANALYSIS_DIR
++        / "pareto_validation.csv"
++    )
++
++    CANDIDATE_FILE = (
++        ANALYSIS_DIR
++        / "representative_case_candidates.csv"
++    )
++
++
++    # =========================================================
++    # LOAD DATA
++    # =========================================================
++
++    if not OD_FILE.exists():
++        raise FileNotFoundError(
++            f"找不到：{OD_FILE}"
++        )
++
++    if not ROUTE_FILE.exists():
++        raise FileNotFoundError(
++            f"找不到：{ROUTE_FILE}"
++        )
++
++
++    od_df = pd.read_csv(
++        OD_FILE,
++        encoding="utf-8-sig"
++    )
++
++    routes_df = pd.read_csv(
++        ROUTE_FILE,
++        encoding="utf-8-sig"
++    )
++
++
++    # =========================================================
++    # BASIC CHECK
++    # =========================================================
++
++    required_od_columns = {
++        "origin",
++        "destination",
++        "pareto_route_count",
++        "fastest_travel_time_minutes",
++        "minimum_transfers",
++        "minimum_walking_minutes",
++        "pareto_time_range_minutes",
++        "pareto_transfer_range",
++        "pareto_walking_range_minutes",
++    }
++
++    required_route_columns = {
++        "origin",
++        "destination",
++        "route_id",
++        "travel_time_seconds",
++        "travel_time_minutes",
++        "transfers",
++        "walking_seconds",
++        "walking_minutes",
++        "path",
++    }
++
++
++    missing_od = (
++        required_od_columns
++        - set(od_df.columns)
++    )
++
++    missing_route = (
++        required_route_columns
++        - set(routes_df.columns)
++    )
++
++
++    if missing_od:
++        raise ValueError(
++            "all_od_summary.csv 缺少欄位："
++            + ", ".join(sorted(missing_od))
++        )
++
++    if missing_route:
++        raise ValueError(
++            "all_od_pareto_routes.csv 缺少欄位："
++            + ", ".join(sorted(missing_route))
++        )
++
++
++    print("=" * 100)
++    print("EXPERIMENT 5 ANALYSIS")
++    print("=" * 100)
++
++    print(
++        f"OD rows       : {len(od_df)}"
++    )
++
++    print(
++        f"Route rows    : {len(routes_df)}"
++    )
++
++
++    # =========================================================
++    # HELPER FUNCTIONS
++    # =========================================================
++
++    def physical_path(path):
++        """
++        Convert:
++
++        亞東醫院站[BL] -> 板橋站[BL] -> ...
++
++        into:
++
++        亞東醫院站 -> 板橋站 -> ...
++
++        This removes line/service-state labels.
++
++        Useful for detecting routes that are physically identical
++        but represented by O#4 / O#5 or other internal states.
++        """
++
++        if pd.isna(path):
++            return ""
++
++        parts = [
+             item.strip()
+-        )
+-
+-    return " -> ".join(
+-        cleaned
+-    )
+-
+-
+-def cost_tuple(row):
+-    return (
+-        int(row["travel_time_seconds"]),
+-        int(row["transfers"]),
+-        int(row["walking_seconds"]),
+-    )
+-
+-
+-def dominates(a, b):
+-    """
+-    a dominates b iff:
+-    a is no worse in every objective
+-    AND strictly better in at least one.
+-    """
+-
+-    no_worse = all(
+-        x <= y
+-        for x, y in zip(a, b)
+-    )
+-
+-    strictly_better = any(
+-        x < y
+-        for x, y in zip(a, b)
+-    )
+-
+-    return (
+-        no_worse
+-        and strictly_better
+-    )
+-
+-
+-# =========================================================
+-# ADD PHYSICAL-PATH COLUMN
+-# =========================================================
+-
+-routes_df[
+-    "physical_path"
+-] = routes_df[
+-    "path"
+-].apply(
+-    physical_path
+-)
+-
+-
+-# =========================================================
+-# CHECK ROUTE COUNTS
+-# =========================================================
+-
+-actual_route_counts = (
+-    routes_df
+-    .groupby(
++            for item in str(path).split("->")
++        ]
++
++        cleaned = []
++
++        for item in parts:
++
++            item = re.sub(
++                r"\[[^\]]*\]",
++                "",
++                item
++            )
++
++            cleaned.append(
++                item.strip()
++            )
++
++        return " -> ".join(
++            cleaned
++        )
++
++
++    def cost_tuple(row):
++        return (
++            int(row["travel_time_seconds"]),
++            int(row["transfers"]),
++            int(row["walking_seconds"]),
++        )
++
++
++    def dominates(a, b):
++        """
++        a dominates b iff:
++        a is no worse in every objective
++        AND strictly better in at least one.
++        """
++
++        no_worse = all(
++            x <= y
++            for x, y in zip(a, b)
++        )
++
++        strictly_better = any(
++            x < y
++            for x, y in zip(a, b)
++        )
++
++        return (
++            no_worse
++            and strictly_better
++        )
++
++
++    # =========================================================
++    # ADD PHYSICAL-PATH COLUMN
++    # =========================================================
++
++    routes_df[
++        "physical_path"
++    ] = routes_df[
++        "path"
++    ].apply(
++        physical_path
++    )
++
++
++    # =========================================================
++    # CHECK ROUTE COUNTS
++    # =========================================================
++
++    actual_route_counts = (
++        routes_df
++        .groupby(
++            [
++                "origin",
++                "destination"
++            ]
++        )
++        .size()
++        .reset_index(
++            name="actual_route_count"
++        )
++    )
++
++
++    count_check_df = (
++        od_df.merge(
++            actual_route_counts,
++            on=[
++                "origin",
++                "destination"
++            ],
++            how="left"
++        )
++    )
++
++
++    count_check_df[
++        "actual_route_count"
++    ] = (
++        count_check_df[
++            "actual_route_count"
++        ]
++        .fillna(0)
++        .astype(int)
++    )
++
++
++    count_mismatch = (
++        count_check_df[
++            count_check_df[
++                "pareto_route_count"
++            ]
++            !=
++            count_check_df[
++                "actual_route_count"
++            ]
++        ]
++    )
++
++
++    print()
++    print("=" * 100)
++    print("ROUTE COUNT VALIDATION")
++    print("=" * 100)
++
++    print(
++        f"Count mismatch ODs: "
++        f"{len(count_mismatch)}"
++    )
++
++
++    if len(count_mismatch) == 0:
++        print("PASS: summary route counts match route file.")
++    else:
++        print(
++            count_mismatch[
++                [
++                    "origin",
++                    "destination",
++                    "pareto_route_count",
++                    "actual_route_count",
++                ]
++            ].to_string(
++                index=False
++            )
++        )
++
++
++    # =========================================================
++    # FIND MAXIMUM PARETO SET SIZE
++    # =========================================================
++
++    max_pareto = int(
++        od_df[
++            "pareto_route_count"
++        ].max()
++    )
++
++
++    max_od_df = (
++        od_df[
++            od_df[
++                "pareto_route_count"
++            ] == max_pareto
++        ]
++        .copy()
++        .sort_values(
++            [
++                "origin",
++                "destination"
++            ]
++        )
++        .reset_index(
++            drop=True
++        )
++    )
++
++
++    print()
++    print("=" * 100)
++    print("MAXIMUM PARETO SET")
++    print("=" * 100)
++
++    print(
++        f"Maximum Pareto-set size: "
++        f"{max_pareto}"
++    )
++
++    print(
++        f"Number of OD pairs     : "
++        f"{len(max_od_df)}"
++    )
++
++
++    print()
++    print(
++        max_od_df[
++            [
++                "origin",
++                "destination",
++                "pareto_route_count",
++                "pareto_time_range_minutes",
++                "pareto_transfer_range",
++                "pareto_walking_range_minutes",
++            ]
++        ].to_string(
++            index=False
++        )
++    )
++
++
++    # =========================================================
++    # GET ROUTES FOR MAX-PARETO ODs
++    # =========================================================
++
++    max_route_df = (
++        routes_df.merge(
++            max_od_df[
++                [
++                    "origin",
++                    "destination"
++                ]
++            ],
++            on=[
++                "origin",
++                "destination"
++            ],
++            how="inner"
++        )
++        .sort_values(
++            [
++                "origin",
++                "destination",
++                "travel_time_seconds",
++                "transfers",
++                "walking_seconds",
++            ]
++        )
++        .reset_index(
++            drop=True
++        )
++    )
++
++
++    # =========================================================
++    # DUPLICATE ANALYSIS
++    # =========================================================
++
++    duplicate_rows = []
++
++    od_diagnostic_rows = []
++
++
++    for (
++        origin,
++        destination
++    ), group in max_route_df.groupby(
+         [
+             "origin",
+             "destination"
+         ]
+-    )
+-    .size()
+-    .reset_index(
+-        name="actual_route_count"
+-    )
+-)
+-
+-
+-count_check_df = (
+-    od_df.merge(
+-        actual_route_counts,
+-        on=[
+-            "origin",
+-            "destination"
+-        ],
+-        how="left"
+-    )
+-)
+-
+-
+-count_check_df[
+-    "actual_route_count"
+-] = (
+-    count_check_df[
+-        "actual_route_count"
+-    ]
+-    .fillna(0)
+-    .astype(int)
+-)
+-
+-
+-count_mismatch = (
+-    count_check_df[
+-        count_check_df[
+-            "pareto_route_count"
+-        ]
+-        !=
+-        count_check_df[
+-            "actual_route_count"
+-        ]
+-    ]
+-)
+-
+-
+-print()
+-print("=" * 100)
+-print("ROUTE COUNT VALIDATION")
+-print("=" * 100)
+-
+-print(
+-    f"Count mismatch ODs: "
+-    f"{len(count_mismatch)}"
+-)
+-
+-
+-if len(count_mismatch) == 0:
+-    print("PASS: summary route counts match route file.")
+-else:
+-    print(
+-        count_mismatch[
+-            [
+-                "origin",
+-                "destination",
+-                "pareto_route_count",
+-                "actual_route_count",
+-            ]
+-        ].to_string(
+-            index=False
+-        )
+-    )
+-
+-
+-# =========================================================
+-# FIND MAXIMUM PARETO SET SIZE
+-# =========================================================
+-
+-max_pareto = int(
+-    od_df[
+-        "pareto_route_count"
+-    ].max()
+-)
+-
+-
+-max_od_df = (
+-    od_df[
+-        od_df[
+-            "pareto_route_count"
+-        ] == max_pareto
+-    ]
+-    .copy()
+-    .sort_values(
++    ):
++
++        group = group.copy()
++
++        # -----------------------------------------------------
++        # Number of unique representations
++        # -----------------------------------------------------
++
++        unique_exact_paths = (
++            group[
++                "path"
++            ].nunique()
++        )
++
++        unique_physical_paths = (
++            group[
++                "physical_path"
++            ].nunique()
++        )
++
++        unique_cost_vectors = (
++            group[
++                [
++                    "travel_time_seconds",
++                    "transfers",
++                    "walking_seconds"
++                ]
++            ]
++            .drop_duplicates()
++            .shape[0]
++        )
++
++        # -----------------------------------------------------
++        # Same exact path
++        # -----------------------------------------------------
++
++        exact_duplicate_groups = (
++            group.groupby(
++                "path"
++            )
++            .filter(
++                lambda x:
++                    len(x) > 1
++            )
++        )
++
++        if not exact_duplicate_groups.empty:
++
++            for _, row in (
++                exact_duplicate_groups.iterrows()
++            ):
++
++                duplicate_rows.append(
++                    {
++                        "origin":
++                            origin,
++
++                        "destination":
++                            destination,
++
++                        "duplicate_type":
++                            "exact_same_path",
++
++                        "route_id":
++                            row["route_id"],
++
++                        "travel_time_seconds":
++                            row[
++                                "travel_time_seconds"
++                            ],
++
++                        "transfers":
++                            row["transfers"],
++
++                        "walking_seconds":
++                            row[
++                                "walking_seconds"
++                            ],
++
++                        "path":
++                            row["path"],
++
++                        "physical_path":
++                            row[
++                                "physical_path"
++                            ],
++                    }
++                )
++
++        # -----------------------------------------------------
++        # Same physical station sequence
++        # but possibly different service-state labels
++        # -----------------------------------------------------
++
++        physical_counts = (
++            group[
++                "physical_path"
++            ]
++            .value_counts()
++        )
++
++        duplicate_physical_paths = (
++            physical_counts[
++                physical_counts > 1
++            ]
++            .index
++            .tolist()
++        )
++
++        for duplicate_path in (
++            duplicate_physical_paths
++        ):
++
++            subset = group[
++                group[
++                    "physical_path"
++                ] == duplicate_path
++            ]
++
++            for _, row in (
++                subset.iterrows()
++            ):
++
++                duplicate_rows.append(
++                    {
++                        "origin":
++                            origin,
++
++                        "destination":
++                            destination,
++
++                        "duplicate_type":
++                            "same_physical_station_sequence",
++
++                        "route_id":
++                            row["route_id"],
++
++                        "travel_time_seconds":
++                            row[
++                                "travel_time_seconds"
++                            ],
++
++                        "transfers":
++                            row["transfers"],
++
++                        "walking_seconds":
++                            row[
++                                "walking_seconds"
++                            ],
++
++                        "path":
++                            row["path"],
++
++                        "physical_path":
++                            row[
++                                "physical_path"
++                            ],
++                    }
++                )
++
++        # -----------------------------------------------------
++        # Same objective cost vector
++        # -----------------------------------------------------
++
++        cost_count = (
++            group.groupby(
++                [
++                    "travel_time_seconds",
++                    "transfers",
++                    "walking_seconds"
++                ]
++            )
++            .size()
++        )
++
++        duplicated_costs = (
++            cost_count[
++                cost_count > 1
++            ]
++        )
++
++        for cost, count in (
++            duplicated_costs.items()
++        ):
++
++            subset = group[
++                (
++                    group[
++                        "travel_time_seconds"
++                    ] == cost[0]
++                )
++                &
++                (
++                    group[
++                        "transfers"
++                    ] == cost[1]
++                )
++                &
++                (
++                    group[
++                        "walking_seconds"
++                    ] == cost[2]
++                )
++            ]
++
++            for _, row in (
++                subset.iterrows()
++            ):
++
++                duplicate_rows.append(
++                    {
++                        "origin":
++                            origin,
++
++                        "destination":
++                            destination,
++
++                        "duplicate_type":
++                            "same_cost_vector",
++
++                        "route_id":
++                            row["route_id"],
++
++                        "travel_time_seconds":
++                            row[
++                                "travel_time_seconds"
++                            ],
++
++                        "transfers":
++                            row["transfers"],
++
++                        "walking_seconds":
++                            row[
++                                "walking_seconds"
++                            ],
++
++                        "path":
++                            row["path"],
++
++                        "physical_path":
++                            row[
++                                "physical_path"
++                            ],
++                    }
++                )
++
++        # -----------------------------------------------------
++        # Suspicion flag
++        # -----------------------------------------------------
++
++        suspicious = (
++            unique_physical_paths
++            <
++            len(group)
++            or
++            unique_cost_vectors
++            <
++            len(group)
++        )
++
++        od_diagnostic_rows.append(
++            {
++                "origin":
++                    origin,
++
++                "destination":
++                    destination,
++
++                "pareto_route_count":
++                    len(group),
++
++                "unique_exact_paths":
++                    unique_exact_paths,
++
++                "unique_physical_paths":
++                    unique_physical_paths,
++
++                "unique_cost_vectors":
++                    unique_cost_vectors,
++
++                "suspected_duplicate":
++                    suspicious,
++            }
++        )
++
++
++    duplicate_df = pd.DataFrame(
++        duplicate_rows
++    )
++
++    diagnostic_df = pd.DataFrame(
++        od_diagnostic_rows
++    )
++
++
++    print()
++    print("=" * 100)
++    print("DUPLICATE / SERVICE-STATE CHECK")
++    print("=" * 100)
++
++
++    if duplicate_df.empty:
++
++        print(
++            "No suspected duplicate routes "
++            "among maximum-Pareto OD pairs."
++        )
++
++    else:
++
++        suspicious_od_count = (
++            diagnostic_df[
++                "suspected_duplicate"
++            ].sum()
++        )
++
++        print(
++            f"OD pairs with suspected duplicates: "
++            f"{suspicious_od_count}"
++        )
++
++        print()
++
++        print(
++            diagnostic_df[
++                diagnostic_df[
++                    "suspected_duplicate"
++                ]
++            ].to_string(
++                index=False
++            )
++        )
++
++
++    # =========================================================
++    # PARETO VALIDATION
++    # =========================================================
++
++    validation_rows = []
++
++
++    for (
++        origin,
++        destination
++    ), group in routes_df.groupby(
+         [
+             "origin",
+             "destination"
+         ]
+-    )
+-    .reset_index(
+-        drop=True
+-    )
+-)
+-
+-
+-print()
+-print("=" * 100)
+-print("MAXIMUM PARETO SET")
+-print("=" * 100)
+-
+-print(
+-    f"Maximum Pareto-set size: "
+-    f"{max_pareto}"
+-)
+-
+-print(
+-    f"Number of OD pairs     : "
+-    f"{len(max_od_df)}"
+-)
+-
+-
+-print()
+-print(
+-    max_od_df[
++    ):
++
++        records = (
++            group.to_dict(
++                orient="records"
++            )
++        )
++
++        dominated_pairs = []
++
++        for i in range(
++            len(records)
++        ):
++
++            cost_i = (
++                records[i][
++                    "travel_time_seconds"
++                ],
++                records[i][
++                    "transfers"
++                ],
++                records[i][
++                    "walking_seconds"
++                ],
++            )
++
++            for j in range(
++                len(records)
++            ):
++
++                if i == j:
++                    continue
++
++                cost_j = (
++                    records[j][
++                        "travel_time_seconds"
++                    ],
++                    records[j][
++                        "transfers"
++                    ],
++                    records[j][
++                        "walking_seconds"
++                    ],
++                )
++
++                if dominates(
++                    cost_j,
++                    cost_i
++                ):
++
++                    dominated_pairs.append(
++                        (
++                            records[j][
++                                "route_id"
++                            ],
++                            records[i][
++                                "route_id"
++                            ],
++                        )
++                    )
++
++        validation_rows.append(
++            {
++                "origin":
++                    origin,
++
++                "destination":
++                    destination,
++
++                "route_count":
++                    len(group),
++
++                "pareto_valid":
++                    len(
++                        dominated_pairs
++                    ) == 0,
++
++                "dominated_pair_count":
++                    len(
++                        dominated_pairs
++                    ),
++
++                "dominated_pairs":
++                    str(
++                        dominated_pairs
++                    ),
++            }
++        )
++
++
++    validation_df = pd.DataFrame(
++        validation_rows
++    )
++
++
++    invalid_df = (
++        validation_df[
++            validation_df[
++                "pareto_valid"
++            ] == False
++        ]
++    )
++
++
++    print()
++    print("=" * 100)
++    print("PARETO VALIDATION")
++    print("=" * 100)
++
++    print(
++        f"Invalid OD Pareto sets: "
++        f"{len(invalid_df)}"
++    )
++
++
++    if len(invalid_df) == 0:
++
++        print(
++            "PASS: no reported Pareto route "
++            "is dominated by another reported route."
++        )
++
++    else:
++
++        print(
++            invalid_df.to_string(
++                index=False
++            )
++        )
++
++
++    # =========================================================
++    # REPRESENTATIVE CASE SCORING
++    # =========================================================
++    #
++    # Purpose:
++    #
++    # We do NOT claim this is a scientific metric.
++    #
++    # It is only used to help choose illustrative
++    # case studies for Chapter 5.
++    #
++    # Preference:
++    #   1. larger Pareto set
++    #   2. more distinct physical routes
++    #   3. larger time trade-off
++    #   4. larger transfer trade-off
++    #   5. larger walking trade-off
++    #   6. no suspected duplicate
++    # =========================================================
++
++    candidate_df = (
++        od_df.copy()
++    )
++
++
++    # ---------------------------------------------------------
++    # Calculate number of unique physical paths / costs
++    # for every OD, not only max=5 ODs
++    # ---------------------------------------------------------
++
++    route_quality_rows = []
++
++
++    for (
++        origin,
++        destination
++    ), group in routes_df.groupby(
+         [
+             "origin",
+-            "destination",
+-            "pareto_route_count",
+-            "pareto_time_range_minutes",
+-            "pareto_transfer_range",
+-            "pareto_walking_range_minutes",
++            "destination"
+         ]
+-    ].to_string(
+-        index=False
+-    )
+-)
+-
+-
+-# =========================================================
+-# GET ROUTES FOR MAX-PARETO ODs
+-# =========================================================
+-
+-max_route_df = (
+-    routes_df.merge(
+-        max_od_df[
+-            [
++    ):
++
++        unique_physical = (
++            group[
++                "physical_path"
++            ].nunique()
++        )
++
++        unique_costs = (
++            group[
++                [
++                    "travel_time_seconds",
++                    "transfers",
++                    "walking_seconds"
++                ]
++            ]
++            .drop_duplicates()
++            .shape[0]
++        )
++
++        route_quality_rows.append(
++            {
++                "origin":
++                    origin,
++
++                "destination":
++                    destination,
++
++                "unique_physical_paths":
++                    unique_physical,
++
++                "unique_cost_vectors":
++                    unique_costs,
++
++                "suspected_duplicate":
++                    (
++                        unique_physical
++                        < len(group)
++                        or
++                        unique_costs
++                        < len(group)
++                    ),
++            }
++        )
++
++
++    quality_df = pd.DataFrame(
++        route_quality_rows
++    )
++
++
++    candidate_df = (
++        candidate_df.merge(
++            quality_df,
++            on=[
+                 "origin",
+                 "destination"
+-            ]
+-        ],
+-        on=[
++            ],
++            how="left"
++        )
++    )
++
++
++    # ---------------------------------------------------------
++    # Fill NA
++    # ---------------------------------------------------------
++
++    numeric_columns = [
++        "pareto_time_range_minutes",
++        "pareto_transfer_range",
++        "pareto_walking_range_minutes",
++        "unique_physical_paths",
++        "unique_cost_vectors",
++    ]
++
++
++    for column in numeric_columns:
++
++        candidate_df[column] = (
++            candidate_df[column]
++            .fillna(0)
++        )
++
++
++    candidate_df[
++        "suspected_duplicate"
++    ] = (
++        candidate_df[
++            "suspected_duplicate"
++        ]
++        .fillna(False)
++    )
++
++
++    # ---------------------------------------------------------
++    # Simple case-study score
++    #
++    # This is only a selection aid.
++    # Not used as an empirical research result.
++    # ---------------------------------------------------------
++
++    candidate_df[
++        "case_score"
++    ] = (
++        candidate_df[
++            "pareto_route_count"
++        ] * 10
++
++        +
++
++        candidate_df[
++            "unique_physical_paths"
++        ] * 5
++
++        +
++
++        candidate_df[
++            "pareto_time_range_minutes"
++        ]
++
++        +
++
++        candidate_df[
++            "pareto_transfer_range"
++        ] * 5
++
++        +
++
++        candidate_df[
++            "pareto_walking_range_minutes"
++        ]
++
++        -
++
++        candidate_df[
++            "suspected_duplicate"
++        ].astype(int) * 30
++    )
++
++
++    candidate_df = (
++        candidate_df
++        .sort_values(
++            [
++                "case_score",
++                "pareto_route_count",
++                "unique_physical_paths",
++                "pareto_time_range_minutes",
++            ],
++            ascending=[
++                False,
++                False,
++                False,
++                False,
++            ]
++        )
++        .reset_index(
++            drop=True
++        )
++    )
++
++
++    # =========================================================
++    # PRINT TOP REPRESENTATIVE CASES
++    # =========================================================
++
++    print()
++    print("=" * 100)
++    print("TOP REPRESENTATIVE CASE CANDIDATES")
++    print("=" * 100)
++
++
++    display_columns = [
++        "origin",
++        "destination",
++        "pareto_route_count",
++        "unique_physical_paths",
++        "unique_cost_vectors",
++        "pareto_time_range_minutes",
++        "pareto_transfer_range",
++        "pareto_walking_range_minutes",
++        "suspected_duplicate",
++        "case_score",
++    ]
++
++
++    print(
++        candidate_df[
++            display_columns
++        ]
++        .head(20)
++        .to_string(
++            index=False
++        )
++    )
++
++
++    # =========================================================
++    # PRINT FULL DETAILS FOR MAX-PARETO ODs
++    # =========================================================
++
++    print()
++    print("=" * 100)
++    print("FULL ROUTES FOR MAXIMUM-PARETO ODs")
++    print("=" * 100)
++
++
++    for (
++        origin,
++        destination
++    ), group in max_route_df.groupby(
++        [
+             "origin",
+             "destination"
+         ],
+-        how="inner"
+-    )
+-    .sort_values(
+-        [
+-            "origin",
+-            "destination",
+-            "travel_time_seconds",
+-            "transfers",
+-            "walking_seconds",
+-        ]
+-    )
+-    .reset_index(
+-        drop=True
+-    )
+-)
+-
+-
+-# =========================================================
+-# DUPLICATE ANALYSIS
+-# =========================================================
+-
+-duplicate_rows = []
+-
+-od_diagnostic_rows = []
+-
+-
+-for (
+-    origin,
+-    destination
+-), group in max_route_df.groupby(
+-    [
+-        "origin",
+-        "destination"
+-    ]
+-):
+-
+-    group = group.copy()
+-
+-    # -----------------------------------------------------
+-    # Number of unique representations
+-    # -----------------------------------------------------
+-
+-    unique_exact_paths = (
+-        group[
+-            "path"
+-        ].nunique()
+-    )
+-
+-    unique_physical_paths = (
+-        group[
+-            "physical_path"
+-        ].nunique()
+-    )
+-
+-    unique_cost_vectors = (
+-        group[
+-            [
+-                "travel_time_seconds",
+-                "transfers",
+-                "walking_seconds"
+-            ]
+-        ]
+-        .drop_duplicates()
+-        .shape[0]
+-    )
+-
+-    # -----------------------------------------------------
+-    # Same exact path
+-    # -----------------------------------------------------
+-
+-    exact_duplicate_groups = (
+-        group.groupby(
+-            "path"
+-        )
+-        .filter(
+-            lambda x:
+-                len(x) > 1
+-        )
+-    )
+-
+-    if not exact_duplicate_groups.empty:
++        sort=True
++    ):
++
++        print()
++        print("-" * 100)
++
++        print(
++            f"{origin} -> {destination}"
++        )
++
++        print("-" * 100)
++
++        group = (
++            group
++            .sort_values(
++                [
++                    "travel_time_seconds",
++                    "transfers",
++                    "walking_seconds",
++                ]
++            )
++        )
+ 
+         for _, row in (
+-            exact_duplicate_groups.iterrows()
++            group.iterrows()
+         ):
+ 
+-            duplicate_rows.append(
+-                {
+-                    "origin":
+-                        origin,
+-
+-                    "destination":
+-                        destination,
+-
+-                    "duplicate_type":
+-                        "exact_same_path",
+-
+-                    "route_id":
+-                        row["route_id"],
+-
+-                    "travel_time_seconds":
+-                        row[
+-                            "travel_time_seconds"
+-                        ],
+-
+-                    "transfers":
+-                        row["transfers"],
+-
+-                    "walking_seconds":
+-                        row[
+-                            "walking_seconds"
+-                        ],
+-
+-                    "path":
+-                        row["path"],
+-
+-                    "physical_path":
+-                        row[
+-                            "physical_path"
+-                        ],
+-                }
+-            )
+-
+-    # -----------------------------------------------------
+-    # Same physical station sequence
+-    # but possibly different service-state labels
+-    # -----------------------------------------------------
+-
+-    physical_counts = (
+-        group[
+-            "physical_path"
+-        ]
+-        .value_counts()
+-    )
+-
+-    duplicate_physical_paths = (
+-        physical_counts[
+-            physical_counts > 1
+-        ]
+-        .index
+-        .tolist()
+-    )
+-
+-    for duplicate_path in (
+-        duplicate_physical_paths
+-    ):
+-
+-        subset = group[
+-            group[
+-                "physical_path"
+-            ] == duplicate_path
+-        ]
+-
+-        for _, row in (
+-            subset.iterrows()
+-        ):
+-
+-            duplicate_rows.append(
+-                {
+-                    "origin":
+-                        origin,
+-
+-                    "destination":
+-                        destination,
+-
+-                    "duplicate_type":
+-                        "same_physical_station_sequence",
+-
+-                    "route_id":
+-                        row["route_id"],
+-
+-                    "travel_time_seconds":
+-                        row[
+-                            "travel_time_seconds"
+-                        ],
+-
+-                    "transfers":
+-                        row["transfers"],
+-
+-                    "walking_seconds":
+-                        row[
+-                            "walking_seconds"
+-                        ],
+-
+-                    "path":
+-                        row["path"],
+-
+-                    "physical_path":
+-                        row[
+-                            "physical_path"
+-                        ],
+-                }
+-            )
+-
+-    # -----------------------------------------------------
+-    # Same objective cost vector
+-    # -----------------------------------------------------
+-
+-    cost_count = (
+-        group.groupby(
+-            [
+-                "travel_time_seconds",
+-                "transfers",
+-                "walking_seconds"
+-            ]
+-        )
+-        .size()
+-    )
+-
+-    duplicated_costs = (
+-        cost_count[
+-            cost_count > 1
+-        ]
+-    )
+-
+-    for cost, count in (
+-        duplicated_costs.items()
+-    ):
+-
+-        subset = group[
+-            (
+-                group[
+-                    "travel_time_seconds"
+-                ] == cost[0]
+-            )
+-            &
+-            (
+-                group[
+-                    "transfers"
+-                ] == cost[1]
+-            )
+-            &
+-            (
+-                group[
+-                    "walking_seconds"
+-                ] == cost[2]
+-            )
+-        ]
+-
+-        for _, row in (
+-            subset.iterrows()
+-        ):
+-
+-            duplicate_rows.append(
+-                {
+-                    "origin":
+-                        origin,
+-
+-                    "destination":
+-                        destination,
+-
+-                    "duplicate_type":
+-                        "same_cost_vector",
+-
+-                    "route_id":
+-                        row["route_id"],
+-
+-                    "travel_time_seconds":
+-                        row[
+-                            "travel_time_seconds"
+-                        ],
+-
+-                    "transfers":
+-                        row["transfers"],
+-
+-                    "walking_seconds":
+-                        row[
+-                            "walking_seconds"
+-                        ],
+-
+-                    "path":
+-                        row["path"],
+-
+-                    "physical_path":
+-                        row[
+-                            "physical_path"
+-                        ],
+-                }
+-            )
+-
+-    # -----------------------------------------------------
+-    # Suspicion flag
+-    # -----------------------------------------------------
+-
+-    suspicious = (
+-        unique_physical_paths
+-        <
+-        len(group)
+-        or
+-        unique_cost_vectors
+-        <
+-        len(group)
+-    )
+-
+-    od_diagnostic_rows.append(
+-        {
+-            "origin":
+-                origin,
+-
+-            "destination":
+-                destination,
+-
+-            "pareto_route_count":
+-                len(group),
+-
+-            "unique_exact_paths":
+-                unique_exact_paths,
+-
+-            "unique_physical_paths":
+-                unique_physical_paths,
+-
+-            "unique_cost_vectors":
+-                unique_cost_vectors,
+-
+-            "suspected_duplicate":
+-                suspicious,
+-        }
+-    )
+-
+-
+-duplicate_df = pd.DataFrame(
+-    duplicate_rows
+-)
+-
+-diagnostic_df = pd.DataFrame(
+-    od_diagnostic_rows
+-)
+-
+-
+-print()
+-print("=" * 100)
+-print("DUPLICATE / SERVICE-STATE CHECK")
+-print("=" * 100)
+-
+-
+-if duplicate_df.empty:
+-
+-    print(
+-        "No suspected duplicate routes "
+-        "among maximum-Pareto OD pairs."
+-    )
+-
+-else:
+-
+-    suspicious_od_count = (
+-        diagnostic_df[
+-            "suspected_duplicate"
+-        ].sum()
+-    )
+-
+-    print(
+-        f"OD pairs with suspected duplicates: "
+-        f"{suspicious_od_count}"
+-    )
+-
+-    print()
+-
+-    print(
+-        diagnostic_df[
+-            diagnostic_df[
+-                "suspected_duplicate"
+-            ]
+-        ].to_string(
+-            index=False
+-        )
+-    )
+-
+-
+-# =========================================================
+-# PARETO VALIDATION
+-# =========================================================
+-
+-validation_rows = []
+-
+-
+-for (
+-    origin,
+-    destination
+-), group in routes_df.groupby(
+-    [
+-        "origin",
+-        "destination"
+-    ]
+-):
+-
+-    records = (
+-        group.to_dict(
+-            orient="records"
+-        )
+-    )
+-
+-    dominated_pairs = []
+-
+-    for i in range(
+-        len(records)
+-    ):
+-
+-        cost_i = (
+-            records[i][
+-                "travel_time_seconds"
+-            ],
+-            records[i][
+-                "transfers"
+-            ],
+-            records[i][
+-                "walking_seconds"
+-            ],
+-        )
+-
+-        for j in range(
+-            len(records)
+-        ):
+-
+-            if i == j:
+-                continue
+-
+-            cost_j = (
+-                records[j][
+-                    "travel_time_seconds"
+-                ],
+-                records[j][
+-                    "transfers"
+-                ],
+-                records[j][
+-                    "walking_seconds"
+-                ],
+-            )
+-
+-            if dominates(
+-                cost_j,
+-                cost_i
+-            ):
+-
+-                dominated_pairs.append(
+-                    (
+-                        records[j][
+-                            "route_id"
+-                        ],
+-                        records[i][
+-                            "route_id"
+-                        ],
+-                    )
+-                )
+-
+-    validation_rows.append(
+-        {
+-            "origin":
+-                origin,
+-
+-            "destination":
+-                destination,
+-
+-            "route_count":
+-                len(group),
+-
+-            "pareto_valid":
+-                len(
+-                    dominated_pairs
+-                ) == 0,
+-
+-            "dominated_pair_count":
+-                len(
+-                    dominated_pairs
+-                ),
+-
+-            "dominated_pairs":
+-                str(
+-                    dominated_pairs
+-                ),
+-        }
+-    )
+-
+-
+-validation_df = pd.DataFrame(
+-    validation_rows
+-)
+-
+-
+-invalid_df = (
+-    validation_df[
+-        validation_df[
+-            "pareto_valid"
+-        ] == False
+-    ]
+-)
+-
+-
+-print()
+-print("=" * 100)
+-print("PARETO VALIDATION")
+-print("=" * 100)
+-
+-print(
+-    f"Invalid OD Pareto sets: "
+-    f"{len(invalid_df)}"
+-)
+-
+-
+-if len(invalid_df) == 0:
+-
+-    print(
+-        "PASS: no reported Pareto route "
+-        "is dominated by another reported route."
+-    )
+-
+-else:
+-
+-    print(
+-        invalid_df.to_string(
+-            index=False
+-        )
+-    )
+-
+-
+-# =========================================================
+-# REPRESENTATIVE CASE SCORING
+-# =========================================================
+-#
+-# Purpose:
+-#
+-# We do NOT claim this is a scientific metric.
+-#
+-# It is only used to help choose illustrative
+-# case studies for Chapter 5.
+-#
+-# Preference:
+-#   1. larger Pareto set
+-#   2. more distinct physical routes
+-#   3. larger time trade-off
+-#   4. larger transfer trade-off
+-#   5. larger walking trade-off
+-#   6. no suspected duplicate
+-# =========================================================
+-
+-candidate_df = (
+-    od_df.copy()
+-)
+-
+-
+-# ---------------------------------------------------------
+-# Calculate number of unique physical paths / costs
+-# for every OD, not only max=5 ODs
+-# ---------------------------------------------------------
+-
+-route_quality_rows = []
+-
+-
+-for (
+-    origin,
+-    destination
+-), group in routes_df.groupby(
+-    [
+-        "origin",
+-        "destination"
+-    ]
+-):
+-
+-    unique_physical = (
+-        group[
+-            "physical_path"
+-        ].nunique()
+-    )
+-
+-    unique_costs = (
+-        group[
+-            [
+-                "travel_time_seconds",
+-                "transfers",
+-                "walking_seconds"
+-            ]
+-        ]
+-        .drop_duplicates()
+-        .shape[0]
+-    )
+-
+-    route_quality_rows.append(
+-        {
+-            "origin":
+-                origin,
+-
+-            "destination":
+-                destination,
+-
+-            "unique_physical_paths":
+-                unique_physical,
+-
+-            "unique_cost_vectors":
+-                unique_costs,
+-
+-            "suspected_duplicate":
+-                (
+-                    unique_physical
+-                    < len(group)
+-                    or
+-                    unique_costs
+-                    < len(group)
+-                ),
+-        }
+-    )
+-
+-
+-quality_df = pd.DataFrame(
+-    route_quality_rows
+-)
+-
+-
+-candidate_df = (
+-    candidate_df.merge(
+-        quality_df,
+-        on=[
+-            "origin",
+-            "destination"
+-        ],
+-        how="left"
+-    )
+-)
+-
+-
+-# ---------------------------------------------------------
+-# Fill NA
+-# ---------------------------------------------------------
+-
+-numeric_columns = [
+-    "pareto_time_range_minutes",
+-    "pareto_transfer_range",
+-    "pareto_walking_range_minutes",
+-    "unique_physical_paths",
+-    "unique_cost_vectors",
+-]
+-
+-
+-for column in numeric_columns:
+-
+-    candidate_df[column] = (
+-        candidate_df[column]
+-        .fillna(0)
+-    )
+-
+-
+-candidate_df[
+-    "suspected_duplicate"
+-] = (
+-    candidate_df[
+-        "suspected_duplicate"
+-    ]
+-    .fillna(False)
+-)
+-
+-
+-# ---------------------------------------------------------
+-# Simple case-study score
+-#
+-# This is only a selection aid.
+-# Not used as an empirical research result.
+-# ---------------------------------------------------------
+-
+-candidate_df[
+-    "case_score"
+-] = (
+-    candidate_df[
+-        "pareto_route_count"
+-    ] * 10
+-
+-    +
+-
+-    candidate_df[
+-        "unique_physical_paths"
+-    ] * 5
+-
+-    +
+-
+-    candidate_df[
+-        "pareto_time_range_minutes"
+-    ]
+-
+-    +
+-
+-    candidate_df[
+-        "pareto_transfer_range"
+-    ] * 5
+-
+-    +
+-
+-    candidate_df[
+-        "pareto_walking_range_minutes"
+-    ]
+-
+-    -
+-
+-    candidate_df[
+-        "suspected_duplicate"
+-    ].astype(int) * 30
+-)
+-
+-
+-candidate_df = (
+-    candidate_df
+-    .sort_values(
+-        [
+-            "case_score",
+-            "pareto_route_count",
+-            "unique_physical_paths",
+-            "pareto_time_range_minutes",
+-        ],
+-        ascending=[
+-            False,
+-            False,
+-            False,
+-            False,
+-        ]
+-    )
+-    .reset_index(
+-        drop=True
+-    )
+-)
+-
+-
+-# =========================================================
+-# PRINT TOP REPRESENTATIVE CASES
+-# =========================================================
+-
+-print()
+-print("=" * 100)
+-print("TOP REPRESENTATIVE CASE CANDIDATES")
+-print("=" * 100)
+-
+-
+-display_columns = [
+-    "origin",
+-    "destination",
+-    "pareto_route_count",
+-    "unique_physical_paths",
+-    "unique_cost_vectors",
+-    "pareto_time_range_minutes",
+-    "pareto_transfer_range",
+-    "pareto_walking_range_minutes",
+-    "suspected_duplicate",
+-    "case_score",
+-]
+-
+-
+-print(
+-    candidate_df[
+-        display_columns
+-    ]
+-    .head(20)
+-    .to_string(
+-        index=False
+-    )
+-)
+-
+-
+-# =========================================================
+-# PRINT FULL DETAILS FOR MAX-PARETO ODs
+-# =========================================================
+-
+-print()
+-print("=" * 100)
+-print("FULL ROUTES FOR MAXIMUM-PARETO ODs")
+-print("=" * 100)
+-
+-
+-for (
+-    origin,
+-    destination
+-), group in max_route_df.groupby(
+-    [
+-        "origin",
+-        "destination"
+-    ],
+-    sort=True
+-):
+-
+-    print()
+-    print("-" * 100)
+-
+-    print(
+-        f"{origin} -> {destination}"
+-    )
+-
+-    print("-" * 100)
+-
+-    group = (
+-        group
+-        .sort_values(
+-            [
++            print()
++
++            print(
++                f"Route {int(row['route_id'])}"
++            )
++
++            print(
++                f"  Cost = "
++                f"("
++                f"{int(row['travel_time_seconds'])} sec, "
++                f"{int(row['transfers'])} transfers, "
++                f"{int(row['walking_seconds'])} sec walking"
++                f")"
++            )
++
++            print(
++                f"  Time = "
++                f"{row['travel_time_minutes']:.2f} min"
++            )
++
++            print(
++                f"  Walk = "
++                f"{row['walking_minutes']:.2f} min"
++            )
++
++            print(
++                f"  Path = "
++                f"{row['path']}"
++            )
++
++            print(
++                f"  Physical path = "
++                f"{row['physical_path']}"
++            )
++
++
++    # =========================================================
++    # SAVE
++    # =========================================================
++
++    max_od_df.to_csv(
++        MAX_OD_FILE,
++        index=False,
++        encoding="utf-8-sig"
++    )
++
++
++    max_route_df.to_csv(
++        MAX_ROUTE_FILE,
++        index=False,
++        encoding="utf-8-sig"
++    )
++
++
++    if duplicate_df.empty:
++
++        pd.DataFrame(
++            columns=[
++                "origin",
++                "destination",
++                "duplicate_type",
++                "route_id",
+                 "travel_time_seconds",
+                 "transfers",
+                 "walking_seconds",
+-            ]
+-        )
+-    )
+-
+-    for _, row in (
+-        group.iterrows()
+-    ):
+-
+-        print()
+-
+-        print(
+-            f"Route {int(row['route_id'])}"
+-        )
+-
+-        print(
+-            f"  Cost = "
+-            f"("
+-            f"{int(row['travel_time_seconds'])} sec, "
+-            f"{int(row['transfers'])} transfers, "
+-            f"{int(row['walking_seconds'])} sec walking"
+-            f")"
+-        )
+-
+-        print(
+-            f"  Time = "
+-            f"{row['travel_time_minutes']:.2f} min"
+-        )
+-
+-        print(
+-            f"  Walk = "
+-            f"{row['walking_minutes']:.2f} min"
+-        )
+-
+-        print(
+-            f"  Path = "
+-            f"{row['path']}"
+-        )
+-
+-        print(
+-            f"  Physical path = "
+-            f"{row['physical_path']}"
+-        )
+-
+-
+-# =========================================================
+-# SAVE
+-# =========================================================
+-
+-max_od_df.to_csv(
+-    MAX_OD_FILE,
+-    index=False,
+-    encoding="utf-8-sig"
+-)
+-
+-
+-max_route_df.to_csv(
+-    MAX_ROUTE_FILE,
+-    index=False,
+-    encoding="utf-8-sig"
+-)
+-
+-
+-if duplicate_df.empty:
+-
+-    pd.DataFrame(
+-        columns=[
+-            "origin",
+-            "destination",
+-            "duplicate_type",
+-            "route_id",
+-            "travel_time_seconds",
+-            "transfers",
+-            "walking_seconds",
+-            "path",
+-            "physical_path",
+-        ]
+-    ).to_csv(
+-        DUPLICATE_FILE,
++                "path",
++                "physical_path",
++            ]
++        ).to_csv(
++            DUPLICATE_FILE,
++            index=False,
++            encoding="utf-8-sig"
++        )
++
++    else:
++
++        duplicate_df.to_csv(
++            DUPLICATE_FILE,
++            index=False,
++            encoding="utf-8-sig"
++        )
++
++
++    validation_df.to_csv(
++        VALIDATION_FILE,
+         index=False,
+         encoding="utf-8-sig"
+     )
+ 
+-else:
+-
+-    duplicate_df.to_csv(
+-        DUPLICATE_FILE,
++
++    candidate_df.to_csv(
++        CANDIDATE_FILE,
+         index=False,
+         encoding="utf-8-sig"
+     )
+ 
+ 
+-validation_df.to_csv(
+-    VALIDATION_FILE,
+-    index=False,
+-    encoding="utf-8-sig"
+-)
+-
+-
+-candidate_df.to_csv(
+-    CANDIDATE_FILE,
+-    index=False,
+-    encoding="utf-8-sig"
+-)
+-
+-
+-# =========================================================
+-# FINAL SUMMARY
+-# =========================================================
+-
+-print()
+-print("=" * 100)
+-print("ANALYSIS SUMMARY")
+-print("=" * 100)
+-
+-print(
+-    f"Maximum Pareto size : "
+-    f"{max_pareto}"
+-)
+-
+-print(
+-    f"Max-Pareto OD pairs : "
+-    f"{len(max_od_df)}"
+-)
+-
+-print(
+-    f"Invalid Pareto sets  : "
+-    f"{len(invalid_df)}"
+-)
+-
+-print(
+-    f"Suspected duplicate max-Pareto ODs: "
+-    f"{diagnostic_df['suspected_duplicate'].sum()}"
+-)
+-
+-
+-print()
+-print("Output files:")
+-
+-print(
+-    f"  {MAX_OD_FILE}"
+-)
+-
+-print(
+-    f"  {MAX_ROUTE_FILE}"
+-)
+-
+-print(
+-    f"  {DUPLICATE_FILE}"
+-)
+-
+-print(
+-    f"  {VALIDATION_FILE}"
+-)
+-
+-print(
+-    f"  {CANDIDATE_FILE}"
+-)
+-
+-
+-print()
+-print(
+-    "Experiment 5 analysis completed successfully."
+-)+    # =========================================================
++    # FINAL SUMMARY
++    # =========================================================
++
++    print()
++    print("=" * 100)
++    print("ANALYSIS SUMMARY")
++    print("=" * 100)
++
++    print(
++        f"Maximum Pareto size : "
++        f"{max_pareto}"
++    )
++
++    print(
++        f"Max-Pareto OD pairs : "
++        f"{len(max_od_df)}"
++    )
++
++    print(
++        f"Invalid Pareto sets  : "
++        f"{len(invalid_df)}"
++    )
++
++    print(
++        f"Suspected duplicate max-Pareto ODs: "
++        f"{diagnostic_df['suspected_duplicate'].sum()}"
++    )
++
++
++    print()
++    print("Output files:")
++
++    print(
++        f"  {MAX_OD_FILE}"
++    )
++
++    print(
++        f"  {MAX_ROUTE_FILE}"
++    )
++
++    print(
++        f"  {DUPLICATE_FILE}"
++    )
++
++    print(
++        f"  {VALIDATION_FILE}"
++    )
++
++    print(
++        f"  {CANDIDATE_FILE}"
++    )
++
++
++    print()
++    print(
++        "Experiment 5 analysis completed successfully."
++    )

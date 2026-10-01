@@ -1,0 +1,13 @@
+positive     eigenvalues: [0.2 0.2 2.6]
+independent  eigenvalues: [1. 1. 1.]
+tradeoff     eigenvalues: [0.2 1.4 1.4]
+mixed        eigenvalues: [0.3596 0.8178 1.8226]
+{
+  "experiment": "experiment_02b",
+  "smoke_only": true,
+  "cases": 4,
+  "project_root": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+  "output": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\regression\\package_smoke\\experiment_02b\\smoke.csv",
+  "formal_settings_modified": false
+}
+

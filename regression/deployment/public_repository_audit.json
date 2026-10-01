@@ -1,0 +1,594 @@
+{
+  "canonical_root": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+  "branch": "main",
+  "remote": "",
+  "files_selected_for_git": 356,
+  "total_bytes": 43894299,
+  "secret_pattern_matches": [],
+  "credential_or_private_storage_files": [],
+  "large_files_over_50_MiB": [],
+  "required_runtime_files_selected": [
+    "src/paths.py",
+    "src/mosp.py",
+    "pyproject.toml",
+    "results/experiment_05_all_od/all_od_pareto_routes.csv",
+    "data/taipei_metro/taipei_metro_station_positions.csv"
+  ],
+  "active_source_windows_cwd_sys_path_issues": [],
+  "path_search": [
+    {
+      "path": "AUDIT_REPORT.md",
+      "matches": {
+        "windows_user_path": 1,
+        "cwd": 1,
+        "sys_path_hack": 1
+      },
+      "classification": "documentation"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "matches": {
+        "localhost": 3,
+        "loopback": 2,
+        "cwd": 1
+      },
+      "classification": "documentation"
+    },
+    {
+      "path": "MIGRATION_REPORT.md",
+      "matches": {
+        "windows_user_path": 218,
+        "localhost": 2
+      },
+      "classification": "documentation"
+    },
+    {
+      "path": "PACKAGE_IMPORT_REPORT.md",
+      "matches": {
+        "windows_user_path": 6,
+        "sys_path_hack": 1
+      },
+      "classification": "documentation"
+    },
+    {
+      "path": "README.md",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "documentation"
+    },
+    {
+      "path": "RESPONSIVE_REPORT.md",
+      "matches": {
+        "localhost": 1
+      },
+      "classification": "documentation"
+    },
+    {
+      "path": "archive/original_sources/Mosp_vr1.1/experiments/experiment_03b_route_overlap.py",
+      "matches": {
+        "sys_path_hack": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "archive/original_sources/Real_case1/experiments/plot_chapter5.py",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "archive/original_sources/Real_case1/taipei-pareto-explorer/backend/main.py",
+      "matches": {
+        "localhost": 1,
+        "loopback": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/dependencies.json",
+      "matches": {
+        "windows_user_path": 1,
+        "localhost": 1,
+        "loopback": 1,
+        "sys_path_hack": 1,
+        "parent_relative": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/analyze_experiment_04b_route_patterns.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/analyze_experiment_05_all.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/analyze_experiment_05b_objective_correlation.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/check_stop_times.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/diagnose_taipei_route.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/plot_chapter5.py.diff",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/plot_chapter5_figures_7_9.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/plot_chapter5_figures_7_9_final.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/plot_chapter5_thesis.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/plot_chapter5_thesis_final.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/real_case/test_taipei_case.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/analyze_experiment_01.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/analyze_experiment_02a.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/analyze_experiment_02b.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/analyze_experiment_03a.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/analyze_experiment_03b.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/plot_experiment_01.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/plot_experiment_02a.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/plot_experiment_02b.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/analysis/synthetic/plot_experiment_03.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/real_case/experiment_04_taipei_main.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/real_case/experiment_04_taipei_main_all.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/real_case/experiment_05_all_od.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/real_case/experiment_06_bruteforce_simple_paths.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/real_case/experiment_06b_all_od_dfs.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/real_case/experiment_07_origin_level_dfs_vs_mosp.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/synthetic/experiment_01.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/synthetic/experiment_02a.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/synthetic/experiment_02b.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/synthetic/experiment_03a.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/experiments/synthetic/experiment_03b.py.diff",
+      "matches": {
+        "windows_user_path": 1,
+        "sys_path_hack": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_diffs/validation/test_correctness.py.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/migration_manifest.json",
+      "matches": {
+        "windows_user_path": 217
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "audit/path_audit.json",
+      "matches": {
+        "windows_user_path": 1,
+        "sys_path_hack": 1,
+        "parent_relative": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/backend_environment_fix.json",
+      "matches": {
+        "windows_user_path": 4
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/backend_reload_smoke.log",
+      "matches": {
+        "windows_user_path": 1,
+        "loopback": 3
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/checks.json",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/01_import_src.log",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/04_correctness.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/05_experiment_01.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/06_experiment_02a.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/07_experiment_02b.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/08_experiment_03a.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/09_experiment_03b.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/10_all_od_one_origin.log",
+      "matches": {
+        "windows_user_path": 7
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/11_all_od_full.log",
+      "matches": {
+        "windows_user_path": 7
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/12_check_installation_external.log",
+      "matches": {
+        "windows_user_path": 3
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/13_import_src_isolated.log",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/14_direct_correctness.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/15_direct_correctness_external.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/16_direct_experiment_external.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/17_full_regression.log",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/baseline.json",
+      "matches": {
+        "sys_path_hack": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/changes.diff",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/installation.json",
+      "matches": {
+        "windows_user_path": 3
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/python313_environment.json",
+      "matches": {
+        "windows_user_path": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/verification.json",
+      "matches": {
+        "windows_user_path": 38,
+        "sys_path_hack": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_fix/windows_setup.json",
+      "matches": {
+        "windows_user_path": 4
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_smoke/experiment_01/smoke.json",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_smoke/experiment_02a/smoke.json",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_smoke/experiment_02b/smoke.json",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_smoke/experiment_03a/smoke.json",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/package_smoke/experiment_03b/smoke.json",
+      "matches": {
+        "windows_user_path": 2
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "regression/responsive/responsive.diff",
+      "matches": {
+        "localhost": 1,
+        "loopback": 1,
+        "parent_relative": 1
+      },
+      "classification": "historical evidence/archive"
+    },
+    {
+      "path": "web/taipei-pareto-explorer/README.md",
+      "matches": {
+        "localhost": 3,
+        "parent_relative": 2
+      },
+      "classification": "documentation"
+    },
+    {
+      "path": "web/taipei-pareto-explorer/backend/main.py",
+      "matches": {
+        "localhost": 1
+      },
+      "classification": "active source/configuration"
+    },
+    {
+      "path": "web/taipei-pareto-explorer/frontend/.env.example",
+      "matches": {
+        "localhost": 1,
+        "loopback": 1
+      },
+      "classification": "active source/configuration"
+    },
+    {
+      "path": "web/taipei-pareto-explorer/frontend/src/components/MetroMap.jsx",
+      "matches": {
+        "parent_relative": 1
+      },
+      "classification": "active source/configuration"
+    },
+    {
+      "path": "web/taipei-pareto-explorer/frontend/vite.config.js",
+      "matches": {
+        "loopback": 1
+      },
+      "classification": "active source/configuration"
+    }
+  ],
+  "matching_existing_GitHub_repositories": []
+}

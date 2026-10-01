@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mosp-research"
+version = "1.0.0"
+description = "Exact MOSP synthetic experiments and Taipei Metro route-state study"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "scipy", "networkx", "matplotlib", "statsmodels"]
+
+[project.optional-dependencies]
+web = ["fastapi", "uvicorn", "python-dotenv", "requests"]
+test = ["httpx"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+namespaces = false
+include = ["src", "src.*", "experiments", "experiments.*", "validation", "validation.*", "analysis", "analysis.*"]
+exclude = ["archive*", "web*", "audit*", "results*", "data*"]

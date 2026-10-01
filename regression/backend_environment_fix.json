@@ -1,0 +1,23 @@
+{
+  "python": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\web\\taipei-pareto-explorer\\backend\\.venv\\Scripts\\python.exe",
+  "python_version": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "mosp-research": "1.0.0",
+  "uvicorn": "0.34.0",
+  "reload_enabled": true,
+  "external_cwd": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support",
+  "health": {
+    "ok": true,
+    "pareto_csv_found": true,
+    "pareto_csv": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\results\\experiment_05_all_od\\all_od_pareto_routes.csv",
+    "station_coordinate_file": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\data\\taipei_metro\\taipei_metro_station_positions.csv",
+    "coordinate_source_count": 119,
+    "taipei_coordinate_count": 109,
+    "circular_fallback_count": 10,
+    "model_station_count": 119,
+    "matched_station_count": 119,
+    "missing_station_count": 0,
+    "missing_stations": [],
+    "station_error": null
+  },
+  "example_route_count": 5
+}

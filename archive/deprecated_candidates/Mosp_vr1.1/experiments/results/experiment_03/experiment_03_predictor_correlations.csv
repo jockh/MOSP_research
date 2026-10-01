@@ -1,0 +1,4 @@
+,distinct_route_count,mean_pairwise_diversity,shortest_hops
+distinct_route_count,1.0,0.5665325229902102,0.7716330355152882
+mean_pairwise_diversity,0.5665325229902102,1.0,0.28523917107758845
+shortest_hops,0.7716330355152882,0.28523917107758845,1.0

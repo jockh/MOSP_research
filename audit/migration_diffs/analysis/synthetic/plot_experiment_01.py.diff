@@ -1,0 +1,306 @@
+--- C:\Users\xAdmin\MOSP_project\Mosp_vr1.1\experiments\plot_experiment_01.py
++++ analysis/synthetic/plot_experiment_01.py
+@@ -1,165 +1,170 @@
++from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+ import os
+-
+ import pandas as pd
+ import matplotlib.pyplot as plt
+ 
+-
+-# ============================================================
+-# File settings
+-# ============================================================
+-
+-INPUT_FILE = (
+-    "experiments/results/"
+-    "experiment_01_formal_raw.csv"
+-)
+-
+-OUTPUT_DIR = (
+-    "experiments/results/"
+-    "experiment_01_figures"
+-)
+-
+-os.makedirs(
+-    OUTPUT_DIR,
+-    exist_ok=True
+-)
++if __name__ == "__main__":
+ 
+ 
+-# ============================================================
+-# Load data
+-# ============================================================
+-
+-df = pd.read_csv(INPUT_FILE)
+-
+-print("Total observations:", len(df))
+-
+-print(
+-    "Objective settings:",
+-    sorted(df["objectives"].unique())
+-)
+ 
+ 
+-# ============================================================
+-# Calculate mean values
+-# ============================================================
+-
+-metrics = [
+-    "generated_labels",
+-    "dominance_checks",
+-    "runtime_seconds"
+-]
+-
+-summary = (
+-    df.groupby("objectives")[metrics]
+-    .mean()
+-    .sort_index()
+-)
+ 
+ 
+-# ============================================================
+-# Normalize using m = 2 as baseline
+-# ============================================================
+ 
+-baseline = summary.loc[2]
++    # ============================================================
++    # File settings
++    # ============================================================
+ 
+-relative = summary.divide(
+-    baseline,
+-    axis="columns"
+-)
++    INPUT_FILE = (
++        result_path('experiment_01_formal_raw.csv')
++    )
+ 
++    OUTPUT_DIR = (
++        result_path('experiment_01_figures')
++    )
+ 
+-# ============================================================
+-# Print relative growth
+-# ============================================================
+-
+-print()
+-print("===== RELATIVE GROWTH (m = 2 baseline) =====")
+-
+-for m in relative.index:
+-
+-    print(
+-        f"m={m}: "
+-        f"Generated labels = "
+-        f"{relative.loc[m, 'generated_labels']:.2f}x, "
+-        f"Dominance checks = "
+-        f"{relative.loc[m, 'dominance_checks']:.2f}x, "
+-        f"Runtime = "
+-        f"{relative.loc[m, 'runtime_seconds']:.2f}x"
++    os.makedirs(
++        OUTPUT_DIR,
++        exist_ok=True
+     )
+ 
+ 
+-# ============================================================
+-# Plot relative growth
+-# ============================================================
++    # ============================================================
++    # Load data
++    # ============================================================
+ 
+-plt.figure(figsize=(7.2, 4.8))
++    df = pd.read_csv(INPUT_FILE)
+ 
+-plt.plot(
+-    relative.index,
+-    relative["generated_labels"],
+-    marker="o",
+-    linestyle="-",
+-    linewidth=1.8,
+-    markersize=6,
+-    label="Generated labels"
+-)
++    print("Total observations:", len(df))
+ 
+-plt.plot(
+-    relative.index,
+-    relative["dominance_checks"],
+-    marker="s",
+-    linestyle="--",
+-    linewidth=1.8,
+-    markersize=6,
+-    label="Dominance checks"
+-)
++    print(
++        "Objective settings:",
++        sorted(df["objectives"].unique())
++    )
+ 
+-plt.plot(
+-    relative.index,
+-    relative["runtime_seconds"],
+-    marker="^",
+-    linestyle="-.",
+-    linewidth=1.8,
+-    markersize=6,
+-    label="Runtime"
+-)
+ 
+-plt.axhline(
+-    y=1,
+-    linestyle=":",
+-    linewidth=1
+-)
++    # ============================================================
++    # Calculate mean values
++    # ============================================================
+ 
+-plt.xlabel(
+-    "Number of Objectives ($m$)",
+-    fontsize=11
+-)
++    metrics = [
++        "generated_labels",
++        "dominance_checks",
++        "runtime_seconds"
++    ]
+ 
+-plt.ylabel(
+-    "Normalized Value ($m=2$ = 1.0)",
+-    fontsize=11
+-)
++    summary = (
++        df.groupby("objectives")[metrics]
++        .mean()
++        .sort_index()
++    )
+ 
+-plt.xticks([2, 3, 4, 5])
+ 
+-plt.grid(
+-    alpha=0.2
+-)
++    # ============================================================
++    # Normalize using m = 2 as baseline
++    # ============================================================
+ 
+-plt.legend(
+-    frameon=False,
+-    fontsize=10
+-)
++    baseline = summary.loc[2]
+ 
+-plt.tight_layout()
++    relative = summary.divide(
++        baseline,
++        axis="columns"
++    )
+ 
+-output_path = os.path.join(
+-    OUTPUT_DIR,
+-    "objective_growth.pdf"
+-)
+ 
+-plt.savefig(
+-    output_path,
+-    bbox_inches="tight"
+-)
++    # ============================================================
++    # Print relative growth
++    # ============================================================
+ 
+-plt.close()+    print()
++    print("===== RELATIVE GROWTH (m = 2 baseline) =====")
++
++    for m in relative.index:
++
++        print(
++            f"m={m}: "
++            f"Generated labels = "
++            f"{relative.loc[m, 'generated_labels']:.2f}x, "
++            f"Dominance checks = "
++            f"{relative.loc[m, 'dominance_checks']:.2f}x, "
++            f"Runtime = "
++            f"{relative.loc[m, 'runtime_seconds']:.2f}x"
++        )
++
++
++    # ============================================================
++    # Plot relative growth
++    # ============================================================
++
++    plt.figure(figsize=(7.2, 4.8))
++
++    plt.plot(
++        relative.index,
++        relative["generated_labels"],
++        marker="o",
++        linestyle="-",
++        linewidth=1.8,
++        markersize=6,
++        label="Generated labels"
++    )
++
++    plt.plot(
++        relative.index,
++        relative["dominance_checks"],
++        marker="s",
++        linestyle="--",
++        linewidth=1.8,
++        markersize=6,
++        label="Dominance checks"
++    )
++
++    plt.plot(
++        relative.index,
++        relative["runtime_seconds"],
++        marker="^",
++        linestyle="-.",
++        linewidth=1.8,
++        markersize=6,
++        label="Runtime"
++    )
++
++    plt.axhline(
++        y=1,
++        linestyle=":",
++        linewidth=1
++    )
++
++    plt.xlabel(
++        "Number of Objectives ($m$)",
++        fontsize=11
++    )
++
++    plt.ylabel(
++        "Normalized Value ($m=2$ = 1.0)",
++        fontsize=11
++    )
++
++    plt.xticks([2, 3, 4, 5])
++
++    plt.grid(
++        alpha=0.2
++    )
++
++    plt.legend(
++        frameon=False,
++        fontsize=10
++    )
++
++    plt.tight_layout()
++
++    output_path = os.path.join(
++        OUTPUT_DIR,
++        "objective_growth.pdf"
++    )
++
++    plt.savefig(
++        output_path,
++        bbox_inches="tight"
++    )
++
++    plt.close()

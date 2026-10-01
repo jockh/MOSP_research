@@ -1,0 +1,180 @@
+--- 
++++ 
+@@ -14,13 +14,14 @@
+ from dotenv import load_dotenv
+ from fastapi import FastAPI, HTTPException, Query
+ from fastapi.middleware.cors import CORSMiddleware
++from src.paths import PROJECT_ROOT, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, project_path
+ 
+ 
+ # ============================================================
+ # ENVIRONMENT
+ # ============================================================
+ 
+-load_dotenv()
++load_dotenv(Path(__file__).resolve().parent / ".env")
+ 
+ APP_DIR = Path(__file__).resolve().parent
+ 
+@@ -159,36 +160,8 @@
+ # ============================================================
+ 
+ def find_upwards(relative: Path) -> Path | None:
+-    """
+-    Search upward from:
+-    1. backend directory
+-    2. current working directory
+-
+-    Supports current Real_case1 project structure.
+-    """
+-
+-    for seed in [
+-        APP_DIR,
+-        Path.cwd().resolve(),
+-    ]:
+-
+-        for base in [
+-            seed,
+-            *seed.parents,
+-        ]:
+-
+-            candidates = [
+-                base / relative,
+-                base / "Real_case1" / relative,
+-                base / "Mosp_vr1.1" / relative,
+-            ]
+-
+-            for candidate in candidates:
+-
+-                if candidate.exists():
+-                    return candidate.resolve()
+-
+-    return None
++    candidate = PROJECT_ROOT / relative
++    return candidate.resolve() if candidate.is_file() else None
+ 
+ 
+ # ============================================================
+@@ -196,22 +169,9 @@
+ # ============================================================
+ 
+ def locate_pareto_csv() -> Path | None:
+-
+     override = os.getenv("PARETO_CSV")
+-
+-    if override:
+-
+-        path = Path(override).expanduser()
+-
+-        if path.exists():
+-            return path.resolve()
+-
+-    return find_upwards(
+-        Path("experiments")
+-        / "results"
+-        / "experiment_05_all_od"
+-        / "all_od_pareto_routes.csv"
+-    )
++    path = project_path(override) if override else ALL_OD_RESULTS_DIR / "all_od_pareto_routes.csv"
++    return path.resolve() if path.is_file() else None
+ 
+ 
+ # ============================================================
+@@ -226,86 +186,9 @@
+ # ============================================================
+ 
+ def locate_station_csv() -> Path | None:
+-
+     override = os.getenv("STATION_POSITION_CSV")
+-
+-    if override:
+-
+-        path = Path(override).expanduser()
+-
+-        if path.exists():
+-            return path.resolve()
+-
+-    possible_names = [
+-        "臺北捷運車站資料.csv",
+-        "台北捷運車站資料.csv",
+-        "taipei_metro_stations.csv",
+-        "taipei_metro_station_positions.csv",
+-    ]
+-
+-    for seed in [
+-        APP_DIR,
+-        Path.cwd().resolve(),
+-    ]:
+-
+-        for base in [
+-            seed,
+-            *seed.parents,
+-        ]:
+-
+-            folders = [
+-                base / "data" / "taipei_metro",
+-                base / "Real_case1" / "data" / "taipei_metro",
+-                base,
+-            ]
+-
+-            for folder in folders:
+-
+-                if not folder.exists():
+-                    continue
+-
+-                # Exact filenames
+-                for name in possible_names:
+-
+-                    candidate = folder / name
+-
+-                    if candidate.exists():
+-
+-                        try:
+-                            df = read_csv_flexible_path(candidate)
+-
+-                            if (
+-                                "StationName" in df.columns
+-                                and "StationPosition" in df.columns
+-                            ):
+-                                return candidate.resolve()
+-
+-                        except Exception:
+-                            pass
+-
+-                # Flexible filenames
+-                patterns = [
+-                    "*捷運車站資料服務*.csv",
+-                    "*metro*station*.csv",
+-                ]
+-
+-                for pattern in patterns:
+-
+-                    for candidate in sorted(folder.glob(pattern)):
+-
+-                        try:
+-                            df = read_csv_flexible_path(candidate)
+-
+-                            if (
+-                                "StationName" in df.columns
+-                                and "StationPosition" in df.columns
+-                            ):
+-                                return candidate.resolve()
+-
+-                        except Exception:
+-                            continue
+-
+-    return None
++    path = project_path(override) if override else TAIPEI_METRO_DATA_DIR / "taipei_metro_station_positions.csv"
++    return path.resolve() if path.is_file() else None
+ 
+ 
+ PARETO_CSV = locate_pareto_csv()
+@@ -860,7 +743,7 @@
+ 
+         raise FileNotFoundError(
+             "Cannot find all_od_pareto_routes.csv. "
+-            "Put taipei-pareto-explorer inside Real_case1 "
++            "Use the canonical web/taipei-pareto-explorer folder "
+             "or set PARETO_CSV in backend/.env."
+         )
+ 

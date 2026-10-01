@@ -1,0 +1,2190 @@
+--- experiments/experiment_03_redundancy.py
++++ experiments/experiment_03_route_diversity.py
+@@ -2,7 +2,7 @@
+ import os
+ import random
+ import time
+-from collections import defaultdict
++from itertools import combinations
+ 
+ import networkx as nx
+ 
+@@ -11,24 +11,8 @@
+ 
+ 
+ # ============================================================
+-# Experiment 3 — Formal Version
+-# Transit Route Redundancy
+-#
+-# Main idea:
+-#   Keep |V|, |E|, objective dimension, OD pairs, and
+-#   cost-generation mechanism controlled.
+-#
+-#   Change only HOW cross-line links are arranged.
+-#
+-# Conditions:
+-#   low    = concentrated interchange corridors
+-#   medium = spatially distributed adjacent-line connections
+-#   high   = spatially distributed connections across many lines
+-# ============================================================
+-
+-
+-# ============================================================
+-# Global settings
++# Experiment 3
++# OD-Level Route Diversity in Transit-Like Networks
+ # ============================================================
+ 
+ NUM_LINES = 5
+@@ -44,59 +28,46 @@
+ NUM_NETWORKS = 50
+ QUERIES_PER_NETWORK = 10
+ 
++NUM_CROSS_LINKS = 36
++
+ MIN_COST = 1
+ MAX_COST = 100
+ 
+ MASTER_SEED = 42
+ 
+ 
+-# ------------------------------------------------------------
+-# IMPORTANT:
+-#
+-# Each line has 19 undirected adjacent links.
+-#
+-# 5 × 19 = 95 undirected base links
+-# Bidirectional representation:
+-# 95 × 2 = 190 directed edges
+-#
+-# Add exactly 36 undirected cross-links:
+-# 36 × 2 = 72 directed edges
+-#
+-# Total:
+-# 190 + 72 = 262 directed edges
+-# ------------------------------------------------------------
+-
+-NUM_CROSS_LINKS = 36
+-
+-EXPECTED_DIRECTED_EDGES = (
++# ============================================================
++# Route diversity settings
++# ============================================================
++
++PATH_STRETCH = 1.50
++
++MIN_DIVERSITY = 0.40
++
++MAX_CANDIDATES = 200
++
++MAX_ACCEPTED_ROUTES = 20
++
++
++# ============================================================
++# Expected network size
++# ============================================================
++
++BASE_DIRECTED_EDGES = (
+     NUM_LINES
+     * (STATIONS_PER_LINE - 1)
+     * 2
+-    +
++)
++
++CROSS_DIRECTED_EDGES = (
+     NUM_CROSS_LINKS
+     * 2
+ )
+ 
+-
+-REDUNDANCY_LEVELS = [
+-    "low",
+-    "medium",
+-    "high"
+-]
+-
+-
+-# ============================================================
+-# Alternative-route metric settings
+-# ============================================================
+-
+-# Count at most the first K loopless shortest alternatives.
+-MAX_ALTERNATIVE_PATHS = 50
+-
+-# A path is considered a "reasonable alternative" if:
+-#
+-# hops(path) <= shortest_hops * PATH_STRETCH
+-#
+-PATH_STRETCH = 1.50
++EXPECTED_DIRECTED_EDGES = (
++    BASE_DIRECTED_EDGES
++    + CROSS_DIRECTED_EDGES
++)
+ 
+ 
+ # ============================================================
+@@ -104,6 +75,7 @@
+ # ============================================================
+ 
+ def node_id(line, position):
++
+     return (
+         line * STATIONS_PER_LINE
+         + position
+@@ -111,30 +83,17 @@
+ 
+ 
+ def node_line(node):
++
+     return (
+         node // STATIONS_PER_LINE
+     )
+ 
+ 
+-def node_position(node):
+-    return (
+-        node % STATIONS_PER_LINE
+-    )
+-
+-
+ # ============================================================
+ # Base transit lines
+ # ============================================================
+ 
+ def generate_base_edges():
+-    """
+-    Five independent bidirectional transit lines.
+-
+-    Each line:
+-        ●—●—●— ... —●
+-
+-    Returns directed edges.
+-    """
+ 
+     edges = set()
+ 
+@@ -154,416 +113,160 @@
+                 pos + 1
+             )
+ 
+-            edges.add((u, v))
+-            edges.add((v, u))
++            edges.add(
++                (u, v)
++            )
++
++            edges.add(
++                (v, u)
++            )
+ 
+     return edges
+ 
+ 
+ # ============================================================
+-# Utility for adding bidirectional cross-links
+-# ============================================================
+-
+-def add_cross_link(
+-    cross_links,
+-    line_a,
+-    pos_a,
+-    line_b,
+-    pos_b
+-):
++# Random transit cross-links
++# ============================================================
++
++def generate_cross_links(rng):
+     """
+-    Store an undirected cross-link canonically.
+-
+-    The directed version is created later.
++    Generate exactly NUM_CROSS_LINKS undirected
++    cross-line links.
++
++    Important:
++    - only different transit lines may be connected
++    - duplicate cross-links are forbidden
++    - total edge count remains fixed
+     """
+ 
+-    u = node_id(
+-        line_a,
+-        pos_a
+-    )
+-
+-    v = node_id(
+-        line_b,
+-        pos_b
+-    )
+-
+-    if u == v:
+-        return False
+-
+-    edge = tuple(
+-        sorted((u, v))
+-    )
+-
+-    if edge in cross_links:
+-        return False
+-
+-    cross_links.add(edge)
+-
+-    return True
+-
+-
+-# ============================================================
+-# LOW redundancy
+-# ============================================================
+-
+-def generate_low_cross_links(rng):
+-    """
+-    LOW REDUNDANCY
+-
+-    Same number of cross-links as all other conditions,
+-    but links are concentrated around only a few
+-    interchange zones.
+-
+-    Adjacent line pairs:
+-        0-1
+-        1-2
+-        2-3
+-        3-4
+-
+-    Each pair receives 9 links.
+-
+-    Those 9 links form a local 3x3 interchange cluster.
+-    Therefore many links exist, but they are spatially
+-    concentrated and create bottleneck-like structure.
+-    """
+-
+     cross_links = set()
+ 
+-    # Choose a local interchange center away from boundaries.
+-    center = rng.randint(
+-        5,
+-        STATIONS_PER_LINE - 6
+-    )
+-
+-    positions = [
+-        center - 1,
+-        center,
+-        center + 1
+-    ]
+-
+-    adjacent_pairs = [
+-        (0, 1),
+-        (1, 2),
+-        (2, 3),
+-        (3, 4)
+-    ]
+-
+-    for line_a, line_b in adjacent_pairs:
+-
+-        # Complete 3 × 3 local cluster
+-        # = 9 cross-links per line pair
+-        for pos_a in positions:
+-
+-            for pos_b in positions:
+-
+-                add_cross_link(
+-                    cross_links,
+-                    line_a,
+-                    pos_a,
+-                    line_b,
+-                    pos_b
+-                )
+-
+-    assert (
++    attempts = 0
++
++    while (
+         len(cross_links)
+-        == NUM_CROSS_LINKS
+-    )
++        < NUM_CROSS_LINKS
++    ):
++
++        attempts += 1
++
++        if attempts > 100000:
++
++            raise RuntimeError(
++                "Could not generate enough cross-links."
++            )
++
++        line_a, line_b = rng.sample(
++            range(NUM_LINES),
++            2
++        )
++
++        # Canonical line ordering
++        if line_a > line_b:
++
++            line_a, line_b = (
++                line_b,
++                line_a
++            )
++
++        pos_a = rng.randrange(
++            STATIONS_PER_LINE
++        )
++
++        pos_b = rng.randrange(
++            STATIONS_PER_LINE
++        )
++
++        u = node_id(
++            line_a,
++            pos_a
++        )
++
++        v = node_id(
++            line_b,
++            pos_b
++        )
++
++        edge = tuple(
++            sorted(
++                (u, v)
++            )
++        )
++
++        cross_links.add(
++            edge
++        )
+ 
+     return cross_links
+ 
+ 
+ # ============================================================
+-# MEDIUM redundancy
+-# ============================================================
+-
+-def generate_medium_cross_links(rng):
+-    """
+-    MEDIUM REDUNDANCY
+-
+-    Still mainly connects adjacent transit lines,
+-    but interchange locations are spread along the corridor.
+-
+-    Same:
+-        36 undirected cross-links
+-
+-    Unlike LOW:
+-        cross-links are no longer concentrated
+-        at one interchange region.
+-    """
+-
+-    cross_links = set()
+-
+-    adjacent_pairs = [
+-        (0, 1),
+-        (1, 2),
+-        (2, 3),
+-        (3, 4)
+-    ]
+-
+-    # 9 positions spread across the transit line.
+-    base_positions = [
+-        1, 3, 5, 7, 9,
+-        11, 13, 15, 17
+-    ]
+-
+-    # Give each network slight positional variation.
+-    jittered_positions = []
+-
+-    for p in base_positions:
+-
+-        shift = rng.choice(
+-            [-1, 0, 1]
+-        )
+-
+-        new_p = max(
+-            0,
+-            min(
+-                STATIONS_PER_LINE - 1,
+-                p + shift
+-            )
+-        )
+-
+-        jittered_positions.append(
+-            new_p
+-        )
+-
+-    # Resolve duplicate positions if jitter generated any.
+-    # Fall back to original spread positions.
+-    if len(set(jittered_positions)) < 9:
+-        jittered_positions = (
+-            base_positions.copy()
+-        )
+-
+-    for line_a, line_b in adjacent_pairs:
+-
+-        # Shuffle destination matching slightly,
+-        # while keeping links spatially distributed.
+-        destination_positions = (
+-            jittered_positions.copy()
+-        )
+-
+-        rng.shuffle(
+-            destination_positions
+-        )
+-
+-        for pos_a, pos_b in zip(
+-            jittered_positions,
+-            destination_positions
++# Generate one transit-like topology
++# ============================================================
++
++def generate_topology(seed):
++
++    rng = random.Random(
++        seed
++    )
++
++    for attempt in range(1000):
++
++        base_edges = (
++            generate_base_edges()
++        )
++
++        cross_links = (
++            generate_cross_links(
++                rng
++            )
++        )
++
++        edges = set(
++            base_edges
++        )
++
++        for u, v in cross_links:
++
++            edges.add(
++                (u, v)
++            )
++
++            edges.add(
++                (v, u)
++            )
++
++        if (
++            len(edges)
++            != EXPECTED_DIRECTED_EDGES
+         ):
+ 
+-            add_cross_link(
+-                cross_links,
+-                line_a,
+-                pos_a,
+-                line_b,
+-                pos_b
+-            )
+-
+-    assert (
+-        len(cross_links)
+-        == NUM_CROSS_LINKS
+-    )
+-
+-    return cross_links
+-
+-
+-# ============================================================
+-# HIGH redundancy
+-# ============================================================
+-
+-def generate_high_cross_links(rng):
+-    """
+-    HIGH REDUNDANCY
+-
+-    Cross-links are distributed:
+-      - across many line pairs
+-      - across many station positions
+-
+-    This creates:
+-      - more cycles between lines
+-      - more alternative corridors
+-      - fewer single interchange bottlenecks
+-
+-    Still exactly 36 undirected cross-links.
+-    """
+-
+-    cross_links = set()
+-
+-    all_line_pairs = []
+-
+-    for line_a in range(NUM_LINES):
+-
+-        for line_b in range(
+-            line_a + 1,
+-            NUM_LINES
++            continue
++
++        G = nx.DiGraph()
++
++        G.add_nodes_from(
++            range(NUM_NODES)
++        )
++
++        G.add_edges_from(
++            edges
++        )
++
++        if nx.is_strongly_connected(
++            G
+         ):
+ 
+-            all_line_pairs.append(
+-                (line_a, line_b)
+-            )
+-
+-    # 5 lines -> C(5,2) = 10 line pairs.
+-    assert len(all_line_pairs) == 10
+-
+-    # Allocate:
+-    #
+-    # first 6 line pairs -> 4 links
+-    # remaining 4 pairs -> 3 links
+-    #
+-    # 6*4 + 4*3 = 36
+-
+-    rng.shuffle(
+-        all_line_pairs
+-    )
+-
+-    allocations = (
+-        [4] * 6
+-        +
+-        [3] * 4
+-    )
+-
+-    for (
+-        line_a,
+-        line_b
+-    ), count in zip(
+-        all_line_pairs,
+-        allocations
+-    ):
+-
+-        attempts = 0
+-        added = 0
+-
+-        used_positions_a = set()
+-        used_positions_b = set()
+-
+-        while added < count:
+-
+-            attempts += 1
+-
+-            if attempts > 10000:
+-                raise RuntimeError(
+-                    "Could not generate "
+-                    "high-redundancy links."
+-                )
+-
+-            # Spread links throughout the lines.
+-            pos_a = rng.randint(
+-                1,
+-                STATIONS_PER_LINE - 2
+-            )
+-
+-            pos_b = rng.randint(
+-                1,
+-                STATIONS_PER_LINE - 2
+-            )
+-
+-            # Prefer using different station positions
+-            # for each connection of the same line pair.
+-            if (
+-                pos_a in used_positions_a
+-                or pos_b in used_positions_b
+-            ):
+-                continue
+-
+-            success = add_cross_link(
+-                cross_links,
+-                line_a,
+-                pos_a,
+-                line_b,
+-                pos_b
+-            )
+-
+-            if not success:
+-                continue
+-
+-            used_positions_a.add(
+-                pos_a
+-            )
+-
+-            used_positions_b.add(
+-                pos_b
+-            )
+-
+-            added += 1
+-
+-    assert (
+-        len(cross_links)
+-        == NUM_CROSS_LINKS
+-    )
+-
+-    return cross_links
+-
+-
+-# ============================================================
+-# Generate complete topology
+-# ============================================================
+-
+-def generate_topology(
+-    level,
+-    seed
+-):
+-
+-    rng = random.Random(seed)
+-
+-    base_edges = (
+-        generate_base_edges()
+-    )
+-
+-    if level == "low":
+-
+-        cross_links = (
+-            generate_low_cross_links(
+-                rng
+-            )
+-        )
+-
+-    elif level == "medium":
+-
+-        cross_links = (
+-            generate_medium_cross_links(
+-                rng
+-            )
+-        )
+-
+-    elif level == "high":
+-
+-        cross_links = (
+-            generate_high_cross_links(
+-                rng
+-            )
+-        )
+-
+-    else:
+-
+-        raise ValueError(
+-            f"Unknown redundancy level: "
+-            f"{level}"
+-        )
+-
+-    directed_edges = set(
+-        base_edges
+-    )
+-
+-    for u, v in cross_links:
+-
+-        directed_edges.add(
+-            (u, v)
+-        )
+-
+-        directed_edges.add(
+-            (v, u)
+-        )
+-
+-    assert (
+-        len(directed_edges)
+-        == EXPECTED_DIRECTED_EDGES
+-    )
+-
+-    return directed_edges
+-
+-
+-# ============================================================
+-# Controlled edge costs
++            return edges
++
++    raise RuntimeError(
++        "Unable to generate a strongly connected "
++        "transit-like network."
++    )
++
++
++# ============================================================
++# Edge costs
+ # ============================================================
+ 
+ def stable_edge_seed(
+@@ -571,15 +274,6 @@
+     u,
+     v
+ ):
+-    """
+-    Deterministic seed for one directed edge.
+-
+-    If the same directed edge occurs in LOW / MEDIUM / HIGH
+-    for the same network replicate, it receives the same
+-    objective-cost vector.
+-
+-    This reduces unnecessary cost-distribution confounding.
+-    """
+ 
+     return (
+         network_seed
+@@ -597,7 +291,7 @@
+ 
+     for u, v in topology:
+ 
+-        edge_rng = random.Random(
++        rng = random.Random(
+             stable_edge_seed(
+                 network_seed,
+                 u,
+@@ -606,10 +300,12 @@
+         )
+ 
+         costs = tuple(
+-            edge_rng.randint(
++
++            rng.randint(
+                 MIN_COST,
+                 MAX_COST
+             )
++
+             for _ in range(
+                 NUM_OBJECTIVES
+             )
+@@ -676,17 +372,228 @@
+ 
+ 
+ # ============================================================
+-# Matched OD generation
+-# ============================================================
+-
+-def generate_matched_queries(
++# Route diversity helpers
++# ============================================================
++
++def path_edges(path):
++
++    return {
++        (
++            path[i],
++            path[i + 1]
++        )
++
++        for i in range(
++            len(path) - 1
++        )
++    }
++
++
++def path_diversity(
++    path_a,
++    path_b
++):
++    """
++    D(Pi, Pj) =
++        1 -
++        shared_edges /
++        min(|Ei|, |Ej|)
++
++    0 = highly overlapping
++    1 = completely edge-disjoint
++    """
++
++    edges_a = path_edges(
++        path_a
++    )
++
++    edges_b = path_edges(
++        path_b
++    )
++
++    if (
++        not edges_a
++        or not edges_b
++    ):
++
++        return 0.0
++
++    shared = (
++        edges_a
++        &
++        edges_b
++    )
++
++    denominator = min(
++        len(edges_a),
++        len(edges_b)
++    )
++
++    overlap = (
++        len(shared)
++        /
++        denominator
++    )
++
++    return (
++        1.0
++        - overlap
++    )
++
++
++# ============================================================
++# Find distinct reasonable routes
++# ============================================================
++
++def find_distinct_routes(
++    G,
++    source,
++    target
++):
++
++    try:
++
++        shortest_hops = (
++            nx.shortest_path_length(
++                G,
++                source,
++                target
++            )
++        )
++
++    except nx.NetworkXNoPath:
++
++        return [], None, 0
++
++    max_hops = max(
++        shortest_hops,
++        int(
++            shortest_hops
++            * PATH_STRETCH
++        )
++    )
++
++    accepted = []
++
++    candidates_examined = 0
++
++    try:
++
++        generator = (
++            nx.shortest_simple_paths(
++                G,
++                source,
++                target
++            )
++        )
++
++        for path in generator:
++
++            candidates_examined += 1
++
++            if (
++                candidates_examined
++                > MAX_CANDIDATES
++            ):
++
++                break
++
++            hops = (
++                len(path)
++                - 1
++            )
++
++            # shortest_simple_paths is ordered
++            # by path length.
++            if hops > max_hops:
++
++                break
++
++            if not accepted:
++
++                accepted.append(
++                    path
++                )
++
++                continue
++
++            valid = all(
++
++                path_diversity(
++                    path,
++                    existing
++                )
++                >= MIN_DIVERSITY
++
++                for existing in accepted
++            )
++
++            if valid:
++
++                accepted.append(
++                    path
++                )
++
++            if (
++                len(accepted)
++                >= MAX_ACCEPTED_ROUTES
++            ):
++
++                break
++
++    except nx.NetworkXNoPath:
++
++        pass
++
++    return (
++        accepted,
++        shortest_hops,
++        candidates_examined
++    )
++
++
++# ============================================================
++# Mean pairwise diversity
++# ============================================================
++
++def mean_pairwise_diversity(
++    routes
++):
++
++    if len(routes) < 2:
++
++        return 0.0
++
++    values = []
++
++    for route_a, route_b in combinations(
++        routes,
++        2
++    ):
++
++        values.append(
++            path_diversity(
++                route_a,
++                route_b
++            )
++        )
++
++    return (
++        sum(values)
++        /
++        len(values)
++    )
++
++
++# ============================================================
++# Generate OD queries
++# ============================================================
++
++def generate_queries(
+     rng
+ ):
+     """
+-    Same OD pairs are used in LOW / MEDIUM / HIGH.
+-
+-    Prefer different-line trips because these are more
+-    informative for transit interchange / redundancy.
++    Prefer OD pairs on different transit lines.
+     """
+ 
+     queries = set()
+@@ -703,8 +610,7 @@
+         if attempts > 10000:
+ 
+             raise RuntimeError(
+-                "Could not generate "
+-                "matched OD pairs."
++                "Could not generate OD pairs."
+             )
+ 
+         source = rng.randrange(
+@@ -716,173 +622,29 @@
+         )
+ 
+         if source == target:
++
+             continue
+ 
+-        # Transit relevance:
+-        # source and target should be on different lines.
+         if (
+             node_line(source)
+             ==
+             node_line(target)
+         ):
++
+             continue
+ 
+-        pair = (
+-            source,
+-            target
+-        )
+-
+         queries.add(
+-            pair
+-        )
+-
+-    return list(
+-        sorted(queries)
+-    )
+-
+-
+-# ============================================================
+-# Redundancy metric 1:
+-# Edge-disjoint path count
+-# ============================================================
+-
+-def edge_disjoint_path_count(
+-    G,
+-    source,
+-    target
+-):
+-
+-    try:
+-
+-        return nx.edge_connectivity(
+-            G,
+-            source,
+-            target
+-        )
+-
+-    except nx.NetworkXError:
+-
+-        return 0
+-
+-
+-# ============================================================
+-# Redundancy metric 2:
+-# Reasonable alternative routes
+-# ============================================================
+-
+-def count_reasonable_alternative_paths(
+-    G,
+-    source,
+-    target,
+-    max_paths=MAX_ALTERNATIVE_PATHS,
+-    stretch=PATH_STRETCH
+-):
+-    """
+-    Count loopless alternative routes whose hop length
+-    is no more than:
+-
+-        shortest_hops × stretch
+-
+-    Search stops after max_paths qualifying / examined
+-    shortest-simple-path candidates.
+-
+-    This is NOT claimed as the unique definition of
+-    transportation route redundancy.
+-
+-    It is used here as a controlled synthetic proxy.
+-    """
+-
+-    try:
+-
+-        shortest_hops = (
+-            nx.shortest_path_length(
+-                G,
++            (
+                 source,
+                 target
+             )
+         )
+ 
+-    except nx.NetworkXNoPath:
+-
+-        return 0, None
+-
+-    max_hops = max(
+-        shortest_hops,
+-        int(
+-            shortest_hops
+-            * stretch
+-        )
+-    )
+-
+-    count = 0
+-    examined = 0
+-
+-    try:
+-
+-        generator = (
+-            nx.shortest_simple_paths(
+-                G,
+-                source,
+-                target
+-            )
+-        )
+-
+-        for path in generator:
+-
+-            examined += 1
+-
+-            hops = (
+-                len(path) - 1
+-            )
+-
+-            # shortest_simple_paths is ordered
+-            # by path length for unweighted graph.
+-            if hops > max_hops:
+-                break
+-
+-            count += 1
+-
+-            if count >= max_paths:
+-                break
+-
+-    except nx.NetworkXNoPath:
+-
+-        return 0, shortest_hops
+-
+-    return (
+-        count,
+-        shortest_hops
+-    )
+-
+-
+-# ============================================================
+-# Graph structural metrics
+-# ============================================================
+-
+-def calculate_graph_metrics(G):
+-
+-    degrees = [
+-        G.out_degree(node)
+-        for node in G.nodes
+-    ]
+-
+-    avg_out_degree = (
+-        sum(degrees)
+-        /
+-        len(degrees)
+-    )
+-
+-    max_out_degree = max(
+-        degrees
+-    )
+-
+-    return {
+-        "avg_out_degree":
+-            avg_out_degree,
+-
+-        "max_out_degree":
+-            max_out_degree
+-    }
++    return list(
++        sorted(
++            queries
++        )
++    )
+ 
+ 
+ # ============================================================
+@@ -896,27 +658,16 @@
+     )
+ 
+     results = []
+-
+-    # Store manipulation information
+-    # during execution.
+-    redundancy_debug = defaultdict(
+-        list
+-    )
+ 
+     for network_id in range(
+         NUM_NETWORKS
+     ):
+ 
+-        print()
+         print(
+-            f"===== Network "
++            f"Network "
+             f"{network_id + 1}/"
+-            f"{NUM_NETWORKS} ====="
+-        )
+-
+-        # ----------------------------------------------------
+-        # One matched network seed
+-        # ----------------------------------------------------
++            f"{NUM_NETWORKS}"
++        )
+ 
+         network_seed = (
+             master_rng.randint(
+@@ -926,291 +677,275 @@
+         )
+ 
+         # ----------------------------------------------------
+-        # SAME OD pairs for all three conditions
++        # Topology
++        # ----------------------------------------------------
++
++        topology = (
++            generate_topology(
++                network_seed
++            )
++        )
++
++        nx_graph = (
++            build_nx_graph(
++                topology
++            )
++        )
++
++        # ----------------------------------------------------
++        # Costs
++        # ----------------------------------------------------
++
++        edge_costs = (
++            generate_edge_costs(
++                topology,
++                network_seed
++            )
++        )
++
++        mosp_graph = (
++            build_mosp_graph(
++                topology,
++                edge_costs
++            )
++        )
++
++        # ----------------------------------------------------
++        # OD queries
+         # ----------------------------------------------------
+ 
+         query_rng = random.Random(
+             network_seed
+-            + 1234567
++            + 999_983
+         )
+ 
+         queries = (
+-            generate_matched_queries(
++            generate_queries(
+                 query_rng
+             )
+         )
+ 
+         # ----------------------------------------------------
+-        # Generate each topology condition
++        # Run each OD
+         # ----------------------------------------------------
+ 
+-        for level_index, level in enumerate(
+-            REDUNDANCY_LEVELS
++        for query_id, (
++            source,
++            target
++        ) in enumerate(
++            queries
+         ):
+ 
+-            print(
+-                f"  {level}"
+-            )
+-
+-            topology_seed = (
+-                network_seed
+-                + level_index
+-                * 10_000_019
+-            )
+-
+-            topology = (
+-                generate_topology(
+-                    level,
+-                    topology_seed
++            # =================================================
++            # Route-diversity measurements
++            # =================================================
++
++            (
++                routes,
++                shortest_hops,
++                candidates_examined
++            ) = (
++                find_distinct_routes(
++                    nx_graph,
++                    source,
++                    target
+                 )
+             )
+ 
+-            edge_costs = (
+-                generate_edge_costs(
+-                    topology,
+-                    network_seed
++            distinct_route_count = (
++                len(routes)
++            )
++
++            # shortest route itself is included.
++            distinct_alternative_count = max(
++                0,
++                distinct_route_count - 1
++            )
++
++            mean_diversity = (
++                mean_pairwise_diversity(
++                    routes
+                 )
+             )
+ 
+-            mosp_graph = (
+-                build_mosp_graph(
+-                    topology,
+-                    edge_costs
++            route_count_ceiling = int(
++                distinct_route_count
++                >= MAX_ACCEPTED_ROUTES
++            )
++
++            candidate_ceiling = int(
++                candidates_examined
++                >= MAX_CANDIDATES
++            )
++
++            # =================================================
++            # MOSP
++            # =================================================
++
++            start = (
++                time.perf_counter()
++            )
++
++            labels, stats = mosp(
++                mosp_graph,
++                source,
++                NUM_OBJECTIVES,
++                return_stats=True
++            )
++
++            runtime = (
++                time.perf_counter()
++                - start
++            )
++
++            target_pareto_labels = (
++                len(
++                    labels[target]
+                 )
+             )
+ 
+-            nx_graph = (
+-                build_nx_graph(
+-                    topology
++            generated = (
++                stats[
++                    "generated_labels"
++                ]
++            )
++
++            pruned = (
++                stats[
++                    "pruned_labels"
++                ]
++            )
++
++            if generated > 0:
++
++                rejection_rate = (
++                    pruned
++                    /
++                    generated
+                 )
+-            )
+-
+-            # All topologies should be strongly connected.
+-            if not nx.is_strongly_connected(
+-                nx_graph
+-            ):
+-
+-                raise RuntimeError(
+-                    f"{level} topology "
+-                    f"is not strongly connected."
+-                )
+-
+-            graph_metrics = (
+-                calculate_graph_metrics(
+-                    nx_graph
+-                )
+-            )
+-
+-            num_edges = (
+-                nx_graph.number_of_edges()
+-            )
+-
+-            assert (
+-                num_edges
+-                ==
+-                EXPECTED_DIRECTED_EDGES
+-            )
+-
+-            # ------------------------------------------------
+-            # Run matched queries
+-            # ------------------------------------------------
+-
+-            for query_id, (
+-                source,
+-                target
+-            ) in enumerate(
+-                queries
+-            ):
+-
+-                # --------------------------------------------
+-                # Redundancy metrics
+-                # --------------------------------------------
+-
+-                edge_disjoint = (
+-                    edge_disjoint_path_count(
+-                        nx_graph,
+-                        source,
++
++            else:
++
++                rejection_rate = 0.0
++
++            # =================================================
++            # Save
++            # =================================================
++
++            results.append({
++
++                "network_id":
++                    network_id,
++
++                "query_id":
++                    query_id,
++
++                "source":
++                    source,
++
++                "target":
++                    target,
++
++                "source_line":
++                    node_line(
++                        source
++                    ),
++
++                "target_line":
++                    node_line(
+                         target
+-                    )
+-                )
+-
+-                (
+-                    alternative_count,
+-                    shortest_hops
+-                ) = (
+-                    count_reasonable_alternative_paths(
+-                        nx_graph,
+-                        source,
+-                        target
+-                    )
+-                )
+-
+-                # --------------------------------------------
+-                # MOSP
+-                # --------------------------------------------
+-
+-                start_time = (
+-                    time.perf_counter()
+-                )
+-
+-                labels, stats = mosp(
+-                    mosp_graph,
+-                    source,
+-                    NUM_OBJECTIVES,
+-                    return_stats=True
+-                )
+-
+-                runtime = (
+-                    time.perf_counter()
+-                    -
+-                    start_time
+-                )
+-
+-                target_pareto_labels = (
++                    ),
++
++                "num_nodes":
++                    NUM_NODES,
++
++                "num_edges":
+                     len(
+-                        labels[target]
+-                    )
+-                )
+-
+-                generated = (
++                        topology
++                    ),
++
++                "avg_out_degree":
++                    (
++                        len(topology)
++                        / NUM_NODES
++                    ),
++
++                "shortest_hops":
++                    shortest_hops,
++
++                "distinct_route_count":
++                    distinct_route_count,
++
++                "distinct_alternative_count":
++                    distinct_alternative_count,
++
++                "mean_pairwise_diversity":
++                    mean_diversity,
++
++                "route_candidates_examined":
++                    candidates_examined,
++
++                "route_count_ceiling":
++                    route_count_ceiling,
++
++                "candidate_ceiling":
++                    candidate_ceiling,
++
++                "target_pareto_labels":
++                    target_pareto_labels,
++
++                "generated_labels":
++                    generated,
++
++                "kept_labels":
+                     stats[
+-                        "generated_labels"
+-                    ]
+-                )
+-
+-                pruned = (
++                        "kept_labels"
++                    ],
++
++                "pruned_labels":
++                    pruned,
++
++                "immediate_rejection_rate":
++                    rejection_rate,
++
++                "dominance_checks":
+                     stats[
+-                        "pruned_labels"
+-                    ]
+-                )
+-
+-                if generated > 0:
+-
+-                    rejection_rate = (
+-                        pruned
+-                        /
+-                        generated
+-                    )
+-
+-                else:
+-
+-                    rejection_rate = 0.0
+-
+-                # --------------------------------------------
+-                # Save observation
+-                # --------------------------------------------
+-
+-                row = {
+-
+-                    "redundancy_level":
+-                        level,
+-
+-                    "network_id":
+-                        network_id,
+-
+-                    "query_id":
+-                        query_id,
+-
+-                    "source":
+-                        source,
+-
+-                    "target":
+-                        target,
+-
+-                    "source_line":
+-                        node_line(source),
+-
+-                    "target_line":
+-                        node_line(target),
+-
+-                    "num_nodes":
+-                        NUM_NODES,
+-
+-                    "num_edges":
+-                        num_edges,
+-
+-                    "avg_out_degree":
+-                        graph_metrics[
+-                            "avg_out_degree"
+-                        ],
+-
+-                    "max_out_degree":
+-                        graph_metrics[
+-                            "max_out_degree"
+-                        ],
+-
+-                    "shortest_hops":
+-                        shortest_hops,
+-
+-                    "edge_disjoint_paths":
+-                        edge_disjoint,
+-
+-                    "reasonable_alternative_paths":
+-                        alternative_count,
+-
+-                    "target_pareto_labels":
+-                        target_pareto_labels,
+-
+-                    "generated_labels":
+-                        generated,
+-
+-                    "kept_labels":
+-                        stats[
+-                            "kept_labels"
+-                        ],
+-
+-                    "pruned_labels":
+-                        pruned,
+-
+-                    "immediate_rejection_rate":
+-                        rejection_rate,
+-
+-                    "dominance_checks":
+-                        stats[
+-                            "dominance_checks"
+-                        ],
+-
+-                    "max_labels_per_node":
+-                        stats[
+-                            "max_labels_per_node"
+-                        ],
+-
+-                    "runtime_seconds":
+-                        runtime
+-                }
+-
+-                results.append(
+-                    row
+-                )
+-
+-                redundancy_debug[
+-                    level
+-                ].append(
+-                    (
+-                        edge_disjoint,
+-                        alternative_count
+-                    )
+-                )
+-
+-    return (
+-        results,
+-        redundancy_debug
+-    )
+-
+-
+-# ============================================================
+-# Save raw results
+-# ============================================================
+-
+-def save_results(results):
+-
+-    script_dir = os.path.dirname(
+-        os.path.abspath(__file__)
+-    )
+-
+-    results_dir = os.path.join(
+-        script_dir,
+-        "results"
++                        "dominance_checks"
++                    ],
++
++                "max_labels_per_node":
++                    stats[
++                        "max_labels_per_node"
++                    ],
++
++                "runtime_seconds":
++                    runtime
++            })
++
++    return results
++
++
++# ============================================================
++# Save results
++# ============================================================
++
++def save_results(
++    results
++):
++
++    script_dir = (
++        os.path.dirname(
++            os.path.abspath(
++                __file__
++            )
++        )
++    )
++
++    results_dir = (
++        os.path.join(
++            script_dir,
++            "results"
++        )
+     )
+ 
+     os.makedirs(
+@@ -1218,9 +953,11 @@
+         exist_ok=True
+     )
+ 
+-    output_path = os.path.join(
+-        results_dir,
+-        "experiment_03_redundancy_formal_raw.csv"
++    output_path = (
++        os.path.join(
++            results_dir,
++            "experiment_03_route_diversity_raw.csv"
++        )
+     )
+ 
+     with open(
+@@ -1251,20 +988,24 @@
+ 
+ 
+ # ============================================================
+-# Manipulation check
+-# ============================================================
+-
+-def print_manipulation_check(
++# Data-quality summary
++# ============================================================
++
++def print_summary(
+     results
+ ):
+ 
++    n = len(
++        results
++    )
++
+     print()
+     print(
+         "=========================================="
+     )
+ 
+     print(
+-        "EXPERIMENT 3 FORMAL MANIPULATION CHECK"
++        "EXPERIMENT 3 DATA CHECK"
+     )
+ 
+     print(
+@@ -1273,169 +1014,175 @@
+ 
+     print()
+ 
+-    for level in REDUNDANCY_LEVELS:
+-
+-        subset = [
+-            row
+-            for row in results
+-            if row[
+-                "redundancy_level"
+-            ] == level
++    print(
++        "Total observations:",
++        n
++    )
++
++    print(
++        "Expected observations:",
++        (
++            NUM_NETWORKS
++            * QUERIES_PER_NETWORK
++        )
++    )
++
++    print()
++
++    # --------------------------------------------------------
++    # Network control
++    # --------------------------------------------------------
++
++    edge_counts = {
++        row[
++            "num_edges"
+         ]
+-
+-        mean_edges = (
+-            sum(
+-                row[
+-                    "num_edges"
+-                ]
+-                for row in subset
+-            )
+-            /
+-            len(subset)
+-        )
+-
+-        mean_degree = (
+-            sum(
+-                row[
+-                    "avg_out_degree"
+-                ]
+-                for row in subset
+-            )
+-            /
+-            len(subset)
+-        )
+-
+-        mean_disjoint = (
+-            sum(
+-                row[
+-                    "edge_disjoint_paths"
+-                ]
+-                for row in subset
+-            )
+-            /
+-            len(subset)
+-        )
+-
+-        mean_alternatives = (
+-            sum(
+-                row[
+-                    "reasonable_alternative_paths"
+-                ]
+-                for row in subset
+-            )
+-            /
+-            len(subset)
+-        )
+-
+-        mean_shortest_hops = (
+-            sum(
+-                row[
+-                    "shortest_hops"
+-                ]
+-                for row in subset
+-            )
+-            /
+-            len(subset)
+-        )
+-
+-        print(level.upper())
+-
+-        print(
+-            f"  Observations = "
+-            f"{len(subset)}"
+-        )
+-
+-        print(
+-            f"  Mean directed edges = "
+-            f"{mean_edges:.3f}"
+-        )
+-
+-        print(
+-            f"  Mean avg out-degree = "
+-            f"{mean_degree:.3f}"
+-        )
+-
+-        print(
+-            f"  Mean edge-disjoint paths = "
+-            f"{mean_disjoint:.3f}"
+-        )
+-
+-        print(
+-            f"  Mean reasonable alternatives = "
+-            f"{mean_alternatives:.3f}"
+-        )
+-
+-        print(
+-            f"  Mean shortest hops = "
+-            f"{mean_shortest_hops:.3f}"
+-        )
+-
+-        print()
+-
+-
+-# ============================================================
+-# Matched-design check
+-# ============================================================
+-
+-def print_matched_design_check(
+-    results
+-):
+-
+-    groups = defaultdict(
+-        set
+-    )
+-
+-    for row in results:
+-
+-        key = (
+-            row[
+-                "network_id"
+-            ],
+-            row[
+-                "query_id"
+-            ],
+-            row[
+-                "source"
+-            ],
+-            row[
+-                "target"
+-            ]
+-        )
+-
+-        groups[
+-            key
+-        ].add(
+-            row[
+-                "redundancy_level"
+-            ]
+-        )
+-
+-    fully_matched = sum(
+-        1
+-        for levels in groups.values()
+-        if levels
+-        ==
+-        set(
+-            REDUNDANCY_LEVELS
+-        )
+-    )
+-
+-    print(
+-        "===== MATCHED DESIGN CHECK ====="
+-    )
+-
+-    print(
+-        "Unique network-OD cases:",
+-        len(groups)
+-    )
+-
+-    print(
+-        "Cases containing all three levels:",
+-        fully_matched
+-    )
++        for row in results
++    }
++
++    print(
++        "Unique directed edge counts:",
++        sorted(
++            edge_counts
++        )
++    )
++
++    # --------------------------------------------------------
++    # Route diversity
++    # --------------------------------------------------------
++
++    route_counts = [
++        row[
++            "distinct_route_count"
++        ]
++        for row in results
++    ]
++
++    alternatives = [
++        row[
++            "distinct_alternative_count"
++        ]
++        for row in results
++    ]
++
++    shortest_hops = [
++        row[
++            "shortest_hops"
++        ]
++        for row in results
++    ]
++
++    mean_diversities = [
++        row[
++            "mean_pairwise_diversity"
++        ]
++        for row in results
++    ]
+ 
+     print()
+ 
++    print(
++        "Distinct route count:"
++    )
++
++    print(
++        f"  min  = "
++        f"{min(route_counts)}"
++    )
++
++    print(
++        f"  mean = "
++        f"{sum(route_counts)/n:.3f}"
++    )
++
++    print(
++        f"  max  = "
++        f"{max(route_counts)}"
++    )
++
++    print()
++
++    print(
++        "Distinct alternative count:"
++    )
++
++    print(
++        f"  min  = "
++        f"{min(alternatives)}"
++    )
++
++    print(
++        f"  mean = "
++        f"{sum(alternatives)/n:.3f}"
++    )
++
++    print(
++        f"  max  = "
++        f"{max(alternatives)}"
++    )
++
++    print()
++
++    print(
++        "Mean pairwise diversity:"
++    )
++
++    print(
++        f"  mean = "
++        f"{sum(mean_diversities)/n:.3f}"
++    )
++
++    print()
++
++    print(
++        "Shortest hops:"
++    )
++
++    print(
++        f"  min  = "
++        f"{min(shortest_hops)}"
++    )
++
++    print(
++        f"  mean = "
++        f"{sum(shortest_hops)/n:.3f}"
++    )
++
++    print(
++        f"  max  = "
++        f"{max(shortest_hops)}"
++    )
++
++    # --------------------------------------------------------
++    # Ceiling checks
++    # --------------------------------------------------------
++
++    route_ceiling_count = sum(
++        row[
++            "route_count_ceiling"
++        ]
++        for row in results
++    )
++
++    candidate_ceiling_count = sum(
++        row[
++            "candidate_ceiling"
++        ]
++        for row in results
++    )
++
++    print()
++
++    print(
++        "Route-count ceiling cases:",
++        route_ceiling_count
++    )
++
++    print(
++        "Candidate-search ceiling cases:",
++        candidate_ceiling_count
++    )
++
+ 
+ # ============================================================
+ # Main
+@@ -1443,7 +1190,7 @@
+ 
+ if __name__ == "__main__":
+ 
+-    results, _ = (
++    results = (
+         run_experiment()
+     )
+ 
+@@ -1451,32 +1198,13 @@
+         results
+     )
+ 
+-    print_manipulation_check(
+-        results
+-    )
+-
+-    print_matched_design_check(
++    print_summary(
+         results
+     )
+ 
+     expected = (
+         NUM_NETWORKS
+-        *
+-        QUERIES_PER_NETWORK
+-        *
+-        len(
+-            REDUNDANCY_LEVELS
+-        )
+-    )
+-
+-    print(
+-        "Total observations:",
+-        len(results)
+-    )
+-
+-    print(
+-        "Expected observations:",
+-        expected
++        * QUERIES_PER_NETWORK
+     )
+ 
+     assert (
+@@ -1485,16 +1213,7 @@
+     )
+ 
+     print()
+-
+-    print(
+-        "Expected directed edges "
+-        "per topology:",
+-        EXPECTED_DIRECTED_EDGES
+-    )
+-
+-    print()
+-
+-    print(
+-        "Experiment 3 formal run "
+-        "completed successfully."
++    print(
++        "Experiment 3 route-diversity "
++        "data generation completed successfully."
+     )

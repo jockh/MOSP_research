@@ -1,0 +1,449 @@
+# 雙專案 Audit（修改前）
+
+分析範圍只涵蓋 `Mosp_vr1.1/` 與 `Real_case1/`。先讀取內容、AST、imports、路徑、CSV schemas，再進行遷移。完整原始 folder trees（含隱藏檔、node_modules、.venv、__pycache__）見 `audit/Mosp_vr1.1_tree.txt` 與 `audit/Real_case1_tree.txt`。第三方環境及 cache 只列 tree/size，不把其數千個 Python 檔誤認為研究程式，也不移植舊環境。研究檔案均記錄 SHA-256。
+
+## 1. 內容盤點
+
+| Project | 全部檔案 | 研究/網站檔案 | Python | CSV | 生成環境/cache 檔案 |
+|---|---:|---:|---:|---:|---:|
+| Mosp_vr1.1 | 94 | 78 | 24 | 21 | 16 |
+| Real_case1 | 13822 | 82 | 24 | 19 | 13740 |
+
+Mosp_vr1.1 包含 generic core、獨立 correctness validator、Experiments 1/2A/2B/3A/3B、較早的 redundancy/route-diversity designs、分析及繪圖程式、正式 CSV 和圖。沒有 Taipei Metro input。
+Real_case1 包含同一 generic core、route-state Taipei Metro model、三個 input CSV、All-OD runner/results、Experiment 4/6/7 與 diagnostics、Chapter 5 分析/候選圖、React/FastAPI 網站及座標 cache。未找到可證明原始執行環境的 requirements lock、run manifest 或 Git history。
+
+## 2. Python files / analysis scripts / dependencies
+
+- `Mosp_vr1.1/experiments/analyze_experiment_01.py` → numpy, pandas
+- `Mosp_vr1.1/experiments/analyze_experiment_02a.py` → os, numpy, pandas
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py` → os, numpy, pandas
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py` → os, numpy, pandas, matplotlib.pyplot, scipy.stats, statsmodels.api
+- `Mosp_vr1.1/experiments/analyze_experiment_03a.py` → os, numpy, pandas
+- `Mosp_vr1.1/experiments/analyze_experiment_03b.py` → os, numpy, pandas
+- `Mosp_vr1.1/experiments/experiment_01_objectives.py` → csv, os, random, time, src.graph, src.mosp
+- `Mosp_vr1.1/experiments/experiment_02a_correlation.py` → csv, os, random, time, numpy, scipy.stats, src.graph, src.mosp
+- `Mosp_vr1.1/experiments/experiment_02b_dependence_3d.py` → csv, os, random, time, numpy, scipy.stats, src.graph, src.mosp
+- `Mosp_vr1.1/experiments/experiment_03_redundancy.py` → csv, os, random, time, collections, networkx, src.graph, src.mosp
+- `Mosp_vr1.1/experiments/experiment_03_route_diversity.py` → csv, os, random, time, itertools, networkx, src.graph, src.mosp
+- `Mosp_vr1.1/experiments/experiment_03a_route_quantity.py` → csv, os, random, time, numpy, src.graph, src.mosp, pandas
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py` → os, sys, time, numpy, pandas, src.graph, src.mosp
+- `Mosp_vr1.1/experiments/plot_experiment_01.py` → os, pandas, matplotlib.pyplot
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py` → os, numpy, pandas, matplotlib.pyplot
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py` → os, numpy, pandas, matplotlib.pyplot
+- `Mosp_vr1.1/experiments/plot_experiment_03.py` → os, numpy, pandas, matplotlib.pyplot
+- `Mosp_vr1.1/experiments/route_diversity_test.py` → networkx
+- `Mosp_vr1.1/src/brute_force.py` → src.label, src.dominance
+- `Mosp_vr1.1/src/dominance.py` → (no imports)
+- `Mosp_vr1.1/src/graph.py` → (no imports)
+- `Mosp_vr1.1/src/label.py` → (no imports)
+- `Mosp_vr1.1/src/mosp.py` → heapq, src.label, src.dominance
+- `Mosp_vr1.1/test_correctness.py` → __future__, csv, random, time, pathlib, src.graph, src.mosp
+- `Real_case1/check_stop_times.py` → pathlib, pandas, src.taipei_metro
+- `Real_case1/diagnose_taipei_route.py` → pathlib, src.mosp, src.taipei_metro
+- `Real_case1/experiment_05_all_od.py` → pathlib, copy, time, pandas, src.mosp, src.taipei_metro
+- `Real_case1/experiments/analyze_experiment_04b_route_patterns.py` → pathlib, re, pandas
+- `Real_case1/experiments/analyze_experiment_05_all.py` → pathlib, re, pandas
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py` → pathlib, pandas, numpy, scipy.stats, matplotlib.pyplot
+- `Real_case1/experiments/experiment_04_taipei_main.py` → pathlib, pandas, src.mosp, src.taipei_metro
+- `Real_case1/experiments/experiment_04_taipei_main_all.py` → pathlib, pandas, src.mosp, src.taipei_metro
+- `Real_case1/experiments/experiment_06_bruteforce_simple_paths.py` → pathlib, time, src.taipei_metro, src.mosp
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py` → pathlib, time, pandas, src.taipei_metro
+- `Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py` → pathlib, copy, time, pandas, src.mosp, src.taipei_metro
+- `Real_case1/experiments/plot_chapter5.py` → pathlib, pandas, matplotlib.pyplot
+- `Real_case1/experiments/plot_chapter5_thesis.py` → pathlib, numpy, pandas, matplotlib.pyplot
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py` → pathlib, numpy, pandas, matplotlib.pyplot
+- `Real_case1/plot_chapter5_figures_7_9.py` → pathlib, re, numpy, pandas, matplotlib.pyplot, matplotlib.patches, matplotlib.lines
+- `Real_case1/plot_chapter5_figures_7_9_final.py` → pathlib, re, pandas, matplotlib.pyplot, matplotlib.patches
+- `Real_case1/src/brute_force.py` → src.label, src.dominance
+- `Real_case1/src/dominance.py` → (no imports)
+- `Real_case1/src/graph.py` → (no imports)
+- `Real_case1/src/label.py` → (no imports)
+- `Real_case1/src/mosp.py` → heapq, src.label, src.dominance
+- `Real_case1/src/taipei_metro.py` → dataclasses, collections, copy, re, pandas
+- `Real_case1/taipei-pareto-explorer/backend/main.py` → __future__, ast, io, json, os, re, functools, pathlib, typing, pandas, requests, dotenv, fastapi, fastapi.middleware.cors
+- `Real_case1/test_taipei_case.py` → pathlib, src.mosp, src.taipei_metro
+
+原有研究 modules 沒有 `__init__.py` 或可安裝的根目錄 package，直接啟動檔案時 `src` resolution 取決於 Python search path。Mosp 的 Experiment 3B 另行把自身 project root 插入 sys.path，因此強制使用 Mosp 的 core。其餘 synthetic 和 real-case scripts 均寫 `from src...`，一般在各自 root 以 module command 啟動時使用各自 core；任意工作目錄或外部 PYTHONPATH 則可能 shadow，不能由檔名證明某次執行解析到哪個 src。兩邊 core byte-identical，使這個歷史 resolution 不確定性不涉及不同算法。
+Real-case model 只有 TransitGraph/Edge 資料結構與捷運建構，沒有內嵌 MOSP 搜尋。All-OD、diagnostics 和 Taipei experiments 都呼叫 `src.mosp.mosp`；TransitGraph 提供 nodes/neighbors 與 edge costs 的既有 duck-typed 介面。
+`dependencies.json` 提供每個 import 的完整 statement、行號、top-level statements 和 function signatures；`reference_graph.json` 提供本地模組引用 edges。
+
+## 3. CSV / data / result files
+
+- `Mosp_vr1.1/experiments/figures/experiment_03/fig_01_route_count_vs_pareto.png` (159374 bytes, SHA256 `eee7b48911d71c61a6b09f914681c8bbbdf8974a8188d251fc4e241bd0a440d5`)
+- `Mosp_vr1.1/experiments/figures/experiment_03/fig_02_route_count_vs_generated.png` (345287 bytes, SHA256 `ce1e8a7534d715980f774d1618a25c8f7e9fae7b570b2921e818599aa7caf107`)
+- `Mosp_vr1.1/experiments/figures/experiment_03/fig_03_route_count_vs_checks.png` (321150 bytes, SHA256 `cd12cd22e3b8a75c30820da50349a171af299acbdbd13c6646ad62f4fb2af12c`)
+- `Mosp_vr1.1/experiments/figures/experiment_03/fig_04_route_count_vs_runtime.png` (308118 bytes, SHA256 `9685a0aa23d1f3206c446a1db78428337f56d4a99d794060aee69ce98729b545`)
+- `Mosp_vr1.1/experiments/figures/experiment_03/fig_05_mean_diversity_vs_pareto.png` (208967 bytes, SHA256 `ff45d2700b2e53eb4c3484016a55c6752b63271ceefed92e4cf679fcf7e98fe9`)
+- `Mosp_vr1.1/experiments/results/correctness_validation/correctness_validation_cases.csv` (81800 bytes, SHA256 `4e8fe4eb5edb80cfc1b8cfc6f5eb4b568e56762e6c92c0df480b983e28a5a703`)
+- `Mosp_vr1.1/experiments/results/correctness_validation/correctness_validation_summary.txt` (836 bytes, SHA256 `f3d111383d37942e78e40779bd021a3d06a32b21380d9520fd610edd681babcd`)
+- `Mosp_vr1.1/experiments/results/experiment_01_figures/fig1_pareto_labels.png` (108180 bytes, SHA256 `f47a52ac01b9cac97ebc579877f17afb3529c598a4240ecbd65bd6eefc05104a`)
+- `Mosp_vr1.1/experiments/results/experiment_01_figures/fig2_generated_labels.png` (120233 bytes, SHA256 `5c510d00217704e045db6e3b631fec49c3ad6a9550c6021eaf52e3bbc11fb390`)
+- `Mosp_vr1.1/experiments/results/experiment_01_figures/fig3_dominance_checks.png` (118717 bytes, SHA256 `f9dff5f6cbed87f209b38e33b254906e82a8aaed3562098b5da7036e9df56c56`)
+- `Mosp_vr1.1/experiments/results/experiment_01_figures/fig4_runtime.png` (113250 bytes, SHA256 `300ff0012f6d3f1d5b3bd93271d5c2c4f7174207b4957128206f042da70bf54c`)
+- `Mosp_vr1.1/experiments/results/experiment_01_figures/fig5_checks_vs_runtime.png` (191884 bytes, SHA256 `c1b96ef40926a2dac82643fe9d18c5371de4701623e911b6b076d0b1b2be2bf6`)
+- `Mosp_vr1.1/experiments/results/experiment_01_figures/objective_growth.pdf` (17197 bytes, SHA256 `b8a5ea2e90b67427a3b25c534f7772a425ae2bb1bac000e18d5584f36452a4f8`)
+- `Mosp_vr1.1/experiments/results/experiment_01_figures/objective_growth.png` (156037 bytes, SHA256 `52d0ed36b360d9d61b17ef1d045cc5b22776af687ab90cf17c525df01c10250d`)
+- `Mosp_vr1.1/experiments/results/experiment_01_formal_raw.csv` (138094 bytes, SHA256 `6030e0975dd32e4694029402f9870336a061a0c10840dea0df8c792f45101fca`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_correlation_check.csv` (8076 bytes, SHA256 `aa350cb643033d3d7ed67407980cc922d6f8950d2405d5985b372ead3b9cdb80`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_correlation_raw.csv` (273975 bytes, SHA256 `c01dddb3ae19bfc0072b18c4086e042bd727fb13209c495795477587d87a89fe`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_figures/fig1_pareto_vs_correlation.png` (127461 bytes, SHA256 `05a189354b7bd5b2be0303df1f937b2861d8995eae1b79f90f18f7b097769526`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_figures/fig2_generated_vs_correlation.png` (129988 bytes, SHA256 `6cab3558c5e9135a3e19c1d6e231290f54085c0067a763aeb5aa9e542e9fb8d2`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_figures/fig3_checks_vs_correlation.png` (125535 bytes, SHA256 `b8f0d70649ce076a23c42c9e242af3140354f09a0e7d3ddd910221b848d0754f`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_figures/fig4_runtime_vs_correlation.png` (123644 bytes, SHA256 `d6280e0c317bfd5de62594edf95914230c30de4a8006099cbe91695e248d4819`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_figures/fig5_checks_vs_runtime.png` (253778 bytes, SHA256 `7714d5a60cc2fda0fe589233714043ed668e41857f7063b40ad95253ffce3a0b`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_figures/objective_correlation_workload.pdf` (19221 bytes, SHA256 `2e8492ebd6975b87529422583c60b970e159214c9852213bf0897b2778c7730d`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_figures/objective_correlation_workload.png` (207493 bytes, SHA256 `9851f203b11a21051aa5509e74cf5e8ec402b1244c6142bbe26b85611d68df33`)
+- `Mosp_vr1.1/experiments/results/experiment_02a_summary.csv` (710 bytes, SHA256 `02afdf6fce09a2941f3954aaf6eefb0916877c171d8ba7d7bf282a65ced9db28`)
+- `Mosp_vr1.1/experiments/results/experiment_02b/fig_01_pareto_labels.png` (111143 bytes, SHA256 `78100c938a0be630f3a1b5d1018fb963b893adc0622d3e53d71f66266b9bb8d7`)
+- `Mosp_vr1.1/experiments/results/experiment_02b/fig_02_generated_labels.png` (120455 bytes, SHA256 `7181c6458df1ce8a776b47e636758f68959a58c36a061a796bf2549db698e136`)
+- `Mosp_vr1.1/experiments/results/experiment_02b/fig_03_dominance_checks.png` (115237 bytes, SHA256 `da1cae8fada9548fefa434ec221fcdfe5649a584e1de40019a901b2405c1f7a8`)
+- `Mosp_vr1.1/experiments/results/experiment_02b/fig_04_runtime.png` (113400 bytes, SHA256 `9e68881dfd9af147fe4814489039fdb1a8b070750f726abac0396758e77901e4`)
+- `Mosp_vr1.1/experiments/results/experiment_02b/fig_05_mixed_vs_independent_paired.png` (293560 bytes, SHA256 `e90cb376c81b9109b514231054fbca233d3841fac47da618611231df537adef6`)
+- `Mosp_vr1.1/experiments/results/experiment_02b_dependence_3d_check.csv` (15459 bytes, SHA256 `2de39f79c5495c7f38766db4d6e68e893b474d9875f251e05241d486c31e4df7`)
+- `Mosp_vr1.1/experiments/results/experiment_02b_dependence_3d_raw.csv` (311796 bytes, SHA256 `7a266bd054886f827039b9d86d0cc678a218c75dd076c4598324c8f12d3a2b35`)
+- `Mosp_vr1.1/experiments/results/experiment_02b_mixed_vs_independent.csv` (875 bytes, SHA256 `68a8e3801eabf9b86227edb556d664b0e506b68dbe4455a0ea4a2341064dfae9`)
+- `Mosp_vr1.1/experiments/results/experiment_02b_summary.csv` (520 bytes, SHA256 `6b42ea2622739496ec2e91ddf1d78d95fcbc58c5a41d5da338d356c028caa011`)
+- `Mosp_vr1.1/experiments/results/experiment_03/experiment_03_correlations.csv` (2481 bytes, SHA256 `f8609c1b7e7ce94ec07e0019fbaeee0a1650470467c5e12b9c0d21905bc4fd6d`)
+- `Mosp_vr1.1/experiments/results/experiment_03/experiment_03_descriptive_summary.csv` (652 bytes, SHA256 `c8b581e5e646344b26a6f26999f619846db4af0c549a87e33b878dabf751f900`)
+- `Mosp_vr1.1/experiments/results/experiment_03/experiment_03_predictor_correlations.csv` (251 bytes, SHA256 `84f0ff392a40139898222b645fb471a731b91208dac5b0065105757c31166a67`)
+- `Mosp_vr1.1/experiments/results/experiment_03/experiment_03_regression_results.csv` (4209 bytes, SHA256 `dd0a4448e12823500442838fd0ccfbd7e8e0ee9df1eb281259b6ee93f09ec551`)
+- `Mosp_vr1.1/experiments/results/experiment_03/experiment_03_route_count_groups.csv` (1248 bytes, SHA256 `bf189b63813cb71beb955f610aa29bc26569fd002a3b7614229675321a915f64`)
+- `Mosp_vr1.1/experiments/results/experiment_03/fig_01_route_count_vs_pareto.png` (159374 bytes, SHA256 `eee7b48911d71c61a6b09f914681c8bbbdf8974a8188d251fc4e241bd0a440d5`)
+- `Mosp_vr1.1/experiments/results/experiment_03/fig_02_route_count_vs_generated.png` (345287 bytes, SHA256 `ce1e8a7534d715980f774d1618a25c8f7e9fae7b570b2921e818599aa7caf107`)
+- `Mosp_vr1.1/experiments/results/experiment_03/fig_03_route_count_vs_checks.png` (321150 bytes, SHA256 `cd12cd22e3b8a75c30820da50349a171af299acbdbd13c6646ad62f4fb2af12c`)
+- `Mosp_vr1.1/experiments/results/experiment_03/fig_04_route_count_vs_runtime.png` (336600 bytes, SHA256 `12cd71ec082719b867f98836277b483d7c9445629831f688cec487d70bb3d74a`)
+- `Mosp_vr1.1/experiments/results/experiment_03/fig_05_mean_diversity_vs_pareto.png` (208967 bytes, SHA256 `ff45d2700b2e53eb4c3484016a55c6752b63271ceefed92e4cf679fcf7e98fe9`)
+- `Mosp_vr1.1/experiments/results/experiment_03_route_diversity_raw.csv` (58425 bytes, SHA256 `8089ccb2cdc05bec8d55a2913f3d6f3bc311c88885add150bc7f34a1736fa92f`)
+- `Mosp_vr1.1/experiments/results/experiment_03a_route_quantity_raw.csv` (347985 bytes, SHA256 `ceeaf80c08b1ac78166c628a8e3eb551bb0495ca29546c287d9845885b697268`)
+- `Mosp_vr1.1/experiments/results/experiment_03a_route_quantity_summary.csv` (507 bytes, SHA256 `5875daaf8071a61f2748c70ebdf7033240ac7b788e9ca2798fdd85eb30ee6a3a`)
+- `Mosp_vr1.1/experiments/results/experiment_03b_overlap_position_analysis.csv` (727 bytes, SHA256 `18bef426146c179ce35eb4389975b7ac6f11043d8f657cdd342c4c8ab6979147`)
+- `Mosp_vr1.1/experiments/results/experiment_03b_overlap_position_paired_analysis.csv` (2793 bytes, SHA256 `3be1d7b4a7a8426e6a149333827b2761c30f771d34791f0c873417a7245062c6`)
+- `Mosp_vr1.1/experiments/results/experiment_03b_overlap_position_raw.csv` (545282 bytes, SHA256 `42ff37b8b61b2085ae0d17d3a197eb606025f12f43765a885ad50af425c0d4d7`)
+- `Mosp_vr1.1/experiments/results/experiment_03b_overlap_position_summary.csv` (732 bytes, SHA256 `9cadfc1fc12fd13a85000bb3811acbabea3082463127616afb76b50f0d43d6cc`)
+- `Mosp_vr1.1/figures/prefix_suffix_dominance_checks.pdf` (32445 bytes, SHA256 `c84da1c5b63b3744e1ac95ac124de33a4ca131747b1189f96c4bbcd284daa88b`)
+- `Mosp_vr1.1/figures/prefix_suffix_structure.pdf` (13809 bytes, SHA256 `1af241b7641157a265c6f72b7ed6abe438b09da6882321a1b3d50e3d21f1d996`)
+- `Mosp_vr1.1/figures/route_quantity_growth.pdf` (16036 bytes, SHA256 `3f7e4af2d8f8dee5697adb45b1dc1916daa29dd0def3ac539f0eb382e80aeabb`)
+- `Real_case1/data/臺北捷運相鄰兩站間之行駛時間及停靠站時間(1150830).csv` (13552 bytes, SHA256 `2f90d1901f3c4533b1dc2f21e01ccfebf8761552ccbd92751724997aa9ffd296`)
+- `Real_case1/data/臺北捷運路線車站資料服務_NEW_fixed (1).csv` (3624 bytes, SHA256 `68c5c58e2a574d79e4dee32181dde678cb16be72df097cbf318ba95d4d02221b`)
+- `Real_case1/data/臺北捷運轉乘車站轉乘步行時間資料.csv` (812 bytes, SHA256 `5f5129274536a55ad8c01ffbe6518f5a1f3a442e5068bf2bfe2f1c31ce4c9351`)
+- `Real_case1/experiments/results/experiment_05_all_od/all_od_pareto_routes.csv` (8056954 bytes, SHA256 `ae2227de58cdf92372f33458afb912cd81ff7f5968d97171eb1d6039f47899ef`)
+- `Real_case1/experiments/results/experiment_05_all_od/all_od_summary.csv` (880567 bytes, SHA256 `cff296bda1a2fd556b90af1c4f7e0dd508f7bb23a11957536d4a6f5648b7bd34`)
+- `Real_case1/experiments/results/experiment_05_all_od/analysis/max_pareto_od_pairs.csv` (2682 bytes, SHA256 `5077609bc7bbfaaa8c5ee7efed1b8f10e30d1617695952277e57979900c19245`)
+- `Real_case1/experiments/results/experiment_05_all_od/analysis/max_pareto_routes.csv` (177290 bytes, SHA256 `ec9cf0a1393101e92430ddd0b9373e575c63eabba1017c15e7851eb8f3292f15`)
+- `Real_case1/experiments/results/experiment_05_all_od/analysis/pareto_validation.csv` (538283 bytes, SHA256 `54583877c16791eafb41e94c1d83964e9b796645e2b384125907fc14a2be2c18`)
+- `Real_case1/experiments/results/experiment_05_all_od/analysis/representative_case_candidates.csv` (1142244 bytes, SHA256 `783ed2f63e24b93097368173f948a8df5f92f255f62bc88d9c84c74cb6de783f`)
+- `Real_case1/experiments/results/experiment_05_all_od/analysis/suspected_duplicate_routes.csv` (112 bytes, SHA256 `913f057d217278a79da84ba39ccd544c9c03eb38657a9e6db965d7f406b5d939`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_2_pareto_set_distribution.png` (92344 bytes, SHA256 `71a07d50d0d90ec2b6fc7baf96db7a52d92d96072af0f060afd78b3ee3b7148e`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_3_station_multi_pareto_rate.png` (186103 bytes, SHA256 `ae473271e4fa3c34e4da3c764d91c8bef94db78ecf881ad873744935e4cdd80c`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_4_frequency_vs_richness.png` (177488 bytes, SHA256 `58862f9fc0756a798403539af1b928eef2da73534b4ba93076b975b453acfd20`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_5_pareto_size_vs_time_range.png` (77268 bytes, SHA256 `0b9705ccd35aef2ff039bbeb915142f67499370d9c10dc3030141ac05508da83`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_6_pareto_size_vs_walking_range.png` (79828 bytes, SHA256 `da088626a79a6d4816fc76120f3ca618f16dcb5be378cfbc1a486e1256e4cec6`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_6_pareto_size_vs_walking_range_thesis.png` (68605 bytes, SHA256 `e41e166844dd5f409c55c7164a89158465f75c927dd87cb06ccfbdacc15bc30f`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/pareto_tradeoff_summary.csv` (495 bytes, SHA256 `2a39459d9a415c6841a0bf386c4a4ff999ea0c57b121db50526bbab955aa8fa1`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_2_pareto_set_distribution.pdf` (15177 bytes, SHA256 `26adab117173459a955cd6153e601203261ebd23d75e2b5e8784f3c95d4a338b`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_2_pareto_set_distribution.png` (226990 bytes, SHA256 `062fdae379ec6d46d788c7eba04ae07518a2c197ef1a60ee66754b13cd016d33`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_3_station_multi_pareto_rate.pdf` (31158 bytes, SHA256 `a9bfef25d09a2b82f2371b356d2cc85774fc2521fa427c3ffa1d6fed49b611f1`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_3_station_multi_pareto_rate.png` (367675 bytes, SHA256 `23331cfae4ad37b32bb26094d9300974f4b8ef94b4f00a2ccbcc59598369dc88`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_4_frequency_vs_richness.pdf` (24390 bytes, SHA256 `178d0fc7f7cb4855f38fd7b0e3a8e76f730add484d262577441643328cc082cd`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_4_frequency_vs_richness.png` (332070 bytes, SHA256 `fe6569b480af727cf551eff2a93fb6ed60660547a6d1c95490a4041998b23dd1`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_5_pareto_size_vs_time_range.pdf` (16016 bytes, SHA256 `d104177a747cf1e30fe97aa26c4cb4c633afc02f21113aec5e67e5f394777f90`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_5_pareto_size_vs_time_range.png` (213440 bytes, SHA256 `975097bb074a76718dcebd728618b7f3be1e8fb76160e9ad063fd17f3757544e`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_6_pareto_size_vs_walking_range.pdf` (15984 bytes, SHA256 `997a832ff8abca1786c0dda41c543bf7372881c700f7743a4ae72a8b903e8f89`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_6_pareto_size_vs_walking_range.png` (178712 bytes, SHA256 `3e6ec5435be54424184c3e324ec1d21ea1c9b1dd66ff52864a602bda7f8776ab`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_7_donghu_zhongyuan_route_schematic.pdf` (29684 bytes, SHA256 `f34e605af3874986b957de5f802af6a173a94fd1a88843e8262dc7df1ece71fe`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_7_donghu_zhongyuan_route_schematic.png` (535430 bytes, SHA256 `d36c065885dd2e3963230548941bc838b7ec064752e8b2152809ea92d70912e6`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_8_donghu_zhongyuan_tradeoff.pdf` (17580 bytes, SHA256 `6c4ea3a81097e0d16f2ef1d2e7ed0128b43e7859a882a3ef5890cbb669f055d9`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_8_donghu_zhongyuan_tradeoff.png` (239467 bytes, SHA256 `b8e922b854fd2519e8e07fe4e4cf0d563b17a0e2bf042ba4c443d8c53df98785`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_9_network_practical_tradeoff.pdf` (48580 bytes, SHA256 `68e2a1ed7eae708de045d3cc7b75f983e7a930e4c7769fb928a804b667807db3`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_9_network_practical_tradeoff.png` (666633 bytes, SHA256 `8264bab17da9e4c1c3a8137190721fbd85f2726c90212adbe321c188157a7c48`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_9_network_tradeoff_data.csv` (880680 bytes, SHA256 `0904064ffe4ec0016efe8c8a6a4045681f82c9481b15e4cc2eb488ab4752cc42`)
+- `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/pareto_tradeoff_summary.csv` (690 bytes, SHA256 `eb608487e74b136f001fc7b085b232a941ff59217edfdf3330f74842a603dd53`)
+- `Real_case1/experiments/results/experiment_05_all_od/destination_summary.csv` (7084 bytes, SHA256 `ded587649926fae54aa90e48bde1c8109f8b07d50b81504735c4fd09d368c9b2`)
+- `Real_case1/experiments/results/experiment_05_all_od/multi_pareto_od_pairs.csv` (380511 bytes, SHA256 `4669abbf07fabeed2122d268fe8c650e4e29407dcf0f6233956f08a41018a10b`)
+- `Real_case1/experiments/results/experiment_05_all_od/origin_summary.csv` (7094 bytes, SHA256 `5f8fefb871f802bdecd66a26e88e504fe1727f262356d974ab6f5bbfc9ac8ddf`)
+- `Real_case1/experiments/results/experiment_05_all_od/pareto_set_size_distribution.csv` (184 bytes, SHA256 `edbe2b7a4a654b94a2524649386942f12ce8f1e3531d6f65f46d2aff5f2325c7`)
+- `Real_case1/experiments/results/experiment_05_all_od/source_mosp_statistics.csv` (6443 bytes, SHA256 `1f14b3a7801552e83e3ed9f5a8490d57d98c2f862125b64fdb6b5aff9dfd21c6`)
+- `Real_case1/taipei-pareto-explorer/backend/cache/taipei_metro_station_positions.csv` (13690 bytes, SHA256 `dc2a2e5070eba123621190621d135f6cde55459c1042d7f942b9ef4a66146ab0`)
+- `Real_case1/taipei-pareto-explorer/backend/requirements.txt` (95 bytes, SHA256 `1132b4178da12c6ccee1a459a842b7c4a4f2d6812a8e691122fb6422de157d6d`)
+
+## 4. Duplicate filenames / modules
+
+五個重複 Python modules（graph, label, dominance, mosp, brute_force）均 byte-identical。`audit/*.py.diff` 保留逐檔比較結果；沒有 instrumentation、stats 或演算法差異。兩個 root 裡只找到 `Real_case1/src/taipei_metro.py`；沒有 taipei_metro(1)/(3)/(4).py。缺少的候選版本不能假設存在，也沒有依括號編號選版本。
+
+- `fig_01_route_count_vs_pareto.png`: `Mosp_vr1.1/experiments/figures/experiment_03/fig_01_route_count_vs_pareto.png`; `Mosp_vr1.1/experiments/results/experiment_03/fig_01_route_count_vs_pareto.png` — identical bytes
+- `fig_02_route_count_vs_generated.png`: `Mosp_vr1.1/experiments/figures/experiment_03/fig_02_route_count_vs_generated.png`; `Mosp_vr1.1/experiments/results/experiment_03/fig_02_route_count_vs_generated.png` — identical bytes
+- `fig_03_route_count_vs_checks.png`: `Mosp_vr1.1/experiments/figures/experiment_03/fig_03_route_count_vs_checks.png`; `Mosp_vr1.1/experiments/results/experiment_03/fig_03_route_count_vs_checks.png` — identical bytes
+- `fig_04_route_count_vs_runtime.png`: `Mosp_vr1.1/experiments/figures/experiment_03/fig_04_route_count_vs_runtime.png`; `Mosp_vr1.1/experiments/results/experiment_03/fig_04_route_count_vs_runtime.png` — different content; all retained
+- `fig_05_mean_diversity_vs_pareto.png`: `Mosp_vr1.1/experiments/figures/experiment_03/fig_05_mean_diversity_vs_pareto.png`; `Mosp_vr1.1/experiments/results/experiment_03/fig_05_mean_diversity_vs_pareto.png` — identical bytes
+- `fig5_checks_vs_runtime.png`: `Mosp_vr1.1/experiments/results/experiment_01_figures/fig5_checks_vs_runtime.png`; `Mosp_vr1.1/experiments/results/experiment_02a_figures/fig5_checks_vs_runtime.png` — different content; all retained
+- `brute_force.py`: `Mosp_vr1.1/src/brute_force.py`; `Real_case1/src/brute_force.py` — identical bytes
+- `dominance.py`: `Mosp_vr1.1/src/dominance.py`; `Real_case1/src/dominance.py` — identical bytes
+- `graph.py`: `Mosp_vr1.1/src/graph.py`; `Real_case1/src/graph.py` — identical bytes
+- `label.py`: `Mosp_vr1.1/src/label.py`; `Real_case1/src/label.py` — identical bytes
+- `mosp.py`: `Mosp_vr1.1/src/mosp.py`; `Real_case1/src/mosp.py` — identical bytes
+- `figure_5_2_pareto_set_distribution.png`: `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_2_pareto_set_distribution.png`; `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_2_pareto_set_distribution.png` — different content; all retained
+- `figure_5_3_station_multi_pareto_rate.png`: `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_3_station_multi_pareto_rate.png`; `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_3_station_multi_pareto_rate.png` — different content; all retained
+- `figure_5_4_frequency_vs_richness.png`: `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_4_frequency_vs_richness.png`; `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_4_frequency_vs_richness.png` — different content; all retained
+- `figure_5_5_pareto_size_vs_time_range.png`: `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_5_pareto_size_vs_time_range.png`; `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_5_pareto_size_vs_time_range.png` — different content; all retained
+- `figure_5_6_pareto_size_vs_walking_range.png`: `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/figure_5_6_pareto_size_vs_walking_range.png`; `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/figure_5_6_pareto_size_vs_walking_range.png` — different content; all retained
+- `pareto_tradeoff_summary.csv`: `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures/pareto_tradeoff_summary.csv`; `Real_case1/experiments/results/experiment_05_all_od/chapter5_figures_thesis/pareto_tradeoff_summary.csv` — different content; all retained
+
+## 5. Path / working-directory audit
+
+沒有發現研究程式呼叫 `os.getcwd()`。但 backend 與 final Figure 7–9 script 呼叫 `Path.cwd()`，再向上/旁邊搜尋舊 project，可能讀到不同資料。只有 Mosp Experiment 3B 發現 sys.path.insert。All-OD 的 ROOT 原本在兩資料夾共同 parent，再加 Real_case1；plot_chapter5.py 使用 hard-coded Windows root。Synthetic readers 多數用 experiments/results 的 CWD-relative 路徑；部分用 __file__ 的 SCRIPT_DIR，但搬動後也會失效。Taipei Experiment 4/6/7 假設 data/taipei_metro，實際三個 inputs 卻在 Real_case1/data。diagnostics 的 ROOT.rglob 可能誤選同名 CSV。
+
+以下為所有相關 path/import/I/O evidence（完整行號與內容亦見 `path_audit.json`）：
+
+- `Mosp_vr1.1/experiments/analyze_experiment_01.py:9`: `df = pd.read_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_01.py:10`: `"experiments/results/experiment_01_formal_raw.csv"`
+- `Mosp_vr1.1/experiments/analyze_experiment_02a.py:12`: `INPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02a.py:18`: `CHECK_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02a.py:29`: `df = pd.read_csv(INPUT_FILE)`
+- `Mosp_vr1.1/experiments/analyze_experiment_02a.py:30`: `check_df = pd.read_csv(CHECK_FILE)`
+- `Mosp_vr1.1/experiments/analyze_experiment_02a.py:550`: `OUTPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02a.py:557`: `compact.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:12`: `SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:13`: `RESULTS_DIR = os.path.join(SCRIPT_DIR, "results")`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:15`: `INPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:20`: `CHECK_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:30`: `df = pd.read_csv(INPUT_FILE)`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:31`: `check_df = pd.read_csv(CHECK_FILE)`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:861`: `SUMMARY_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:866`: `PAIRED_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:872`: `compact.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_02b.py:879`: `).to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:16`: `SCRIPT_DIR = os.path.dirname(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:17`: `os.path.abspath(__file__)`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:20`: `EXP03_DIR = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:32`: `INPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:43`: `df = pd.read_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:840`: `output_path = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:845`: `plt.savefig(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:978`: `SUMMARY_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:983`: `CORRELATION_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:988`: `REGRESSION_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:993`: `GROUP_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:998`: `PREDICTOR_CORR_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:1004`: `summary.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:1008`: `correlation_df.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:1013`: `regression_df.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:1018`: `group_summary.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03.py:1022`: `predictor_corr.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03a.py:12`: `INPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03a.py:18`: `OUTPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03a.py:29`: `df = pd.read_csv(INPUT_FILE)`
+- `Mosp_vr1.1/experiments/analyze_experiment_03a.py:846`: `compact.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03b.py:26`: `INPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03b.py:32`: `SUMMARY_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03b.py:38`: `PAIRED_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03b.py:49`: `df = pd.read_csv(INPUT_FILE)`
+- `Mosp_vr1.1/experiments/analyze_experiment_03b.py:1252`: `compact.to_csv(`
+- `Mosp_vr1.1/experiments/analyze_experiment_03b.py:1258`: `paired_summary.to_csv(`
+- `Mosp_vr1.1/experiments/experiment_01_objectives.py:318`: `output_dir = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_01_objectives.py:328`: `output_file = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_01_objectives.py:337`: `with open(`
+- `Mosp_vr1.1/experiments/experiment_02a_correlation.py:508`: `output_dir = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_02a_correlation.py:518`: `output_file = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_02a_correlation.py:527`: `with open(`
+- `Mosp_vr1.1/experiments/experiment_02a_correlation.py:560`: `output_dir = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_02a_correlation.py:565`: `output_file = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_02a_correlation.py:574`: `with open(`
+- `Mosp_vr1.1/experiments/experiment_02b_dependence_3d.py:507`: `script_dir = os.path.dirname(`
+- `Mosp_vr1.1/experiments/experiment_02b_dependence_3d.py:508`: `os.path.abspath(__file__)`
+- `Mosp_vr1.1/experiments/experiment_02b_dependence_3d.py:511`: `output_dir = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_02b_dependence_3d.py:521`: `path = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_02b_dependence_3d.py:526`: `with open(`
+- `Mosp_vr1.1/experiments/experiment_03_redundancy.py:1207`: `script_dir = os.path.dirname(`
+- `Mosp_vr1.1/experiments/experiment_03_redundancy.py:1208`: `os.path.abspath(__file__)`
+- `Mosp_vr1.1/experiments/experiment_03_redundancy.py:1211`: `results_dir = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03_redundancy.py:1221`: `output_path = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03_redundancy.py:1226`: `with open(`
+- `Mosp_vr1.1/experiments/experiment_03_route_diversity.py:937`: `os.path.dirname(`
+- `Mosp_vr1.1/experiments/experiment_03_route_diversity.py:938`: `os.path.abspath(`
+- `Mosp_vr1.1/experiments/experiment_03_route_diversity.py:945`: `os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03_route_diversity.py:957`: `os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03_route_diversity.py:963`: `with open(`
+- `Mosp_vr1.1/experiments/experiment_03a_route_quantity.py:48`: `OUTPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03a_route_quantity.py:55`: `os.path.dirname(OUTPUT_FILE),`
+- `Mosp_vr1.1/experiments/experiment_03a_route_quantity.py:686`: `with open(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:52`: `CURRENT_DIR = os.path.dirname(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:53`: `os.path.abspath(__file__)`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:56`: `PROJECT_ROOT = os.path.abspath(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:57`: `os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:59`: `".."`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:63`: `if PROJECT_ROOT not in sys.path:`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:64`: `sys.path.insert(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:119`: `OUTPUT_DIR = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:129`: `OUTPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:1566`: `df.to_csv(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:1963`: `SUMMARY_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/experiment_03b_route_overlap.py:1969`: `workload_summary.to_csv(`
+- `Mosp_vr1.1/experiments/plot_experiment_01.py:12`: `"experiments/results/"`
+- `Mosp_vr1.1/experiments/plot_experiment_01.py:17`: `"experiments/results/"`
+- `Mosp_vr1.1/experiments/plot_experiment_01.py:31`: `df = pd.read_csv(INPUT_FILE)`
+- `Mosp_vr1.1/experiments/plot_experiment_01.py:155`: `output_path = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_01.py:160`: `plt.savefig(`
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py:13`: `INPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py:19`: `OUTPUT_DIR = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py:35`: `df = pd.read_csv(INPUT_FILE)`
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py:228`: `PNG_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py:233`: `plt.savefig(`
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py:245`: `PDF_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02a.py:250`: `plt.savefig(`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:12`: `SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:14`: `RESULTS_DIR = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:19`: `FIGURES_DIR = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:30`: `INPUT_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:35`: `df = pd.read_csv(INPUT_FILE)`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:123`: `path = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:128`: `plt.savefig(`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:330`: `path = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_02b.py:335`: `plt.savefig(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:26`: `EXP3A_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:32`: `EXP3B_FILE = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:50`: `df3a = pd.read_csv(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:54`: `df3b = pd.read_csv(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:97`: `pdf_path = os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:102`: `plt.savefig(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:690`: `hatch=".."`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:792`: `os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:800`: `os.path.join(`
+- `Mosp_vr1.1/experiments/plot_experiment_03.py:808`: `os.path.join(`
+- `Mosp_vr1.1/test_correctness.py:55`: `ROOT = Path(__file__).resolve().parent`
+- `Mosp_vr1.1/test_correctness.py:587`: `with open(`
+- `Real_case1/check_stop_times.py:15`: `ROOT = Path(__file__).resolve().parent`
+- `Real_case1/check_stop_times.py:515`: `travel_df = pd.read_csv(`
+- `Real_case1/diagnose_taipei_route.py:15`: `ROOT = Path(__file__).resolve().parent`
+- `Real_case1/experiment_05_all_od.py:42`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiment_05_all_od.py:1932`: `od_df.to_csv(`
+- `Real_case1/experiment_05_all_od.py:1944`: `routes_df.to_csv(`
+- `Real_case1/experiment_05_all_od.py:1956`: `source_stats_df.to_csv(`
+- `Real_case1/experiment_05_all_od.py:1968`: `distribution_df.to_csv(`
+- `Real_case1/experiment_05_all_od.py:1980`: `origin_summary_df.to_csv(`
+- `Real_case1/experiment_05_all_od.py:1992`: `destination_summary_df.to_csv(`
+- `Real_case1/experiment_05_all_od.py:2004`: `multi_od_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_04b_route_patterns.py:10`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiments/analyze_experiment_04b_route_patterns.py:29`: `df = pd.read_csv(`
+- `Real_case1/experiments/analyze_experiment_04b_route_patterns.py:220`: `df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_04b_route_patterns.py:405`: `pair_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_04b_route_patterns.py:449`: `tradeoff_summary.to_csv(`
+- `Real_case1/experiments/analyze_experiment_04b_route_patterns.py:480`: `transfer_pattern_summary.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:11`: `SCRIPT_DIR = Path(__file__).resolve().parent`
+- `Real_case1/experiments/analyze_experiment_05_all.py:34`: `"experiments/results/experiment_05_all_od/\n"`
+- `Real_case1/experiments/analyze_experiment_05_all.py:115`: `od_df = pd.read_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:120`: `routes_df = pd.read_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:1282`: `max_od_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:1289`: `max_route_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:1310`: `).to_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:1318`: `duplicate_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:1325`: `validation_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05_all.py:1332`: `candidate_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:13`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:32`: `df = pd.read_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:78`: `descriptive_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:106`: `pearson_matrix.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:134`: `spearman_matrix.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:215`: `pair_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:313`: `multi_pearson.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:318`: `multi_spearman.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:425`: `difference_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:549`: `tradeoff_direction_df.to_csv(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:603`: `plt.savefig(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:646`: `plt.savefig(`
+- `Real_case1/experiments/analyze_experiment_05b_objective_correlation.py:689`: `plt.savefig(`
+- `Real_case1/experiments/experiment_04_taipei_main.py:21`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiments/experiment_04_taipei_main.py:349`: `summary_df.to_csv(`
+- `Real_case1/experiments/experiment_04_taipei_main.py:355`: `routes_df.to_csv(`
+- `Real_case1/experiments/experiment_04_taipei_main_all.py:21`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiments/experiment_04_taipei_main_all.py:574`: `summary_df.to_csv(`
+- `Real_case1/experiments/experiment_04_taipei_main_all.py:581`: `routes_df.to_csv(`
+- `Real_case1/experiments/experiment_04_taipei_main_all.py:588`: `distribution_df.to_csv(`
+- `Real_case1/experiments/experiment_04_taipei_main_all.py:595`: `multi_pareto_df.to_csv(`
+- `Real_case1/experiments/experiment_04_taipei_main_all.py:602`: `multi_route_details_df.to_csv(`
+- `Real_case1/experiments/experiment_06_bruteforce_simple_paths.py:12`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:13`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:445`: `checkpoint_df.to_csv(`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:486`: `dfs_df.to_csv(`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:518`: `summary_df.to_csv(`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:542`: `top_simple_df.to_csv(`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:567`: `top_partial_df.to_csv(`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:580`: `exp5_df = pd.read_csv(`
+- `Real_case1/experiments/experiment_06b_all_od_dfs.py:645`: `merged_df.to_csv(`
+- `Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py:15`: `ROOT = Path(__file__).resolve().parents[1]`
+- `Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py:93`: `dfs_df = pd.read_csv(`
+- `Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py:607`: `merged_df.to_csv(`
+- `Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py:656`: `summary_df.to_csv(`
+- `Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py:694`: `top_reduction_df.to_csv(`
+- `Real_case1/experiments/experiment_07_origin_level_dfs_vs_mosp.py:700`: `bottom_reduction_df.to_csv(`
+- `Real_case1/experiments/plot_chapter5.py:11`: `ROOT = Path(`
+- `Real_case1/experiments/plot_chapter5.py:12`: `r"C:\Users\xAdmin\MOSP_project\Real_case1"`
+- `Real_case1/experiments/plot_chapter5.py:66`: `od_df = pd.read_csv(`
+- `Real_case1/experiments/plot_chapter5.py:71`: `origin_df = pd.read_csv(`
+- `Real_case1/experiments/plot_chapter5.py:124`: `plt.savefig(`
+- `Real_case1/experiments/plot_chapter5.py:693`: `summary_df.to_csv(`
+- `Real_case1/experiments/plot_chapter5_thesis.py:15`: `# └─ results/`
+- `Real_case1/experiments/plot_chapter5_thesis.py:30`: `SCRIPT_DIR = Path(__file__).resolve().parent`
+- `Real_case1/experiments/plot_chapter5_thesis.py:57`: `"experiments/results/experiment_05_all_od/\n"`
+- `Real_case1/experiments/plot_chapter5_thesis.py:121`: `od_df = pd.read_csv(`
+- `Real_case1/experiments/plot_chapter5_thesis.py:127`: `origin_df = pd.read_csv(`
+- `Real_case1/experiments/plot_chapter5_thesis.py:312`: `plt.savefig(`
+- `Real_case1/experiments/plot_chapter5_thesis.py:319`: `plt.savefig(`
+- `Real_case1/experiments/plot_chapter5_thesis.py:1093`: `summary_df.to_csv(`
+- `Real_case1/experiments/plot_chapter5_thesis.py:1203`: `f"Summary CSV:\n{SUMMARY_FILE}"`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:35`: `# │  └─ results/`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:41`: `SCRIPT_DIR = Path(__file__).resolve().parent`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:63`: `"experiments/results/experiment_05_all_od/all_od_summary.csv\n"`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:64`: `"experiments/results/experiment_05_all_od/origin_summary.csv\n"`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:97`: `od_df = pd.read_csv(`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:102`: `origin_df = pd.read_csv(`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:175`: `"savefig.facecolor": "white",`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:217`: `fig.savefig(`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:223`: `fig.savefig(`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:778`: `summary_df.to_csv(`
+- `Real_case1/experiments/plot_chapter5_thesis_final (1).py:828`: `print(f"Summary CSV:\n{SUMMARY_FILE}")`
+- `Real_case1/plot_chapter5_figures_7_9.py:36`: `# experiments/results/experiment_05_all_od/`
+- `Real_case1/plot_chapter5_figures_7_9.py:39`: `SCRIPT_DIR = Path(__file__).resolve().parent`
+- `Real_case1/plot_chapter5_figures_7_9.py:66`: `"experiments/results/experiment_05_all_od/\n"`
+- `Real_case1/plot_chapter5_figures_7_9.py:115`: `routes_df = pd.read_csv(`
+- `Real_case1/plot_chapter5_figures_7_9.py:246`: `plt.savefig(`
+- `Real_case1/plot_chapter5_figures_7_9.py:253`: `plt.savefig(`
+- `Real_case1/plot_chapter5_figures_7_9.py:1470`: `].to_csv(`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:22`: `# experiments/results/experiment_05_all_od/all_od_pareto_routes.csv`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:29`: `SCRIPT_DIR = Path(__file__).resolve().parent`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:30`: `CWD = Path.cwd().resolve()`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:31`: `REL_RESULT_DIR = Path("experiments") / "results" / "experiment_05_all_od"`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:67`: `"需要找到：experiments/results/experiment_05_all_od/all_od_pareto_routes.csv",`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:87`: `routes_df = pd.read_csv(ROUTE_FILE, encoding="utf-8-sig")`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:141`: `plt.savefig(png_path, dpi=600, bbox_inches="tight")`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:142`: `plt.savefig(pdf_path, bbox_inches="tight")`
+- `Real_case1/plot_chapter5_figures_7_9_final.py:548`: `].to_csv(`
+- `Real_case1/src/taipei_metro.py:643`: `station_df = pd.read_csv(`
+- `Real_case1/src/taipei_metro.py:648`: `travel_df = pd.read_csv(`
+- `Real_case1/src/taipei_metro.py:653`: `transfer_df = pd.read_csv(`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:25`: `APP_DIR = Path(__file__).resolve().parent`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:172`: `Path.cwd().resolve(),`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:198`: `def locate_pareto_csv() -> Path | None:`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:204`: `path = Path(override).expanduser()`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:210`: `Path("experiments")`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:234`: `path = Path(override).expanduser()`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:248`: `Path.cwd().resolve(),`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:275`: `df = read_csv_flexible_path(candidate)`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:297`: `df = read_csv_flexible_path(candidate)`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:311`: `PARETO_CSV = locate_pareto_csv()`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:318`: `def read_csv_flexible_bytes(`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:335`: `return pd.read_csv(`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:352`: `def read_csv_flexible_path(`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:356`: `return read_csv_flexible_bytes(`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:867`: `df = read_csv_flexible_path(`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:919`: `df = read_csv_flexible_path(`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:1488`: `"pareto_csv_found": (`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:1493`: `"pareto_csv": (`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:1557`: `"pareto_csv_found": (`
+- `Real_case1/taipei-pareto-explorer/backend/main.py:1562`: `"pareto_csv": (`
+- `Real_case1/test_taipei_case.py:15`: `ROOT = Path(__file__).resolve().parent`
+
+## 6. 哪些程式與目前研究結果一致
+
+Synthetic 的各個 canonical runner 寫入同名 raw CSV；相應 analyze/plot scripts 讀同一 raw CSV。正式 row counts 與設定吻合（1:2000, 2A:2500, 2B:2000, 3A:2000, 3B:3000；correctness:1000）。迁移後選取原始 seed 的樣本，所有非 runtime MOSP workload statistics 與保存的 raw rows 一致。
+Real-case 的 Chapter 5 scripts、All-OD analysis 與網站實際讀 experiments/results/experiment_05_all_od/all_od_pareto_routes.csv。修改前用原始 model 與 All-OD 的兩個 source/target functions 重算東湖站：218 條 routes 的完整 costs/path/route ordering 符合保存 CSV。修改後更完整重算所有 119 origins：全部非 runtime 欄位 exact-match。
+這是內容/引用/重現證據；未找到論文正文、執行 log 或版本標籤，所以不聲稱能由現有檔案證明「作者最後選了哪一個圖版」。7–9 與 thesis 的不同 plot candidates 均保留，差異放在 `audit/version_diffs/`。先前 Experiment 3 的兩種設計與 3A/3B 不相同，不能以「較新」名義合併。

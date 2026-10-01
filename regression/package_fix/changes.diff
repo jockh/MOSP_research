@@ -1,0 +1,181 @@
+--- experiments/synthetic/experiment_01.py
++++ experiments/synthetic/experiment_01.py
+@@ -410,6 +410,8 @@
+ # ============================================================
+ 
+ if __name__ == "__main__":
++    from experiments.synthetic._cli import maybe_run_smoke_test
++    maybe_run_smoke_test("experiment_01")
+ 
+     # Verify that costs are nested correctly
+     sanity_check()
+
+--- experiments/synthetic/experiment_02a.py
++++ experiments/synthetic/experiment_02a.py
+@@ -681,6 +681,8 @@
+ # ============================================================
+ 
+ if __name__ == "__main__":
++    from experiments.synthetic._cli import maybe_run_smoke_test
++    maybe_run_smoke_test("experiment_02a")
+ 
+     # ----------------------------------------
+     # Verify correlation generation first
+
+--- experiments/synthetic/experiment_02b.py
++++ experiments/synthetic/experiment_02b.py
+@@ -628,6 +628,8 @@
+ # ============================================================
+ 
+ if __name__ == "__main__":
++    from experiments.synthetic._cli import maybe_run_smoke_test
++    maybe_run_smoke_test("experiment_02b")
+ 
+     sanity_check()
+ 
+
+--- experiments/synthetic/experiment_03a.py
++++ experiments/synthetic/experiment_03a.py
+@@ -855,6 +855,8 @@
+ # ============================================================
+ 
+ if __name__ == "__main__":
++    from experiments.synthetic._cli import maybe_run_smoke_test
++    maybe_run_smoke_test("experiment_03a")
+ 
+     results = (
+         run_experiment()
+
+--- experiments/synthetic/experiment_03b.py
++++ experiments/synthetic/experiment_03b.py
+@@ -2014,4 +2014,6 @@
+ # ============================================================
+ 
+ if __name__ == "__main__":
++    from experiments.synthetic._cli import maybe_run_smoke_test
++    maybe_run_smoke_test("experiment_03b")
+     main()
+--- pyproject.toml
++++ pyproject.toml
+@@ -15,5 +15,6 @@
+ 
+ [tool.setuptools.packages.find]
+ where = ["."]
+-include = ["src*", "experiments*", "validation*", "analysis*"]
++namespaces = false
++include = ["src", "src.*", "experiments", "experiments.*", "validation", "validation.*", "analysis", "analysis.*"]
+ exclude = ["archive*", "web*", "audit*", "results*", "data*"]
+
+--- README.md
++++ README.md
+@@ -24,42 +24,85 @@
+ └── regression/                # test evidence; reruns are isolated
+ ```
+ 
+-## Installation
++## Windows installation: one explicit research interpreter
+ 
+-Python >=3.10; migration tested with Python 3.12.14. In PowerShell at the new root:
++`src` is the actual package name, located at the repository root. It is not a
++source-layout container. The root `pyproject.toml` installs `src`, `experiments`,
++`validation` and `analysis`; all core imports consistently use `from src...`.
++
++Python >=3.10 is supported; the project environment is verified on Python 3.13.
++Use an explicit venv interpreter for both installation and execution. Activation
++is optional. Run these once in PowerShell:
+ 
+ ```powershell
+-python -m venv .venv
+-.\.venv\Scripts\Activate.ps1
+-python -m pip install -e .
++cd C:\Users\xAdmin\MOSP_project\MOSP_research
++py -3.13 -m venv .venv
++.\.venv\Scripts\python.exe -m pip install -U pip
++.\.venv\Scripts\python.exe -m pip install -e .
++.\.venv\Scripts\python.exe -m validation.check_installation
+ ```
+ 
+-`requirements.txt` contains only research Python dependencies. Optional API:
+-`python -m pip install -e ".[web,test]"`. `requirements-tested.txt` records
+-the exact versions actually used for migration verification, not the undocumented
+-original runtime. Keep React/npm dependencies in the frontend package.json/lockfile.
+-After editable installation the following module commands also work from a working
+-directory outside the repository. Python's normal module rules still apply: avoid
+-a different checkout containing another top-level `src` package on the search path.
++If the Python launcher is unavailable, replace the `py -3.13` venv command with:
++
++```powershell
++& "$env:LOCALAPPDATA\Programs\Python\Python313\python.exe" -m venv .venv
++```
++
++The root `setup_windows.ps1` also performs the same installation and verifies all
++active module imports; it finds Python or accepts `-PythonExecutable`. If PowerShell
++blocks local scripts, the following process-local command needs no policy change:
++
++```powershell
++powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\setup_windows.ps1
++```
++
++`requirements.txt` contains research dependencies. Optional web/test dependencies:
++`.\.venv\Scripts\python.exe -m pip install -e ".[web,test]"`.
++The website's separate backend `.venv` needs its own editable installation; one
++environment's installation does not register packages in another Python interpreter.
++Use its existing `start_backend.ps1` or the website README setup commands.
++
++Editable installation makes module and file execution work from other working
++directories when using this same interpreter. It uses neither PYTHONPATH nor
++script-level sys.path edits. Another checkout containing a different top-level
++`src` can still shadow packages under normal Python rules; use the canonical root
++or an unrelated working directory, not the old checkout as an execution root.
+ 
+ ## Formal execution
+ 
++From the canonical root, without activating the venv:
++
+ ```powershell
+-python -m validation.test_correctness
+-python -m experiments.synthetic.experiment_01
+-python -m experiments.synthetic.experiment_02a
+-python -m experiments.synthetic.experiment_02b
+-python -m experiments.synthetic.experiment_03a
+-python -m experiments.synthetic.experiment_03b
+-python -m experiments.real_case.experiment_05_all_od
++.\.venv\Scripts\python.exe -m validation.test_correctness
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_01
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_02a
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_02b
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_03a
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_03b
++.\.venv\Scripts\python.exe -m experiments.real_case.experiment_05_all_od
+ ```
+ 
+-Formal commands write to `results/<experiment>/`; running an experiment again
+-regenerates its corresponding CSVs. Neither data nor output discovery uses CWD.
+-Synthetic default settings and RNG logic remain exactly those of the original
+-scripts. Taipei still uses one source-to-all MOSP run per physical origin, with
+-three objectives, origin dwell removal, service states, Circular Line,
+-新埔/新埔民生 transfers, and the explicit 3-minute 大坪林 G/Y assumption.
++Outside the root, use the full path to `.venv/Scripts/python.exe` with the same
++module names. There is no need to enter experiments/validation/analysis folders.
++Formal commands regenerate the corresponding `results/<experiment>/` CSVs.
++Scientific parameters, RNG logic and output definitions are unchanged.
++
++For short end-to-end checks without rewriting formal results:
++
++```powershell
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_01 --smoke-test
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_02a --smoke-test
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_02b --smoke-test
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_03a --smoke-test
++.\.venv\Scripts\python.exe -m experiments.synthetic.experiment_03b --smoke-test
++.\.venv\Scripts\python.exe -m experiments.real_case.experiment_05_all_od --origin 東湖站 --output-dir regression/package_smoke/all_od
++```
++
++Synthetic smoke uses the first original replicate/query for every original
++condition, generates the original graph and costs, calls the same solver, and
++writes only `regression/package_smoke/<experiment>/smoke.csv`. It does not reduce
++or patch the constants of formal experiments. `--smoke-output-dir` may select
++another directory within canonical `regression/`.
+ 
+ ## Isolated validation / smoke
+ 

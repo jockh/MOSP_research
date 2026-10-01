@@ -1,0 +1,14 @@
+{
+  "App_logic_unchanged": true,
+  "playback_functions_unchanged": [
+    "reset",
+    "stop",
+    "fitAll",
+    "fitRoute",
+    "move",
+    "playRoute",
+    "showFinalComparison"
+  ],
+  "route_coordinates_and_line_colors_unchanged": true,
+  "tradeoff_cost_calculations_unchanged": true
+}

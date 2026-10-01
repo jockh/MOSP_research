@@ -1,0 +1,16 @@
+INFO:     Started server process [6876]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8811 (Press CTRL+C to quit)
+INFO:     127.0.0.1:14161 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14165 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14166 - "OPTIONS /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14167 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14168 - "OPTIONS /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14169 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14170 - "OPTIONS /api/health HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:14171 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14172 - "OPTIONS /api/health HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:14173 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14175 - "GET /api/network HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14177 - "GET /api/routes?origin=%E6%9D%B1%E6%B9%96%E7%AB%99&destination=%E4%B8%AD%E5%8E%9F%E7%AB%99 HTTP/1.1" 200 OK

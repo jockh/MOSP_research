@@ -1,0 +1,78 @@
+{
+  "build_stats": {
+    "nodes": 150,
+    "ride_segments": 141,
+    "ride_directed_edges": 282,
+    "transfer_directed_edges": 54,
+    "states_with_positive_stop_time": 132,
+    "states_with_zero_stop_time": 18,
+    "states_without_stop_time_data": [
+      "BR01@BR#1",
+      "R01@R#2",
+      "G01@G#3",
+      "O01@O#4",
+      "O01@O#5",
+      "BL01@BL#6",
+      "R22A@R-3#7",
+      "G03A@G-3#8",
+      "Y07@Y#9"
+    ],
+    "skipped_travel_rows": 0,
+    "skipped_pairs": [],
+    "expanded_routes": [
+      {
+        "route_key": "O#5",
+        "parent_route_key": "O#4",
+        "junction_station": "大橋頭站"
+      }
+    ],
+    "circular_line_included": true,
+    "circular_route_info": {
+      "route_key": "Y#9",
+      "line_id": "Y",
+      "service_name": "新北產業園區-大坪林",
+      "station_count": 14,
+      "segment_count": 13,
+      "stations": [
+        "新北產業園區站",
+        "幸福站",
+        "頭前庄站",
+        "新埔民生站",
+        "板橋站",
+        "板新站",
+        "中原站",
+        "橋和站",
+        "中和站",
+        "景安站",
+        "景平站",
+        "秀朗橋站",
+        "十四張站",
+        "大坪林站"
+      ]
+    },
+    "special_transfer_directed_edges": 4,
+    "transfer_assumptions": [
+      {
+        "station": "大坪林站",
+        "lines": [
+          "G",
+          "Y"
+        ],
+        "walking_minutes": 3.0,
+        "reason": "official interchange exists but the supplied transfer-walking CSV has no Dapinglin row"
+      }
+    ]
+  },
+  "physical_stations": 119,
+  "origin": "東湖站",
+  "routes": 218,
+  "saved_routes": 218,
+  "saved_routes_exact_match": true,
+  "search_stats": {
+    "generated_labels": 883,
+    "kept_labels": 495,
+    "pruned_labels": 388,
+    "dominance_checks": 1418,
+    "max_labels_per_node": 5
+  }
+}

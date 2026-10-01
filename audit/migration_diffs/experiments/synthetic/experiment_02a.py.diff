@@ -1,0 +1,31 @@
+--- C:\Users\xAdmin\MOSP_project\Mosp_vr1.1\experiments\experiment_02a_correlation.py
++++ experiments/synthetic/experiment_02a.py
+@@ -1,3 +1,4 @@
++from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+ import csv
+ import os
+ import random
+@@ -505,10 +506,7 @@
+ 
+ def save_results(results):
+ 
+-    output_dir = os.path.join(
+-        "experiments",
+-        "results"
+-    )
++    output_dir = CANONICAL_RESULTS_DIR / 'experiment_02a'
+ 
+     os.makedirs(
+         output_dir,
+@@ -557,10 +555,7 @@
+     correlation_checks
+ ):
+ 
+-    output_dir = os.path.join(
+-        "experiments",
+-        "results"
+-    )
++    output_dir = CANONICAL_RESULTS_DIR / 'experiment_02a'
+ 
+     output_file = os.path.join(
+         output_dir,

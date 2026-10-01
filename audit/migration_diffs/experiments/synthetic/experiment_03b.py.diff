@@ -1,0 +1,47 @@
+--- C:\Users\xAdmin\MOSP_project\Mosp_vr1.1\experiments\experiment_03b_route_overlap.py
++++ experiments/synthetic/experiment_03b.py
+@@ -1,3 +1,4 @@
++from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+ import os
+ import sys
+ import time
+@@ -49,22 +50,11 @@
+ # 0. Project path
+ # ============================================================
+ 
+-CURRENT_DIR = os.path.dirname(
+-    os.path.abspath(__file__)
+-)
+-
+-PROJECT_ROOT = os.path.abspath(
+-    os.path.join(
+-        CURRENT_DIR,
+-        ".."
+-    )
+-)
+-
+-if PROJECT_ROOT not in sys.path:
+-    sys.path.insert(
+-        0,
+-        PROJECT_ROOT
+-    )
++pass  # root supplied by src.paths
++
++pass  # root supplied by src.paths
++
++pass  # packaged imports replace path injection
+ 
+ 
+ # ============================================================
+@@ -116,10 +106,7 @@
+ # 2. Output file
+ # ============================================================
+ 
+-OUTPUT_DIR = os.path.join(
+-    "experiments",
+-    "results"
+-)
++OUTPUT_DIR = CANONICAL_RESULTS_DIR / 'experiment_03b'
+ 
+ os.makedirs(
+     OUTPUT_DIR,

@@ -1,0 +1,11 @@
+[
+  "index.html",
+  "vite.config.js",
+  "src/api.js",
+  "src/App.jsx",
+  "src/styles.css",
+  "src/components/MetroMap.jsx",
+  "src/components/RoutePanel.jsx",
+  "src/components/TradeoffPlot.jsx",
+  "src/hooks/useResponsiveViewport.js"
+]

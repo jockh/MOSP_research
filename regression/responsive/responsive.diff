@@ -1,0 +1,1162 @@
+--- before/index.html
++++ after/index.html
+@@ -2,7 +2,7 @@
+ <html lang="zh-Hant">
+ <head>
+   <meta charset="UTF-8" />
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+   <title>Taipei Pareto Route Explorer</title>
+ </head>
+ <body>
+--- before/vite.config.js
++++ after/vite.config.js
+@@ -1,3 +1,18 @@
+-import { defineConfig } from 'vite';
++import { fileURLToPath } from 'node:url';
++import { defineConfig, loadEnv } from 'vite';
+ import react from '@vitejs/plugin-react';
+-export default defineConfig({ plugins: [react()], server: { port: 5173 } });
++
++export default defineConfig(({ mode }) => {
++  const env = loadEnv(mode, fileURLToPath(new URL('.', import.meta.url)), 'MOSP_');
++  const proxy = {
++    '/api': {
++      target: process.env.MOSP_API_PROXY_TARGET || env.MOSP_API_PROXY_TARGET || 'http://127.0.0.1:8000',
++      changeOrigin: true,
++    },
++  };
++  return {
++    plugins: [react()],
++    server: { port: 5173, proxy },
++    preview: { proxy },
++  };
++});
+--- before/src/api.js
++++ after/src/api.js
+@@ -1,4 +1,6 @@
+-const API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
++// Render Static Site: set VITE_API_BASE_URL to the backend's HTTPS origin.
++// Locally, an empty value uses Vite's /api proxy (default backend: port 8000).
++const API = (import.meta.env.VITE_API_BASE_URL || '').trim().replace(/\/+$/, '');
+ async function json(response) {
+   const body = await response.json().catch(() => ({}));
+   if (!response.ok) throw new Error(body.detail || `HTTP ${response.status}`);
+--- before/src/App.jsx
++++ after/src/App.jsx
+@@ -4,6 +4,7 @@
+ import MetroMap from './components/MetroMap.jsx';
+ import RoutePanel from './components/RoutePanel.jsx';
+ import TradeoffPlot from './components/TradeoffPlot.jsx';
++import { useViewportHeightFallback } from './hooks/useResponsiveViewport.js';
+ 
+ const COLORS = ['#ef4444', '#2563eb', '#10b981', '#8b5cf6', '#f97316', '#ec4899', '#06b6d4', '#84cc16'];
+ const SPEEDS = [1, 1.5, 2];
+@@ -34,6 +35,7 @@
+ 
+ export default function App() {
+   const mapRef = useRef(null);
++  useViewportHeightFallback();
+   const [health, setHealth] = useState(null);
+   const [stations, setStations] = useState([]);
+   const [network, setNetwork] = useState(null);
+@@ -317,7 +319,7 @@
+           <div className="od-block-fields">
+             <label className="line-field">
+               <span>1 · Line</span>
+-              <select value={originLine} onChange={handleOriginLineChange} disabled={playing}>
++              <select aria-label="Origin line" value={originLine} onChange={handleOriginLineChange} disabled={playing}>
+                 <option value="">選路線</option>
+                 {availableLines.map(line => (
+                   <option key={line} value={line}>
+@@ -330,6 +332,7 @@
+             <label className="station-field">
+               <span>2 · Station</span>
+               <select
++                aria-label="Origin station"
+                 value={origin}
+                 onChange={handleOriginStationChange}
+                 disabled={!originLine || playing}
+@@ -363,7 +366,7 @@
+           <div className="od-block-fields">
+             <label className="line-field">
+               <span>1 · Line</span>
+-              <select value={destinationLine} onChange={handleDestinationLineChange} disabled={playing}>
++              <select aria-label="Destination line" value={destinationLine} onChange={handleDestinationLineChange} disabled={playing}>
+                 <option value="">選路線</option>
+                 {availableLines.map(line => (
+                   <option key={line} value={line}>
+@@ -376,6 +379,7 @@
+             <label className="station-field">
+               <span>2 · Station</span>
+               <select
++                aria-label="Destination station"
+                 value={destination}
+                 onChange={handleDestinationStationChange}
+                 disabled={!destinationLine || playing}
+@@ -399,38 +403,11 @@
+           <Search size={16} /> Find Pareto Routes
+         </button>
+ 
+-        {routes.length > 0 && (
+-          <div className="speed-control" aria-label="animation speed">
+-            <span>Speed</span>
+-            {SPEEDS.map(value => (
+-              <button
+-                key={value}
+-                className={speed === value ? 'selected' : ''}
+-                onClick={() => setSpeed(value)}
+-                disabled={playing}
+-              >
+-                {value}×
+-              </button>
+-            ))}
+-          </div>
+-        )}
+-
+-        {routes.length > 0 && !playing && (
+-          <button className="playtop" onClick={playAll}>
+-            <Play size={16} fill="currentColor" /> Play All
+-          </button>
+-        )}
+-
+-        {playing && (
+-          <button className="stop" onClick={stopPlayback}>
+-            <Square size={14} fill="currentColor" /> Stop
+-          </button>
+-        )}
+       </div>
+ 
+-      {error && <div className="error">{error}</div>}
+-
+-      <main>
++      {error && <div className="error" role="alert">{error}</div>}
++
++      <main aria-label="Pareto route results">
+         <section className="mapcol">
+           <div className="maphead">
+             <div>
+@@ -454,10 +431,41 @@
+               finalComparison={finalComparison}
+             />
+ 
++
++          </div>
++          {routes.length > 0 && (
++            <div className="animation-controls" aria-label="Animation controls">
++              {playing ? (
++                <button type="button" className="stop" onClick={stopPlayback}>
++                  <Square size={16} fill="currentColor" /> Stop
++                </button>
++              ) : (
++                <button type="button" className="playtop" onClick={playAll}>
++                  <Play size={16} fill="currentColor" /> Play All
++                </button>
++              )}
++              <div className="speed-control" role="group" aria-label="animation speed">
++                <span>Speed</span>
++                {SPEEDS.map(value => (
++                  <button
++                    type="button"
++                    key={value}
++                    className={speed === value ? 'selected' : ''}
++                    aria-pressed={speed === value}
++                    onClick={() => setSpeed(value)}
++                    disabled={playing}
++                  >
++                    {value}×
++                  </button>
++                ))}
++              </div>
++            </div>
++          )}
++          <div className="map-feedback">
+             {finalComparison && !playback && (
+               <div className="comparison-hud">
+                 <strong>All Pareto routes shown</strong>
+-                <span>{routes.length} non-dominated alternatives · compare trade-offs on the right</span>
++                <span>{routes.length} non-dominated alternatives · compare travel time, transfers and walking</span>
+               </div>
+             )}
+ 
+@@ -484,7 +492,7 @@
+                   station {playback.stationIndex} / {playback.stationCount}
+                 </div>
+ 
+-                <div className="progress-track">
++                <div className="progress-track" role="progressbar" aria-label="路徑播放進度" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
+                   <div className="progress-fill" style={{ width: `${progress}%` }} />
+                 </div>
+               </div>
+--- before/src/styles.css
++++ after/src/styles.css
+@@ -1,422 +1,236 @@
+-:root{
+-  font-family:Inter,"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+-  color:#142033;
+-  background:#edf2f7;
+-  font-synthesis:none;
+-  font-weight:400;
+-  -webkit-font-smoothing:antialiased;
+-  -moz-osx-font-smoothing:grayscale;
+-}
+-*{box-sizing:border-box}
+-body{margin:0;min-width:1040px;background:#edf2f7;font-weight:400}
+-button,select{font:inherit}
+-button{cursor:pointer}
+-button:disabled{opacity:.52;cursor:not-allowed}
+-.app{min-height:100vh;background:radial-gradient(circle at top left,rgba(255,255,255,.95),transparent 35%),#edf2f7}
+-
+-header{
+-  padding:27px 32px 19px;
+-  background:#0f172a;
+-  color:#fff;
+-  display:flex;
+-  justify-content:space-between;
+-  align-items:flex-end;
+-  gap:24px;
+-}
+-header h1{margin:4px 0;font-size:29px;font-weight:700;letter-spacing:-.03em}
+-header p{margin:0;color:#cbd5e1;font-size:13px;font-weight:400}
+-.eyebrow{font-size:9px;letter-spacing:.16em;font-weight:600;color:#64748b}
+-.blue{color:#60a5fa}
+-.status{border:1px solid #334155;border-radius:999px;padding:8px 12px;font-size:10px;font-weight:500;color:#cbd5e1;display:flex;align-items:center;gap:8px}
+-.status i{width:8px;height:8px;border-radius:50%;background:#ef4444}
+-.status.ok i{background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.12)}
+-
+-.controls{
+-  padding:13px 32px;
+-  background:rgba(255,255,255,.96);
+-  border-bottom:1px solid #dbe3ec;
+-  display:flex;
+-  align-items:flex-end;
+-  gap:11px;
+-  position:sticky;
+-  top:0;
+-  z-index:1000;
+-  backdrop-filter:blur(12px);
+-}
+-label{display:grid;gap:4px}
+-label span{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#64748b;font-weight:600}
+-select{width:205px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;padding:9px 11px;color:#1f2937;outline:none;font-size:14px;font-weight:500;line-height:1.35}
+-select:focus{border-color:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.13)}
+-option{font-weight:400}
+-.arrow{margin-bottom:9px;color:#94a3b8}
+-.search,.playtop,.play-all,.stop{border:0;border-radius:9px;padding:10px 13px;color:#fff;display:inline-flex;align-items:center;gap:7px;font-weight:600}
+-.search{background:#0f172a}
+-.playtop,.play-all{background:#2563eb}
+-.stop{background:#dc2626}
+-.search:hover,.playtop:hover,.play-all:hover{filter:brightness(1.06)}
+-
+-.speed-control{
+-  height:38px;
+-  display:flex;
+-  align-items:center;
+-  gap:3px;
+-  border:1px solid #dbe3ec;
+-  background:#f8fafc;
+-  border-radius:9px;
+-  padding:4px;
+-}
+-.speed-control>span{font-size:8px;font-weight:600;letter-spacing:.08em;color:#94a3b8;padding:0 5px}
+-.speed-control button{border:0;background:transparent;color:#64748b;border-radius:6px;padding:6px 7px;font-size:9px;font-weight:600}
+-.speed-control button.selected{background:#0f172a;color:#fff;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+-
+-.error{margin:14px 26px 0;padding:10px 12px;border:1px solid #fecaca;background:#fff1f2;color:#9f1239;border-radius:9px;font-size:11px}
+-main{padding:18px 24px 24px;display:grid;grid-template-columns:minmax(0,1fr) 385px;gap:16px}
+-.maphead{min-height:53px;padding:2px 4px 9px;display:flex;align-items:flex-end;justify-content:space-between}
+-.maphead h2{margin:3px 0 0;font-size:19px}
+-.maphead h2 span{color:#94a3b8}
+-.maphead b{background:#e0f2fe;color:#075985;border:1px solid #bae6fd;border-radius:999px;padding:6px 9px;font-size:10px}
+-.map-stage{position:relative}
+-
+-.map-wrap{
+-  height:calc(100vh - 220px);
+-  min-height:620px;
+-  position:relative;
+-  background:#fff;
+-  border:1px solid #dce4ed;
+-  border-radius:16px;
+-  overflow:hidden;
+-  box-shadow:0 18px 55px rgba(15,23,42,.06);
+-}
+-.map{height:100%;width:100%}
+-.map-loading{height:620px;display:grid;place-items:center;background:#fff;color:#64748b;border-radius:16px}
+-
+-/* Make the basemap quiet so Pareto alternatives become the visual focus. */
+-.leaflet-tile-pane{
+-  filter:grayscale(.88) saturate(.35) brightness(1.07) contrast(.91);
+-}
+-.map-wrap.is-playing .leaflet-tile-pane{filter:grayscale(1) saturate(.18) brightness(1.09) contrast(.89)}
+-
+-.od-tooltip{
+-  background:#0f172a!important;
+-  color:#fff!important;
+-  border:0!important;
+-  box-shadow:0 4px 16px rgba(15,23,42,.20)!important;
+-  font-size:9px!important;
+-  font-weight:800!important;
+-  padding:4px 7px!important;
+-}
+-.od-tooltip:before{border-top-color:#0f172a!important}
+-
+-.map-tip{
+-  position:absolute;
+-  left:14px;
+-  bottom:14px;
+-  z-index:500;
+-  background:rgba(15,23,42,.88);
+-  color:#e2e8f0;
+-  padding:7px 10px;
+-  border-radius:8px;
+-  font-size:10px;
+-  pointer-events:none;
+-  backdrop-filter:blur(8px);
+-}
+-
+-.map-legend{
+-  position:absolute;
+-  right:14px;
+-  bottom:14px;
+-  z-index:500;
+-  display:flex;
+-  gap:10px;
+-  align-items:center;
+-  background:rgba(255,255,255,.90);
+-  border:1px solid rgba(203,213,225,.8);
+-  border-radius:8px;
+-  padding:7px 9px;
+-  font-size:8px;
+-  font-weight:550;
+-  color:#64748b;
+-  pointer-events:none;
+-  backdrop-filter:blur(8px);
+-}
+-.map-legend span{display:flex;align-items:center;gap:5px}
+-.map-legend i{display:block;width:17px;height:3px;border-radius:99px}
+-.legend-active{background:#2563eb;height:5px!important}
+-.legend-complete{background:#64748b;opacity:.5}
+-.legend-network{background:#cbd5e1;opacity:.8}
+-
+-/* Leaflet SVG path animation for the moving halo / transfer pulse. */
+-.leaflet-moving-ring{animation:movingRing 1.05s ease-in-out infinite}
+-.leaflet-transfer-ring{animation:transferRing .62s ease-out infinite}
+-.leaflet-transfer-ring-2{animation:transferRing2 .62s ease-out infinite}
+-@keyframes movingRing{0%,100%{stroke-opacity:.35;fill-opacity:.05}50%{stroke-opacity:.78;fill-opacity:.13}}
+-@keyframes transferRing{0%{stroke-opacity:.95;fill-opacity:.18}100%{stroke-opacity:.16;fill-opacity:.02}}
+-@keyframes transferRing2{0%,100%{stroke-opacity:.85}50%{stroke-opacity:.20}}
+-
+-aside{display:grid;align-content:start;gap:13px}
+-.panel{background:#fff;border:1px solid #dce4ed;border-radius:15px;padding:15px;box-shadow:0 10px 35px rgba(15,23,42,.05)}
+-.panel h2{margin:3px 0 0;font-size:16px;font-weight:650}
+-.panel-head{display:flex;justify-content:space-between;align-items:center}
+-.icon{width:33px;height:33px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;display:grid;place-items:center}
+-.play-all{width:100%;justify-content:center;margin:12px 0}
+-.routes{display:grid;gap:8px;max-height:385px;overflow:auto;padding:3px 3px 3px 0}
+-
+-.route-card{
+-  border:1px solid #e2e8f0;
+-  border-left:4px solid var(--c);
+-  border-radius:11px;
+-  padding:10px;
+-  background:#fff;
+-  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
+-}
+-.route-card:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(15,23,42,.06)}
+-.route-card.shown{
+-  background:color-mix(in srgb,var(--c) 2.5%,white);
+-  border-left-width:4px;
+-}
+-.route-card.active{
+-  border-color:var(--c);
+-  background:color-mix(in srgb,var(--c) 4%,white);
+-  box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 13%,transparent),0 9px 22px rgba(15,23,42,.08);
+-  transform:translateX(-2px);
+-}
+-.route-top{display:flex;justify-content:space-between;align-items:center}
+-.rname{display:flex;align-items:center;gap:7px;font-weight:650}
+-.rname>span{width:9px;height:9px;border-radius:50%}
+-.rname em{font-style:normal;font-size:7px;letter-spacing:.12em;border-radius:999px;padding:3px 5px;background:var(--c);color:#fff;animation:nowPulse 1s ease-in-out infinite}
+-@keyframes nowPulse{0%,100%{opacity:1}50%{opacity:.50}}
+-.route-top button{border:0;border-radius:7px;background:#f1f5f9;color:#334155;padding:5px 8px;display:flex;align-items:center;gap:4px;font-size:10px;font-weight:550}
+-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:9px}
+-.metrics div{display:grid;gap:2px}
+-.metrics span{color:#94a3b8;font-size:8px;font-weight:400}
+-.metrics strong{font-size:11px;font-weight:600;white-space:nowrap}
+-.line-seq{margin-top:8px;padding-top:8px;border-top:1px dashed #e2e8f0;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+-.line-chip{min-width:26px;text-align:center;padding:3px 6px;border-radius:999px;color:#fff;font-size:8px;font-weight:700;letter-spacing:.03em;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+-.line-chip.dark{color:#3f3f46}
+-
+-.muted{color:#64748b;font-size:11px}
+-.plot-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+-.plot-title span{font-size:8px;color:#94a3b8}
+-.plot{width:100%;height:auto;margin-top:7px;overflow:visible}
+-.plot .axis{stroke:#94a3b8;stroke-width:1}
+-.plot .gridline{stroke:#e2e8f0;stroke-width:.8}
+-.frontier{stroke:#94a3b8;stroke-width:1.4;stroke-dasharray:4 4}
+-.dot{cursor:pointer;transition:opacity .2s}
+-.dot.disabled{cursor:default}
+-.dot text{font-size:9px;font-weight:600;fill:#334155;pointer-events:none}
+-.dot circle:not(.plot-pulse){transition:r .16s ease,filter .16s ease}
+-.dot:hover circle:not(.plot-pulse){filter:drop-shadow(0 2px 4px rgba(15,23,42,.18))}
+-.plot-pulse{transform-box:fill-box;transform-origin:center;animation:plotPulse 1s ease-out infinite}
+-@keyframes plotPulse{0%{opacity:.75;transform:scale(.78)}100%{opacity:0;transform:scale(1.28)}}
+-.axislabel{font-size:8px;fill:#64748b;font-weight:500}
+-.ticklabel{font-size:7.5px;fill:#94a3b8}
+-
+-footer{padding:8px 32px 20px;display:flex;justify-content:space-between;color:#94a3b8;font-size:9px}
+-
+-.playback-hud{
+-  position:absolute;
+-  top:72px;
+-  left:18px;
+-  z-index:700;
+-  width:225px;
+-  background:rgba(15,23,42,.93);
+-  border:1px solid rgba(255,255,255,.12);
+-  border-left:5px solid var(--route-color);
+-  border-radius:12px;
+-  padding:12px 13px;
+-  color:#fff;
+-  box-shadow:0 15px 35px rgba(15,23,42,.24);
+-  backdrop-filter:blur(10px);
+-  pointer-events:none;
+-  animation:hudIn .18s ease-out;
+-}
+-@keyframes hudIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+-.playback-topline{display:flex;justify-content:space-between;align-items:center}
+-.playback-topline strong{font-size:19px;font-weight:650}
+-.playback-topline span{font-size:10px;color:#cbd5e1}
+-.playback-phase{display:inline-flex;margin-top:7px;border:1px solid color-mix(in srgb,var(--route-color) 45%,transparent);background:color-mix(in srgb,var(--route-color) 18%,transparent);border-radius:999px;padding:3px 6px;color:#e2e8f0;font-size:7px;font-weight:650;letter-spacing:.12em}
+-.playback-station{margin-top:7px;font-size:16px;font-weight:650;letter-spacing:-.01em}
+-.playback-transfer{display:flex;gap:8px;align-items:center;margin-top:5px;color:#cbd5e1;font-size:10px;font-weight:550}
+-.playback-transfer span{color:#64748b}
+-.playback-meta{margin-top:3px;font-size:9px;color:#94a3b8}
+-.progress-track{height:4px;border-radius:999px;background:#334155;margin-top:10px;overflow:hidden}
+-.progress-fill{height:100%;border-radius:999px;background:var(--route-color);transition:width .12s linear}
+-
+-
+-/* ========================================================
+-   V3: active-route station labels
+-   ======================================================== */
+-.route-station-tooltip{
+-  background:rgba(255,255,255,.94)!important;
+-  color:#334155!important;
+-  border:1px solid rgba(148,163,184,.72)!important;
+-  border-radius:5px!important;
+-  box-shadow:0 3px 10px rgba(15,23,42,.10)!important;
+-  padding:2px 5px!important;
+-  font-size:8px!important;
+-  line-height:1.15!important;
+-  font-weight:500!important;
+-  white-space:nowrap!important;
+-  pointer-events:none!important;
+-}
+-.route-station-tooltip.visited{
+-  color:#0f172a!important;
+-  border-color:#64748b!important;
+-  font-weight:600!important;
+-  opacity:1!important;
+-}
+-.route-station-tooltip.upcoming{
+-  opacity:.68!important;
+-}
+-.leaflet-tooltip-top.route-station-tooltip:before{
+-  border-top-color:rgba(148,163,184,.72)!important;
+-}
+-.leaflet-tooltip-bottom.route-station-tooltip:before{
+-  border-bottom-color:rgba(148,163,184,.72)!important;
+-}
+-
+-/* ========================================================
+-   V4: choose metro line first, then station
+-   ======================================================== */
+-.od-controls{
+-  align-items:flex-end;
+-  gap:10px;
+-}
+-.od-block{
+-  display:grid;
+-  gap:5px;
+-  min-width:0;
+-}
+-.od-block-title{
+-  display:flex;
+-  align-items:center;
+-  gap:7px;
+-  padding-left:1px;
+-}
+-.od-block-title>span{
+-  font-size:9px;
+-  text-transform:uppercase;
+-  letter-spacing:.13em;
+-  color:#475569;
+-  font-weight:600;
+-}
+-.selected-line-badge{
+-  min-width:28px;
+-  padding:2px 6px;
+-  border-radius:999px;
+-  background:var(--line-color);
+-  color:#fff;
+-  text-align:center;
+-  font-size:8px;
+-  line-height:1.25;
+-  letter-spacing:.04em;
+-  box-shadow:inset 0 0 0 1px rgba(0,0,0,.07);
+-}
+-.selected-line-badge.dark{color:#3f3f46}
+-.od-block-fields{
+-  display:flex;
+-  gap:6px;
+-  padding:5px;
+-  border:1px solid #e2e8f0;
+-  border-radius:12px;
+-  background:#f8fafc;
+-}
+-.od-block-fields label{gap:3px}
+-.od-block-fields label span{
+-  padding-left:3px;
+-  font-size:7px;
+-  color:#94a3b8;
+-  letter-spacing:.10em;
+-}
+-.od-block-fields select{
+-  height:35px;
+-  padding:7px 9px;
+-  border-radius:7px;
+-  background:#fff;
+-}
+-.line-field select{width:175px;font-weight:550}
+-.station-field select{width:175px;font-weight:500}
+-.od-arrow{margin:0 1px 12px;color:#94a3b8;flex:0 0 auto}
+-
+-@media (max-width:1500px){
+-  .controls.od-controls{flex-wrap:wrap;align-items:flex-end}
+-  .od-block{flex:0 0 auto}
+-}
+-
+-
+-/* ========================================================
+-   V5: transfer emphasis / final comparison / offline fallback
+-   ======================================================== */
+-.transfer-tooltip{
+-  background:rgba(255,255,255,.96)!important;
+-  color:#334155!important;
+-  border:1px solid #94a3b8!important;
+-  border-radius:5px!important;
+-  box-shadow:0 3px 10px rgba(15,23,42,.10)!important;
+-  padding:2px 5px!important;
+-  font-size:8px!important;
+-  font-weight:550!important;
+-  white-space:nowrap!important;
+-  pointer-events:none!important;
+-}
+-.transfer-tooltip:before{border-top-color:#94a3b8!important}
+-
+-.comparison-hud{
+-  position:absolute;
+-  top:18px;
+-  left:50%;
+-  transform:translateX(-50%);
+-  z-index:720;
+-  min-width:300px;
+-  display:grid;
+-  gap:2px;
+-  text-align:center;
+-  padding:9px 14px;
+-  border-radius:10px;
+-  background:rgba(15,23,42,.91);
+-  color:#fff;
+-  border:1px solid rgba(255,255,255,.12);
+-  box-shadow:0 10px 28px rgba(15,23,42,.18);
+-  backdrop-filter:blur(8px);
+-  pointer-events:none;
+-}
+-.comparison-hud strong{font-size:11px;font-weight:650;letter-spacing:.03em}
+-.comparison-hud span{font-size:8px;font-weight:400;color:#cbd5e1}
+-
+-.final-map-label{
+-  position:absolute;
+-  top:14px;
+-  right:14px;
+-  z-index:510;
+-  padding:5px 8px;
+-  border-radius:999px;
+-  background:rgba(255,255,255,.92);
+-  border:1px solid #cbd5e1;
+-  color:#475569;
+-  font-size:8px;
+-  font-weight:600;
+-  letter-spacing:.08em;
+-  pointer-events:none;
+-}
+-
+-.offline-map-warning{
+-  position:absolute;
+-  top:14px;
+-  left:14px;
+-  z-index:730;
+-  max-width:360px;
+-  padding:7px 10px;
+-  border-radius:8px;
+-  background:rgba(254,243,199,.95);
+-  border:1px solid #f59e0b;
+-  color:#92400e;
+-  font-size:9px;
+-  font-weight:500;
+-  box-shadow:0 5px 16px rgba(15,23,42,.10);
+-  pointer-events:none;
+-}
+-
+-.plot-final-ring{
+-  opacity:.72;
+-  filter:drop-shadow(0 1px 3px rgba(15,23,42,.14));
+-}
++:root {
++  font-family: Inter, "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
++  color: #142033;
++  background: #edf2f7;
++  font-synthesis: none;
++  font-weight: 400;
++  font-size: 16px;
++  -webkit-font-smoothing: antialiased;
++  -moz-osx-font-smoothing: grayscale;
++  -webkit-text-size-adjust: 100%;
++  text-size-adjust: 100%;
++  --space: clamp(12px, 2.3vw, 32px);
++  --viewport-height: 100vh;
++  --map-height: clamp(260px, calc(var(--viewport-height) * .5), 560px);
++}
++@supports (height: 100dvh) {
++  :root { --viewport-height: 100dvh; }
++}
++* { box-sizing: border-box; }
++body { margin: 0; min-width: 0; background: #edf2f7; font-weight: 400; }
++#root, .app { min-height: 100vh; min-height: var(--viewport-height); min-height: 100dvh; }
++.app { background: radial-gradient(circle at top left, rgba(255,255,255,.95), transparent 35%), #edf2f7; }
++button, select { font: inherit; min-height: 48px; min-width: 44px; touch-action: manipulation; }
++button { cursor: pointer; }
++button:disabled { opacity: .52; cursor: not-allowed; }
++button svg { flex: 0 0 auto; }
++button:focus, select:focus { outline: 2px solid #2563eb; outline-offset: 3px; }
++button:focus:not(:focus-visible) { outline: none; }
++header, .controls, main, footer { padding-left: var(--space); padding-right: var(--space); }
++header, .controls, main, footer {
++  padding-left: calc(var(--space) + env(safe-area-inset-left, 0px));
++  padding-right: calc(var(--space) + env(safe-area-inset-right, 0px));
++}
++header {
++  padding-top: 18px;
++  padding-top: calc(18px + env(safe-area-inset-top, 0px));
++  padding-bottom: 16px;
++  background: #0f172a;
++  color: #fff;
++  display: flex;
++  flex-direction: column;
++  gap: 12px;
++}
++header > div { min-width: 0; }
++header h1 { margin: 5px 0; font-size: clamp(20px, 3vw, 29px); font-weight: 600; letter-spacing: -.03em; line-height: 1.2; overflow-wrap: break-word; }
++header p { margin: 0; color: #cbd5e1; font-size: clamp(12px, 1.4vw, 14px); line-height: 1.5; }
++.eyebrow { font-size: 10px; letter-spacing: .12em; font-weight: 500; color: #64748b; line-height: 1.5; }
++.blue { color: #60a5fa; }
++.status { align-self: flex-start; max-width: 100%; border: 1px solid #334155; border-radius: 999px; padding: 8px 12px; font-size: 12px; color: #cbd5e1; display: flex; align-items: center; gap: 8px; }
++.status i { flex: 0 0 8px; width: 8px; height: 8px; border-radius: 50%; background: #ef4444; }
++.status.ok i { background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.12); }
++
++/* Mobile first: each OD is a group, and each native select has its own row. */
++.controls { padding-top: 16px; padding-bottom: 16px; background: #fff; border-bottom: 1px solid #dbe3ec; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
++.od-block { display: grid; gap: 8px; min-width: 0; }
++.od-block-title { display: flex; align-items: center; gap: 8px; }
++.od-block-title > span { font-size: 13px; color: #475569; font-weight: 600; }
++.selected-line-badge { min-width: 30px; padding: 3px 8px; border-radius: 999px; background: var(--line-color); color: #fff; text-align: center; font-size: 12px; line-height: 1.3; box-shadow: inset 0 0 0 1px rgba(0,0,0,.07); }
++.selected-line-badge.dark { color: #3f3f46; }
++.od-block-fields { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 10px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; min-width: 0; }
++label { display: grid; gap: 5px; min-width: 0; }
++label > span { font-size: 12px; color: #64748b; font-weight: 400; }
++select { width: 100%; max-width: 100%; min-width: 0; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #fff; padding: 10px; color: #1f2937; font-size: 16px; font-weight: 400; line-height: 1.4; -webkit-appearance: menulist; appearance: auto; }
++option { font-weight: 400; }
++.od-arrow { display: none; }
++.search, .playtop, .play-all, .stop { border: 0; border-radius: 9px; padding: 12px 16px; color: #fff; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 500; }
++.search { width: 100%; background: #0f172a; }
++.playtop, .play-all { background: #2563eb; }
++.stop { background: #dc2626; }
++.error { margin: 14px var(--space) 0; padding: 12px; border: 1px solid #fecaca; background: #fff1f2; color: #9f1239; border-radius: 9px; font-size: 14px; overflow-wrap: break-word; }
++
++main { padding-top: 18px; padding-bottom: 24px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
++.mapcol, aside, .panel, .map-stage { min-width: 0; }
++.maphead { padding: 0 2px 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
++.maphead > div { min-width: 0; }
++.maphead h2 { margin: 3px 0 0; font-size: clamp(17px, 2vw, 20px); font-weight: 500; line-height: 1.5; }
++.maphead h2 span { color: #94a3b8; }
++.maphead b { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 500; }
++.map-wrap { background: #fff; border: 1px solid #dce4ed; border-radius: 14px; box-shadow: 0 18px 55px rgba(15,23,42,.06); min-width: 0; }
++.map-surface, .map-loading { height: var(--map-height); min-height: 0; position: relative; border-radius: 14px 14px 0 0; }
++/* Only the map clips tiles; the page and mobile route list scroll normally. */
++.map-surface { overflow: hidden; }
++.map { height: 100%; width: 100%; }
++.map-loading { display: grid; place-items: center; background: #fff; color: #64748b; border-radius: 14px; padding: 20px; font-size: 14px; }
++.map-notes { padding: 12px; display: grid; gap: 8px; }
++.map-tip { margin: 0; color: #64748b; font-size: 12px; line-height: 1.5; overflow-wrap: break-word; }
++.map-legend { display: flex; gap: 8px 14px; flex-wrap: wrap; color: #64748b; font-size: 11px; }
++.map-legend span { display: flex; align-items: center; gap: 5px; }
++.map-legend i { display: block; width: 17px; height: 3px; border-radius: 99px; }
++.legend-active { background: #2563eb; height: 5px !important; }
++.legend-complete { background: #64748b; opacity: .5; }
++.legend-network { background: #cbd5e1; opacity: .8; }
++.final-map-label { justify-self: start; padding: 5px 8px; border-radius: 999px; background: #f8fafc; border: 1px solid #cbd5e1; color: #475569; font-size: 11px; }
++.offline-map-warning { padding: 10px; border-radius: 8px; background: #fef3c7; border: 1px solid #f59e0b; color: #92400e; font-size: 12px; line-height: 1.5; }
++.map .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 44px; font-size: 22px; }
++.map .leaflet-control-attribution { max-width: calc(100% - 12px); white-space: normal; }
++/* Leave Leaflet's own touch-action rules intact for drag, pinch and double tap. */
++.leaflet-tile-pane { filter: grayscale(.88) saturate(.35) brightness(1.07) contrast(.91); }
++.map-wrap.is-playing .leaflet-tile-pane { filter: grayscale(1) saturate(.18) brightness(1.09) contrast(.89); }
++.od-tooltip { background: #0f172a !important; color: #fff !important; border: 0 !important; box-shadow: 0 4px 16px rgba(15,23,42,.20) !important; font-size: 12px !important; font-weight: 500 !important; padding: 5px 8px !important; }
++.od-tooltip:before { border-top-color: #0f172a !important; }
++.transfer-tooltip, .route-station-tooltip { background: rgba(255,255,255,.96) !important; color: #334155 !important; border: 1px solid #94a3b8 !important; border-radius: 5px !important; box-shadow: 0 3px 10px rgba(15,23,42,.10) !important; padding: 3px 6px !important; font-size: 11px !important; font-weight: 400 !important; line-height: 1.3 !important; white-space: nowrap !important; pointer-events: none !important; }
++.route-station-tooltip.visited { color: #0f172a !important; border-color: #64748b !important; opacity: 1 !important; }
++.route-station-tooltip.upcoming { opacity: .68 !important; }
++.transfer-tooltip:before, .leaflet-tooltip-top.route-station-tooltip:before { border-top-color: #94a3b8 !important; }
++.leaflet-tooltip-bottom.route-station-tooltip:before { border-bottom-color: #94a3b8 !important; }
++
++/* In-flow playback controls cannot cover map gestures or the home indicator. */
++.animation-controls { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; align-items: stretch; }
++.animation-controls > .playtop, .animation-controls > .stop { flex: 1 1 150px; }
++.speed-control { flex: 1 1 220px; min-width: 0; display: flex; align-items: center; gap: 6px; border: 1px solid #dbe3ec; background: #fff; border-radius: 9px; padding: 4px; }
++.speed-control > span { font-size: 13px; color: #64748b; padding: 0 6px; }
++.speed-control button { flex: 1; border: 0; background: transparent; color: #64748b; border-radius: 6px; padding: 8px; font-size: 14px; }
++.speed-control button.selected { background: #0f172a; color: #fff; }
++.map-feedback:empty { display: none; }
++.playback-hud, .comparison-hud { margin-top: 12px; width: 100%; border: 1px solid #334155; border-radius: 12px; padding: 14px; color: #fff; background: #0f172a; min-width: 0; }
++.playback-hud { border-left: 5px solid var(--route-color); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; animation: hudIn .18s ease-out; }
++.playback-topline { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; }
++.playback-topline strong { font-size: 18px; font-weight: 500; }
++.playback-topline span { font-size: 13px; color: #cbd5e1; }
++.playback-phase { justify-self: start; border: 1px solid #64748b; background: #334155; border: 1px solid color-mix(in srgb, var(--route-color) 45%, transparent); background: color-mix(in srgb, var(--route-color) 18%, transparent); border-radius: 999px; padding: 4px 8px; color: #e2e8f0; font-size: 11px; letter-spacing: .06em; }
++.playback-station { grid-column: 1 / -1; font-size: 17px; overflow-wrap: break-word; }
++.playback-transfer { display: flex; gap: 8px; align-items: center; color: #cbd5e1; font-size: 13px; }
++.playback-transfer span { color: #94a3b8; }
++.playback-meta { grid-column: 1 / -1; font-size: 12px; color: #cbd5e1; }
++.progress-track { grid-column: 1 / -1; height: 4px; border-radius: 999px; background: #334155; margin-top: 4px; overflow: hidden; }
++.progress-fill { height: 100%; border-radius: 999px; background: var(--route-color); transition: width .12s linear; }
++.comparison-hud { display: grid; gap: 6px; }
++.comparison-hud strong { font-size: 14px; font-weight: 500; }
++.comparison-hud span { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
++
++aside { display: grid; align-content: start; gap: 16px; }
++.panel { background: #fff; border: 1px solid #dce4ed; border-radius: 14px; padding: clamp(12px, 2vw, 18px); box-shadow: 0 10px 35px rgba(15,23,42,.05); }
++.panel h2 { margin: 3px 0 0; font-size: 18px; font-weight: 500; line-height: 1.4; }
++.panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
++.icon { width: 44px; height: 48px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; display: grid; place-items: center; flex: 0 0 auto; }
++.play-all { width: 100%; margin: 12px 0; }
++.routes { display: grid; gap: 12px; padding: 3px; max-height: none; overflow: visible; }
++.route-card { min-width: 0; width: 100%; border: 1px solid #e2e8f0; border-left: 4px solid var(--c); border-radius: 11px; padding: 12px; background: #fff; transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }
++.route-card.shown { background: #f8fafc; background: color-mix(in srgb, var(--c) 2.5%, white); }
++.route-card.active { border-color: var(--c); background: #f1f5f9; background: color-mix(in srgb, var(--c) 4%, white); box-shadow: 0 0 0 2px var(--c); }
++.route-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }
++.rname { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-weight: 500; }
++.rname > span { width: 10px; height: 10px; border-radius: 50%; }
++.rname em { font-style: normal; font-size: 10px; border-radius: 999px; padding: 4px 6px; background: var(--c); color: #fff; animation: nowPulse 1s ease-in-out infinite; }
++.route-top button { border: 0; border-radius: 8px; background: #f1f5f9; color: #334155; padding: 10px 14px; display: flex; align-items: center; gap: 6px; font-size: 14px; }
++.metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
++.metrics > div { display: grid; gap: 3px; min-width: 0; }
++.metrics > div:first-child { grid-column: 1 / -1; }
++.metrics span { color: #64748b; font-size: 12px; }
++.metrics strong { font-size: 16px; font-weight: 500; overflow-wrap: break-word; }
++.line-seq { margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e2e8f0; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
++.line-chip { min-width: 30px; text-align: center; padding: 4px 8px; border-radius: 999px; color: #fff; font-size: 12px; font-weight: 500; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
++.line-chip.dark { color: #3f3f46; }
++.muted { color: #64748b; font-size: 14px; line-height: 1.5; }
++.plot-title { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 10px; }
++.plot-title span { font-size: 12px; color: #64748b; }
++.plot { display: block; width: 100%; max-width: 100%; height: auto; margin-top: 12px; overflow: visible; }
++.plot .axis { stroke: #94a3b8; stroke-width: 1; }
++.plot .gridline { stroke: #e2e8f0; stroke-width: .8; }
++.frontier { stroke: #94a3b8; stroke-width: 1.4; stroke-dasharray: 4 4; }
++.dot { cursor: pointer; transition: opacity .2s; }
++.dot.disabled { cursor: default; }
++.dot text { font-size: 11px; font-weight: 500; fill: #334155; pointer-events: none; }
++.dot:focus { outline: none; }
++.dot:focus-visible .plot-hit-area { stroke: rgba(37,99,235,.2); }
++.plot-hit-area { pointer-events: all; }
++.plot-pulse { transform-box: fill-box; transform-origin: center; animation: plotPulse 1s ease-out infinite; }
++.plot-final-ring { opacity: .72; filter: drop-shadow(0 1px 3px rgba(15,23,42,.14)); }
++.axislabel { font-size: 11px; fill: #64748b; font-weight: 400; }
++.ticklabel { font-size: 10px; fill: #64748b; }
++.plot-route-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-top: 10px; }
++.plot-route-button { min-width: 0; display: grid; grid-template-columns: 12px minmax(0, 1fr); align-items: center; gap: 4px 8px; padding: 10px; text-align: left; border: 1px solid #e2e8f0; border-radius: 8px; color: #334155; background: #fff; }
++.plot-route-button > i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
++.plot-route-button > strong { font-size: 14px; font-weight: 500; }
++.plot-route-button > span { grid-column: 1 / -1; font-size: 12px; line-height: 1.5; overflow-wrap: break-word; }
++.plot-route-button[aria-pressed="true"] { border-color: var(--c); box-shadow: 0 0 0 1px var(--c); background: #f8fafc; }
++.plot-hint { margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: #64748b; }
++footer { padding-top: 8px; padding-bottom: 20px; padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: 6px; color: #64748b; font-size: 12px; line-height: 1.5; }
++
++@media (min-width: 481px) {
++  header { flex-direction: row; align-items: center; justify-content: space-between; }
++  .status { align-self: center; }
++  .od-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++  .search { grid-column: 1 / -1; }
++  .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
++  .metrics > div:first-child { grid-column: auto; }
++}
++@media (min-width: 769px) {
++  :root { --map-height: clamp(360px, calc(var(--viewport-height) * .55), 650px); }
++  .od-block-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++  aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++  footer { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
++}
++@media (min-width: 1025px) {
++  :root { --map-height: clamp(420px, calc(var(--viewport-height) * .7), 850px); }
++  header { padding-top: 26px; padding-bottom: 20px; }
++  .od-controls { grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr) auto; position: sticky; top: 0; z-index: 1000; align-items: end; }
++  .od-arrow { display: block; margin-bottom: 26px; color: #94a3b8; }
++  .search { grid-column: auto; width: auto; margin-bottom: 11px; }
++  main { grid-template-columns: minmax(0, 1fr) minmax(340px, 400px); align-items: start; }
++  aside { grid-template-columns: minmax(0, 1fr); }
++  .routes { max-height: 560px; max-height: clamp(380px, 62vh, 650px); overflow-y: auto; }
++}
++@media (orientation: landscape) and (max-height: 600px) and (max-width: 1024px) {
++  :root { --map-height: clamp(220px, calc(var(--viewport-height) * .7), 420px); }
++  header { flex-direction: row; align-items: center; gap: 12px; padding-top: 10px; padding-top: calc(10px + env(safe-area-inset-top, 0px)); padding-bottom: 10px; }
++  header h1 { font-size: 20px; margin: 2px 0; }
++  header p, .status { font-size: 11px; }
++  header .eyebrow { font-size: 9px; }
++  .controls { padding-top: 10px; padding-bottom: 10px; gap: 10px; }
++  main { padding-top: 12px; }
++}
++@media (hover: hover) and (pointer: fine) {
++  .search:hover, .playtop:hover, .play-all:hover { filter: brightness(1.06); }
++  .route-card:hover { box-shadow: 0 7px 18px rgba(15,23,42,.06); }
++  .dot:hover circle:not(.plot-pulse):not(.plot-hit-area) { filter: drop-shadow(0 2px 4px rgba(15,23,42,.18)); }
++}
++@supports ((backdrop-filter: blur(6px)) or (-webkit-backdrop-filter: blur(6px))) {
++  @media (min-width: 1025px) {
++    .controls { background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
++  }
++}
++.leaflet-moving-ring { animation: movingRing 1.05s ease-in-out infinite; }
++.leaflet-transfer-ring { animation: transferRing .62s ease-out infinite; }
++.leaflet-transfer-ring-2 { animation: transferRing2 .62s ease-out infinite; }
++@keyframes movingRing { 0%,100% { stroke-opacity: .35; fill-opacity: .05; } 50% { stroke-opacity: .78; fill-opacity: .13; } }
++@keyframes transferRing { 0% { stroke-opacity: .95; fill-opacity: .18; } 100% { stroke-opacity: .16; fill-opacity: .02; } }
++@keyframes transferRing2 { 0%,100% { stroke-opacity: .85; } 50% { stroke-opacity: .20; } }
++@keyframes nowPulse { 0%,100% { opacity: 1; } 50% { opacity: .50; } }
++@keyframes plotPulse { 0% { opacity: .75; transform: scale(.78); } 100% { opacity: 0; transform: scale(1.28); } }
++@keyframes hudIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
++@media (prefers-reduced-motion: reduce) {
++  .route-card, .progress-fill { transition: none; }
++  .playback-hud { animation: none; }
++}
+--- before/src/components/MetroMap.jsx
++++ after/src/components/MetroMap.jsx
+@@ -14,6 +14,7 @@
+   Tooltip,
+   useMap,
+ } from 'react-leaflet';
++import { useCompactMap } from '../hooks/useResponsiveViewport.js';
+ 
+ const LINE_COLORS = {
+   BR: '#a76528',
+@@ -41,26 +42,100 @@
+ const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+ const ease = t => 1 - Math.pow(1 - t, 3);
+ 
+-function FitBounds({ coords, token }) {
++
++// A route panel, rotation, browser toolbar or bfcache restore can resize the
++// container without a window resize. Refresh tiles without resetting pan/zoom.
++function MapSizeObserver({ compact }) {
+   const map = useMap();
++  useEffect(() => {
++    const container = map.getContainer();
++    const viewport = window.visualViewport;
++    map.setMinZoom(compact ? 9 : 10.5);
++    let frame;
++    const schedule = () => {
++      cancelAnimationFrame(frame);
++      frame = requestAnimationFrame(() => {
++        if (container.clientWidth && container.clientHeight) {
++          map.invalidateSize({ animate: false, pan: true, debounceMoveend: true });
++        }
++      });
++    };
++    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(schedule);
++    observer?.observe(container);
++    window.addEventListener('resize', schedule);
++    window.addEventListener('orientationchange', schedule);
++    window.addEventListener('pageshow', schedule);
++    viewport?.addEventListener('resize', schedule);
++    schedule();
++    return () => {
++      cancelAnimationFrame(frame);
++      observer?.disconnect();
++      window.removeEventListener('resize', schedule);
++      window.removeEventListener('orientationchange', schedule);
++      window.removeEventListener('pageshow', schedule);
++      viewport?.removeEventListener('resize', schedule);
++    };
++  }, [map, compact]);
++  return null;
++}
++
++function FitBounds({ coords, token, playing }) {
++  const map = useMap();
++  const playingRef = useRef(playing);
++  playingRef.current = playing;
+ 
+   useEffect(() => {
+     if (!coords?.length) return;
+ 
+     const points = coords.map(p => [p.lat, p.lon]);
+ 
+-    if (points.length === 1) {
+-      map.setView(points[0], 13);
+-      return;
+-    }
+-
+-    map.fitBounds(points, {
+-      paddingTopLeft: [70, 90],
+-      paddingBottomRight: [70, 70],
+-      maxZoom: 13,
+-      animate: true,
+-      duration: 0.55,
+-    });
++    const container = map.getContainer();
++    let userAdjusted = false;
++    let timer;
++    const fit = (animate = false) => {
++      if (points.length === 1) {
++        map.setView(points[0], 13);
++        return;
++      }
++      const compact = container.clientWidth < 769 || container.clientHeight < 300;
++      map.fitBounds(points, {
++        paddingTopLeft: compact ? [60, 55] : [70, 90],
++        paddingBottomRight: compact ? [60, 40] : [70, 70],
++        maxZoom: 13,
++        animate,
++        duration: 0.55,
++      });
++    };
++    const markUserAdjusted = () => { userAdjusted = true; };
++    const refitAfterResize = () => {
++      clearTimeout(timer);
++      timer = setTimeout(() => {
++        if (!userAdjusted && !playingRef.current && container.clientWidth && container.clientHeight) fit();
++      }, 120);
++    };
++    fit(true);
++    // Refit a default route view on rotation; keep a user-adjusted camera and
++    // an ongoing animation untouched when Safari's browser bars resize.
++    container.addEventListener('pointerdown', markUserAdjusted, { passive: true });
++    container.addEventListener('touchstart', markUserAdjusted, { passive: true });
++    container.addEventListener('wheel', markUserAdjusted, { passive: true });
++    container.addEventListener('keydown', markUserAdjusted);
++    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(refitAfterResize);
++    observer?.observe(container);
++    window.addEventListener('resize', refitAfterResize);
++    window.addEventListener('orientationchange', refitAfterResize);
++    window.visualViewport?.addEventListener('resize', refitAfterResize);
++    return () => {
++      clearTimeout(timer);
++      observer?.disconnect();
++      container.removeEventListener('pointerdown', markUserAdjusted);
++      container.removeEventListener('touchstart', markUserAdjusted);
++      container.removeEventListener('wheel', markUserAdjusted);
++      container.removeEventListener('keydown', markUserAdjusted);
++      window.removeEventListener('resize', refitAfterResize);
++      window.removeEventListener('orientationchange', refitAfterResize);
++      window.visualViewport?.removeEventListener('resize', refitAfterResize);
++    };
+   }, [map, token]);
+ 
+   return null;
+@@ -90,9 +165,12 @@
+   const [visitedStep, setVisitedStep] = useState(-1);
+   const [tileError, setTileError] = useState(false);
+   const cancelRef = useRef(0);
++  const compact = useCompactMap();
+ 
+   const routeCoords = route =>
+     (route?.path || []).filter(p => p.lat != null && p.lon != null);
++
++  const currentStation = routeCoords(active?.route)[visitedStep]?.station;
+ 
+   const allRouteCoords = useMemo(
+     () => routes.flatMap(routeCoords),
+@@ -389,10 +467,11 @@
+ 
+   return (
+     <div className={`map-wrap ${playing ? 'is-playing' : ''}`}>
++      <div className="map-surface">
+       <MapContainer
+         center={[25.045, 121.54]}
+         zoom={11.5}
+-        minZoom={10.5}
++        minZoom={compact ? 9 : 10.5}
+         maxZoom={16}
+         zoomSnap={0.25}
+         zoomDelta={0.5}
+@@ -400,8 +479,12 @@
+         maxBounds={METRO_MAX_BOUNDS}
+         maxBoundsViscosity={1.0}
+         scrollWheelZoom
++        dragging
++        touchZoom
++        doubleClickZoom
+         className="map"
+       >
++        <MapSizeObserver compact={compact} />
+         <TileLayer
+           attribution='&copy; OpenStreetMap contributors'
+           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+@@ -520,7 +603,7 @@
+           const familyCount = new Set((station.lines || []).map(lineFamily).filter(Boolean)).size;
+           const isNetworkTransfer = familyCount >= 2;
+           const isParetoTransfer = paretoTransferStations.has(station.id);
+-          const radius = isOrigin || isDestination ? 8 : isParetoTransfer ? 5.4 : isNetworkTransfer ? 4.3 : 3.4;
++          const radius = isOrigin || isDestination ? 8 : isParetoTransfer ? 5.4 : isNetworkTransfer ? 4.3 : compact ? 4.2 : 3.4;
+ 
+           return (
+             <React.Fragment key={station.id}>
+@@ -546,7 +629,7 @@
+               >
+                 <Tooltip
+                   direction="top"
+-                  permanent={isOrigin || isDestination || (isParetoTransfer && !playing)}
++                  permanent={isOrigin || isDestination || (isParetoTransfer && !playing && !compact)}
+                   className={
+                     isOrigin || isDestination
+                       ? 'od-tooltip'
+@@ -602,7 +685,7 @@
+               interactive={false}
+             >
+               <Tooltip
+-                permanent
++                permanent={!compact || point.station === currentStation || (point.isTransfer && routeLabelPoints.filter(p => p.isTransfer).slice(0, 3).some(p => p.station === point.station))}
+                 direction={labelIndex % 2 === 0 ? 'top' : 'bottom'}
+                 offset={[0, labelIndex % 2 === 0 ? -5 : 5]}
+                 className={`route-station-tooltip ${point.visited ? 'visited' : 'upcoming'}`}
+@@ -660,11 +743,12 @@
+           </>
+         )}
+ 
+-        {!!fitCoords.length && <FitBounds coords={fitCoords} token={fitToken} />}
++        {!!fitCoords.length && <FitBounds coords={fitCoords} token={fitToken} playing={playing} />}
+       </MapContainer>
+-
++      </div>
++      <div className="map-notes">
+       {tileError && (
+-        <div className="offline-map-warning">
++        <div className="offline-map-warning" role="status">
+           底圖目前無法載入；捷運路網與 Pareto 路徑仍可正常展示
+         </div>
+       )}
+@@ -679,12 +763,13 @@
+         <span><i className="legend-network" /> metro network</span>
+       </div>
+ 
+-      <div className="map-tip">
++      <p className="map-tip">
+         {playing
+           ? '播放中：目前路徑加亮；轉乘站以 ◎ 與脈衝提示'
+           : finalComparison
+             ? '比較完成：所有 Pareto alternatives 同時保留於地圖'
+             : '地圖已限制在雙北捷運範圍；點兩個車站即可選 OD'}
++      </p>
+       </div>
+     </div>
+   );
+--- before/src/components/RoutePanel.jsx
++++ after/src/components/RoutePanel.jsx
+@@ -34,7 +34,7 @@
+           <h2>{routes.length ? `${routes.length} 條路徑` : '尚未搜尋'}</h2>
+         </div>
+ 
+-        <button className="icon" onClick={onReset} title="Reset animation">
++        <button className="icon" onClick={onReset} title="Reset animation" aria-label="重設動畫">
+           <RotateCcw size={16} />
+         </button>
+       </div>
+@@ -60,7 +60,7 @@
+                 {active === index && playing && <em>NOW</em>}
+               </div>
+ 
+-              <button onClick={() => onPlay(index)} disabled={playing}>
++              <button type="button" aria-label={`播放路徑 R${index + 1}`} onClick={() => onPlay(index)} disabled={playing}>
+                 <Play size={13} fill="currentColor" />播放
+               </button>
+             </div>
+@@ -72,10 +72,10 @@
+             </div>
+ 
+             <div className="line-seq">
+-              {lineSeq(route.path).map(line => (
++              {lineSeq(route.path).map((line, segmentIndex) => (
+                 <span
+                   className={`line-chip ${line === 'Y' ? 'dark' : ''}`}
+-                  key={line}
++                  key={`${line}-${segmentIndex}`}
+                   style={{ background: LINE_COLORS[line] || '#64748b' }}
+                 >
+                   {line}
+--- before/src/components/TradeoffPlot.jsx
++++ after/src/components/TradeoffPlot.jsx
+@@ -67,7 +67,7 @@
+         <span>圓點大小＝轉乘次數</span>
+       </div>
+ 
+-      <svg viewBox={`0 0 ${W} ${H}`} className="plot">
++      <svg viewBox={`0 0 ${W} ${H}`} className="plot" aria-label="Pareto 旅行時間與轉乘步行取捨圖">
+         {xTicks.map((tick, index) => (
+           <g key={`x-${index}`}>
+             <line
+@@ -119,8 +119,20 @@
+             <g
+               key={index}
+               className={`dot ${isActive ? 'active' : ''} ${playing ? 'disabled' : ''}`}
++              role="button"
++              tabIndex={playing ? -1 : 0}
++              aria-disabled={playing}
++              aria-pressed={isActive}
++              aria-label={`播放 R${index + 1}：${route.travel_time_minutes.toFixed(2)} 分，${route.transfers} 次轉乘，步行 ${route.walking_minutes.toFixed(0)} 分`}
++              onKeyDown={event => {
++                if (event.key === 'Enter' || event.key === ' ') {
++                  event.preventDefault();
++                  if (!playing) onPlay(index);
++                }
++              }}
+               onClick={() => !playing && onPlay(index)}
+             >
++              <circle className="plot-hit-area" cx={x} cy={y} r="1" fill="transparent" stroke="transparent" strokeWidth="44" vectorEffect="non-scaling-stroke" />
+               <title>
+                 {`R${index + 1}: ${route.travel_time_minutes.toFixed(2)} min, ${route.transfers} transfers, ${route.walking_minutes.toFixed(0)} min walk`}
+               </title>
+@@ -182,6 +194,24 @@
+           轉乘步行（分鐘）
+         </text>
+       </svg>
++      <div className="plot-route-buttons" aria-label="Pareto chart routes">
++        {routes.map((route, index) => (
++          <button
++            type="button"
++            key={index}
++            className="plot-route-button"
++            style={{ '--c': colors[index] }}
++            aria-pressed={active === index}
++            aria-label={`播放圖表路徑 R${index + 1}`}
++            disabled={playing}
++            onClick={() => onPlay(index)}
++          >
++            <i aria-hidden="true" /><strong>R{index + 1}</strong>
++            <span>{route.travel_time_minutes.toFixed(2)} 分 · {route.transfers} 次轉乘 · 步行 {route.walking_minutes.toFixed(0)} 分</span>
++          </button>
++        ))}
++      </div>
++      <p className="plot-hint">點選圓點或路徑按鈕播放；地圖、路徑卡與圖表同步加亮。</p>
+     </section>
+   );
+ }

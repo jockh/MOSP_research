@@ -1,0 +1,22 @@
+--- C:\Users\xAdmin\MOSP_project\Mosp_vr1.1\test_correctness.py
++++ validation/test_correctness.py
+@@ -13,6 +13,7 @@
+ # ============================================================
+ 
+ from __future__ import annotations
++from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+ 
+ import csv
+ import random
+@@ -55,10 +56,7 @@
+ ROOT = Path(__file__).resolve().parent
+ 
+ RESULT_DIR = (
+-    ROOT
+-    / "experiments"
+-    / "results"
+-    / "correctness_validation"
++    CANONICAL_RESULTS_DIR / 'correctness_validation'
+ )
+ 
+ RESULT_DIR.mkdir(

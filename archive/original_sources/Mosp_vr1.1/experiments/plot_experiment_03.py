@@ -1,0 +1,812 @@
+import os
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# ============================================================
+# Experiment 3 Plotting
+#
+# Figure 1:
+#   Route quantity -> relative MOSP workload
+#
+# Figure 2:
+#   Prefix vs. suffix structure illustration
+#
+# Figure 3:
+#   Prefix vs. suffix dominance checks
+# ============================================================
+
+
+# ============================================================
+# Paths
+# ============================================================
+
+EXP3A_FILE = os.path.join(
+    "experiments",
+    "results",
+    "experiment_03a_route_quantity_raw.csv"
+)
+
+EXP3B_FILE = os.path.join(
+    "experiments",
+    "results",
+    "experiment_03b_overlap_position_raw.csv"
+)
+
+OUTPUT_DIR = "figures"
+
+os.makedirs(
+    OUTPUT_DIR,
+    exist_ok=True
+)
+
+
+# ============================================================
+# Load data
+# ============================================================
+
+df3a = pd.read_csv(
+    EXP3A_FILE
+)
+
+df3b = pd.read_csv(
+    EXP3B_FILE
+)
+
+
+print(
+    "Exp.3A observations:",
+    len(df3a)
+)
+
+print(
+    "Exp.3B observations:",
+    len(df3b)
+)
+
+
+# ============================================================
+# Basic checks
+# ============================================================
+
+assert set(
+    df3a["route_count"].unique()
+) == {2, 4, 8, 16}
+
+
+assert set(
+    df3b["structure"].unique()
+) == {"prefix", "suffix"}
+
+
+assert set(
+    df3b["pairwise_overlap"].unique()
+) == {0.25, 0.50, 0.75}
+
+
+# ============================================================
+# Helper
+# ============================================================
+
+def save_figure(
+    filename
+):
+
+    pdf_path = os.path.join(
+        OUTPUT_DIR,
+        filename
+    )
+
+    plt.savefig(
+        pdf_path,
+        bbox_inches="tight"
+    )
+
+    print(
+        "Saved:",
+        pdf_path
+    )
+
+
+# ============================================================
+# FIGURE 1
+# Exp.3A
+#
+# Relative growth of MOSP workload
+#
+# Baseline:
+# route_count = 2 -> 1
+# ============================================================
+
+metrics = {
+    "target_pareto_labels":
+        "Pareto labels",
+
+    "generated_labels":
+        "Generated labels",
+
+    "dominance_checks":
+        "Dominance checks",
+
+    "runtime_seconds":
+        "Runtime"
+}
+
+
+summary3a = (
+    df3a
+    .groupby("route_count")
+    [list(metrics.keys())]
+    .mean()
+    .sort_index()
+)
+
+
+# Normalize to K = 2
+baseline = summary3a.loc[2]
+
+relative = (
+    summary3a
+    / baseline
+)
+
+
+print()
+print(
+    "===== EXP.3A RELATIVE GROWTH ====="
+)
+
+print(
+    relative.round(3)
+)
+
+
+plt.figure(
+    figsize=(7.5, 5.2)
+)
+
+
+markers = [
+    "o",
+    "s",
+    "^",
+    "D"
+]
+
+
+linestyles = [
+    "-",
+    "--",
+    "-.",
+    ":"
+]
+
+
+for (
+    metric,
+    label
+), marker, linestyle in zip(
+    metrics.items(),
+    markers,
+    linestyles
+):
+
+    plt.plot(
+        relative.index,
+        relative[metric],
+        marker=marker,
+        linestyle=linestyle,
+        linewidth=2,
+        markersize=7,
+        label=label
+    )
+
+
+plt.xlabel(
+    "Number of Alternative Routes",
+    fontsize=12
+)
+
+plt.ylabel(
+    "Relative Value (K = 2 as baseline)",
+    fontsize=12
+)
+
+plt.xticks(
+    [2, 4, 8, 16]
+)
+
+plt.legend(
+    frameon=False,
+    fontsize=10
+)
+
+plt.grid(
+    alpha=0.25
+)
+
+plt.tight_layout()
+
+
+save_figure(
+    "route_quantity_growth.pdf"
+)
+
+plt.close()
+
+
+# ============================================================
+# FIGURE 2
+# Exp.3B
+#
+# Prefix vs suffix structure
+# ============================================================
+
+fig, axes = plt.subplots(
+    2,
+    1,
+    figsize=(8.5, 5.6)
+)
+
+
+# ============================================================
+# Prefix structure
+# ============================================================
+
+ax = axes[0]
+
+ax.set_title(
+    "(a) Prefix sharing",
+    fontsize=12,
+    loc="left"
+)
+
+
+# Source
+source_x = 0
+source_y = 0
+
+
+# Shared section
+branch_x = 4
+
+
+ax.plot(
+    [0, branch_x],
+    [0, 0],
+    linewidth=3
+)
+
+
+# Four alternative routes
+route_ys = [
+    1.2,
+    0.4,
+    -0.4,
+    -1.2
+]
+
+
+target_x = 9
+
+
+for y in route_ys:
+
+    # Branch
+    ax.plot(
+        [branch_x, branch_x + 1],
+        [0, y],
+        linewidth=1.8
+    )
+
+    # Independent section
+    ax.plot(
+        [branch_x + 1, target_x],
+        [y, y],
+        linewidth=1.8
+    )
+
+
+# Nodes
+ax.scatter(
+    [source_x],
+    [source_y],
+    s=60,
+    zorder=5
+)
+
+ax.scatter(
+    [branch_x],
+    [0],
+    s=60,
+    zorder=5
+)
+
+
+# Labels
+ax.text(
+    source_x - 0.25,
+    0.35,
+    "S",
+    fontsize=12
+)
+
+ax.text(
+    1.4,
+    0.35,
+    "Shared segment",
+    fontsize=10
+)
+
+ax.text(
+    branch_x + 0.15,
+    1.65,
+    "Routes diverge",
+    fontsize=10
+)
+
+ax.text(
+    target_x + 0.15,
+    0,
+    "T",
+    fontsize=12,
+    va="center"
+)
+
+
+# Connect routes visually to target label
+for y in route_ys:
+
+    ax.scatter(
+        [target_x],
+        [y],
+        s=25
+    )
+
+
+ax.set_xlim(
+    -0.5,
+    10
+)
+
+ax.set_ylim(
+    -2,
+    2
+)
+
+ax.axis(
+    "off"
+)
+
+
+# ============================================================
+# Suffix structure
+# ============================================================
+
+ax = axes[1]
+
+ax.set_title(
+    "(b) Suffix sharing",
+    fontsize=12,
+    loc="left"
+)
+
+
+source_x = 0
+
+merge_x = 5
+
+target_x = 9
+
+
+for y in route_ys:
+
+    # Independent section
+    ax.plot(
+        [source_x, merge_x - 1],
+        [y, y],
+        linewidth=1.8
+    )
+
+    # Merge
+    ax.plot(
+        [merge_x - 1, merge_x],
+        [y, 0],
+        linewidth=1.8
+    )
+
+    ax.scatter(
+        [source_x],
+        [y],
+        s=25
+    )
+
+
+# Shared suffix
+ax.plot(
+    [merge_x, target_x],
+    [0, 0],
+    linewidth=3
+)
+
+
+ax.scatter(
+    [merge_x],
+    [0],
+    s=60,
+    zorder=5
+)
+
+ax.scatter(
+    [target_x],
+    [0],
+    s=60,
+    zorder=5
+)
+
+
+ax.text(
+    source_x - 0.35,
+    0,
+    "S",
+    fontsize=12,
+    va="center"
+)
+
+ax.text(
+    merge_x - 1.3,
+    1.65,
+    "Routes merge",
+    fontsize=10
+)
+
+ax.text(
+    6.2,
+    0.35,
+    "Shared segment",
+    fontsize=10
+)
+
+ax.text(
+    target_x + 0.15,
+    0,
+    "T",
+    fontsize=12,
+    va="center"
+)
+
+
+ax.set_xlim(
+    -0.5,
+    10
+)
+
+ax.set_ylim(
+    -2,
+    2
+)
+
+ax.axis(
+    "off"
+)
+
+
+plt.tight_layout()
+
+
+save_figure(
+    "prefix_suffix_structure.pdf"
+)
+
+plt.close()
+
+
+# ============================================================
+# FIGURE 3
+# Exp.3B
+#
+# Dominance checks:
+# Prefix vs suffix
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Calculate mean, SD, N, SE, 95% CI
+# ------------------------------------------------------------
+
+summary3b = (
+    df3b
+    .groupby(
+        [
+            "pairwise_overlap",
+            "structure"
+        ]
+    )
+    ["dominance_checks"]
+    .agg(
+        mean="mean",
+        std="std",
+        count="count"
+    )
+    .reset_index()
+)
+
+
+summary3b["se"] = (
+    summary3b["std"]
+    /
+    np.sqrt(
+        summary3b["count"]
+    )
+)
+
+
+summary3b["ci95"] = (
+    1.96
+    *
+    summary3b["se"]
+)
+
+
+print()
+print(
+    "===== EXP.3B DOMINANCE CHECKS ====="
+)
+
+print(
+    summary3b.round(3)
+)
+
+
+# ------------------------------------------------------------
+# Extract prefix and suffix
+# ------------------------------------------------------------
+
+prefix = (
+    summary3b[
+        summary3b["structure"]
+        == "prefix"
+    ]
+    .sort_values(
+        "pairwise_overlap"
+    )
+)
+
+
+suffix = (
+    summary3b[
+        summary3b["structure"]
+        == "suffix"
+    ]
+    .sort_values(
+        "pairwise_overlap"
+    )
+)
+
+
+overlaps = (
+    prefix[
+        "pairwise_overlap"
+    ]
+    .to_numpy()
+)
+
+
+prefix_mean = (
+    prefix[
+        "mean"
+    ]
+    .to_numpy()
+)
+
+
+suffix_mean = (
+    suffix[
+        "mean"
+    ]
+    .to_numpy()
+)
+
+
+prefix_ci = (
+    prefix[
+        "ci95"
+    ]
+    .to_numpy()
+)
+
+
+suffix_ci = (
+    suffix[
+        "ci95"
+    ]
+    .to_numpy()
+)
+
+
+# ------------------------------------------------------------
+# Calculate suffix / prefix ratios
+# ------------------------------------------------------------
+
+ratios = (
+    suffix_mean
+    /
+    prefix_mean
+)
+
+
+print()
+print(
+    "Suffix / Prefix ratios:"
+)
+
+for overlap, ratio in zip(
+    overlaps,
+    ratios
+):
+
+    print(
+        f"Overlap = {overlap:.2f}: "
+        f"{ratio:.3f}x"
+    )
+
+
+# ------------------------------------------------------------
+# Plot
+# ------------------------------------------------------------
+
+x = np.arange(
+    len(overlaps)
+)
+
+width = 0.34
+
+
+plt.figure(
+    figsize=(7.5, 5.3)
+)
+
+
+bars_prefix = plt.bar(
+    x - width / 2,
+    prefix_mean,
+    width,
+    yerr=prefix_ci,
+    capsize=5,
+    label="Prefix",
+    hatch="//"
+)
+
+
+bars_suffix = plt.bar(
+    x + width / 2,
+    suffix_mean,
+    width,
+    yerr=suffix_ci,
+    capsize=5,
+    label="Suffix",
+    hatch=".."
+)
+
+
+plt.xlabel(
+    "Pairwise Route Overlap",
+    fontsize=12
+)
+
+plt.ylabel(
+    "Average Number of Dominance Checks",
+    fontsize=12
+)
+
+
+plt.xticks(
+    x,
+    [
+        "0.25",
+        "0.50",
+        "0.75"
+    ]
+)
+
+
+plt.legend(
+    frameon=False
+)
+
+
+plt.grid(
+    axis="y",
+    alpha=0.25
+)
+
+
+# ------------------------------------------------------------
+# Add ratio labels
+# ------------------------------------------------------------
+
+for i, ratio in enumerate(
+    ratios
+):
+
+    highest = max(
+        prefix_mean[i]
+        + prefix_ci[i],
+        suffix_mean[i]
+        + suffix_ci[i]
+    )
+
+    plt.text(
+        x[i],
+        highest + 10,
+        f"{ratio:.2f}×",
+        ha="center",
+        va="bottom",
+        fontsize=10
+    )
+
+
+# Give enough room for annotations
+plt.ylim(
+    0,
+    max(
+        suffix_mean
+        + suffix_ci
+    ) * 1.18
+)
+
+
+plt.tight_layout()
+
+
+save_figure(
+    "prefix_suffix_dominance_checks.pdf"
+)
+
+plt.close()
+
+
+# ============================================================
+# Final summary
+# ============================================================
+
+print()
+print(
+    "=" * 60
+)
+
+print(
+    "ALL EXPERIMENT 3 FIGURES GENERATED"
+)
+
+print(
+    "=" * 60
+)
+
+print()
+
+print(
+    "1.",
+    os.path.join(
+        OUTPUT_DIR,
+        "route_quantity_growth.pdf"
+    )
+)
+
+print(
+    "2.",
+    os.path.join(
+        OUTPUT_DIR,
+        "prefix_suffix_structure.pdf"
+    )
+)
+
+print(
+    "3.",
+    os.path.join(
+        OUTPUT_DIR,
+        "prefix_suffix_dominance_checks.pdf"
+    )
+)

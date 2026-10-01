@@ -1,0 +1,8 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\web\\taipei-pareto-explorer\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:10282 (Press CTRL+C to quit)
+INFO:     Started reloader process [34168] using WatchFiles
+INFO:     Started server process [36120]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:10291 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10292 - "GET /api/routes?origin=%E6%9D%B1%E6%B9%96%E7%AB%99&destination=%E4%B8%AD%E5%8E%9F%E7%AB%99 HTTP/1.1" 200 OK

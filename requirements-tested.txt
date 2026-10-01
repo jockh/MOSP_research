@@ -1,0 +1,13 @@
+# Versions used for migration regression on Python 3.12.14.
+# Backend stays optional in normal requirements.txt.
+numpy==2.3.5
+pandas==3.0.1
+scipy==1.18.1
+networkx==3.7
+matplotlib==3.11.2
+statsmodels==0.15.0
+fastapi==0.142.2
+uvicorn==0.54.0
+python-dotenv==1.2.3
+requests==2.34.2
+httpx==0.28.1

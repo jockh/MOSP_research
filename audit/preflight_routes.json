@@ -1,0 +1,1964 @@
+[
+  {
+    "origin": "東湖站",
+    "destination": "七張站",
+    "route_id": 1,
+    "travel_time_seconds": 2882,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "七張站",
+    "route_id": 2,
+    "travel_time_seconds": 3066,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "七張站",
+    "route_id": 3,
+    "travel_time_seconds": 3253,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "三和國中站",
+    "route_id": 1,
+    "travel_time_seconds": 2519,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#5] -> 松江南京站[O#5] -> 行天宮站[O#5] -> 中山國小站[O#5] -> 民權西路站[O#5] -> 大橋頭站[O#5] -> 三重國小站[O] -> 三和國中站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "三民高中站",
+    "route_id": 1,
+    "travel_time_seconds": 2743,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#5] -> 松江南京站[O#5] -> 行天宮站[O#5] -> 中山國小站[O#5] -> 民權西路站[O#5] -> 大橋頭站[O#5] -> 三重國小站[O] -> 三和國中站[O] -> 徐匯中學站[O] -> 三民高中站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "三重國小站",
+    "route_id": 1,
+    "travel_time_seconds": 2387,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#5] -> 松江南京站[O#5] -> 行天宮站[O#5] -> 中山國小站[O#5] -> 民權西路站[O#5] -> 大橋頭站[O#5] -> 三重國小站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "三重站",
+    "route_id": 1,
+    "travel_time_seconds": 2594,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中原站",
+    "route_id": 1,
+    "travel_time_seconds": 3330,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中原站",
+    "route_id": 2,
+    "travel_time_seconds": 3439,
+    "transfers": 2,
+    "walking_seconds": 840,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y] -> 板橋站[Y] -> 板新站[Y] -> 中原站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中原站",
+    "route_id": 3,
+    "travel_time_seconds": 3902,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中原站",
+    "route_id": 4,
+    "travel_time_seconds": 4086,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中原站",
+    "route_id": 5,
+    "travel_time_seconds": 4273,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中和站",
+    "route_id": 1,
+    "travel_time_seconds": 3104,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 中和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中和站",
+    "route_id": 2,
+    "travel_time_seconds": 3665,
+    "transfers": 2,
+    "walking_seconds": 840,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y] -> 板橋站[Y] -> 板新站[Y] -> 中原站[Y] -> 橋和站[Y] -> 中和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中和站",
+    "route_id": 3,
+    "travel_time_seconds": 3676,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中和站",
+    "route_id": 4,
+    "travel_time_seconds": 3860,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中和站",
+    "route_id": 5,
+    "travel_time_seconds": 4047,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中山國中站",
+    "route_id": 1,
+    "travel_time_seconds": 1263,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中山國小站",
+    "route_id": 1,
+    "travel_time_seconds": 2003,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中山站",
+    "route_id": 1,
+    "travel_time_seconds": 1925,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中正紀念堂站",
+    "route_id": 1,
+    "travel_time_seconds": 2128,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 東門站[R] -> 中正紀念堂站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中正紀念堂站",
+    "route_id": 2,
+    "travel_time_seconds": 2185,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 台大醫院站[R] -> 中正紀念堂站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中正紀念堂站",
+    "route_id": 3,
+    "travel_time_seconds": 2223,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "中正紀念堂站",
+    "route_id": 4,
+    "travel_time_seconds": 2303,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "丹鳳站",
+    "route_id": 1,
+    "travel_time_seconds": 3313,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O] -> 新莊站[O] -> 輔大站[O] -> 丹鳳站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "亞東醫院站",
+    "route_id": 1,
+    "travel_time_seconds": 2714,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 板橋站[BL] -> 府中站[BL] -> 亞東醫院站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "信義安和站",
+    "route_id": 1,
+    "travel_time_seconds": 2012,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 信義安和站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "先嗇宮站",
+    "route_id": 1,
+    "travel_time_seconds": 2761,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "內湖站",
+    "route_id": 1,
+    "travel_time_seconds": 320,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "公館站",
+    "route_id": 1,
+    "travel_time_seconds": 2391,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "公館站",
+    "route_id": 2,
+    "travel_time_seconds": 2575,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "公館站",
+    "route_id": 3,
+    "travel_time_seconds": 2762,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "六張犁站",
+    "route_id": 1,
+    "travel_time_seconds": 1843,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR] -> 六張犁站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "劍南路站",
+    "route_id": 1,
+    "travel_time_seconds": 745,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "劍潭站",
+    "route_id": 1,
+    "travel_time_seconds": 2507,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "劍潭站",
+    "route_id": 2,
+    "travel_time_seconds": 2548,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "劍潭站",
+    "route_id": 3,
+    "travel_time_seconds": 3068,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "動物園站",
+    "route_id": 1,
+    "travel_time_seconds": 2525,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR] -> 六張犁站[BR] -> 麟光站[BR] -> 辛亥站[BR] -> 萬芳醫院站[BR] -> 萬芳社區站[BR] -> 木柵站[BR] -> 動物園站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "北投站",
+    "route_id": 1,
+    "travel_time_seconds": 3308,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "北投站",
+    "route_id": 2,
+    "travel_time_seconds": 3349,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "北投站",
+    "route_id": 3,
+    "travel_time_seconds": 3869,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "北門站",
+    "route_id": 1,
+    "travel_time_seconds": 2076,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "十四張站",
+    "route_id": 1,
+    "travel_time_seconds": 3102,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "十四張站",
+    "route_id": 2,
+    "travel_time_seconds": 3232,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 景平站[Y] -> 秀朗橋站[Y] -> 十四張站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "十四張站",
+    "route_id": 3,
+    "travel_time_seconds": 3286,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "十四張站",
+    "route_id": 4,
+    "travel_time_seconds": 3473,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "南京三民站",
+    "route_id": 1,
+    "travel_time_seconds": 1905,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 台北小巨蛋站[G] -> 南京三民站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "南京復興站",
+    "route_id": 1,
+    "travel_time_seconds": 1359,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "南勢角站",
+    "route_id": 1,
+    "travel_time_seconds": 2640,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 南勢角站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "南港展覽館站",
+    "route_id": 1,
+    "travel_time_seconds": 188,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "南港站",
+    "route_id": 1,
+    "travel_time_seconds": 600,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "南港軟體園區站",
+    "route_id": 1,
+    "travel_time_seconds": 85,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "古亭站",
+    "route_id": 1,
+    "travel_time_seconds": 2044,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "古亭站",
+    "route_id": 2,
+    "travel_time_seconds": 2535,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台北101/世貿站",
+    "route_id": 1,
+    "travel_time_seconds": 2122,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 信義安和站[R] -> 台北101/世貿站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台北小巨蛋站",
+    "route_id": 1,
+    "travel_time_seconds": 1776,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 台北小巨蛋站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台北橋站",
+    "route_id": 1,
+    "travel_time_seconds": 2363,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台北車站",
+    "route_id": 1,
+    "travel_time_seconds": 1721,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台大醫院站",
+    "route_id": 1,
+    "travel_time_seconds": 2063,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 台大醫院站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台大醫院站",
+    "route_id": 2,
+    "travel_time_seconds": 2305,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 台北車站[R] -> 台大醫院站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台大醫院站",
+    "route_id": 3,
+    "travel_time_seconds": 2428,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台電大樓站",
+    "route_id": 1,
+    "travel_time_seconds": 2282,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台電大樓站",
+    "route_id": 2,
+    "travel_time_seconds": 2466,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "台電大樓站",
+    "route_id": 3,
+    "travel_time_seconds": 2653,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "唭哩岸站",
+    "route_id": 1,
+    "travel_time_seconds": 3088,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "唭哩岸站",
+    "route_id": 2,
+    "travel_time_seconds": 3129,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "唭哩岸站",
+    "route_id": 3,
+    "travel_time_seconds": 3649,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "善導寺站",
+    "route_id": 1,
+    "travel_time_seconds": 1630,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "國父紀念館站",
+    "route_id": 1,
+    "travel_time_seconds": 1187,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "圓山站",
+    "route_id": 1,
+    "travel_time_seconds": 2366,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "圓山站",
+    "route_id": 2,
+    "travel_time_seconds": 2407,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "圓山站",
+    "route_id": 3,
+    "travel_time_seconds": 2927,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "土城站",
+    "route_id": 1,
+    "travel_time_seconds": 3014,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 板橋站[BL] -> 府中站[BL] -> 亞東醫院站[BL] -> 海山站[BL] -> 土城站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "士林站",
+    "route_id": 1,
+    "travel_time_seconds": 2635,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "士林站",
+    "route_id": 2,
+    "travel_time_seconds": 2676,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "士林站",
+    "route_id": 3,
+    "travel_time_seconds": 3196,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大坪林站",
+    "route_id": 1,
+    "travel_time_seconds": 2777,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大坪林站",
+    "route_id": 2,
+    "travel_time_seconds": 2961,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大坪林站",
+    "route_id": 3,
+    "travel_time_seconds": 3148,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大安森林公園站",
+    "route_id": 1,
+    "travel_time_seconds": 1996,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大安站",
+    "route_id": 1,
+    "travel_time_seconds": 1592,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大橋頭站",
+    "route_id": 1,
+    "travel_time_seconds": 2210,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大湖公園站",
+    "route_id": 1,
+    "travel_time_seconds": 224,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "大直站",
+    "route_id": 1,
+    "travel_time_seconds": 874,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "奇岩站",
+    "route_id": 1,
+    "travel_time_seconds": 3190,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "奇岩站",
+    "route_id": 2,
+    "travel_time_seconds": 3231,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "奇岩站",
+    "route_id": 3,
+    "travel_time_seconds": 3751,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "小南門站",
+    "route_id": 1,
+    "travel_time_seconds": 2120,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "小南門站",
+    "route_id": 2,
+    "travel_time_seconds": 2307,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "小碧潭站",
+    "route_id": 1,
+    "travel_time_seconds": 3265,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 七張站[G-3] -> 小碧潭站[G-3]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "小碧潭站",
+    "route_id": 2,
+    "travel_time_seconds": 3449,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 七張站[G-3] -> 小碧潭站[G-3]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "小碧潭站",
+    "route_id": 3,
+    "travel_time_seconds": 3636,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 七張站[G-3] -> 小碧潭站[G-3]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "市政府站",
+    "route_id": 1,
+    "travel_time_seconds": 1082,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "幸福站",
+    "route_id": 1,
+    "travel_time_seconds": 3192,
+    "transfers": 2,
+    "walking_seconds": 840,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "幸福站",
+    "route_id": 2,
+    "travel_time_seconds": 3384,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O] -> 頭前庄站[Y] -> 幸福站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "幸福站",
+    "route_id": 3,
+    "travel_time_seconds": 4745,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "幸福站",
+    "route_id": 4,
+    "travel_time_seconds": 4929,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "幸福站",
+    "route_id": 5,
+    "travel_time_seconds": 5116,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "府中站",
+    "route_id": 1,
+    "travel_time_seconds": 2584,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 板橋站[BL] -> 府中站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "廣慈/奉天宮站",
+    "route_id": 1,
+    "travel_time_seconds": 2395,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 信義安和站[R] -> 台北101/世貿站[R] -> 象山站[R] -> 廣慈/奉天宮站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "後山埤站",
+    "route_id": 1,
+    "travel_time_seconds": 865,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "徐匯中學站",
+    "route_id": 1,
+    "travel_time_seconds": 2626,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#5] -> 松江南京站[O#5] -> 行天宮站[O#5] -> 中山國小站[O#5] -> 民權西路站[O#5] -> 大橋頭站[O#5] -> 三重國小站[O] -> 三和國中站[O] -> 徐匯中學站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "復興崗站",
+    "route_id": 1,
+    "travel_time_seconds": 3470,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "復興崗站",
+    "route_id": 2,
+    "travel_time_seconds": 3511,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "復興崗站",
+    "route_id": 3,
+    "travel_time_seconds": 4031,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "忠孝復興站",
+    "route_id": 1,
+    "travel_time_seconds": 1379,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "忠孝復興站",
+    "route_id": 2,
+    "travel_time_seconds": 1480,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "忠孝敦化站",
+    "route_id": 1,
+    "travel_time_seconds": 1286,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "忠孝新生站",
+    "route_id": 1,
+    "travel_time_seconds": 1509,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "忠義站",
+    "route_id": 1,
+    "travel_time_seconds": 3614,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "忠義站",
+    "route_id": 2,
+    "travel_time_seconds": 3655,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "忠義站",
+    "route_id": 3,
+    "travel_time_seconds": 4175,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "文德站",
+    "route_id": 1,
+    "travel_time_seconds": 423,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北投站",
+    "route_id": 1,
+    "travel_time_seconds": 3645,
+    "transfers": 3,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 北投站[R-3] -> 新北投站[R-3]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北投站",
+    "route_id": 2,
+    "travel_time_seconds": 3686,
+    "transfers": 3,
+    "walking_seconds": 660,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 北投站[R-3] -> 新北投站[R-3]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北投站",
+    "route_id": 3,
+    "travel_time_seconds": 4206,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 北投站[R-3] -> 新北投站[R-3]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北產業園區站",
+    "route_id": 1,
+    "travel_time_seconds": 3350,
+    "transfers": 2,
+    "walking_seconds": 840,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y] -> 新北產業園區站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北產業園區站",
+    "route_id": 2,
+    "travel_time_seconds": 3542,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O] -> 頭前庄站[Y] -> 幸福站[Y] -> 新北產業園區站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北產業園區站",
+    "route_id": 3,
+    "travel_time_seconds": 4903,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y] -> 新北產業園區站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北產業園區站",
+    "route_id": 4,
+    "travel_time_seconds": 5087,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y] -> 新北產業園區站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新北產業園區站",
+    "route_id": 5,
+    "travel_time_seconds": 5274,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y] -> 頭前庄站[Y] -> 幸福站[Y] -> 新北產業園區站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新埔民生站",
+    "route_id": 1,
+    "travel_time_seconds": 2894,
+    "transfers": 2,
+    "walking_seconds": 840,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新埔民生站",
+    "route_id": 2,
+    "travel_time_seconds": 3432,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O] -> 頭前庄站[Y] -> 新埔民生站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新埔民生站",
+    "route_id": 3,
+    "travel_time_seconds": 4447,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新埔民生站",
+    "route_id": 4,
+    "travel_time_seconds": 4631,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新埔民生站",
+    "route_id": 5,
+    "travel_time_seconds": 4818,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y] -> 板橋站[Y] -> 新埔民生站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新埔站",
+    "route_id": 1,
+    "travel_time_seconds": 2354,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新店區公所站",
+    "route_id": 1,
+    "travel_time_seconds": 2987,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 新店區公所站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新店區公所站",
+    "route_id": 2,
+    "travel_time_seconds": 3171,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 新店區公所站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新店區公所站",
+    "route_id": 3,
+    "travel_time_seconds": 3358,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 新店區公所站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新店站",
+    "route_id": 1,
+    "travel_time_seconds": 3123,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 新店區公所站[G] -> 新店站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新店站",
+    "route_id": 2,
+    "travel_time_seconds": 3307,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 新店區公所站[G] -> 新店站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新店站",
+    "route_id": 3,
+    "travel_time_seconds": 3494,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 七張站[G] -> 新店區公所站[G] -> 新店站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "新莊站",
+    "route_id": 1,
+    "travel_time_seconds": 3013,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O] -> 新莊站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "昆陽站",
+    "route_id": 1,
+    "travel_time_seconds": 733,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "明德站",
+    "route_id": 1,
+    "travel_time_seconds": 2862,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "明德站",
+    "route_id": 2,
+    "travel_time_seconds": 2903,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "明德站",
+    "route_id": 3,
+    "travel_time_seconds": 3423,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景安站",
+    "route_id": 1,
+    "travel_time_seconds": 2515,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景平站",
+    "route_id": 1,
+    "travel_time_seconds": 2994,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 景平站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景平站",
+    "route_id": 2,
+    "travel_time_seconds": 3338,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景平站",
+    "route_id": 3,
+    "travel_time_seconds": 3522,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景平站",
+    "route_id": 4,
+    "travel_time_seconds": 3709,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景美站",
+    "route_id": 1,
+    "travel_time_seconds": 2658,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景美站",
+    "route_id": 2,
+    "travel_time_seconds": 2842,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "景美站",
+    "route_id": 3,
+    "travel_time_seconds": 3029,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "木柵站",
+    "route_id": 1,
+    "travel_time_seconds": 2433,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR] -> 六張犁站[BR] -> 麟光站[BR] -> 辛亥站[BR] -> 萬芳醫院站[BR] -> 萬芳社區站[BR] -> 木柵站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "東門站",
+    "route_id": 1,
+    "travel_time_seconds": 1803,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "東門站",
+    "route_id": 2,
+    "travel_time_seconds": 2098,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "松山機場站",
+    "route_id": 1,
+    "travel_time_seconds": 1071,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "松山站",
+    "route_id": 1,
+    "travel_time_seconds": 2070,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 台北小巨蛋站[G] -> 南京三民站[G] -> 松山站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "松江南京站",
+    "route_id": 1,
+    "travel_time_seconds": 1769,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "松江南京站",
+    "route_id": 2,
+    "travel_time_seconds": 1784,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "板新站",
+    "route_id": 1,
+    "travel_time_seconds": 3303,
+    "transfers": 2,
+    "walking_seconds": 840,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y] -> 板橋站[Y] -> 板新站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "板新站",
+    "route_id": 2,
+    "travel_time_seconds": 3466,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "板新站",
+    "route_id": 3,
+    "travel_time_seconds": 4038,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "板新站",
+    "route_id": 4,
+    "travel_time_seconds": 4222,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "板新站",
+    "route_id": 5,
+    "travel_time_seconds": 4409,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y] -> 板新站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "板橋站",
+    "route_id": 1,
+    "travel_time_seconds": 2489,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 板橋站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "橋和站",
+    "route_id": 1,
+    "travel_time_seconds": 3233,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "橋和站",
+    "route_id": 2,
+    "travel_time_seconds": 3536,
+    "transfers": 2,
+    "walking_seconds": 840,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y] -> 板橋站[Y] -> 板新站[Y] -> 中原站[Y] -> 橋和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "橋和站",
+    "route_id": 3,
+    "travel_time_seconds": 3805,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "橋和站",
+    "route_id": 4,
+    "travel_time_seconds": 3989,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "橋和站",
+    "route_id": 5,
+    "travel_time_seconds": 4176,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "民權西路站",
+    "route_id": 1,
+    "travel_time_seconds": 2105,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "民權西路站",
+    "route_id": 2,
+    "travel_time_seconds": 2807,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "永安市場站",
+    "route_id": 1,
+    "travel_time_seconds": 2396,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "永寧站",
+    "route_id": 1,
+    "travel_time_seconds": 3135,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 板橋站[BL] -> 府中站[BL] -> 亞東醫院站[BL] -> 海山站[BL] -> 土城站[BL] -> 永寧站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "永春站",
+    "route_id": 1,
+    "travel_time_seconds": 970,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "江子翠站",
+    "route_id": 1,
+    "travel_time_seconds": 2249,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "海山站",
+    "route_id": 1,
+    "travel_time_seconds": 2882,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 板橋站[BL] -> 府中站[BL] -> 亞東醫院站[BL] -> 海山站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "淡水站",
+    "route_id": 1,
+    "travel_time_seconds": 4269,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R] -> 紅樹林站[R] -> 淡水站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "淡水站",
+    "route_id": 2,
+    "travel_time_seconds": 4310,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R] -> 紅樹林站[R] -> 淡水站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "淡水站",
+    "route_id": 3,
+    "travel_time_seconds": 4830,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R] -> 紅樹林站[R] -> 淡水站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "港墘站",
+    "route_id": 1,
+    "travel_time_seconds": 520,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "石牌站",
+    "route_id": 1,
+    "travel_time_seconds": 2952,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "石牌站",
+    "route_id": 2,
+    "travel_time_seconds": 2993,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "石牌站",
+    "route_id": 3,
+    "travel_time_seconds": 3513,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "秀朗橋站",
+    "route_id": 1,
+    "travel_time_seconds": 3098,
+    "transfers": 3,
+    "walking_seconds": 780,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 景平站[Y] -> 秀朗橋站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "秀朗橋站",
+    "route_id": 2,
+    "travel_time_seconds": 3236,
+    "transfers": 4,
+    "walking_seconds": 720,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "秀朗橋站",
+    "route_id": 3,
+    "travel_time_seconds": 3420,
+    "transfers": 3,
+    "walking_seconds": 600,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "秀朗橋站",
+    "route_id": 4,
+    "travel_time_seconds": 3607,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "科技大樓站",
+    "route_id": 1,
+    "travel_time_seconds": 1696,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "竹圍站",
+    "route_id": 1,
+    "travel_time_seconds": 3898,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "竹圍站",
+    "route_id": 2,
+    "travel_time_seconds": 3939,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "竹圍站",
+    "route_id": 3,
+    "travel_time_seconds": 4459,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "紅樹林站",
+    "route_id": 1,
+    "travel_time_seconds": 4067,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R] -> 紅樹林站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "紅樹林站",
+    "route_id": 2,
+    "travel_time_seconds": 4108,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R] -> 紅樹林站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "紅樹林站",
+    "route_id": 3,
+    "travel_time_seconds": 4628,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R] -> 竹圍站[R] -> 紅樹林站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "芝山站",
+    "route_id": 1,
+    "travel_time_seconds": 2756,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "芝山站",
+    "route_id": 2,
+    "travel_time_seconds": 2797,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "芝山站",
+    "route_id": 3,
+    "travel_time_seconds": 3317,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "菜寮站",
+    "route_id": 1,
+    "travel_time_seconds": 2485,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "萬芳社區站",
+    "route_id": 1,
+    "travel_time_seconds": 2361,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR] -> 六張犁站[BR] -> 麟光站[BR] -> 辛亥站[BR] -> 萬芳醫院站[BR] -> 萬芳社區站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "萬芳醫院站",
+    "route_id": 1,
+    "travel_time_seconds": 2237,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR] -> 六張犁站[BR] -> 麟光站[BR] -> 辛亥站[BR] -> 萬芳醫院站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "萬隆站",
+    "route_id": 1,
+    "travel_time_seconds": 2542,
+    "transfers": 3,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "萬隆站",
+    "route_id": 2,
+    "travel_time_seconds": 2726,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "萬隆站",
+    "route_id": 3,
+    "travel_time_seconds": 2913,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "葫洲站",
+    "route_id": 1,
+    "travel_time_seconds": 78,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "蘆洲站",
+    "route_id": 1,
+    "travel_time_seconds": 2879,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#5] -> 松江南京站[O#5] -> 行天宮站[O#5] -> 中山國小站[O#5] -> 民權西路站[O#5] -> 大橋頭站[O#5] -> 三重國小站[O] -> 三和國中站[O] -> 徐匯中學站[O] -> 三民高中站[O] -> 蘆洲站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "行天宮站",
+    "route_id": 1,
+    "travel_time_seconds": 1877,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "西湖站",
+    "route_id": 1,
+    "travel_time_seconds": 610,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "西門站",
+    "route_id": 1,
+    "travel_time_seconds": 1883,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "象山站",
+    "route_id": 1,
+    "travel_time_seconds": 2218,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 信義安和站[R] -> 台北101/世貿站[R] -> 象山站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "輔大站",
+    "route_id": 1,
+    "travel_time_seconds": 3175,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O] -> 新莊站[O] -> 輔大站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "辛亥站",
+    "route_id": 1,
+    "travel_time_seconds": 2106,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR] -> 六張犁站[BR] -> 麟光站[BR] -> 辛亥站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "迴龍站",
+    "route_id": 1,
+    "travel_time_seconds": 3506,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O] -> 新莊站[O] -> 輔大站[O] -> 丹鳳站[O] -> 迴龍站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "關渡站",
+    "route_id": 1,
+    "travel_time_seconds": 3721,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "關渡站",
+    "route_id": 2,
+    "travel_time_seconds": 3762,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "關渡站",
+    "route_id": 3,
+    "travel_time_seconds": 4282,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R] -> 民權西路站[R] -> 圓山站[R] -> 劍潭站[R] -> 士林站[R] -> 芝山站[R] -> 明德站[R] -> 石牌站[R] -> 唭哩岸站[R] -> 奇岩站[R] -> 北投站[R] -> 復興崗站[R] -> 忠義站[R] -> 關渡站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "雙連站",
+    "route_id": 1,
+    "travel_time_seconds": 2156,
+    "transfers": 2,
+    "walking_seconds": 540,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 台北車站[R] -> 中山站[R] -> 雙連站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "雙連站",
+    "route_id": 2,
+    "travel_time_seconds": 2197,
+    "transfers": 2,
+    "walking_seconds": 480,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 中山站[R] -> 雙連站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "雙連站",
+    "route_id": 3,
+    "travel_time_seconds": 2717,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 大安站[R] -> 大安森林公園站[R] -> 東門站[R] -> 中正紀念堂站[R] -> 台大醫院站[R] -> 台北車站[R] -> 中山站[R] -> 雙連站[R]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "頂埔站",
+    "route_id": 1,
+    "travel_time_seconds": 3343,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 板橋站[BL] -> 府中站[BL] -> 亞東醫院站[BL] -> 海山站[BL] -> 土城站[BL] -> 永寧站[BL] -> 頂埔站[BL]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "頂溪站",
+    "route_id": 1,
+    "travel_time_seconds": 2264,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "頭前庄站",
+    "route_id": 1,
+    "travel_time_seconds": 2894,
+    "transfers": 2,
+    "walking_seconds": 420,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 松江南京站[O#4] -> 行天宮站[O#4] -> 中山國小站[O#4] -> 民權西路站[O#4] -> 大橋頭站[O#4] -> 台北橋站[O] -> 菜寮站[O] -> 三重站[O] -> 先嗇宮站[O] -> 頭前庄站[O]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "麟光站",
+    "route_id": 1,
+    "travel_time_seconds": 1940,
+    "transfers": 0,
+    "walking_seconds": 0,
+    "path": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 忠孝復興站[BR] -> 大安站[BR] -> 科技大樓站[BR] -> 六張犁站[BR] -> 麟光站[BR]"
+  },
+  {
+    "origin": "東湖站",
+    "destination": "龍山寺站",
+    "route_id": 1,
+    "travel_time_seconds": 2028,
+    "transfers": 1,
+    "walking_seconds": 300,
+    "path": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL]"
+  }
+]

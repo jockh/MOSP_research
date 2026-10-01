@@ -1,0 +1,166 @@
+{
+  "installation": {
+    "command": "python -m pip install -e . -r web/taipei-pareto-explorer/backend/requirements.txt",
+    "fresh_environment": true,
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "pip_check": "No broken requirements found."
+  },
+  "versions": {
+    "mosp-research": "1.0.0",
+    "fastapi": "0.115.6",
+    "uvicorn": "0.34.0",
+    "pandas": "2.2.3",
+    "requests": "2.32.3",
+    "python-dotenv": "1.0.1"
+  },
+  "import": {
+    "src_file": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\src\\__init__.py",
+    "external_cwd": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\deployment_stage",
+    "project_root": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+    "pareto_csv": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\results\\experiment_05_all_od\\all_od_pareto_routes.csv",
+    "station_csv": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\data\\taipei_metro\\taipei_metro_station_positions.csv",
+    "cwd_independent": true
+  },
+  "live_start_command": [
+    "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\deployment_stage\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "uvicorn",
+    "main:app",
+    "--app-dir",
+    "web/taipei-pareto-explorer/backend",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8811"
+  ],
+  "health_status": 200,
+  "health": {
+    "ok": true,
+    "pareto_csv_found": true,
+    "pareto_csv": "results/experiment_05_all_od/all_od_pareto_routes.csv",
+    "station_coordinate_file": "data/taipei_metro/taipei_metro_station_positions.csv",
+    "coordinate_source_count": 119,
+    "taipei_coordinate_count": 109,
+    "circular_fallback_count": 10,
+    "model_station_count": 119,
+    "matched_station_count": 119,
+    "missing_station_count": 0,
+    "missing_stations": [],
+    "station_error": null
+  },
+  "cors": [
+    {
+      "origin": "https://pareto-frontend.example.test",
+      "allowed": true,
+      "GET_status": 200,
+      "preflight_status": 200,
+      "allow_origin": "https://pareto-frontend.example.test"
+    },
+    {
+      "origin": "http://localhost:5173",
+      "allowed": true,
+      "GET_status": 200,
+      "preflight_status": 200,
+      "allow_origin": "http://localhost:5173"
+    },
+    {
+      "origin": "http://127.0.0.1:5173",
+      "allowed": false,
+      "GET_status": 200,
+      "preflight_status": 400,
+      "allow_origin": null
+    },
+    {
+      "origin": "https://untrusted.example.test",
+      "allowed": false,
+      "GET_status": 200,
+      "preflight_status": 400,
+      "allow_origin": null
+    }
+  ],
+  "payloads_compared_with_prechange_server": {
+    "/api/stations": {
+      "unchanged": true,
+      "sha256": "dc8f0016e33e7682de78ab07545318346c486e7a4d225a41028f43706ea354d7"
+    },
+    "/api/network": {
+      "unchanged": true,
+      "sha256": "8dadac5b80e8ca0dbdb95e7a5c77ea3403bcdd60fd071c5ecbdee4d054075eed"
+    },
+    "/api/routes?origin=%E6%9D%B1%E6%B9%96%E7%AB%99&destination=%E4%B8%AD%E5%8E%9F%E7%AB%99": {
+      "unchanged": true,
+      "sha256": "0600a76ac597a810dc174e1ee5b1cfcabd816dc492df16f581c0c619f301ac7c"
+    }
+  },
+  "existing_backend_functions_unchanged": 21,
+  "health_presentation_only_change": "Relative data paths and generic public error diagnostics; absolute paths/tracebacks kept in server logs only.",
+  "backend_constants_unchanged": true,
+  "protected_files_sha256": {
+    "count": 87,
+    "changed": []
+  },
+  "deployed": false,
+  "frontend": {
+    "node": "v24.19.0",
+    "commands": {
+      "npm_ci.log": {
+        "command": [
+          "C:\\Program Files\\nodejs\\npm.cmd",
+          "ci"
+        ],
+        "exit_code": 0
+      },
+      "npm_build.log": {
+        "command": [
+          "C:\\Program Files\\nodejs\\npm.cmd",
+          "run",
+          "build"
+        ],
+        "exit_code": 0
+      },
+      "npm_render_env_build.log": {
+        "command": [
+          "C:\\Program Files\\nodejs\\npm.cmd",
+          "run",
+          "build",
+          "--",
+          "--outDir",
+          "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support\\deployment_stage\\render_env_dist"
+        ],
+        "exit_code": 0
+      }
+    },
+    "production_env_injection": true,
+    "public_bundle_contains_localhost_backend_url": false,
+    "api_functions_unchanged": true,
+    "production_static_site_requires_VITE_API_BASE_URL": true,
+    "local_fallback": "same-origin /api via Vite dev/preview proxy"
+  },
+  "correctness": {
+    "total": 1000,
+    "passed": 1000,
+    "failed": 0,
+    "pass_rate": "100.00%",
+    "seed": 20260930,
+    "nodes": 7,
+    "objectives": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "cost_range": [
+      1,
+      20
+    ],
+    "simple_paths_tested": 7481,
+    "output_isolated_from_formal_results": true
+  },
+  "authentication": {
+    "GitHub": "authenticated",
+    "Render": "authenticated",
+    "workspace_selected": true
+  },
+  "public_deployment": "in progress; no service created yet"
+}

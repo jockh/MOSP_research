@@ -1,0 +1,12 @@
+[
+  "pyproject.toml",
+  "README.md",
+  "setup_windows.ps1",
+  "validation/check_installation.py",
+  "experiments/synthetic/experiment_01.py",
+  "experiments/synthetic/experiment_02a.py",
+  "experiments/synthetic/experiment_02b.py",
+  "experiments/synthetic/experiment_03a.py",
+  "experiments/synthetic/experiment_03b.py",
+  "experiments/synthetic/_cli.py"
+]

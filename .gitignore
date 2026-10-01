@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+node_modules/
+.env
+.env.*
+!.env.example
+!.env.production.example
+regression/runs/
+# Preserve formal data, CSVs and research figures in version control.
+
+# Credentials and local platform files are never research inputs.
+secrets/
+*.pem
+*.key
+.DS_Store
+Thumbs.db

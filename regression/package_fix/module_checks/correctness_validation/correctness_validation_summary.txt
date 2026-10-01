@@ -1,0 +1,27 @@
+========================================================================
+MOSP CORRECTNESS VALIDATION SUMMARY
+========================================================================
+
+Total tests              : 1000
+Passed                   : 1000
+Failed                   : 0
+Pass rate                : 100.00%
+
+Nodes per graph          : 7
+Additional edge prob.    : 0.25
+Objectives tested        : [2, 3, 4, 5]
+Edge cost range          : [1, 20]
+Master seed              : 20260930
+
+Total simple paths tested: 7481
+Total runtime            : 0.2167 seconds
+
+Validation criterion:
+MOSP Pareto cost-vector set
+==
+Brute-force Pareto cost-vector set
+
+RESULT:
+ALL TESTS PASSED.
+
+All 1,000 random test cases produced exactly the same non-dominated cost-vector set under MOSP and exhaustive simple-path enumeration.

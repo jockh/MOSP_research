@@ -1,0 +1,351 @@
+from pathlib import Path
+import time
+
+from src.taipei_metro import build_taipei_metro_graph
+from src.mosp import mosp
+
+
+# =========================================================
+# PATHS
+# =========================================================
+
+ROOT = Path(__file__).resolve().parents[1]
+
+DATA_DIR = ROOT / "data" / "taipei_metro"
+
+STATION_FILE = (
+    DATA_DIR
+    / "臺北捷運路線車站資料服務_NEW_fixed (1).csv"
+)
+
+TRAVEL_FILE = (
+    DATA_DIR
+    / "臺北捷運相鄰兩站間之行駛時間及停靠站時間(1150830).csv"
+)
+
+TRANSFER_FILE = (
+    DATA_DIR
+    / "臺北捷運轉乘車站轉乘步行時間資料.csv"
+)
+
+
+# =========================================================
+# BUILD GRAPH
+# =========================================================
+
+graph, build_stats = build_taipei_metro_graph(
+    station_file=STATION_FILE,
+    travel_time_file=TRAVEL_FILE,
+    transfer_file=TRANSFER_FILE
+)
+
+
+print("=" * 80)
+print("BRUTE-FORCE SIMPLE PATH COUNT")
+print("=" * 80)
+
+print("Graph nodes:", len(graph.nodes()))
+
+directed_edges = sum(
+    len(graph.neighbors(node))
+    for node in graph.nodes()
+)
+
+print("Directed edges:", directed_edges)
+
+
+# =========================================================
+# DFS SIMPLE PATH COUNTER
+# =========================================================
+
+def count_simple_paths(
+    graph,
+    origin_name,
+    destination_name,
+    timeout_seconds=60,
+    max_paths=None
+):
+    """
+    Count all simple paths from any route-state of origin
+    to any route-state of destination.
+
+    A simple path may not visit the same state-node twice.
+
+    Parameters
+    ----------
+    timeout_seconds:
+        Stop if runtime exceeds this value.
+
+    max_paths:
+        Optional hard ceiling.
+        Example: 1_000_000
+        None = no path-count ceiling.
+    """
+
+    origin_states = list(
+        graph.states_by_name[origin_name]
+    )
+
+    destination_states = set(
+        graph.states_by_name[destination_name]
+    )
+
+    start_time = time.perf_counter()
+
+    path_count = 0
+
+    explored_partial_paths = 0
+
+    max_depth = 0
+
+    timed_out = False
+
+    hit_path_limit = False
+
+
+    # -----------------------------------------------------
+    # DFS
+    # -----------------------------------------------------
+
+    def dfs(current, visited, depth):
+
+        nonlocal path_count
+        nonlocal explored_partial_paths
+        nonlocal max_depth
+        nonlocal timed_out
+        nonlocal hit_path_limit
+
+        explored_partial_paths += 1
+
+        max_depth = max(
+            max_depth,
+            depth
+        )
+
+
+        # Timeout check
+        if (
+            time.perf_counter()
+            - start_time
+            > timeout_seconds
+        ):
+            timed_out = True
+            return
+
+
+        # Path-count ceiling
+        if (
+            max_paths is not None
+            and path_count >= max_paths
+        ):
+            hit_path_limit = True
+            return
+
+
+        # Reached destination
+        if current in destination_states:
+
+            path_count += 1
+
+            return
+
+
+        # Expand neighbors
+        for edge in graph.neighbors(current):
+
+            nxt = edge.to
+
+
+            # Simple path:
+            # cannot revisit a node
+            if nxt in visited:
+                continue
+
+
+            visited.add(nxt)
+
+            dfs(
+                nxt,
+                visited,
+                depth + 1
+            )
+
+            visited.remove(nxt)
+
+
+            if timed_out or hit_path_limit:
+                return
+
+
+    # -----------------------------------------------------
+    # Origin may correspond to multiple line states
+    # -----------------------------------------------------
+
+    for start_node in origin_states:
+
+        dfs(
+            start_node,
+            {start_node},
+            1
+        )
+
+        if timed_out or hit_path_limit:
+            break
+
+
+    runtime = (
+        time.perf_counter()
+        - start_time
+    )
+
+
+    return {
+
+        "origin":
+            origin_name,
+
+        "destination":
+            destination_name,
+
+        "simple_paths":
+            path_count,
+
+        "explored_partial_paths":
+            explored_partial_paths,
+
+        "max_depth":
+            max_depth,
+
+        "runtime_seconds":
+            runtime,
+
+        "timed_out":
+            timed_out,
+
+        "hit_path_limit":
+            hit_path_limit
+    }
+
+
+# =========================================================
+# TEST ODs
+# =========================================================
+
+OD_PAIRS = [
+
+    # Short / simple
+    ("台北車站", "中山站"),
+
+    # Previous experiment
+    ("台北車站", "南京復興站"),
+
+    ("台北車站", "松江南京站"),
+
+    # Long corridor
+    ("台北車站", "淡水站"),
+
+    # Cross-network
+    ("淡水站", "新店站"),
+
+    ("淡水站", "動物園站"),
+
+    # Pareto-size = 4 examples
+    ("信義安和站", "南京復興站"),
+
+    ("大安站", "松山站"),
+]
+
+
+# =========================================================
+# RUN
+# =========================================================
+
+results = []
+
+
+for origin, destination in OD_PAIRS:
+
+    print()
+    print("=" * 80)
+
+    print(
+        f"{origin} -> {destination}"
+    )
+
+    result = count_simple_paths(
+        graph=graph,
+        origin_name=origin,
+        destination_name=destination,
+
+        # Safety guard
+        timeout_seconds=60,
+
+        # Change to None if you really want
+        # unlimited enumeration.
+        max_paths=1_000_000
+    )
+
+    results.append(result)
+
+
+    print(
+        "Simple paths:",
+        result["simple_paths"]
+    )
+
+    print(
+        "Explored partial paths:",
+        result[
+            "explored_partial_paths"
+        ]
+    )
+
+    print(
+        "Maximum DFS depth:",
+        result["max_depth"]
+    )
+
+    print(
+        "Runtime:",
+        f"{result['runtime_seconds']:.6f} sec"
+    )
+
+    print(
+        "Timed out:",
+        result["timed_out"]
+    )
+
+    print(
+        "Hit path limit:",
+        result["hit_path_limit"]
+    )
+
+
+# =========================================================
+# SUMMARY
+# =========================================================
+
+print()
+print("=" * 80)
+print("SUMMARY")
+print("=" * 80)
+
+for result in results:
+
+    status = "complete"
+
+    if result["timed_out"]:
+        status = "TIMEOUT"
+
+    elif result["hit_path_limit"]:
+        status = "PATH LIMIT"
+
+
+    print(
+        f"{result['origin']} -> "
+        f"{result['destination']}: "
+        f"{result['simple_paths']} paths | "
+        f"{result['explored_partial_paths']} partial states | "
+        f"{result['runtime_seconds']:.6f} sec | "
+        f"{status}"
+    )

@@ -1,0 +1,1570 @@
+[
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_01.py",
+    "line": 1,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_01.py",
+    "line": 2,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_02a.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_02a.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_02a.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_02b.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_02b.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_02b.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03.py",
+    "line": 5,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03.py",
+    "line": 7,
+    "imported_module": "scipy.stats",
+    "resolved_local_module": null,
+    "statement": "from scipy.stats import pearsonr, spearmanr"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03.py",
+    "line": 9,
+    "imported_module": "statsmodels.api",
+    "resolved_local_module": null,
+    "statement": "import statsmodels.api as sm"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03a.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03a.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03a.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03b.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03b.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/analyze_experiment_03b.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_01_objectives.py",
+    "line": 1,
+    "imported_module": "csv",
+    "resolved_local_module": null,
+    "statement": "import csv"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_01_objectives.py",
+    "line": 2,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_01_objectives.py",
+    "line": 3,
+    "imported_module": "random",
+    "resolved_local_module": null,
+    "statement": "import random"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_01_objectives.py",
+    "line": 4,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_01_objectives.py",
+    "line": 6,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_01_objectives.py",
+    "line": 7,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 1,
+    "imported_module": "csv",
+    "resolved_local_module": null,
+    "statement": "import csv"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 2,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 3,
+    "imported_module": "random",
+    "resolved_local_module": null,
+    "statement": "import random"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 4,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 6,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 7,
+    "imported_module": "scipy.stats",
+    "resolved_local_module": null,
+    "statement": "from scipy.stats import norm"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 9,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02a_correlation.py",
+    "line": 10,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 1,
+    "imported_module": "csv",
+    "resolved_local_module": null,
+    "statement": "import csv"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 2,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 3,
+    "imported_module": "random",
+    "resolved_local_module": null,
+    "statement": "import random"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 4,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 6,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 7,
+    "imported_module": "scipy.stats",
+    "resolved_local_module": null,
+    "statement": "from scipy.stats import norm"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 9,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_02b_dependence_3d.py",
+    "line": 10,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 1,
+    "imported_module": "csv",
+    "resolved_local_module": null,
+    "statement": "import csv"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 2,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 3,
+    "imported_module": "random",
+    "resolved_local_module": null,
+    "statement": "import random"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 4,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 5,
+    "imported_module": "collections",
+    "resolved_local_module": null,
+    "statement": "from collections import defaultdict"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 7,
+    "imported_module": "networkx",
+    "resolved_local_module": null,
+    "statement": "import networkx as nx"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 9,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_redundancy.py",
+    "line": 10,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 1,
+    "imported_module": "csv",
+    "resolved_local_module": null,
+    "statement": "import csv"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 2,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 3,
+    "imported_module": "random",
+    "resolved_local_module": null,
+    "statement": "import random"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 4,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 5,
+    "imported_module": "itertools",
+    "resolved_local_module": null,
+    "statement": "from itertools import combinations"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 7,
+    "imported_module": "networkx",
+    "resolved_local_module": null,
+    "statement": "import networkx as nx"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 9,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03_route_diversity.py",
+    "line": 10,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 1,
+    "imported_module": "csv",
+    "resolved_local_module": null,
+    "statement": "import csv"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 2,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 3,
+    "imported_module": "random",
+    "resolved_local_module": null,
+    "statement": "import random"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 4,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 6,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 8,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 9,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03a_route_quantity.py",
+    "line": 724,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03b_route_overlap.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03b_route_overlap.py",
+    "line": 2,
+    "imported_module": "sys",
+    "resolved_local_module": null,
+    "statement": "import sys"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03b_route_overlap.py",
+    "line": 3,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03b_route_overlap.py",
+    "line": 5,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03b_route_overlap.py",
+    "line": 6,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03b_route_overlap.py",
+    "line": 74,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/experiment_03b_route_overlap.py",
+    "line": 75,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_01.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_01.py",
+    "line": 3,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_01.py",
+    "line": 4,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02a.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02a.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02a.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02a.py",
+    "line": 5,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02b.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02b.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02b.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_02b.py",
+    "line": 5,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_03.py",
+    "line": 1,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_03.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_03.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/plot_experiment_03.py",
+    "line": 5,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "experiments/route_diversity_test.py",
+    "line": 1,
+    "imported_module": "networkx",
+    "resolved_local_module": null,
+    "statement": "import networkx as nx"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "src/brute_force.py",
+    "line": 1,
+    "imported_module": "src.label",
+    "resolved_local_module": "src.label",
+    "statement": "from src.label import Label"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "src/brute_force.py",
+    "line": 2,
+    "imported_module": "src.dominance",
+    "resolved_local_module": "src.dominance",
+    "statement": "from src.dominance import dominates"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "src/mosp.py",
+    "line": 1,
+    "imported_module": "heapq",
+    "resolved_local_module": null,
+    "statement": "import heapq"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "src/mosp.py",
+    "line": 3,
+    "imported_module": "src.label",
+    "resolved_local_module": "src.label",
+    "statement": "from src.label import Label"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "src/mosp.py",
+    "line": 4,
+    "imported_module": "src.dominance",
+    "resolved_local_module": "src.dominance",
+    "statement": "from src.dominance import insert_label"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "test_correctness.py",
+    "line": 15,
+    "imported_module": "__future__",
+    "resolved_local_module": null,
+    "statement": "from __future__ import annotations"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "test_correctness.py",
+    "line": 17,
+    "imported_module": "csv",
+    "resolved_local_module": null,
+    "statement": "import csv"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "test_correctness.py",
+    "line": 18,
+    "imported_module": "random",
+    "resolved_local_module": null,
+    "statement": "import random"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "test_correctness.py",
+    "line": 19,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "test_correctness.py",
+    "line": 20,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "test_correctness.py",
+    "line": 22,
+    "imported_module": "src.graph",
+    "resolved_local_module": "src.graph",
+    "statement": "from src.graph import Graph"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "file": "test_correctness.py",
+    "line": 23,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Real_case1",
+    "file": "check_stop_times.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "check_stop_times.py",
+    "line": 3,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "check_stop_times.py",
+    "line": 5,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import (\r\n    build_taipei_metro_graph,\r\n    clean_station_name,\r\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "diagnose_taipei_route.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "diagnose_taipei_route.py",
+    "line": 3,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Real_case1",
+    "file": "diagnose_taipei_route.py",
+    "line": 4,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import (\r\n    build_taipei_metro_graph,\r\n    make_od_graph,\r\n    format_path,\r\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiment_05_all_od.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiment_05_all_od.py",
+    "line": 3,
+    "imported_module": "copy",
+    "resolved_local_module": null,
+    "statement": "import copy"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiment_05_all_od.py",
+    "line": 4,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiment_05_all_od.py",
+    "line": 8,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiment_05_all_od.py",
+    "line": 12,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import (\n\n    mosp,\n\n    reconstruct_path\n\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiment_05_all_od.py",
+    "line": 22,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import (\n\n    build_taipei_metro_graph,\n\n    format_path\n\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 2,
+    "imported_module": "re",
+    "resolved_local_module": null,
+    "statement": "import re"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 3,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05_all.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05_all.py",
+    "line": 2,
+    "imported_module": "re",
+    "resolved_local_module": null,
+    "statement": "import re"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05_all.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 3,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 4,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 5,
+    "imported_module": "scipy.stats",
+    "resolved_local_module": null,
+    "statement": "from scipy.stats import pearsonr, spearmanr"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 6,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main.py",
+    "line": 3,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main.py",
+    "line": 5,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import (\r\n    mosp,\r\n    reconstruct_path\r\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main.py",
+    "line": 10,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import (\r\n    build_taipei_metro_graph,\r\n    make_od_graph,\r\n    format_path\r\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main_all.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main_all.py",
+    "line": 3,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main_all.py",
+    "line": 5,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import (\r\n    mosp,\r\n    reconstruct_path\r\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_04_taipei_main_all.py",
+    "line": 10,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import (\r\n    build_taipei_metro_graph,\r\n    make_od_graph,\r\n    format_path\r\n)"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06_bruteforce_simple_paths.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06_bruteforce_simple_paths.py",
+    "line": 2,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06_bruteforce_simple_paths.py",
+    "line": 4,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import build_taipei_metro_graph"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06_bruteforce_simple_paths.py",
+    "line": 5,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 2,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 6,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import build_taipei_metro_graph"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 2,
+    "imported_module": "copy",
+    "resolved_local_module": null,
+    "statement": "import copy"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 3,
+    "imported_module": "time",
+    "resolved_local_module": null,
+    "statement": "import time"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 5,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 7,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 8,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import build_taipei_metro_graph"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5.py",
+    "line": 3,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5.py",
+    "line": 4,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis.py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis.py",
+    "line": 5,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 3,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 5,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9.py",
+    "line": 2,
+    "imported_module": "re",
+    "resolved_local_module": null,
+    "statement": "import re"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9.py",
+    "line": 4,
+    "imported_module": "numpy",
+    "resolved_local_module": null,
+    "statement": "import numpy as np"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9.py",
+    "line": 5,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9.py",
+    "line": 6,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9.py",
+    "line": 7,
+    "imported_module": "matplotlib.patches",
+    "resolved_local_module": null,
+    "statement": "from matplotlib.patches import Rectangle"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9.py",
+    "line": 8,
+    "imported_module": "matplotlib.lines",
+    "resolved_local_module": null,
+    "statement": "from matplotlib.lines import Line2D"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9_final.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9_final.py",
+    "line": 2,
+    "imported_module": "re",
+    "resolved_local_module": null,
+    "statement": "import re"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9_final.py",
+    "line": 4,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9_final.py",
+    "line": 5,
+    "imported_module": "matplotlib.pyplot",
+    "resolved_local_module": null,
+    "statement": "import matplotlib.pyplot as plt"
+  },
+  {
+    "project": "Real_case1",
+    "file": "plot_chapter5_figures_7_9_final.py",
+    "line": 6,
+    "imported_module": "matplotlib.patches",
+    "resolved_local_module": null,
+    "statement": "from matplotlib.patches import Rectangle"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/brute_force.py",
+    "line": 1,
+    "imported_module": "src.label",
+    "resolved_local_module": "src.label",
+    "statement": "from src.label import Label"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/brute_force.py",
+    "line": 2,
+    "imported_module": "src.dominance",
+    "resolved_local_module": "src.dominance",
+    "statement": "from src.dominance import dominates"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/mosp.py",
+    "line": 1,
+    "imported_module": "heapq",
+    "resolved_local_module": null,
+    "statement": "import heapq"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/mosp.py",
+    "line": 3,
+    "imported_module": "src.label",
+    "resolved_local_module": "src.label",
+    "statement": "from src.label import Label"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/mosp.py",
+    "line": 4,
+    "imported_module": "src.dominance",
+    "resolved_local_module": "src.dominance",
+    "statement": "from src.dominance import insert_label"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/taipei_metro.py",
+    "line": 1,
+    "imported_module": "dataclasses",
+    "resolved_local_module": null,
+    "statement": "from dataclasses import dataclass"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/taipei_metro.py",
+    "line": 2,
+    "imported_module": "collections",
+    "resolved_local_module": null,
+    "statement": "from collections import defaultdict"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/taipei_metro.py",
+    "line": 3,
+    "imported_module": "copy",
+    "resolved_local_module": null,
+    "statement": "import copy"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/taipei_metro.py",
+    "line": 4,
+    "imported_module": "re",
+    "resolved_local_module": null,
+    "statement": "import re"
+  },
+  {
+    "project": "Real_case1",
+    "file": "src/taipei_metro.py",
+    "line": 6,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 1,
+    "imported_module": "__future__",
+    "resolved_local_module": null,
+    "statement": "from __future__ import annotations"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 3,
+    "imported_module": "ast",
+    "resolved_local_module": null,
+    "statement": "import ast"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 4,
+    "imported_module": "io",
+    "resolved_local_module": null,
+    "statement": "import io"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 5,
+    "imported_module": "json",
+    "resolved_local_module": null,
+    "statement": "import json"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 6,
+    "imported_module": "os",
+    "resolved_local_module": null,
+    "statement": "import os"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 7,
+    "imported_module": "re",
+    "resolved_local_module": null,
+    "statement": "import re"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 8,
+    "imported_module": "functools",
+    "resolved_local_module": null,
+    "statement": "from functools import lru_cache"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 9,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 10,
+    "imported_module": "typing",
+    "resolved_local_module": null,
+    "statement": "from typing import Any"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 12,
+    "imported_module": "pandas",
+    "resolved_local_module": null,
+    "statement": "import pandas as pd"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 13,
+    "imported_module": "requests",
+    "resolved_local_module": null,
+    "statement": "import requests"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 14,
+    "imported_module": "dotenv",
+    "resolved_local_module": null,
+    "statement": "from dotenv import load_dotenv"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 15,
+    "imported_module": "fastapi",
+    "resolved_local_module": null,
+    "statement": "from fastapi import FastAPI, HTTPException, Query"
+  },
+  {
+    "project": "Real_case1",
+    "file": "taipei-pareto-explorer/backend/main.py",
+    "line": 16,
+    "imported_module": "fastapi.middleware.cors",
+    "resolved_local_module": null,
+    "statement": "from fastapi.middleware.cors import CORSMiddleware"
+  },
+  {
+    "project": "Real_case1",
+    "file": "test_taipei_case.py",
+    "line": 1,
+    "imported_module": "pathlib",
+    "resolved_local_module": null,
+    "statement": "from pathlib import Path"
+  },
+  {
+    "project": "Real_case1",
+    "file": "test_taipei_case.py",
+    "line": 3,
+    "imported_module": "src.mosp",
+    "resolved_local_module": "src.mosp",
+    "statement": "from src.mosp import mosp"
+  },
+  {
+    "project": "Real_case1",
+    "file": "test_taipei_case.py",
+    "line": 4,
+    "imported_module": "src.taipei_metro",
+    "resolved_local_module": "src.taipei_metro",
+    "statement": "from src.taipei_metro import (\r\n    build_taipei_metro_graph,\r\n    make_od_graph,\r\n    format_path,\r\n)"
+  }
+]

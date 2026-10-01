@@ -1,0 +1,393 @@
+from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+import os
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+if __name__ == "__main__":
+
+
+
+
+
+
+
+
+    # ============================================================
+    # Paths
+    # ============================================================
+
+    SCRIPT_DIR = PROJECT_ROOT
+
+    RESULTS_DIR = CANONICAL_RESULTS_DIR / 'experiment_02b'
+
+    FIGURES_DIR = CANONICAL_RESULTS_DIR / 'experiment_02b' / "figures"
+
+    os.makedirs(
+        FIGURES_DIR,
+        exist_ok=True
+    )
+
+    INPUT_FILE = os.path.join(
+        RESULTS_DIR,
+        "experiment_02b_dependence_3d_raw.csv"
+    )
+
+    df = pd.read_csv(INPUT_FILE)
+
+
+    # ============================================================
+    # Settings
+    # ============================================================
+
+    ORDER = [
+        "positive",
+        "mixed",
+        "independent",
+        "tradeoff"
+    ]
+
+    LABELS = [
+        "Positive",
+        "Mixed",
+        "Independent",
+        "Trade-off"
+    ]
+
+
+    # ============================================================
+    # Summary helper
+    # ============================================================
+
+    def get_summary(metric):
+
+        summary = (
+            df.groupby("structure")[metric]
+            .agg(["mean", "std", "count"])
+            .reindex(ORDER)
+        )
+
+        summary["ci95"] = (
+            1.96
+            * summary["std"]
+            / np.sqrt(summary["count"])
+        )
+
+        return summary
+
+
+    # ============================================================
+    # Generic mean + CI plot
+    # ============================================================
+
+    def plot_metric(
+        metric,
+        ylabel,
+        title,
+        filename
+    ):
+
+        summary = get_summary(metric)
+
+        x = np.arange(len(ORDER))
+
+        fig, ax = plt.subplots(
+            figsize=(8, 5.5)
+        )
+
+        ax.errorbar(
+            x,
+            summary["mean"],
+            yerr=summary["ci95"],
+            marker="o",
+            capsize=5,
+            linewidth=2
+        )
+
+        ax.set_xticks(x)
+        ax.set_xticklabels(LABELS)
+
+        ax.set_xlabel(
+            "Objective Dependence Structure"
+        )
+
+        ax.set_ylabel(ylabel)
+        ax.set_title(title)
+
+        ax.grid(
+            axis="y",
+            alpha=0.3
+        )
+
+        plt.tight_layout()
+
+        path = os.path.join(
+            FIGURES_DIR,
+            filename
+        )
+
+        plt.savefig(
+            path,
+            dpi=300,
+            bbox_inches="tight"
+        )
+
+        plt.close()
+
+        print("Saved:", path)
+
+
+    # ============================================================
+    # Figure 1 — Pareto labels
+    # ============================================================
+
+    plot_metric(
+        metric="target_pareto_labels",
+        ylabel="Mean Number of Pareto Labels",
+        title=(
+            "Pareto Set Size under "
+            "3D Objective Dependence Structures"
+        ),
+        filename="fig_01_pareto_labels.png"
+    )
+
+
+    # ============================================================
+    # Figure 2 — Generated labels
+    # ============================================================
+
+    plot_metric(
+        metric="generated_labels",
+        ylabel="Mean Generated Labels",
+        title=(
+            "Generated Labels under "
+            "3D Objective Dependence Structures"
+        ),
+        filename="fig_02_generated_labels.png"
+    )
+
+
+    # ============================================================
+    # Figure 3 — Dominance checks
+    # ============================================================
+
+    plot_metric(
+        metric="dominance_checks",
+        ylabel="Mean Dominance Checks",
+        title=(
+            "Dominance Workload under "
+            "3D Objective Dependence Structures"
+        ),
+        filename="fig_03_dominance_checks.png"
+    )
+
+
+    # ============================================================
+    # Figure 4 — Runtime
+    # ============================================================
+
+    plot_metric(
+        metric="runtime_seconds",
+        ylabel="Mean Runtime (seconds)",
+        title=(
+            "Runtime under "
+            "3D Objective Dependence Structures"
+        ),
+        filename="fig_04_runtime.png"
+    )
+
+
+    # ============================================================
+    # Figure 5
+    # Mixed vs Independent
+    # Paired-difference distribution
+    # ============================================================
+
+    pivot = df.pivot(
+        index=[
+            "network_id",
+            "query_id"
+        ],
+        columns="structure",
+        values="dominance_checks"
+    )
+
+    difference = (
+        pivot["mixed"]
+        - pivot["independent"]
+    )
+
+    mean_diff = difference.mean()
+
+    ci95 = (
+        1.96
+        * difference.std(ddof=1)
+        / np.sqrt(len(difference))
+    )
+
+
+    fig, ax = plt.subplots(
+        figsize=(8, 5.5)
+    )
+
+
+    # ------------------------------------------------------------
+    # Plot all paired differences
+    # ------------------------------------------------------------
+
+    x_jitter = np.random.default_rng(42).normal(
+        loc=0,
+        scale=0.035,
+        size=len(difference)
+    )
+
+    ax.scatter(
+        x_jitter,
+        difference,
+        alpha=0.25,
+        s=18
+    )
+
+
+    # ------------------------------------------------------------
+    # Zero reference
+    # ------------------------------------------------------------
+
+    ax.axhline(
+        0,
+        linestyle="--",
+        linewidth=1.5
+    )
+
+
+    # ------------------------------------------------------------
+    # Mean difference + 95% CI
+    # ------------------------------------------------------------
+
+    ax.errorbar(
+        [0],
+        [mean_diff],
+        yerr=[ci95],
+        marker="o",
+        markersize=10,
+        capsize=8,
+        linewidth=2.5
+    )
+
+
+    # ------------------------------------------------------------
+    # Labels
+    # ------------------------------------------------------------
+
+    ax.set_xlim(
+        -0.18,
+        0.18
+    )
+
+    ax.set_xticks([0])
+
+    ax.set_xticklabels([
+        "Mixed − Independent"
+    ])
+
+    ax.set_ylabel(
+        "Paired Difference in Dominance Checks"
+    )
+
+    ax.set_title(
+        "Paired Difference in Dominance Workload\n"
+        "Mixed vs Independent"
+    )
+
+    ax.grid(
+        axis="y",
+        alpha=0.3
+    )
+
+
+    # ------------------------------------------------------------
+    # Text annotation
+    # ------------------------------------------------------------
+
+    lower_ci = mean_diff - ci95
+    upper_ci = mean_diff + ci95
+
+    ax.text(
+        0.03,
+        0.08,
+        (
+            f"Mean difference = {mean_diff:.0f}\n"
+            f"95% CI = [{lower_ci:.0f}, {upper_ci:.0f}]\n"
+            f"n = {len(difference)} paired cases"
+        ),
+        transform=ax.transAxes,
+        fontsize=11,
+        verticalalignment="bottom"
+    )
+
+
+    plt.tight_layout()
+
+    path = os.path.join(
+        FIGURES_DIR,
+        "fig_05_mixed_vs_independent_paired.png"
+    )
+
+    plt.savefig(
+        path,
+        dpi=300,
+        bbox_inches="tight"
+    )
+
+    plt.close()
+
+    print("Saved:", path)
+
+
+    # ============================================================
+    # Figure summary
+    # ============================================================
+
+    print()
+    print("===== FIGURE SUMMARY =====")
+
+    for metric in [
+        "target_pareto_labels",
+        "generated_labels",
+        "dominance_checks",
+        "runtime_seconds"
+    ]:
+
+        print()
+        print(metric)
+
+        summary = get_summary(metric)
+
+        print(
+            summary[
+                ["mean", "ci95"]
+            ]
+        )
+
+
+    print()
+    print(
+        "Mixed - Independent dominance checks:"
+    )
+
+    print(
+        f"Mean difference = "
+        f"{mean_diff:.3f}"
+    )
+
+    print(
+        f"95% CI = "
+        f"[{mean_diff-ci95:.3f}, "
+        f"{mean_diff+ci95:.3f}]"
+    )
+
+    print()
+    print(
+        "All Experiment 2B figures "
+        "generated successfully."
+    )

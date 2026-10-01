@@ -1,0 +1,8 @@
+{
+  "experiment": "experiment_03b",
+  "smoke_only": true,
+  "cases": 6,
+  "project_root": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+  "output": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\regression\\package_smoke\\experiment_03b\\smoke.csv",
+  "formal_settings_modified": false
+}

@@ -1,0 +1,56 @@
+========================================================================
+MOSP CORRECTNESS VALIDATION
+========================================================================
+
+Number of tests       : 1000
+Nodes per graph       : 7
+Additional edge prob. : 0.25
+Objectives tested     : [2, 3, 4, 5]
+Edge cost range       : [1, 20]
+Master seed           : 20260930
+
+[ 100/1000] PASS
+[ 200/1000] PASS
+[ 300/1000] PASS
+[ 400/1000] PASS
+[ 500/1000] PASS
+[ 600/1000] PASS
+[ 700/1000] PASS
+[ 800/1000] PASS
+[ 900/1000] PASS
+[1000/1000] PASS
+
+========================================================================
+MOSP CORRECTNESS VALIDATION SUMMARY
+========================================================================
+
+Total tests              : 1000
+Passed                   : 1000
+Failed                   : 0
+Pass rate                : 100.00%
+
+Nodes per graph          : 7
+Additional edge prob.    : 0.25
+Objectives tested        : [2, 3, 4, 5]
+Edge cost range          : [1, 20]
+Master seed              : 20260930
+
+Total simple paths tested: 7481
+Total runtime            : 0.2134 seconds
+
+Validation criterion:
+MOSP Pareto cost-vector set
+==
+Brute-force Pareto cost-vector set
+
+RESULT:
+ALL TESTS PASSED.
+
+All 1,000 random test cases produced exactly the same non-dominated cost-vector set under MOSP and exhaustive simple-path enumeration.
+
+Case-level results saved to:
+C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\direct_external\correctness_validation\correctness_validation_cases.csv
+
+Summary saved to:
+C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\direct_external\correctness_validation\correctness_validation_summary.txt
+

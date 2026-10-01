@@ -1,0 +1,1330 @@
+{
+  "import_smoke": {
+    "modules": 50,
+    "passed": true
+  },
+  "shared_core_and_model_bytes": {
+    "graph.py": "f528ca4b7132902582f49e5ef59386a10e7c31e5ece17e65b217858a32f8e976",
+    "label.py": "a01e17d1c72f89b0c39d9b9aea296b6bc1cfb55f6906671640444ddaa03bbd3f",
+    "dominance.py": "2c386a885c92949a23f2111766478cf6970f5c19a2a021d9d1566c629c69f770",
+    "mosp.py": "74b510cdb8ab4f2223ddf28951872d4744d520c190fa318ce016d3a62ec89f56",
+    "brute_force.py": "920753b452ab23bb882c7e458bfc4107a98df429f221fa9ff9fa9fa2d66e53f5"
+  },
+  "formal_artifact_hashes": {
+    "files": 90,
+    "unchanged": true
+  },
+  "scientific_functions_and_settings": {
+    "experiment_01": {
+      "unchanged": [
+        "generate_topology",
+        "generate_full_costs",
+        "build_graph",
+        "generate_queries",
+        "run_experiment",
+        "sanity_check"
+      ],
+      "path_only": [
+        "save_results"
+      ]
+    },
+    "experiment_02a": {
+      "unchanged": [
+        "generate_topology",
+        "generate_queries",
+        "generate_base_normals",
+        "create_correlated_normals",
+        "normals_to_costs",
+        "generate_correlated_costs",
+        "build_graph",
+        "run_experiment",
+        "print_correlation_summary",
+        "sanity_check"
+      ],
+      "path_only": [
+        "save_results",
+        "save_correlation_checks"
+      ]
+    },
+    "experiment_02b": {
+      "unchanged": [
+        "validate_correlation_matrix",
+        "generate_topology",
+        "generate_queries",
+        "generate_base_normals",
+        "apply_dependence",
+        "normals_to_costs",
+        "generate_costs",
+        "build_graph",
+        "run_experiment",
+        "print_dependence_summary",
+        "sanity_check"
+      ],
+      "path_only": [
+        "save_csv"
+      ]
+    },
+    "experiment_03a": {
+      "unchanged": [
+        "create_master_topology",
+        "generate_master_costs",
+        "build_graph",
+        "calculate_route_structure",
+        "calculate_cost_correlations",
+        "run_experiment",
+        "save_results",
+        "print_summary"
+      ],
+      "path_only": []
+    },
+    "experiment_03b": {
+      "unchanged": [
+        "add_edge",
+        "generate_cost_bank",
+        "build_prefix_graph",
+        "build_suffix_graph",
+        "calculate_route_costs",
+        "reference_pareto_count",
+        "calculate_cost_correlations",
+        "get_stat",
+        "get_target_label_count",
+        "run_mosp_case",
+        "main"
+      ],
+      "path_only": []
+    }
+  },
+  "experiment_01": {
+    "nodes": 100,
+    "edges": 753,
+    "pareto_counts": {
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3
+    },
+    "matches_saved_statistics": true
+  },
+  "experiment_02a": {
+    "generation_matches_original": true,
+    "matches_saved_statistics": true,
+    "pareto_counts": {
+      "-0.8": 3,
+      "-0.4": 1,
+      "0.0": 1,
+      "0.4": 1,
+      "0.8": 1
+    }
+  },
+  "experiment_02b": {
+    "generation_matches_original": true,
+    "matches_saved_statistics": true,
+    "pareto_counts": {
+      "positive": 2,
+      "independent": 2,
+      "tradeoff": 2,
+      "mixed": 2
+    }
+  },
+  "experiment_03a": {
+    "cases": 12,
+    "generation_and_saved_statistics_match": true
+  },
+  "experiment_03b": {
+    "cases": 18,
+    "paired_costs_and_pareto_sets_equal": true,
+    "saved_statistics_match": true
+  },
+  "taipei_metro": {
+    "physical_stations": 119,
+    "route_states": 150,
+    "build_stats_match_original": true,
+    "circular_line_included": true,
+    "skipped_travel_rows": 0
+  },
+  "all_od_full_recomputation": {
+    "files": {
+      "all_od_pareto_routes.csv": 22052,
+      "all_od_summary.csv": 14042,
+      "destination_summary.csv": 119,
+      "multi_pareto_od_pairs.csv": 5522,
+      "origin_summary.csv": 119,
+      "pareto_set_size_distribution.csv": 5,
+      "source_mosp_statistics.csv": 119
+    },
+    "all_non_runtime_fields_exact_match": true
+  },
+  "web_backend": {
+    "health_status": 200,
+    "health": {
+      "ok": true,
+      "pareto_csv_found": true,
+      "pareto_csv": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\results\\experiment_05_all_od\\all_od_pareto_routes.csv",
+      "station_coordinate_file": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\data\\taipei_metro\\taipei_metro_station_positions.csv",
+      "coordinate_source_count": 119,
+      "taipei_coordinate_count": 109,
+      "circular_fallback_count": 10,
+      "model_station_count": 119,
+      "matched_station_count": 119,
+      "missing_station_count": 0,
+      "missing_stations": [],
+      "station_error": null
+    },
+    "example_routes_status": 200,
+    "example_routes": {
+      "origin": "東湖站",
+      "destination": "中原站",
+      "pareto_count": 5,
+      "routes": [
+        {
+          "route_id": 1,
+          "travel_time_seconds": 3330.0,
+          "travel_time_minutes": 55.5,
+          "transfers": 3,
+          "walking_seconds": 780.0,
+          "walking_minutes": 13.0,
+          "path_text": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 頂溪站[O#4] -> 永安市場站[O#4] -> 景安站[O#4] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]",
+          "path": [
+            {
+              "station": "東湖站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.067455,
+              "lon": 121.611535
+            },
+            {
+              "station": "南港軟體園區站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.05992,
+              "lon": 121.615
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.052035,
+              "lon": 121.60697
+            },
+            {
+              "station": "昆陽站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.0504585,
+              "lon": 121.5932285
+            },
+            {
+              "station": "後山埤站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.044715,
+              "lon": 121.58227
+            },
+            {
+              "station": "永春站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.040855,
+              "lon": 121.5762
+            },
+            {
+              "station": "市政府站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041135,
+              "lon": 121.565685
+            },
+            {
+              "station": "國父紀念館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04137,
+              "lon": 121.557815
+            },
+            {
+              "station": "忠孝敦化站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041505,
+              "lon": 121.55045
+            },
+            {
+              "station": "忠孝復興站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041749,
+              "lon": 121.545026
+            },
+            {
+              "station": "忠孝新生站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.042498,
+              "lon": 121.53321
+            },
+            {
+              "station": "忠孝新生站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.042498,
+              "lon": 121.53321
+            },
+            {
+              "station": "東門站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.033894,
+              "lon": 121.528766
+            },
+            {
+              "station": "古亭站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.026373,
+              "lon": 121.522868
+            },
+            {
+              "station": "頂溪站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.013858,
+              "lon": 121.515462
+            },
+            {
+              "station": "永安市場站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.002895,
+              "lon": 121.511225
+            },
+            {
+              "station": "景安站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 24.99392,
+              "lon": 121.505114
+            },
+            {
+              "station": "景安站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99392,
+              "lon": 121.505114
+            },
+            {
+              "station": "中和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00236,
+              "lon": 121.49621
+            },
+            {
+              "station": "橋和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.0046,
+              "lon": 121.49025
+            },
+            {
+              "station": "中原站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00818,
+              "lon": 121.48427
+            }
+          ],
+          "transfer_events": [
+            {
+              "station": "南港展覽館站",
+              "from_line": "BR",
+              "to_line": "BL",
+              "path_index": 2
+            },
+            {
+              "station": "忠孝新生站",
+              "from_line": "BL",
+              "to_line": "O",
+              "path_index": 12
+            },
+            {
+              "station": "景安站",
+              "from_line": "O",
+              "to_line": "Y",
+              "path_index": 18
+            }
+          ],
+          "missing_coordinate_stations": [],
+          "display_id": 1
+        },
+        {
+          "route_id": 2,
+          "travel_time_seconds": 3439.0,
+          "travel_time_minutes": 57.32,
+          "transfers": 2,
+          "walking_seconds": 840.0,
+          "walking_minutes": 14.0,
+          "path_text": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 龍山寺站[BL] -> 江子翠站[BL] -> 新埔站[BL] -> 新埔民生站[Y] -> 板橋站[Y] -> 板新站[Y] -> 中原站[Y]",
+          "path": [
+            {
+              "station": "東湖站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.067455,
+              "lon": 121.611535
+            },
+            {
+              "station": "南港軟體園區站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.05992,
+              "lon": 121.615
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.052035,
+              "lon": 121.60697
+            },
+            {
+              "station": "昆陽站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.0504585,
+              "lon": 121.5932285
+            },
+            {
+              "station": "後山埤站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.044715,
+              "lon": 121.58227
+            },
+            {
+              "station": "永春站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.040855,
+              "lon": 121.5762
+            },
+            {
+              "station": "市政府站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041135,
+              "lon": 121.565685
+            },
+            {
+              "station": "國父紀念館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04137,
+              "lon": 121.557815
+            },
+            {
+              "station": "忠孝敦化站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041505,
+              "lon": 121.55045
+            },
+            {
+              "station": "忠孝復興站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041749,
+              "lon": 121.545026
+            },
+            {
+              "station": "忠孝新生站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.042498,
+              "lon": 121.53321
+            },
+            {
+              "station": "善導寺站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04468,
+              "lon": 121.523885
+            },
+            {
+              "station": "台北車站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04631,
+              "lon": 121.517415
+            },
+            {
+              "station": "西門站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.042025,
+              "lon": 121.508175
+            },
+            {
+              "station": "龍山寺站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.03528,
+              "lon": 121.500325
+            },
+            {
+              "station": "江子翠站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.030265,
+              "lon": 121.47257
+            },
+            {
+              "station": "新埔站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.02327,
+              "lon": 121.468055
+            },
+            {
+              "station": "新埔民生站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.02613,
+              "lon": 121.46667
+            },
+            {
+              "station": "板橋站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.013825,
+              "lon": 121.462305
+            },
+            {
+              "station": "板新站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.01453,
+              "lon": 121.47242
+            },
+            {
+              "station": "中原站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00818,
+              "lon": 121.48427
+            }
+          ],
+          "transfer_events": [
+            {
+              "station": "南港展覽館站",
+              "from_line": "BR",
+              "to_line": "BL",
+              "path_index": 2
+            }
+          ],
+          "missing_coordinate_stations": [],
+          "display_id": 2
+        },
+        {
+          "route_id": 3,
+          "travel_time_seconds": 3902.0,
+          "travel_time_minutes": 65.03,
+          "transfers": 4,
+          "walking_seconds": 720.0,
+          "walking_minutes": 12.0,
+          "path_text": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 忠孝新生站[O#4] -> 東門站[O#4] -> 古亭站[O#4] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]",
+          "path": [
+            {
+              "station": "東湖站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.067455,
+              "lon": 121.611535
+            },
+            {
+              "station": "南港軟體園區站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.05992,
+              "lon": 121.615
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.052035,
+              "lon": 121.60697
+            },
+            {
+              "station": "昆陽站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.0504585,
+              "lon": 121.5932285
+            },
+            {
+              "station": "後山埤站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.044715,
+              "lon": 121.58227
+            },
+            {
+              "station": "永春站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.040855,
+              "lon": 121.5762
+            },
+            {
+              "station": "市政府站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041135,
+              "lon": 121.565685
+            },
+            {
+              "station": "國父紀念館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04137,
+              "lon": 121.557815
+            },
+            {
+              "station": "忠孝敦化站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041505,
+              "lon": 121.55045
+            },
+            {
+              "station": "忠孝復興站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041749,
+              "lon": 121.545026
+            },
+            {
+              "station": "忠孝新生站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.042498,
+              "lon": 121.53321
+            },
+            {
+              "station": "忠孝新生站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.042498,
+              "lon": 121.53321
+            },
+            {
+              "station": "東門站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.033894,
+              "lon": 121.528766
+            },
+            {
+              "station": "古亭站",
+              "line": "O",
+              "state": "O#4",
+              "lat": 25.026373,
+              "lon": 121.522868
+            },
+            {
+              "station": "古亭站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.026373,
+              "lon": 121.522868
+            },
+            {
+              "station": "台電大樓站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.020733,
+              "lon": 121.5281435
+            },
+            {
+              "station": "公館站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.014781,
+              "lon": 121.534358
+            },
+            {
+              "station": "萬隆站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.001978,
+              "lon": 121.539008
+            },
+            {
+              "station": "景美站",
+              "line": "G",
+              "state": "G",
+              "lat": 24.992824,
+              "lon": 121.5406975
+            },
+            {
+              "station": "大坪林站",
+              "line": "G",
+              "state": "G",
+              "lat": 24.9827205,
+              "lon": 121.54134
+            },
+            {
+              "station": "大坪林站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.9827205,
+              "lon": 121.54134
+            },
+            {
+              "station": "十四張站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.98447,
+              "lon": 121.52759
+            },
+            {
+              "station": "秀朗橋站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99033,
+              "lon": 121.5249
+            },
+            {
+              "station": "景平站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99215,
+              "lon": 121.51617
+            },
+            {
+              "station": "景安站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99392,
+              "lon": 121.505114
+            },
+            {
+              "station": "中和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00236,
+              "lon": 121.49621
+            },
+            {
+              "station": "橋和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.0046,
+              "lon": 121.49025
+            },
+            {
+              "station": "中原站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00818,
+              "lon": 121.48427
+            }
+          ],
+          "transfer_events": [
+            {
+              "station": "南港展覽館站",
+              "from_line": "BR",
+              "to_line": "BL",
+              "path_index": 2
+            },
+            {
+              "station": "忠孝新生站",
+              "from_line": "BL",
+              "to_line": "O",
+              "path_index": 12
+            },
+            {
+              "station": "古亭站",
+              "from_line": "O",
+              "to_line": "G",
+              "path_index": 15
+            },
+            {
+              "station": "大坪林站",
+              "from_line": "G",
+              "to_line": "Y",
+              "path_index": 21
+            }
+          ],
+          "missing_coordinate_stations": [],
+          "display_id": 3
+        },
+        {
+          "route_id": 4,
+          "travel_time_seconds": 4086.0,
+          "travel_time_minutes": 68.1,
+          "transfers": 3,
+          "walking_seconds": 600.0,
+          "walking_minutes": 10.0,
+          "path_text": "東湖站[BR] -> 南港軟體園區站[BR] -> 南港展覽館站[BR] -> 南港展覽館站[BL] -> 南港站[BL] -> 昆陽站[BL] -> 後山埤站[BL] -> 永春站[BL] -> 市政府站[BL] -> 國父紀念館站[BL] -> 忠孝敦化站[BL] -> 忠孝復興站[BL] -> 忠孝新生站[BL] -> 善導寺站[BL] -> 台北車站[BL] -> 西門站[BL] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]",
+          "path": [
+            {
+              "station": "東湖站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.067455,
+              "lon": 121.611535
+            },
+            {
+              "station": "南港軟體園區站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.05992,
+              "lon": 121.615
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港展覽館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.054919,
+              "lon": 121.616861
+            },
+            {
+              "station": "南港站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.052035,
+              "lon": 121.60697
+            },
+            {
+              "station": "昆陽站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.0504585,
+              "lon": 121.5932285
+            },
+            {
+              "station": "後山埤站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.044715,
+              "lon": 121.58227
+            },
+            {
+              "station": "永春站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.040855,
+              "lon": 121.5762
+            },
+            {
+              "station": "市政府站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041135,
+              "lon": 121.565685
+            },
+            {
+              "station": "國父紀念館站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04137,
+              "lon": 121.557815
+            },
+            {
+              "station": "忠孝敦化站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041505,
+              "lon": 121.55045
+            },
+            {
+              "station": "忠孝復興站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.041749,
+              "lon": 121.545026
+            },
+            {
+              "station": "忠孝新生站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.042498,
+              "lon": 121.53321
+            },
+            {
+              "station": "善導寺站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04468,
+              "lon": 121.523885
+            },
+            {
+              "station": "台北車站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.04631,
+              "lon": 121.517415
+            },
+            {
+              "station": "西門站",
+              "line": "BL",
+              "state": "BL",
+              "lat": 25.042025,
+              "lon": 121.508175
+            },
+            {
+              "station": "西門站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.042025,
+              "lon": 121.508175
+            },
+            {
+              "station": "小南門站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.035585,
+              "lon": 121.51088
+            },
+            {
+              "station": "中正紀念堂站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.032767,
+              "lon": 121.518273
+            },
+            {
+              "station": "古亭站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.026373,
+              "lon": 121.522868
+            },
+            {
+              "station": "台電大樓站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.020733,
+              "lon": 121.5281435
+            },
+            {
+              "station": "公館站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.014781,
+              "lon": 121.534358
+            },
+            {
+              "station": "萬隆站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.001978,
+              "lon": 121.539008
+            },
+            {
+              "station": "景美站",
+              "line": "G",
+              "state": "G",
+              "lat": 24.992824,
+              "lon": 121.5406975
+            },
+            {
+              "station": "大坪林站",
+              "line": "G",
+              "state": "G",
+              "lat": 24.9827205,
+              "lon": 121.54134
+            },
+            {
+              "station": "大坪林站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.9827205,
+              "lon": 121.54134
+            },
+            {
+              "station": "十四張站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.98447,
+              "lon": 121.52759
+            },
+            {
+              "station": "秀朗橋站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99033,
+              "lon": 121.5249
+            },
+            {
+              "station": "景平站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99215,
+              "lon": 121.51617
+            },
+            {
+              "station": "景安站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99392,
+              "lon": 121.505114
+            },
+            {
+              "station": "中和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00236,
+              "lon": 121.49621
+            },
+            {
+              "station": "橋和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.0046,
+              "lon": 121.49025
+            },
+            {
+              "station": "中原站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00818,
+              "lon": 121.48427
+            }
+          ],
+          "transfer_events": [
+            {
+              "station": "南港展覽館站",
+              "from_line": "BR",
+              "to_line": "BL",
+              "path_index": 2
+            },
+            {
+              "station": "西門站",
+              "from_line": "BL",
+              "to_line": "G",
+              "path_index": 15
+            },
+            {
+              "station": "大坪林站",
+              "from_line": "G",
+              "to_line": "Y",
+              "path_index": 24
+            }
+          ],
+          "missing_coordinate_stations": [],
+          "display_id": 4
+        },
+        {
+          "route_id": 5,
+          "travel_time_seconds": 4273.0,
+          "travel_time_minutes": 71.22,
+          "transfers": 2,
+          "walking_seconds": 480.0,
+          "walking_minutes": 8.0,
+          "path_text": "東湖站[BR] -> 葫洲站[BR] -> 大湖公園站[BR] -> 內湖站[BR] -> 文德站[BR] -> 港墘站[BR] -> 西湖站[BR] -> 劍南路站[BR] -> 大直站[BR] -> 松山機場站[BR] -> 中山國中站[BR] -> 南京復興站[BR] -> 南京復興站[G] -> 松江南京站[G] -> 中山站[G] -> 北門站[G] -> 西門站[G] -> 小南門站[G] -> 中正紀念堂站[G] -> 古亭站[G] -> 台電大樓站[G] -> 公館站[G] -> 萬隆站[G] -> 景美站[G] -> 大坪林站[G] -> 大坪林站[Y] -> 十四張站[Y] -> 秀朗橋站[Y] -> 景平站[Y] -> 景安站[Y] -> 中和站[Y] -> 橋和站[Y] -> 中原站[Y]",
+          "path": [
+            {
+              "station": "東湖站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.067455,
+              "lon": 121.611535
+            },
+            {
+              "station": "葫洲站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.07271,
+              "lon": 121.6071455
+            },
+            {
+              "station": "大湖公園站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.083805,
+              "lon": 121.602214
+            },
+            {
+              "station": "內湖站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.083675,
+              "lon": 121.594363
+            },
+            {
+              "station": "文德站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.078455,
+              "lon": 121.5849995
+            },
+            {
+              "station": "港墘站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.08007,
+              "lon": 121.57516
+            },
+            {
+              "station": "西湖站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.08216,
+              "lon": 121.567227
+            },
+            {
+              "station": "劍南路站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.08483,
+              "lon": 121.5555825
+            },
+            {
+              "station": "大直站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.07943,
+              "lon": 121.54679
+            },
+            {
+              "station": "松山機場站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.0629075,
+              "lon": 121.55201
+            },
+            {
+              "station": "中山國中站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.06085,
+              "lon": 121.544215
+            },
+            {
+              "station": "南京復興站",
+              "line": "BR",
+              "state": "BR",
+              "lat": 25.052044,
+              "lon": 121.544303
+            },
+            {
+              "station": "南京復興站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.052044,
+              "lon": 121.544303
+            },
+            {
+              "station": "松江南京站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.052693,
+              "lon": 121.53285
+            },
+            {
+              "station": "中山站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.052621,
+              "lon": 121.520364
+            },
+            {
+              "station": "北門站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.049554,
+              "lon": 121.510184
+            },
+            {
+              "station": "西門站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.042025,
+              "lon": 121.508175
+            },
+            {
+              "station": "小南門站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.035585,
+              "lon": 121.51088
+            },
+            {
+              "station": "中正紀念堂站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.032767,
+              "lon": 121.518273
+            },
+            {
+              "station": "古亭站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.026373,
+              "lon": 121.522868
+            },
+            {
+              "station": "台電大樓站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.020733,
+              "lon": 121.5281435
+            },
+            {
+              "station": "公館站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.014781,
+              "lon": 121.534358
+            },
+            {
+              "station": "萬隆站",
+              "line": "G",
+              "state": "G",
+              "lat": 25.001978,
+              "lon": 121.539008
+            },
+            {
+              "station": "景美站",
+              "line": "G",
+              "state": "G",
+              "lat": 24.992824,
+              "lon": 121.5406975
+            },
+            {
+              "station": "大坪林站",
+              "line": "G",
+              "state": "G",
+              "lat": 24.9827205,
+              "lon": 121.54134
+            },
+            {
+              "station": "大坪林站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.9827205,
+              "lon": 121.54134
+            },
+            {
+              "station": "十四張站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.98447,
+              "lon": 121.52759
+            },
+            {
+              "station": "秀朗橋站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99033,
+              "lon": 121.5249
+            },
+            {
+              "station": "景平站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99215,
+              "lon": 121.51617
+            },
+            {
+              "station": "景安站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 24.99392,
+              "lon": 121.505114
+            },
+            {
+              "station": "中和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00236,
+              "lon": 121.49621
+            },
+            {
+              "station": "橋和站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.0046,
+              "lon": 121.49025
+            },
+            {
+              "station": "中原站",
+              "line": "Y",
+              "state": "Y",
+              "lat": 25.00818,
+              "lon": 121.48427
+            }
+          ],
+          "transfer_events": [
+            {
+              "station": "南京復興站",
+              "from_line": "BR",
+              "to_line": "G",
+              "path_index": 11
+            },
+            {
+              "station": "大坪林站",
+              "from_line": "G",
+              "to_line": "Y",
+              "path_index": 24
+            }
+          ],
+          "missing_coordinate_stations": [],
+          "display_id": 5
+        }
+      ],
+      "missing_coordinate_stations": []
+    }
+  }
+}

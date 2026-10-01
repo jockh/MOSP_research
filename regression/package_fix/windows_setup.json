@@ -1,0 +1,18 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\setup_windows.ps1",
+    "-IncludeWeb"
+  ],
+  "cwd": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support",
+  "exit_code": 0,
+  "python": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+  "editable_install_succeeded": true,
+  "module_count": 50,
+  "src_file": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\src\\__init__.py",
+  "global_execution_policy_changed": false
+}

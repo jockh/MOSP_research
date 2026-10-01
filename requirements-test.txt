@@ -1,0 +1,3 @@
+-r requirements.txt
+-r web/taipei-pareto-explorer/backend/requirements.txt
+httpx

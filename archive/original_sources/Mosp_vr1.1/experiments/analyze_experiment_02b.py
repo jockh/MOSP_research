@@ -1,0 +1,906 @@
+import os
+
+import numpy as np
+import pandas as pd
+
+
+# ============================================================
+# Experiment 2B Analysis
+# 3D Objective Dependence Structures
+# ============================================================
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULTS_DIR = os.path.join(SCRIPT_DIR, "results")
+
+INPUT_FILE = os.path.join(
+    RESULTS_DIR,
+    "experiment_02b_dependence_3d_raw.csv"
+)
+
+CHECK_FILE = os.path.join(
+    RESULTS_DIR,
+    "experiment_02b_dependence_3d_check.csv"
+)
+
+
+# ============================================================
+# 1. Load data
+# ============================================================
+
+df = pd.read_csv(INPUT_FILE)
+check_df = pd.read_csv(CHECK_FILE)
+
+print("===== EXPERIMENT 2B DATA CHECK =====")
+
+print(
+    "Total observations:",
+    len(df)
+)
+
+print(
+    "Expected observations:",
+    2000
+)
+
+assert len(df) == 2000
+
+print()
+
+
+# ============================================================
+# 2. Observations per structure
+# ============================================================
+
+counts = (
+    df.groupby("structure")
+    .size()
+)
+
+print(
+    "Observations per dependence structure:"
+)
+
+print(counts)
+print()
+
+assert all(counts == 500)
+
+
+# ============================================================
+# 3. Derived metric
+# Comparisons per generated label
+# ============================================================
+
+# IMPORTANT:
+# Calculate the ratio for EACH case first,
+# then calculate group-level mean / SD / CI.
+
+df["comparisons_per_generated_label"] = np.where(
+    df["generated_labels"] > 0,
+    df["dominance_checks"]
+    / df["generated_labels"],
+    0.0
+)
+
+
+# ============================================================
+# 4. Manipulation check
+# ============================================================
+
+print(
+    "===== 3D DEPENDENCE MANIPULATION CHECK ====="
+)
+
+corr_summary = (
+    check_df
+    .groupby("structure")[
+        [
+            "rho_12",
+            "rho_13",
+            "rho_23"
+        ]
+    ]
+    .agg(["mean", "std"])
+)
+
+print(
+    corr_summary.round(4)
+)
+
+print()
+
+
+# ------------------------------------------------------------
+# Average pairwise correlation
+#
+# Useful especially for comparing:
+# mixed vs independent
+# ------------------------------------------------------------
+
+check_df["mean_pairwise_rho"] = (
+    check_df[
+        [
+            "rho_12",
+            "rho_13",
+            "rho_23"
+        ]
+    ]
+    .mean(axis=1)
+)
+
+mean_rho_summary = (
+    check_df
+    .groupby("structure")[
+        "mean_pairwise_rho"
+    ]
+    .agg(
+        mean="mean",
+        std="std"
+    )
+)
+
+print(
+    "===== MEAN PAIRWISE CORRELATION ====="
+)
+
+print(
+    mean_rho_summary.round(4)
+)
+
+print()
+
+
+# ============================================================
+# 5. Metrics
+# ============================================================
+
+metrics = {
+
+    "target_pareto_labels":
+        "Pareto Labels",
+
+    "generated_labels":
+        "Generated Labels",
+
+    "dominance_checks":
+        "Dominance Checks",
+
+    "comparisons_per_generated_label":
+        "Comparisons Per Generated Label",
+
+    "runtime_seconds":
+        "Runtime",
+
+    "immediate_rejection_rate":
+        "Immediate Rejection Rate",
+
+    "max_labels_per_node":
+        "Max Labels Per Node"
+}
+
+
+# ============================================================
+# 6. Mean / SD / 95% CI
+# ============================================================
+
+def metric_summary(metric):
+
+    summary = (
+        df
+        .groupby("structure")[metric]
+        .agg(
+            mean="mean",
+            std="std",
+            count="count"
+        )
+    )
+
+    summary["se"] = (
+        summary["std"]
+        / np.sqrt(
+            summary["count"]
+        )
+    )
+
+    summary["ci95"] = (
+        1.96
+        * summary["se"]
+    )
+
+    return summary
+
+
+summaries = {}
+
+print(
+    "===== DETAILED METRIC SUMMARIES ====="
+)
+
+for metric, label in metrics.items():
+
+    summary = metric_summary(
+        metric
+    )
+
+    summaries[metric] = summary
+
+    print()
+    print(
+        f"--- {label} ---"
+    )
+
+    print(
+        summary[
+            [
+                "mean",
+                "std",
+                "ci95"
+            ]
+        ].round(6)
+    )
+
+
+# ============================================================
+# 7. Compact summary
+# ============================================================
+
+compact = pd.DataFrame({
+
+    "pareto_labels":
+        summaries[
+            "target_pareto_labels"
+        ]["mean"],
+
+    "generated":
+        summaries[
+            "generated_labels"
+        ]["mean"],
+
+    "dominance_checks":
+        summaries[
+            "dominance_checks"
+        ]["mean"],
+
+    "comparisons_per_generated_label":
+        summaries[
+            "comparisons_per_generated_label"
+        ]["mean"],
+
+    "runtime":
+        summaries[
+            "runtime_seconds"
+        ]["mean"],
+
+    "rejection_rate":
+        summaries[
+            "immediate_rejection_rate"
+        ]["mean"],
+
+    "max_labels_per_node":
+        summaries[
+            "max_labels_per_node"
+        ]["mean"]
+})
+
+
+# Logical display order
+display_order = [
+    "positive",
+    "independent",
+    "mixed",
+    "tradeoff"
+]
+
+compact = compact.reindex(
+    display_order
+)
+
+
+print()
+print(
+    "===== COMPACT SUMMARY ====="
+)
+
+print(
+    compact.round(6)
+)
+
+
+# ============================================================
+# 8. Relative to Independent baseline
+# ============================================================
+
+print()
+print(
+    "===== RELATIVE TO INDEPENDENT BASELINE ====="
+)
+
+baseline = compact.loc[
+    "independent"
+]
+
+
+ratio_columns = [
+    "pareto_labels",
+    "generated",
+    "dominance_checks",
+    "comparisons_per_generated_label",
+    "runtime",
+    "max_labels_per_node"
+]
+
+
+ratio_table = pd.DataFrame(
+    index=compact.index
+)
+
+
+for column in ratio_columns:
+
+    ratio_table[column] = (
+        compact[column]
+        / baseline[column]
+    )
+
+
+print(
+    ratio_table.round(3)
+)
+
+
+# ============================================================
+# 9. Tradeoff vs Positive
+# ============================================================
+
+print()
+print(
+    "===== EXTREME STRUCTURE COMPARISON ====="
+)
+
+tradeoff = compact.loc[
+    "tradeoff"
+]
+
+positive = compact.loc[
+    "positive"
+]
+
+
+for column in ratio_columns:
+
+    ratio = (
+        tradeoff[column]
+        / positive[column]
+    )
+
+    print(
+        f"{column}: "
+        f"tradeoff is "
+        f"{ratio:.3f}x positive"
+    )
+
+
+# ============================================================
+# 10. Prepare paired dataset
+# ============================================================
+
+# Every network_id + query_id corresponds to the SAME
+# topology, OD pair, and underlying random draws.
+
+pair_keys = [
+    "network_id",
+    "query_id"
+]
+
+
+pair_counts = (
+    df
+    .groupby(pair_keys)["structure"]
+    .nunique()
+)
+
+assert (
+    pair_counts == 4
+).all()
+
+
+print()
+print(
+    "===== PAIRED DESIGN CHECK ====="
+)
+
+print(
+    "Matched routing cases:",
+    len(pair_counts)
+)
+
+print(
+    "Cases containing all four structures:",
+    (pair_counts == 4).sum()
+)
+
+
+# ============================================================
+# 11. Mixed vs Independent paired comparison
+# ============================================================
+
+print()
+print(
+    "===== MIXED VS INDEPENDENT — PAIRED ANALYSIS ====="
+)
+
+paired_results = []
+
+
+paired_metrics = [
+
+    "target_pareto_labels",
+
+    "generated_labels",
+
+    "dominance_checks",
+
+    "comparisons_per_generated_label",
+
+    "runtime_seconds",
+
+    "max_labels_per_node"
+]
+
+
+for metric in paired_metrics:
+
+    pivot = df.pivot(
+        index=pair_keys,
+        columns="structure",
+        values=metric
+    )
+
+    mixed = pivot[
+        "mixed"
+    ]
+
+    independent = pivot[
+        "independent"
+    ]
+
+    difference = (
+        mixed
+        - independent
+    )
+
+    n = len(
+        difference
+    )
+
+    mean_difference = (
+        difference.mean()
+    )
+
+    std_difference = (
+        difference.std(
+            ddof=1
+        )
+    )
+
+    se_difference = (
+        std_difference
+        / np.sqrt(n)
+    )
+
+    ci95 = (
+        1.96
+        * se_difference
+    )
+
+    percent_mixed_greater = (
+        (difference > 0).mean()
+        * 100
+    )
+
+    percent_equal = (
+        (difference == 0).mean()
+        * 100
+    )
+
+    percent_mixed_lower = (
+        (difference < 0).mean()
+        * 100
+    )
+
+    # Ratio of overall matched means
+    mean_ratio = (
+        mixed.mean()
+        / independent.mean()
+    )
+
+
+    paired_results.append({
+
+        "metric":
+            metric,
+
+        "mixed_mean":
+            mixed.mean(),
+
+        "independent_mean":
+            independent.mean(),
+
+        "mean_difference":
+            mean_difference,
+
+        "ci95_difference":
+            ci95,
+
+        "mixed_independent_ratio":
+            mean_ratio,
+
+        "mixed_greater_percent":
+            percent_mixed_greater,
+
+        "equal_percent":
+            percent_equal,
+
+        "mixed_lower_percent":
+            percent_mixed_lower
+    })
+
+
+    print()
+    print(metric)
+
+    print(
+        f"  Mixed mean       = "
+        f"{mixed.mean():.6f}"
+    )
+
+    print(
+        f"  Independent mean = "
+        f"{independent.mean():.6f}"
+    )
+
+    print(
+        f"  Mean difference  = "
+        f"{mean_difference:+.6f}"
+    )
+
+    print(
+        f"  95% CI difference = "
+        f"["
+        f"{mean_difference - ci95:+.6f}, "
+        f"{mean_difference + ci95:+.6f}"
+        f"]"
+    )
+
+    print(
+        f"  Mixed / Independent = "
+        f"{mean_ratio:.3f}x"
+    )
+
+    print(
+        f"  Mixed > Independent = "
+        f"{percent_mixed_greater:.1f}%"
+    )
+
+    print(
+        f"  Mixed = Independent = "
+        f"{percent_equal:.1f}%"
+    )
+
+    print(
+        f"  Mixed < Independent = "
+        f"{percent_mixed_lower:.1f}%"
+    )
+
+
+# ============================================================
+# 12. Workload-runtime correlations
+# ============================================================
+
+print()
+print(
+    "===== WORKLOAD-RUNTIME CORRELATIONS ====="
+)
+
+
+workload_metrics = [
+
+    "target_pareto_labels",
+
+    "generated_labels",
+
+    "dominance_checks",
+
+    "comparisons_per_generated_label",
+
+    "max_labels_per_node"
+]
+
+
+for metric in workload_metrics:
+
+    r = (
+        df[
+            [
+                metric,
+                "runtime_seconds"
+            ]
+        ]
+        .corr(
+            method="pearson"
+        )
+        .iloc[0, 1]
+    )
+
+    print(
+        f"{metric} vs runtime: "
+        f"r = {r:.4f}"
+    )
+
+
+# ============================================================
+# 13. Dominance checks vs runtime
+# within each structure
+# ============================================================
+
+print()
+print(
+    "===== DOMINANCE CHECKS VS RUNTIME "
+    "BY STRUCTURE ====="
+)
+
+
+for structure in display_order:
+
+    subset = df[
+        df["structure"]
+        == structure
+    ]
+
+    r = (
+        subset[
+            [
+                "dominance_checks",
+                "runtime_seconds"
+            ]
+        ]
+        .corr(
+            method="pearson"
+        )
+        .iloc[0, 1]
+    )
+
+    print(
+        f"{structure:12s}: "
+        f"r = {r:.4f}"
+    )
+
+
+# ============================================================
+# 14. Comparisons per label by structure
+# ============================================================
+
+print()
+print(
+    "===== COMPARISON BURDEN BY STRUCTURE ====="
+)
+
+
+for structure in display_order:
+
+    value = compact.loc[
+        structure,
+        "comparisons_per_generated_label"
+    ]
+
+    print(
+        f"{structure:12s}: "
+        f"{value:.4f} checks/generated label"
+    )
+
+
+# ============================================================
+# 15. Mean difficulty order
+# ============================================================
+
+print()
+print(
+    "===== MEAN DIFFICULTY ORDER ====="
+)
+
+
+for column in [
+
+    "pareto_labels",
+
+    "generated",
+
+    "comparisons_per_generated_label",
+
+    "dominance_checks",
+
+    "runtime",
+
+    "max_labels_per_node"
+]:
+
+    order = (
+        compact[column]
+        .sort_values()
+        .index
+        .tolist()
+    )
+
+    print(
+        f"{column}: "
+        + " < ".join(order)
+    )
+
+
+# ============================================================
+# 16. Mechanism comparison:
+# Tradeoff vs Positive
+# ============================================================
+
+print()
+print(
+    "===== WORKLOAD AMPLIFICATION: "
+    "TRADEOFF VS POSITIVE ====="
+)
+
+
+generated_ratio = (
+    tradeoff["generated"]
+    / positive["generated"]
+)
+
+comparison_ratio = (
+    tradeoff[
+        "comparisons_per_generated_label"
+    ]
+    / positive[
+        "comparisons_per_generated_label"
+    ]
+)
+
+checks_ratio = (
+    tradeoff[
+        "dominance_checks"
+    ]
+    / positive[
+        "dominance_checks"
+    ]
+)
+
+labels_ratio = (
+    tradeoff[
+        "max_labels_per_node"
+    ]
+    / positive[
+        "max_labels_per_node"
+    ]
+)
+
+
+print(
+    f"Generated labels: "
+    f"{generated_ratio:.3f}x"
+)
+
+print(
+    f"Comparisons per generated label: "
+    f"{comparison_ratio:.3f}x"
+)
+
+print(
+    f"Max labels per node: "
+    f"{labels_ratio:.3f}x"
+)
+
+print(
+    f"Dominance checks: "
+    f"{checks_ratio:.3f}x"
+)
+
+
+# ============================================================
+# 17. Mixed vs Independent mechanism summary
+# ============================================================
+
+print()
+print(
+    "===== MIXED VS INDEPENDENT "
+    "MECHANISM SUMMARY ====="
+)
+
+
+for column in [
+
+    "pareto_labels",
+
+    "generated",
+
+    "comparisons_per_generated_label",
+
+    "dominance_checks",
+
+    "max_labels_per_node",
+
+    "runtime"
+]:
+
+    ratio = (
+        compact.loc[
+            "mixed",
+            column
+        ]
+        /
+        compact.loc[
+            "independent",
+            column
+        ]
+    )
+
+    difference_percent = (
+        (ratio - 1)
+        * 100
+    )
+
+    print(
+        f"{column}: "
+        f"Mixed / Independent = "
+        f"{ratio:.3f}x "
+        f"({difference_percent:+.1f}%)"
+    )
+
+
+# ============================================================
+# 18. Save outputs
+# ============================================================
+
+SUMMARY_FILE = os.path.join(
+    RESULTS_DIR,
+    "experiment_02b_summary.csv"
+)
+
+PAIRED_FILE = os.path.join(
+    RESULTS_DIR,
+    "experiment_02b_mixed_vs_independent.csv"
+)
+
+
+compact.to_csv(
+    SUMMARY_FILE
+)
+
+
+pd.DataFrame(
+    paired_results
+).to_csv(
+    PAIRED_FILE,
+    index=False
+)
+
+
+print()
+
+print(
+    "Summary saved to:",
+    SUMMARY_FILE
+)
+
+print(
+    "Paired analysis saved to:",
+    PAIRED_FILE
+)
+
+
+# ============================================================
+# Done
+# ============================================================
+
+print()
+
+print(
+    "Experiment 2B analysis completed successfully."
+)

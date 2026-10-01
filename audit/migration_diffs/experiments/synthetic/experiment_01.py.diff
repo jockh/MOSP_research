@@ -1,0 +1,19 @@
+--- C:\Users\xAdmin\MOSP_project\Mosp_vr1.1\experiments\experiment_01_objectives.py
++++ experiments/synthetic/experiment_01.py
+@@ -1,3 +1,4 @@
++from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+ import csv
+ import os
+ import random
+@@ -315,10 +316,7 @@
+ 
+ def save_results(results):
+ 
+-    output_dir = os.path.join(
+-        "experiments",
+-        "results"
+-    )
++    output_dir = CANONICAL_RESULTS_DIR / 'experiment_01'
+ 
+     os.makedirs(
+         output_dir,

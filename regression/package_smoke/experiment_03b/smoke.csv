@@ -1,0 +1,7 @@
+﻿condition,source,target,nodes,edges,target_pareto_labels,generated_labels,kept_labels,pruned_labels,dominance_checks,max_labels_per_node
+prefix:4,S,T,94,100,3,100,96,4,22,3
+suffix:4,S,T,94,100,3,108,104,4,46,3
+prefix:8,S,T,66,72,3,72,67,5,20,3
+suffix:8,S,T,66,72,3,88,83,5,68,3
+prefix:12,S,T,38,44,5,44,41,3,26,5
+suffix:12,S,T,38,44,5,92,89,3,266,5

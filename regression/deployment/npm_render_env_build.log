@@ -1,0 +1,17 @@
+
+> taipei-pareto-route-explorer@0.2.0 build
+> vite build --outDir C:\Users\xAdmin\.codex\visualizations\2026\09\30\***\migration_support\deployment_stage\render_env_dist
+
+vite v6.4.3 building for production...
+transforming...
+✓ 1627 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../../.codex/visualizations/2026/09/30/01a0f2fd-3f3d-7192-83e4-2f2f74955234/migration_support/deployment_stage/render_env_dist/index.html                   0.43 kB │ gzip:   0.30 kB
+../../../../../.codex/visualizations/2026/09/30/01a0f2fd-3f3d-7192-83e4-2f2f74955234/migration_support/deployment_stage/render_env_dist/assets/index-D0p5wVi8.css   31.40 kB │ gzip:  10.54 kB
+../../../../../.codex/visualizations/2026/09/30/01a0f2fd-3f3d-7192-83e4-2f2f74955234/migration_support/deployment_stage/render_env_dist/assets/index-0xYr2Qbz.js   330.57 kB │ gzip: 101.84 kB
+✓ built in 2.99s
+
+(!) outDir C:\Users\xAdmin\.codex\visualizations\2026\09\30\01a0f2fd-3f3d-7192-83e4-2f2f74955234\migration_support\deployment_stage\render_env_dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+

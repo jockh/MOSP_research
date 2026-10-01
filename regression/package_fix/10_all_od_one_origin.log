@@ -1,0 +1,95 @@
+================================================================================
+EXPERIMENT 5
+TAIPEI METRO ALL-ORIGIN ALL-DESTINATION MOSP
+================================================================================
+
+NETWORK SUMMARY
+nodes: 150
+ride_segments: 141
+ride_directed_edges: 282
+transfer_directed_edges: 54
+states_with_positive_stop_time: 132
+states_with_zero_stop_time: 18
+states_without_stop_time_data: ['BR01@BR#1', 'R01@R#2', 'G01@G#3', 'O01@O#4', 'O01@O#5', 'BL01@BL#6', 'R22A@R-3#7', 'G03A@G-3#8', 'Y07@Y#9']
+skipped_travel_rows: 0
+expanded_routes: [{'route_key': 'O#5', 'parent_route_key': 'O#4', 'junction_station': '大橋頭站'}]
+circular_line_included: True
+circular_route_info: {'route_key': 'Y#9', 'line_id': 'Y', 'service_name': '新北產業園區-大坪林', 'station_count': 14, 'segment_count': 13, 'stations': ['新北產業園區站', '幸福站', '頭前庄站', '新埔民生站', '板橋站', '板新站', '中原站', '橋和站', '中和站', '景安站', '景平站', '秀朗橋站', '十四張站', '大坪林站']}
+special_transfer_directed_edges: 4
+transfer_assumptions: [{'station': '大坪林站', 'lines': ('G', 'Y'), 'walking_minutes': 3.0, 'reason': 'official interchange exists but the supplied transfer-walking CSV has no Dapinglin row'}]
+
+Physical stations: 119
+Ordered OD pairs: 14042
+
+Skipped travel pairs:
+
+================================================================================
+[Origin 1/1] 東湖站
+================================================================================
+  Destinations: 0
+  Multi-Pareto ODs: 44
+  Total Pareto routes: 218
+  Generated labels: 883
+  Dominance checks: 1418
+  Runtime: 0.004538 sec
+
+================================================================================
+PARETO SET SIZE DISTRIBUTION
+================================================================================
+ pareto_route_count  number_of_od_pairs  percentage
+                  1                  74   62.711864
+                  2                   6    5.084746
+                  3                  27   22.881356
+                  4                   4    3.389831
+                  5                   7    5.932203
+
+================================================================================
+KEY RESULT SUMMARY
+================================================================================
+Physical stations: 119
+Total ordered OD pairs: 118
+Single-Pareto ODs: 74 (62.71%)
+Multi-Pareto ODs: 44 (37.29%)
+Mean Pareto-set size: 1.847
+Median Pareto-set size: 1.000
+Maximum Pareto-set size: 5
+
+================================================================================
+TOP 15 ORIGINS BY MULTI-PARETO RATE
+================================================================================
+origin  multi_pareto_od_count  multi_pareto_percentage  mean_pareto_size  max_pareto_size
+   東湖站                     44                37.288136          1.847458                5
+
+================================================================================
+TOP 15 DESTINATIONS BY MULTI-PARETO RATE
+================================================================================
+destination  multi_pareto_od_count  multi_pareto_percentage  mean_pareto_size  max_pareto_size
+        七張站                      1                    100.0               3.0                3
+        中原站                      1                    100.0               5.0                5
+        公館站                      1                    100.0               3.0                3
+        劍潭站                      1                    100.0               3.0                3
+     中正紀念堂站                      1                    100.0               4.0                4
+        中和站                      1                    100.0               5.0                5
+        北投站                      1                    100.0               3.0                3
+        士林站                      1                    100.0               3.0                3
+       大坪林站                      1                    100.0               3.0                3
+      台大醫院站                      1                    100.0               3.0                3
+       小南門站                      1                    100.0               2.0                2
+       小碧潭站                      1                    100.0               3.0                3
+        幸福站                      1                    100.0               5.0                5
+        奇岩站                      1                    100.0               3.0                3
+        圓山站                      1                    100.0               3.0                3
+
+================================================================================
+OUTPUT FILES
+================================================================================
+OD summary:          C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_smoke\all_od\all_od_summary.csv
+Pareto routes:       C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_smoke\all_od\all_od_pareto_routes.csv
+Source MOSP stats:   C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_smoke\all_od\source_mosp_statistics.csv
+Distribution:        C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_smoke\all_od\pareto_set_size_distribution.csv
+Origin summary:      C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_smoke\all_od\origin_summary.csv
+Destination summary: C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_smoke\all_od\destination_summary.csv
+Multi-Pareto ODs:    C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_smoke\all_od\multi_pareto_od_pairs.csv
+
+Experiment 5 completed successfully.
+

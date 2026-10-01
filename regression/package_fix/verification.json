@@ -1,0 +1,299 @@
+{
+  "commands": [
+    {
+      "name": "01_import_src",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "import src; print(src.__file__)"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\01_import_src.log"
+    },
+    {
+      "name": "02_import_graph",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from src.graph import Graph; print('graph OK')"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\02_import_graph.log"
+    },
+    {
+      "name": "03_import_mosp",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from src.mosp import mosp; print('mosp OK')"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\03_import_mosp.log"
+    },
+    {
+      "name": "04_correctness",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "validation.test_correctness"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": "regression/package_fix/module_checks",
+      "exit_code": 0,
+      "log": "regression\\package_fix\\04_correctness.log"
+    },
+    {
+      "name": "05_experiment_01",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "experiments.synthetic.experiment_01",
+        "--smoke-test"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\05_experiment_01.log"
+    },
+    {
+      "name": "06_experiment_02a",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "experiments.synthetic.experiment_02a",
+        "--smoke-test"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\06_experiment_02a.log"
+    },
+    {
+      "name": "07_experiment_02b",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "experiments.synthetic.experiment_02b",
+        "--smoke-test"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\07_experiment_02b.log"
+    },
+    {
+      "name": "08_experiment_03a",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "experiments.synthetic.experiment_03a",
+        "--smoke-test"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\08_experiment_03a.log"
+    },
+    {
+      "name": "09_experiment_03b",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "experiments.synthetic.experiment_03b",
+        "--smoke-test"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\09_experiment_03b.log"
+    },
+    {
+      "name": "10_all_od_one_origin",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "experiments.real_case.experiment_05_all_od",
+        "--origin",
+        "東湖站",
+        "--output-dir",
+        "regression/package_smoke/all_od"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\10_all_od_one_origin.log"
+    },
+    {
+      "name": "11_all_od_full",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "experiments.real_case.experiment_05_all_od"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": "regression/package_fix/all_od_full",
+      "exit_code": 0,
+      "log": "regression\\package_fix\\11_all_od_full.log"
+    },
+    {
+      "name": "12_check_installation_external",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "validation.check_installation",
+        "--output",
+        "regression/package_fix/installation.json"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\12_check_installation_external.log"
+    },
+    {
+      "name": "13_import_src_isolated",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-I",
+        "-c",
+        "import src; print(src.__file__)"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\13_import_src_isolated.log"
+    },
+    {
+      "name": "14_direct_correctness",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "validation/test_correctness.py"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": "regression/package_fix/direct_root",
+      "exit_code": 0,
+      "log": "regression\\package_fix\\14_direct_correctness.log"
+    },
+    {
+      "name": "15_direct_correctness_external",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\validation\\test_correctness.py"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support",
+      "results_override": "regression/package_fix/direct_external",
+      "exit_code": 0,
+      "log": "regression\\package_fix\\15_direct_correctness_external.log"
+    },
+    {
+      "name": "16_direct_experiment_external",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\experiments\\synthetic\\experiment_01.py",
+        "--smoke-test"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\.codex\\visualizations\\2026\\09\\30\\01a0f2fd-3f3d-7192-83e4-2f2f74955234\\migration_support",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\16_direct_experiment_external.log"
+    },
+    {
+      "name": "17_full_regression",
+      "command": [
+        "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "validation.regression_checks"
+      ],
+      "cwd": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research",
+      "results_override": null,
+      "exit_code": 0,
+      "log": "regression\\package_fix\\17_full_regression.log"
+    }
+  ],
+  "module_count": 50,
+  "python": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\.venv\\Scripts\\python.exe",
+  "python_version": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "src_file": "C:\\Users\\xAdmin\\MOSP_project\\MOSP_research\\src\\__init__.py",
+  "dependencies": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "networkx": "3.7",
+    "matplotlib": "3.11.2",
+    "statsmodels": "0.15.0"
+  },
+  "synthetic_smoke_cases_matching_saved": 23,
+  "correctness": {
+    "tests": 1000,
+    "passed": 1000,
+    "failed": 0
+  },
+  "all_od_full_non_runtime_fields_exact_match": true,
+  "core_data_formal_results_hashes_unchanged": true,
+  "scientific_functions_and_constants_ast_unchanged": true,
+  "active_sys_path_hacks": 0,
+  "archive_hacks_preserved": [
+    {
+      "file": "archive/original_sources/Mosp_vr1.1/experiments/experiment_03b_route_overlap.py",
+      "line": 64,
+      "code": "sys.path.insert(0, PROJECT_ROOT)"
+    }
+  ],
+  "remaining_src_import_errors_in_tested_environment": 0
+}

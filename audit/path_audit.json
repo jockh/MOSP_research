@@ -1,0 +1,1484 @@
+[
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_01.py",
+    "line": 9,
+    "text": "df = pd.read_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_01.py",
+    "line": 10,
+    "text": "    \"experiments/results/experiment_01_formal_raw.csv\""
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02a.py",
+    "line": 12,
+    "text": "INPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02a.py",
+    "line": 18,
+    "text": "CHECK_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02a.py",
+    "line": 29,
+    "text": "df = pd.read_csv(INPUT_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02a.py",
+    "line": 30,
+    "text": "check_df = pd.read_csv(CHECK_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02a.py",
+    "line": 550,
+    "text": "OUTPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02a.py",
+    "line": 557,
+    "text": "compact.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 12,
+    "text": "SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 13,
+    "text": "RESULTS_DIR = os.path.join(SCRIPT_DIR, \"results\")"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 15,
+    "text": "INPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 20,
+    "text": "CHECK_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 30,
+    "text": "df = pd.read_csv(INPUT_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 31,
+    "text": "check_df = pd.read_csv(CHECK_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 861,
+    "text": "SUMMARY_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 866,
+    "text": "PAIRED_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 872,
+    "text": "compact.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_02b.py",
+    "line": 879,
+    "text": ").to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 16,
+    "text": "SCRIPT_DIR = os.path.dirname("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 17,
+    "text": "    os.path.abspath(__file__)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 20,
+    "text": "EXP03_DIR = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 32,
+    "text": "INPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 43,
+    "text": "df = pd.read_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 840,
+    "text": "    output_path = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 845,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 978,
+    "text": "SUMMARY_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 983,
+    "text": "CORRELATION_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 988,
+    "text": "REGRESSION_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 993,
+    "text": "GROUP_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 998,
+    "text": "PREDICTOR_CORR_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 1004,
+    "text": "summary.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 1008,
+    "text": "correlation_df.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 1013,
+    "text": "regression_df.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 1018,
+    "text": "group_summary.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03.py",
+    "line": 1022,
+    "text": "predictor_corr.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03a.py",
+    "line": 12,
+    "text": "INPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03a.py",
+    "line": 18,
+    "text": "OUTPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03a.py",
+    "line": 29,
+    "text": "df = pd.read_csv(INPUT_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03a.py",
+    "line": 846,
+    "text": "compact.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03b.py",
+    "line": 26,
+    "text": "INPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03b.py",
+    "line": 32,
+    "text": "SUMMARY_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03b.py",
+    "line": 38,
+    "text": "PAIRED_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03b.py",
+    "line": 49,
+    "text": "df = pd.read_csv(INPUT_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03b.py",
+    "line": 1252,
+    "text": "compact.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/analyze_experiment_03b.py",
+    "line": 1258,
+    "text": "paired_summary.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_01_objectives.py",
+    "line": 318,
+    "text": "    output_dir = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_01_objectives.py",
+    "line": 328,
+    "text": "    output_file = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_01_objectives.py",
+    "line": 337,
+    "text": "    with open("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02a_correlation.py",
+    "line": 508,
+    "text": "    output_dir = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02a_correlation.py",
+    "line": 518,
+    "text": "    output_file = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02a_correlation.py",
+    "line": 527,
+    "text": "    with open("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02a_correlation.py",
+    "line": 560,
+    "text": "    output_dir = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02a_correlation.py",
+    "line": 565,
+    "text": "    output_file = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02a_correlation.py",
+    "line": 574,
+    "text": "    with open("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02b_dependence_3d.py",
+    "line": 507,
+    "text": "    script_dir = os.path.dirname("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02b_dependence_3d.py",
+    "line": 508,
+    "text": "        os.path.abspath(__file__)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02b_dependence_3d.py",
+    "line": 511,
+    "text": "    output_dir = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02b_dependence_3d.py",
+    "line": 521,
+    "text": "    path = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_02b_dependence_3d.py",
+    "line": 526,
+    "text": "    with open("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_redundancy.py",
+    "line": 1207,
+    "text": "    script_dir = os.path.dirname("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_redundancy.py",
+    "line": 1208,
+    "text": "        os.path.abspath(__file__)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_redundancy.py",
+    "line": 1211,
+    "text": "    results_dir = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_redundancy.py",
+    "line": 1221,
+    "text": "    output_path = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_redundancy.py",
+    "line": 1226,
+    "text": "    with open("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_route_diversity.py",
+    "line": 937,
+    "text": "        os.path.dirname("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_route_diversity.py",
+    "line": 938,
+    "text": "            os.path.abspath("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_route_diversity.py",
+    "line": 945,
+    "text": "        os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_route_diversity.py",
+    "line": 957,
+    "text": "        os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03_route_diversity.py",
+    "line": 963,
+    "text": "    with open("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03a_route_quantity.py",
+    "line": 48,
+    "text": "OUTPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03a_route_quantity.py",
+    "line": 55,
+    "text": "    os.path.dirname(OUTPUT_FILE),"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03a_route_quantity.py",
+    "line": 686,
+    "text": "    with open("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 52,
+    "text": "CURRENT_DIR = os.path.dirname("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 53,
+    "text": "    os.path.abspath(__file__)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 56,
+    "text": "PROJECT_ROOT = os.path.abspath("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 57,
+    "text": "    os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 59,
+    "text": "        \"..\""
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 63,
+    "text": "if PROJECT_ROOT not in sys.path:"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 64,
+    "text": "    sys.path.insert("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 119,
+    "text": "OUTPUT_DIR = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 129,
+    "text": "OUTPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 1566,
+    "text": "    df.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 1963,
+    "text": "    SUMMARY_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/experiment_03b_route_overlap.py",
+    "line": 1969,
+    "text": "    workload_summary.to_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_01.py",
+    "line": 12,
+    "text": "    \"experiments/results/\""
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_01.py",
+    "line": 17,
+    "text": "    \"experiments/results/\""
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_01.py",
+    "line": 31,
+    "text": "df = pd.read_csv(INPUT_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_01.py",
+    "line": 155,
+    "text": "output_path = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_01.py",
+    "line": 160,
+    "text": "plt.savefig("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02a.py",
+    "line": 13,
+    "text": "INPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02a.py",
+    "line": 19,
+    "text": "OUTPUT_DIR = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02a.py",
+    "line": 35,
+    "text": "df = pd.read_csv(INPUT_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02a.py",
+    "line": 228,
+    "text": "PNG_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02a.py",
+    "line": 233,
+    "text": "plt.savefig("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02a.py",
+    "line": 245,
+    "text": "PDF_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02a.py",
+    "line": 250,
+    "text": "plt.savefig("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 12,
+    "text": "SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 14,
+    "text": "RESULTS_DIR = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 19,
+    "text": "FIGURES_DIR = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 30,
+    "text": "INPUT_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 35,
+    "text": "df = pd.read_csv(INPUT_FILE)"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 123,
+    "text": "    path = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 128,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 330,
+    "text": "path = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_02b.py",
+    "line": 335,
+    "text": "plt.savefig("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 26,
+    "text": "EXP3A_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 32,
+    "text": "EXP3B_FILE = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 50,
+    "text": "df3a = pd.read_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 54,
+    "text": "df3b = pd.read_csv("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 97,
+    "text": "    pdf_path = os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 102,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 690,
+    "text": "    hatch=\"..\""
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 792,
+    "text": "    os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 800,
+    "text": "    os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "experiments/plot_experiment_03.py",
+    "line": 808,
+    "text": "    os.path.join("
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "test_correctness.py",
+    "line": 55,
+    "text": "ROOT = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Mosp_vr1.1",
+    "path": "test_correctness.py",
+    "line": 587,
+    "text": "    with open("
+  },
+  {
+    "project": "Real_case1",
+    "path": "check_stop_times.py",
+    "line": 15,
+    "text": "ROOT = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "check_stop_times.py",
+    "line": 515,
+    "text": "    travel_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "diagnose_taipei_route.py",
+    "line": 15,
+    "text": "ROOT = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 42,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 1932,
+    "text": "od_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 1944,
+    "text": "routes_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 1956,
+    "text": "source_stats_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 1968,
+    "text": "distribution_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 1980,
+    "text": "origin_summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 1992,
+    "text": "destination_summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiment_05_all_od.py",
+    "line": 2004,
+    "text": "multi_od_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 10,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 29,
+    "text": "df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 220,
+    "text": "df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 405,
+    "text": "pair_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 449,
+    "text": "tradeoff_summary.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_04b_route_patterns.py",
+    "line": 480,
+    "text": "transfer_pattern_summary.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 11,
+    "text": "SCRIPT_DIR = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 34,
+    "text": "        \"experiments/results/experiment_05_all_od/\\n\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 115,
+    "text": "od_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 120,
+    "text": "routes_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 1282,
+    "text": "max_od_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 1289,
+    "text": "max_route_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 1310,
+    "text": "    ).to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 1318,
+    "text": "    duplicate_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 1325,
+    "text": "validation_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05_all.py",
+    "line": 1332,
+    "text": "candidate_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 13,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 32,
+    "text": "df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 78,
+    "text": "descriptive_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 106,
+    "text": "pearson_matrix.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 134,
+    "text": "spearman_matrix.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 215,
+    "text": "pair_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 313,
+    "text": "multi_pearson.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 318,
+    "text": "multi_spearman.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 425,
+    "text": "difference_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 549,
+    "text": "tradeoff_direction_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 603,
+    "text": "plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 646,
+    "text": "plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/analyze_experiment_05b_objective_correlation.py",
+    "line": 689,
+    "text": "plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main.py",
+    "line": 21,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main.py",
+    "line": 349,
+    "text": "summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main.py",
+    "line": 355,
+    "text": "routes_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main_all.py",
+    "line": 21,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main_all.py",
+    "line": 574,
+    "text": "summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main_all.py",
+    "line": 581,
+    "text": "routes_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main_all.py",
+    "line": 588,
+    "text": "distribution_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main_all.py",
+    "line": 595,
+    "text": "multi_pareto_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_04_taipei_main_all.py",
+    "line": 602,
+    "text": "multi_route_details_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06_bruteforce_simple_paths.py",
+    "line": 12,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 13,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 445,
+    "text": "    checkpoint_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 486,
+    "text": "dfs_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 518,
+    "text": "summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 542,
+    "text": "top_simple_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 567,
+    "text": "top_partial_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 580,
+    "text": "    exp5_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_06b_all_od_dfs.py",
+    "line": 645,
+    "text": "    merged_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 15,
+    "text": "ROOT = Path(__file__).resolve().parents[1]"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 93,
+    "text": "dfs_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 607,
+    "text": "merged_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 656,
+    "text": "summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 694,
+    "text": "top_reduction_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/experiment_07_origin_level_dfs_vs_mosp.py",
+    "line": 700,
+    "text": "bottom_reduction_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5.py",
+    "line": 11,
+    "text": "ROOT = Path("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5.py",
+    "line": 12,
+    "text": "    r\"C:\\Users\\xAdmin\\MOSP_project\\Real_case1\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5.py",
+    "line": 66,
+    "text": "od_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5.py",
+    "line": 71,
+    "text": "origin_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5.py",
+    "line": 124,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5.py",
+    "line": 693,
+    "text": "summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 15,
+    "text": "# └─ results/"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 30,
+    "text": "SCRIPT_DIR = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 57,
+    "text": "        \"experiments/results/experiment_05_all_od/\\n\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 121,
+    "text": "od_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 127,
+    "text": "origin_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 312,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 319,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 1093,
+    "text": "summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis.py",
+    "line": 1203,
+    "text": "    f\"Summary CSV:\\n{SUMMARY_FILE}\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 35,
+    "text": "# │  └─ results/"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 41,
+    "text": "SCRIPT_DIR = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 63,
+    "text": "        \"experiments/results/experiment_05_all_od/all_od_summary.csv\\n\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 64,
+    "text": "        \"experiments/results/experiment_05_all_od/origin_summary.csv\\n\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 97,
+    "text": "od_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 102,
+    "text": "origin_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 175,
+    "text": "        \"savefig.facecolor\": \"white\","
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 217,
+    "text": "    fig.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 223,
+    "text": "    fig.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 778,
+    "text": "summary_df.to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "experiments/plot_chapter5_thesis_final (1).py",
+    "line": 828,
+    "text": "print(f\"Summary CSV:\\n{SUMMARY_FILE}\")"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9.py",
+    "line": 36,
+    "text": "# experiments/results/experiment_05_all_od/"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9.py",
+    "line": 39,
+    "text": "SCRIPT_DIR = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9.py",
+    "line": 66,
+    "text": "        \"experiments/results/experiment_05_all_od/\\n\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9.py",
+    "line": 115,
+    "text": "routes_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9.py",
+    "line": 246,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9.py",
+    "line": 253,
+    "text": "    plt.savefig("
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9.py",
+    "line": 1470,
+    "text": "].to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 22,
+    "text": "# experiments/results/experiment_05_all_od/all_od_pareto_routes.csv"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 29,
+    "text": "SCRIPT_DIR = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 30,
+    "text": "CWD = Path.cwd().resolve()"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 31,
+    "text": "REL_RESULT_DIR = Path(\"experiments\") / \"results\" / \"experiment_05_all_od\""
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 67,
+    "text": "        \"需要找到：experiments/results/experiment_05_all_od/all_od_pareto_routes.csv\","
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 87,
+    "text": "routes_df = pd.read_csv(ROUTE_FILE, encoding=\"utf-8-sig\")"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 141,
+    "text": "    plt.savefig(png_path, dpi=600, bbox_inches=\"tight\")"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 142,
+    "text": "    plt.savefig(pdf_path, bbox_inches=\"tight\")"
+  },
+  {
+    "project": "Real_case1",
+    "path": "plot_chapter5_figures_7_9_final.py",
+    "line": 548,
+    "text": "].to_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "src/taipei_metro.py",
+    "line": 643,
+    "text": "    station_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "src/taipei_metro.py",
+    "line": 648,
+    "text": "    travel_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "src/taipei_metro.py",
+    "line": 653,
+    "text": "    transfer_df = pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 25,
+    "text": "APP_DIR = Path(__file__).resolve().parent"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 172,
+    "text": "        Path.cwd().resolve(),"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 198,
+    "text": "def locate_pareto_csv() -> Path | None:"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 204,
+    "text": "        path = Path(override).expanduser()"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 210,
+    "text": "        Path(\"experiments\")"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 234,
+    "text": "        path = Path(override).expanduser()"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 248,
+    "text": "        Path.cwd().resolve(),"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 275,
+    "text": "                            df = read_csv_flexible_path(candidate)"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 297,
+    "text": "                            df = read_csv_flexible_path(candidate)"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 311,
+    "text": "PARETO_CSV = locate_pareto_csv()"
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 318,
+    "text": "def read_csv_flexible_bytes("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 335,
+    "text": "            return pd.read_csv("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 352,
+    "text": "def read_csv_flexible_path("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 356,
+    "text": "    return read_csv_flexible_bytes("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 867,
+    "text": "    df = read_csv_flexible_path("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 919,
+    "text": "    df = read_csv_flexible_path("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 1488,
+    "text": "            \"pareto_csv_found\": ("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 1493,
+    "text": "            \"pareto_csv\": ("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 1557,
+    "text": "            \"pareto_csv_found\": ("
+  },
+  {
+    "project": "Real_case1",
+    "path": "taipei-pareto-explorer/backend/main.py",
+    "line": 1562,
+    "text": "            \"pareto_csv\": ("
+  },
+  {
+    "project": "Real_case1",
+    "path": "test_taipei_case.py",
+    "line": 15,
+    "text": "ROOT = Path(__file__).resolve().parent"
+  }
+]

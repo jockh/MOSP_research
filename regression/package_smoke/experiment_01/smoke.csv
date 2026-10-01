@@ -1,0 +1,5 @@
+﻿condition,source,target,nodes,edges,target_pareto_labels,generated_labels,kept_labels,pruned_labels,dominance_checks,max_labels_per_node
+2,60,41,100,753,2,5043,838,4205,17456,15
+3,60,41,100,753,2,9557,1512,8045,57624,33
+4,60,41,100,753,3,16480,2506,13974,148740,59
+5,60,41,100,753,3,22364,3265,19099,252518,74

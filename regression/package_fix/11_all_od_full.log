@@ -1,0 +1,1289 @@
+================================================================================
+EXPERIMENT 5
+TAIPEI METRO ALL-ORIGIN ALL-DESTINATION MOSP
+================================================================================
+
+NETWORK SUMMARY
+nodes: 150
+ride_segments: 141
+ride_directed_edges: 282
+transfer_directed_edges: 54
+states_with_positive_stop_time: 132
+states_with_zero_stop_time: 18
+states_without_stop_time_data: ['BR01@BR#1', 'R01@R#2', 'G01@G#3', 'O01@O#4', 'O01@O#5', 'BL01@BL#6', 'R22A@R-3#7', 'G03A@G-3#8', 'Y07@Y#9']
+skipped_travel_rows: 0
+expanded_routes: [{'route_key': 'O#5', 'parent_route_key': 'O#4', 'junction_station': '大橋頭站'}]
+circular_line_included: True
+circular_route_info: {'route_key': 'Y#9', 'line_id': 'Y', 'service_name': '新北產業園區-大坪林', 'station_count': 14, 'segment_count': 13, 'stations': ['新北產業園區站', '幸福站', '頭前庄站', '新埔民生站', '板橋站', '板新站', '中原站', '橋和站', '中和站', '景安站', '景平站', '秀朗橋站', '十四張站', '大坪林站']}
+special_transfer_directed_edges: 4
+transfer_assumptions: [{'station': '大坪林站', 'lines': ('G', 'Y'), 'walking_minutes': 3.0, 'reason': 'official interchange exists but the supplied transfer-walking CSV has no Dapinglin row'}]
+
+Physical stations: 119
+Ordered OD pairs: 14042
+
+Skipped travel pairs:
+
+================================================================================
+[Origin 1/119] 七張站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 164
+  Generated labels: 657
+  Dominance checks: 578
+  Runtime: 0.002797 sec
+
+================================================================================
+[Origin 2/119] 三和國中站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 178
+  Generated labels: 730
+  Dominance checks: 725
+  Runtime: 0.003157 sec
+
+================================================================================
+[Origin 3/119] 三民高中站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 178
+  Generated labels: 730
+  Dominance checks: 725
+  Runtime: 0.003078 sec
+
+================================================================================
+[Origin 4/119] 三重國小站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 178
+  Generated labels: 730
+  Dominance checks: 725
+  Runtime: 0.003060 sec
+
+================================================================================
+[Origin 5/119] 三重站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 54
+  Total Pareto routes: 180
+  Generated labels: 729
+  Dominance checks: 730
+  Runtime: 0.003081 sec
+
+================================================================================
+[Origin 6/119] 中原站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 98
+  Total Pareto routes: 314
+  Generated labels: 1275
+  Dominance checks: 2466
+  Runtime: 0.007139 sec
+
+================================================================================
+[Origin 7/119] 中和站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 98
+  Total Pareto routes: 324
+  Generated labels: 1291
+  Dominance checks: 2617
+  Runtime: 0.007530 sec
+
+================================================================================
+[Origin 8/119] 中山國中站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 30
+  Total Pareto routes: 154
+  Generated labels: 622
+  Dominance checks: 508
+  Runtime: 0.002474 sec
+
+================================================================================
+[Origin 9/119] 中山國小站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 149
+  Generated labels: 611
+  Dominance checks: 453
+  Runtime: 0.002356 sec
+
+================================================================================
+[Origin 10/119] 中山站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 51
+  Total Pareto routes: 198
+  Generated labels: 844
+  Dominance checks: 1137
+  Runtime: 0.004030 sec
+
+================================================================================
+[Origin 11/119] 中正紀念堂站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 173
+  Generated labels: 718
+  Dominance checks: 783
+  Runtime: 0.003135 sec
+
+================================================================================
+[Origin 12/119] 丹鳳站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 56
+  Total Pareto routes: 189
+  Generated labels: 769
+  Dominance checks: 847
+  Runtime: 0.003386 sec
+
+================================================================================
+[Origin 13/119] 亞東醫院站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 179
+  Generated labels: 740
+  Dominance checks: 869
+  Runtime: 0.003335 sec
+
+================================================================================
+[Origin 14/119] 信義安和站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 34
+  Total Pareto routes: 174
+  Generated labels: 714
+  Dominance checks: 777
+  Runtime: 0.003126 sec
+
+================================================================================
+[Origin 15/119] 先嗇宮站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 54
+  Total Pareto routes: 182
+  Generated labels: 735
+  Dominance checks: 749
+  Runtime: 0.003149 sec
+
+================================================================================
+[Origin 16/119] 內湖站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002420 sec
+
+================================================================================
+[Origin 17/119] 公館站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 161
+  Generated labels: 642
+  Dominance checks: 536
+  Runtime: 0.002557 sec
+
+================================================================================
+[Origin 18/119] 六張犁站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003084 sec
+
+================================================================================
+[Origin 19/119] 劍南路站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002542 sec
+
+================================================================================
+[Origin 20/119] 劍潭站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003765 sec
+
+================================================================================
+[Origin 21/119] 動物園站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003116 sec
+
+================================================================================
+[Origin 22/119] 北投站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 838
+  Dominance checks: 989
+  Runtime: 0.003756 sec
+
+================================================================================
+[Origin 23/119] 北門站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 43
+  Total Pareto routes: 167
+  Generated labels: 679
+  Dominance checks: 616
+  Runtime: 0.002804 sec
+
+================================================================================
+[Origin 24/119] 十四張站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 55
+  Total Pareto routes: 210
+  Generated labels: 874
+  Dominance checks: 1217
+  Runtime: 0.004253 sec
+
+================================================================================
+[Origin 25/119] 南京三民站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 45
+  Total Pareto routes: 178
+  Generated labels: 715
+  Dominance checks: 741
+  Runtime: 0.003206 sec
+
+================================================================================
+[Origin 26/119] 南京復興站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 43
+  Total Pareto routes: 182
+  Generated labels: 761
+  Dominance checks: 874
+  Runtime: 0.004802 sec
+
+================================================================================
+[Origin 27/119] 南勢角站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 51
+  Total Pareto routes: 186
+  Generated labels: 734
+  Dominance checks: 784
+  Runtime: 0.003258 sec
+
+================================================================================
+[Origin 28/119] 南港展覽館站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 193
+  Generated labels: 786
+  Dominance checks: 1042
+  Runtime: 0.003779 sec
+
+================================================================================
+[Origin 29/119] 南港站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 177
+  Generated labels: 720
+  Dominance checks: 855
+  Runtime: 0.003251 sec
+
+================================================================================
+[Origin 30/119] 南港軟體園區站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 60
+  Total Pareto routes: 235
+  Generated labels: 949
+  Dominance checks: 1558
+  Runtime: 0.006004 sec
+
+================================================================================
+[Origin 31/119] 古亭站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 157
+  Generated labels: 633
+  Dominance checks: 517
+  Runtime: 0.002533 sec
+
+================================================================================
+[Origin 32/119] 台北101/世貿站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 34
+  Total Pareto routes: 174
+  Generated labels: 714
+  Dominance checks: 777
+  Runtime: 0.003101 sec
+
+================================================================================
+[Origin 33/119] 台北小巨蛋站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 45
+  Total Pareto routes: 178
+  Generated labels: 715
+  Dominance checks: 741
+  Runtime: 0.003051 sec
+
+================================================================================
+[Origin 34/119] 台北橋站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 172
+  Generated labels: 704
+  Dominance checks: 643
+  Runtime: 0.003092 sec
+
+================================================================================
+[Origin 35/119] 台北車站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 35
+  Total Pareto routes: 163
+  Generated labels: 698
+  Dominance checks: 685
+  Runtime: 0.002985 sec
+
+================================================================================
+[Origin 36/119] 台大醫院站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 48
+  Total Pareto routes: 181
+  Generated labels: 776
+  Dominance checks: 885
+  Runtime: 0.003570 sec
+
+================================================================================
+[Origin 37/119] 台電大樓站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 44
+  Total Pareto routes: 168
+  Generated labels: 680
+  Dominance checks: 622
+  Runtime: 0.002819 sec
+
+================================================================================
+[Origin 38/119] 唭哩岸站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003979 sec
+
+================================================================================
+[Origin 39/119] 善導寺站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 24
+  Total Pareto routes: 153
+  Generated labels: 621
+  Dominance checks: 528
+  Runtime: 0.002593 sec
+
+================================================================================
+[Origin 40/119] 國父紀念館站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 177
+  Generated labels: 720
+  Dominance checks: 855
+  Runtime: 0.003359 sec
+
+================================================================================
+[Origin 41/119] 圓山站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003837 sec
+
+================================================================================
+[Origin 42/119] 土城站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 179
+  Generated labels: 740
+  Dominance checks: 869
+  Runtime: 0.003566 sec
+
+================================================================================
+[Origin 43/119] 士林站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003763 sec
+
+================================================================================
+[Origin 44/119] 大坪林站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 38
+  Total Pareto routes: 163
+  Generated labels: 666
+  Dominance checks: 597
+  Runtime: 0.002725 sec
+
+================================================================================
+[Origin 45/119] 大安森林公園站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 34
+  Total Pareto routes: 162
+  Generated labels: 671
+  Dominance checks: 619
+  Runtime: 0.002790 sec
+
+================================================================================
+[Origin 46/119] 大安站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 32
+  Total Pareto routes: 182
+  Generated labels: 785
+  Dominance checks: 1011
+  Runtime: 0.003730 sec
+
+================================================================================
+[Origin 47/119] 大橋頭站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 172
+  Generated labels: 705
+  Dominance checks: 644
+  Runtime: 0.002921 sec
+
+================================================================================
+[Origin 48/119] 大湖公園站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002417 sec
+
+================================================================================
+[Origin 49/119] 大直站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002444 sec
+
+================================================================================
+[Origin 50/119] 奇岩站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003783 sec
+
+================================================================================
+[Origin 51/119] 小南門站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 33
+  Total Pareto routes: 156
+  Generated labels: 657
+  Dominance checks: 559
+  Runtime: 0.002652 sec
+
+================================================================================
+[Origin 52/119] 小碧潭站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 164
+  Generated labels: 656
+  Dominance checks: 577
+  Runtime: 0.002686 sec
+
+================================================================================
+[Origin 53/119] 市政府站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 177
+  Generated labels: 720
+  Dominance checks: 855
+  Runtime: 0.003465 sec
+
+================================================================================
+[Origin 54/119] 幸福站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 100
+  Total Pareto routes: 322
+  Generated labels: 1333
+  Dominance checks: 2642
+  Runtime: 0.007775 sec
+
+================================================================================
+[Origin 55/119] 府中站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 179
+  Generated labels: 740
+  Dominance checks: 869
+  Runtime: 0.003466 sec
+
+================================================================================
+[Origin 56/119] 廣慈/奉天宮站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 34
+  Total Pareto routes: 174
+  Generated labels: 714
+  Dominance checks: 777
+  Runtime: 0.003098 sec
+
+================================================================================
+[Origin 57/119] 後山埤站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 177
+  Generated labels: 720
+  Dominance checks: 855
+  Runtime: 0.003245 sec
+
+================================================================================
+[Origin 58/119] 徐匯中學站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 178
+  Generated labels: 730
+  Dominance checks: 725
+  Runtime: 0.003133 sec
+
+================================================================================
+[Origin 59/119] 復興崗站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003938 sec
+
+================================================================================
+[Origin 60/119] 忠孝復興站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 179
+  Generated labels: 759
+  Dominance checks: 944
+  Runtime: 0.003484 sec
+
+================================================================================
+[Origin 61/119] 忠孝敦化站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 177
+  Generated labels: 720
+  Dominance checks: 855
+  Runtime: 0.003229 sec
+
+================================================================================
+[Origin 62/119] 忠孝新生站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 28
+  Total Pareto routes: 151
+  Generated labels: 631
+  Dominance checks: 512
+  Runtime: 0.002478 sec
+
+================================================================================
+[Origin 63/119] 忠義站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003997 sec
+
+================================================================================
+[Origin 64/119] 文德站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002461 sec
+
+================================================================================
+[Origin 65/119] 新北投站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003879 sec
+
+================================================================================
+[Origin 66/119] 新北產業園區站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 100
+  Total Pareto routes: 322
+  Generated labels: 1333
+  Dominance checks: 2642
+  Runtime: 0.007926 sec
+
+================================================================================
+[Origin 67/119] 新埔民生站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 100
+  Total Pareto routes: 335
+  Generated labels: 1389
+  Dominance checks: 2894
+  Runtime: 0.008322 sec
+
+================================================================================
+[Origin 68/119] 新埔站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 171
+  Generated labels: 707
+  Dominance checks: 726
+  Runtime: 0.003098 sec
+
+================================================================================
+[Origin 69/119] 新店區公所站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 164
+  Generated labels: 656
+  Dominance checks: 577
+  Runtime: 0.002681 sec
+
+================================================================================
+[Origin 70/119] 新店站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 164
+  Generated labels: 656
+  Dominance checks: 577
+  Runtime: 0.002680 sec
+
+================================================================================
+[Origin 71/119] 新莊站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 56
+  Total Pareto routes: 189
+  Generated labels: 769
+  Dominance checks: 847
+  Runtime: 0.003625 sec
+
+================================================================================
+[Origin 72/119] 昆陽站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 177
+  Generated labels: 720
+  Dominance checks: 855
+  Runtime: 0.004628 sec
+
+================================================================================
+[Origin 73/119] 明德站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003960 sec
+
+================================================================================
+[Origin 74/119] 景安站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 42
+  Total Pareto routes: 190
+  Generated labels: 750
+  Dominance checks: 908
+  Runtime: 0.003446 sec
+
+================================================================================
+[Origin 75/119] 景平站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 97
+  Total Pareto routes: 259
+  Generated labels: 1057
+  Dominance checks: 1630
+  Runtime: 0.005375 sec
+
+================================================================================
+[Origin 76/119] 景美站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 38
+  Total Pareto routes: 158
+  Generated labels: 629
+  Dominance checks: 509
+  Runtime: 0.002497 sec
+
+================================================================================
+[Origin 77/119] 木柵站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003117 sec
+
+================================================================================
+[Origin 78/119] 東湖站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 44
+  Total Pareto routes: 218
+  Generated labels: 883
+  Dominance checks: 1418
+  Runtime: 0.004632 sec
+
+================================================================================
+[Origin 79/119] 東門站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 13
+  Total Pareto routes: 132
+  Generated labels: 551
+  Dominance checks: 339
+  Runtime: 0.002130 sec
+
+================================================================================
+[Origin 80/119] 松山機場站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002450 sec
+
+================================================================================
+[Origin 81/119] 松山站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 45
+  Total Pareto routes: 178
+  Generated labels: 715
+  Dominance checks: 741
+  Runtime: 0.003080 sec
+
+================================================================================
+[Origin 82/119] 松江南京站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 169
+  Generated labels: 699
+  Dominance checks: 688
+  Runtime: 0.002986 sec
+
+================================================================================
+[Origin 83/119] 板新站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 98
+  Total Pareto routes: 321
+  Generated labels: 1302
+  Dominance checks: 2584
+  Runtime: 0.007448 sec
+
+================================================================================
+[Origin 84/119] 板橋站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 28
+  Total Pareto routes: 150
+  Generated labels: 650
+  Dominance checks: 553
+  Runtime: 0.002629 sec
+
+================================================================================
+[Origin 85/119] 橋和站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 98
+  Total Pareto routes: 328
+  Generated labels: 1305
+  Dominance checks: 2659
+  Runtime: 0.007574 sec
+
+================================================================================
+[Origin 86/119] 民權西路站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 48
+  Total Pareto routes: 168
+  Generated labels: 705
+  Dominance checks: 634
+  Runtime: 0.002905 sec
+
+================================================================================
+[Origin 87/119] 永安市場站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 47
+  Total Pareto routes: 182
+  Generated labels: 716
+  Dominance checks: 748
+  Runtime: 0.003130 sec
+
+================================================================================
+[Origin 88/119] 永寧站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 179
+  Generated labels: 740
+  Dominance checks: 869
+  Runtime: 0.003426 sec
+
+================================================================================
+[Origin 89/119] 永春站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 31
+  Total Pareto routes: 177
+  Generated labels: 720
+  Dominance checks: 855
+  Runtime: 0.003339 sec
+
+================================================================================
+[Origin 90/119] 江子翠站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 171
+  Generated labels: 707
+  Dominance checks: 727
+  Runtime: 0.003145 sec
+
+================================================================================
+[Origin 91/119] 海山站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 179
+  Generated labels: 740
+  Dominance checks: 869
+  Runtime: 0.003429 sec
+
+================================================================================
+[Origin 92/119] 淡水站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003849 sec
+
+================================================================================
+[Origin 93/119] 港墘站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002521 sec
+
+================================================================================
+[Origin 94/119] 石牌站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003886 sec
+
+================================================================================
+[Origin 95/119] 秀朗橋站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 75
+  Total Pareto routes: 232
+  Generated labels: 943
+  Dominance checks: 1365
+  Runtime: 0.004792 sec
+
+================================================================================
+[Origin 96/119] 科技大樓站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003287 sec
+
+================================================================================
+[Origin 97/119] 竹圍站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003771 sec
+
+================================================================================
+[Origin 98/119] 紅樹林站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003789 sec
+
+================================================================================
+[Origin 99/119] 芝山站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003789 sec
+
+================================================================================
+[Origin 100/119] 菜寮站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 180
+  Generated labels: 732
+  Dominance checks: 736
+  Runtime: 0.003136 sec
+
+================================================================================
+[Origin 101/119] 萬芳社區站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003105 sec
+
+================================================================================
+[Origin 102/119] 萬芳醫院站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003082 sec
+
+================================================================================
+[Origin 103/119] 萬隆站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 162
+  Generated labels: 642
+  Dominance checks: 534
+  Runtime: 0.002589 sec
+
+================================================================================
+[Origin 104/119] 葫洲站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 40
+  Total Pareto routes: 176
+  Generated labels: 716
+  Dominance checks: 790
+  Runtime: 0.003178 sec
+
+================================================================================
+[Origin 105/119] 蘆洲站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 53
+  Total Pareto routes: 178
+  Generated labels: 730
+  Dominance checks: 725
+  Runtime: 0.003117 sec
+
+================================================================================
+[Origin 106/119] 行天宮站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 28
+  Total Pareto routes: 147
+  Generated labels: 614
+  Dominance checks: 463
+  Runtime: 0.002410 sec
+
+================================================================================
+[Origin 107/119] 西湖站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 29
+  Total Pareto routes: 153
+  Generated labels: 622
+  Dominance checks: 507
+  Runtime: 0.002594 sec
+
+================================================================================
+[Origin 108/119] 西門站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 171
+  Generated labels: 696
+  Dominance checks: 685
+  Runtime: 0.002991 sec
+
+================================================================================
+[Origin 109/119] 象山站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 34
+  Total Pareto routes: 174
+  Generated labels: 714
+  Dominance checks: 777
+  Runtime: 0.003133 sec
+
+================================================================================
+[Origin 110/119] 輔大站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 56
+  Total Pareto routes: 189
+  Generated labels: 769
+  Dominance checks: 847
+  Runtime: 0.003352 sec
+
+================================================================================
+[Origin 111/119] 辛亥站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003108 sec
+
+================================================================================
+[Origin 112/119] 迴龍站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 56
+  Total Pareto routes: 189
+  Generated labels: 769
+  Dominance checks: 847
+  Runtime: 0.003404 sec
+
+================================================================================
+[Origin 113/119] 關渡站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 190
+  Generated labels: 837
+  Dominance checks: 988
+  Runtime: 0.003783 sec
+
+================================================================================
+[Origin 114/119] 雙連站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 57
+  Total Pareto routes: 186
+  Generated labels: 805
+  Dominance checks: 885
+  Runtime: 0.003541 sec
+
+================================================================================
+[Origin 115/119] 頂埔站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 179
+  Generated labels: 740
+  Dominance checks: 869
+  Runtime: 0.003343 sec
+
+================================================================================
+[Origin 116/119] 頂溪站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 42
+  Total Pareto routes: 177
+  Generated labels: 701
+  Dominance checks: 716
+  Runtime: 0.003018 sec
+
+================================================================================
+[Origin 117/119] 頭前庄站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 46
+  Total Pareto routes: 180
+  Generated labels: 750
+  Dominance checks: 831
+  Runtime: 0.003383 sec
+
+================================================================================
+[Origin 118/119] 麟光站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 41
+  Total Pareto routes: 175
+  Generated labels: 716
+  Dominance checks: 774
+  Runtime: 0.003136 sec
+
+================================================================================
+[Origin 119/119] 龍山寺站
+================================================================================
+  Destinations: 118
+  Multi-Pareto ODs: 36
+  Total Pareto routes: 169
+  Generated labels: 709
+  Dominance checks: 725
+  Runtime: 0.003280 sec
+
+================================================================================
+PARETO SET SIZE DISTRIBUTION
+================================================================================
+ pareto_route_count  number_of_od_pairs  percentage
+                  1                8520   60.675118
+                  2                3649   25.986327
+                  3                1294    9.215212
+                  4                 543    3.866971
+                  5                  36    0.256374
+
+================================================================================
+KEY RESULT SUMMARY
+================================================================================
+Physical stations: 119
+Total ordered OD pairs: 14042
+Single-Pareto ODs: 8520 (60.68%)
+Multi-Pareto ODs: 5522 (39.32%)
+Mean Pareto-set size: 1.570
+Median Pareto-set size: 1.000
+Maximum Pareto-set size: 5
+
+================================================================================
+TOP 15 ORIGINS BY MULTI-PARETO RATE
+================================================================================
+ origin  multi_pareto_od_count  multi_pareto_percentage  mean_pareto_size  max_pareto_size
+    幸福站                    100                84.745763          2.728814                5
+  新埔民生站                    100                84.745763          2.838983                5
+新北產業園區站                    100                84.745763          2.728814                5
+    橋和站                     98                83.050847          2.779661                5
+    板新站                     98                83.050847          2.720339                5
+    中原站                     98                83.050847          2.661017                5
+    中和站                     98                83.050847          2.745763                5
+    景平站                     97                82.203390          2.194915                4
+   秀朗橋站                     75                63.559322          1.966102                4
+南港軟體園區站                     60                50.847458          1.991525                5
+    士林站                     57                48.305085          1.610169                4
+   唭哩岸站                     57                48.305085          1.610169                4
+    芝山站                     57                48.305085          1.610169                4
+    關渡站                     57                48.305085          1.610169                4
+    明德站                     57                48.305085          1.610169                4
+
+================================================================================
+TOP 15 DESTINATIONS BY MULTI-PARETO RATE
+================================================================================
+destination  multi_pareto_od_count  multi_pareto_percentage  mean_pareto_size  max_pareto_size
+        幸福站                    100                84.745763          2.728814                5
+      新埔民生站                    100                84.745763          2.838983                5
+    新北產業園區站                    100                84.745763          2.728814                5
+        橋和站                     98                83.050847          2.779661                5
+        板新站                     98                83.050847          2.720339                5
+        中原站                     98                83.050847          2.661017                5
+        中和站                     98                83.050847          2.669492                5
+        景平站                     97                82.203390          2.194915                4
+       秀朗橋站                     75                63.559322          1.966102                4
+    南港軟體園區站                     60                50.847458          1.991525                5
+        士林站                     57                48.305085          1.610169                4
+       唭哩岸站                     57                48.305085          1.610169                4
+        芝山站                     57                48.305085          1.610169                4
+        關渡站                     57                48.305085          1.610169                4
+        明德站                     57                48.305085          1.610169                4
+
+================================================================================
+OUTPUT FILES
+================================================================================
+OD summary:          C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\all_od_full\experiment_05_all_od\all_od_summary.csv
+Pareto routes:       C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\all_od_full\experiment_05_all_od\all_od_pareto_routes.csv
+Source MOSP stats:   C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\all_od_full\experiment_05_all_od\source_mosp_statistics.csv
+Distribution:        C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\all_od_full\experiment_05_all_od\pareto_set_size_distribution.csv
+Origin summary:      C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\all_od_full\experiment_05_all_od\origin_summary.csv
+Destination summary: C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\all_od_full\experiment_05_all_od\destination_summary.csv
+Multi-Pareto ODs:    C:\Users\xAdmin\MOSP_project\MOSP_research\regression\package_fix\all_od_full\experiment_05_all_od\multi_pareto_od_pairs.csv
+
+Experiment 5 completed successfully.
+

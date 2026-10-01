@@ -1,0 +1,802 @@
+from src.paths import PROJECT_ROOT, RESULTS_DIR as CANONICAL_RESULTS_DIR, TAIPEI_METRO_DATA_DIR, ALL_OD_RESULTS_DIR, result_path, project_path
+from pathlib import Path
+import pandas as pd
+from src.mosp import (
+    mosp,
+    reconstruct_path
+)
+from src.taipei_metro import (
+    build_taipei_metro_graph,
+    make_od_graph,
+    format_path
+)
+
+if __name__ == "__main__":
+
+
+
+
+
+
+
+
+
+
+    # =========================================================
+    # PATHS
+    # =========================================================
+
+    ROOT = PROJECT_ROOT
+
+    DATA_DIR = (
+        TAIPEI_METRO_DATA_DIR
+    )
+
+    RESULT_DIR = (
+        CANONICAL_RESULTS_DIR / 'experiment_04_taipei_main_all'
+    )
+
+    RESULT_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+
+    STATION_FILE = (
+        DATA_DIR
+        / "臺北捷運路線車站資料服務_NEW_fixed (1).csv"
+    )
+
+    TRAVEL_FILE = (
+        DATA_DIR
+        / "臺北捷運相鄰兩站間之行駛時間及停靠站時間(1150830).csv"
+    )
+
+    TRANSFER_FILE = (
+        DATA_DIR
+        / "臺北捷運轉乘車站轉乘步行時間資料.csv"
+    )
+
+
+    # =========================================================
+    # SETTINGS
+    # =========================================================
+
+    ORIGIN = "台北車站"
+
+    NUM_OBJECTIVES = 3
+
+
+    # =========================================================
+    # BUILD NETWORK
+    # =========================================================
+
+    base_graph, build_stats = build_taipei_metro_graph(
+        station_file=STATION_FILE,
+        travel_time_file=TRAVEL_FILE,
+        transfer_file=TRANSFER_FILE
+    )
+
+
+    print("=" * 75)
+    print("TAIPEI MAIN STATION -> ALL METRO STATIONS")
+    print("=" * 75)
+
+    print()
+
+    print("NETWORK SUMMARY")
+
+    for key, value in build_stats.items():
+
+        if key != "skipped_pairs":
+            print(f"{key}: {value}")
+
+
+    print()
+
+    print("Skipped travel pairs:")
+
+    for pair in build_stats["skipped_pairs"]:
+        print(" ", pair)
+
+
+    # =========================================================
+    # GET ALL PHYSICAL DESTINATIONS
+    # =========================================================
+
+    DESTINATIONS = sorted([
+        station_name
+        for station_name
+        in base_graph.states_by_name.keys()
+        if station_name != ORIGIN
+    ])
+
+
+    print()
+    print("=" * 75)
+    print("EXPERIMENT SETTINGS")
+    print("=" * 75)
+
+    print(f"Origin: {ORIGIN}")
+    print(f"Destinations: {len(DESTINATIONS)}")
+    print(f"Objectives: {NUM_OBJECTIVES}")
+
+    print()
+
+    print("Objectives:")
+    print("  C1 = Total travel time")
+    print("  C2 = Number of transfers")
+    print("  C3 = Transfer walking time")
+
+
+    # =========================================================
+    # RESULT CONTAINERS
+    # =========================================================
+
+    summary_rows = []
+
+    route_rows = []
+
+
+    # =========================================================
+    # RUN ALL OD PAIRS
+    # =========================================================
+
+    for od_index, destination in enumerate(
+        DESTINATIONS,
+        start=1
+    ):
+
+        print()
+        print("=" * 75)
+
+        print(
+            f"[{od_index}/{len(DESTINATIONS)}] "
+            f"{ORIGIN} -> {destination}"
+        )
+
+        print("=" * 75)
+
+
+        # -----------------------------------------------------
+        # BUILD THIS OD
+        # -----------------------------------------------------
+
+        graph, source, target = make_od_graph(
+            base_graph,
+            ORIGIN,
+            destination
+        )
+
+
+        # -----------------------------------------------------
+        # RUN MOSP
+        # -----------------------------------------------------
+
+        labels, stats = mosp(
+            graph=graph,
+            source=source,
+            num_objectives=NUM_OBJECTIVES,
+            return_stats=True
+        )
+
+
+        target_labels = sorted(
+            labels[target],
+            key=lambda label: label.costs
+        )
+
+
+        pareto_count = len(target_labels)
+
+
+        print(
+            f"Pareto routes: {pareto_count}"
+        )
+
+
+        # =====================================================
+        # ROUTE LEVEL
+        # =====================================================
+
+        costs_for_this_od = []
+
+
+        for route_id, label in enumerate(
+            target_labels,
+            start=1
+        ):
+
+            path = reconstruct_path(
+                label
+            )
+
+            readable_path = format_path(
+                graph,
+                path
+            )
+
+
+            travel_time_seconds = (
+                label.costs[0]
+            )
+
+            transfers = (
+                label.costs[1]
+            )
+
+            walking_seconds = (
+                label.costs[2]
+            )
+
+
+            travel_time_minutes = (
+                travel_time_seconds / 60
+            )
+
+            walking_minutes = (
+                walking_seconds / 60
+            )
+
+
+            costs_for_this_od.append(
+                (
+                    travel_time_seconds,
+                    transfers,
+                    walking_seconds
+                )
+            )
+
+
+            print(
+                f"Route {route_id}: "
+                f"{travel_time_minutes:.2f} min | "
+                f"{transfers} transfers | "
+                f"{walking_minutes:.2f} min walking"
+            )
+
+            print(
+                f"  {readable_path}"
+            )
+
+
+            route_rows.append({
+
+                "origin":
+                    ORIGIN,
+
+                "destination":
+                    destination,
+
+                "route_id":
+                    route_id,
+
+                "travel_time_seconds":
+                    travel_time_seconds,
+
+                "travel_time_minutes":
+                    travel_time_minutes,
+
+                "transfers":
+                    transfers,
+
+                "walking_seconds":
+                    walking_seconds,
+
+                "walking_minutes":
+                    walking_minutes,
+
+                "path":
+                    readable_path
+            })
+
+
+        # =====================================================
+        # OD LEVEL SUMMARY
+        # =====================================================
+
+        if pareto_count > 0:
+
+            fastest_seconds = min(
+                x[0]
+                for x in costs_for_this_od
+            )
+
+            minimum_transfers = min(
+                x[1]
+                for x in costs_for_this_od
+            )
+
+            minimum_walking_seconds = min(
+                x[2]
+                for x in costs_for_this_od
+            )
+
+
+            slowest_seconds = max(
+                x[0]
+                for x in costs_for_this_od
+            )
+
+            maximum_walking_seconds = max(
+                x[2]
+                for x in costs_for_this_od
+            )
+
+
+            time_range_seconds = (
+                slowest_seconds
+                -
+                fastest_seconds
+            )
+
+            walking_range_seconds = (
+                maximum_walking_seconds
+                -
+                minimum_walking_seconds
+            )
+
+
+        else:
+
+            fastest_seconds = None
+
+            minimum_transfers = None
+
+            minimum_walking_seconds = None
+
+            time_range_seconds = None
+
+            walking_range_seconds = None
+
+
+        summary_rows.append({
+
+            "origin":
+                ORIGIN,
+
+            "destination":
+                destination,
+
+            "pareto_route_count":
+                pareto_count,
+
+            "fastest_travel_time_minutes":
+                (
+                    fastest_seconds / 60
+                    if fastest_seconds
+                    is not None
+                    else None
+                ),
+
+            "minimum_transfers":
+                minimum_transfers,
+
+            "minimum_walking_minutes":
+                (
+                    minimum_walking_seconds / 60
+                    if minimum_walking_seconds
+                    is not None
+                    else None
+                ),
+
+            "pareto_time_range_minutes":
+                (
+                    time_range_seconds / 60
+                    if time_range_seconds
+                    is not None
+                    else None
+                ),
+
+            "pareto_walking_range_minutes":
+                (
+                    walking_range_seconds / 60
+                    if walking_range_seconds
+                    is not None
+                    else None
+                ),
+
+            # These are source-to-all-node statistics.
+            # They are not destination-specific workload metrics.
+
+            "generated_labels":
+                stats["generated_labels"],
+
+            "kept_labels":
+                stats["kept_labels"],
+
+            "pruned_labels":
+                stats["pruned_labels"],
+
+            "dominance_checks":
+                stats["dominance_checks"],
+
+            "max_labels_per_node":
+                stats["max_labels_per_node"]
+
+        })
+
+
+    # =========================================================
+    # DATAFRAMES
+    # =========================================================
+
+    summary_df = pd.DataFrame(
+        summary_rows
+    )
+
+    routes_df = pd.DataFrame(
+        route_rows
+    )
+
+
+    summary_df = (
+        summary_df
+        .sort_values(
+            [
+                "pareto_route_count",
+                "destination"
+            ],
+            ascending=[
+                False,
+                True
+            ]
+        )
+        .reset_index(
+            drop=True
+        )
+    )
+
+
+    routes_df = (
+        routes_df
+        .sort_values(
+            [
+                "destination",
+                "travel_time_seconds",
+                "transfers",
+                "walking_seconds"
+            ]
+        )
+        .reset_index(
+            drop=True
+        )
+    )
+
+
+    # =========================================================
+    # PARETO SET SIZE DISTRIBUTION
+    # =========================================================
+
+    distribution_df = (
+        summary_df[
+            "pareto_route_count"
+        ]
+        .value_counts()
+        .sort_index()
+        .reset_index()
+    )
+
+
+    distribution_df.columns = [
+        "pareto_route_count",
+        "number_of_od_pairs"
+    ]
+
+
+    distribution_df[
+        "percentage"
+    ] = (
+        distribution_df[
+            "number_of_od_pairs"
+        ]
+        / len(summary_df)
+        * 100
+    )
+
+
+    # =========================================================
+    # MULTIPLE-PARETO ODs
+    # =========================================================
+
+    multi_pareto_df = (
+        summary_df[
+            summary_df[
+                "pareto_route_count"
+            ] > 1
+        ]
+        .sort_values(
+            [
+                "pareto_route_count",
+                "pareto_time_range_minutes"
+            ],
+            ascending=[
+                False,
+                False
+            ]
+        )
+        .reset_index(
+            drop=True
+        )
+    )
+
+
+    # =========================================================
+    # MULTIPLE-PARETO ROUTE DETAILS
+    # =========================================================
+
+    multi_destinations = set(
+        multi_pareto_df[
+            "destination"
+        ]
+    )
+
+
+    multi_route_details_df = (
+        routes_df[
+            routes_df[
+                "destination"
+            ].isin(
+                multi_destinations
+            )
+        ]
+        .copy()
+    )
+
+
+    # =========================================================
+    # SAVE
+    # =========================================================
+
+    SUMMARY_FILE = (
+        RESULT_DIR
+        / "taipei_main_all_od_summary.csv"
+    )
+
+    ROUTES_FILE = (
+        RESULT_DIR
+        / "taipei_main_all_od_pareto_routes.csv"
+    )
+
+    DISTRIBUTION_FILE = (
+        RESULT_DIR
+        / "pareto_set_size_distribution.csv"
+    )
+
+    MULTI_FILE = (
+        RESULT_DIR
+        / "multi_pareto_od_pairs.csv"
+    )
+
+    MULTI_ROUTES_FILE = (
+        RESULT_DIR
+        / "multi_pareto_route_details.csv"
+    )
+
+
+    summary_df.to_csv(
+        SUMMARY_FILE,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+
+    routes_df.to_csv(
+        ROUTES_FILE,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+
+    distribution_df.to_csv(
+        DISTRIBUTION_FILE,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+
+    multi_pareto_df.to_csv(
+        MULTI_FILE,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+
+    multi_route_details_df.to_csv(
+        MULTI_ROUTES_FILE,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+
+    # =========================================================
+    # FINAL SUMMARY
+    # =========================================================
+
+    total_od = len(
+        summary_df
+    )
+
+    single_od = (
+        summary_df[
+            "pareto_route_count"
+        ]
+        .eq(1)
+        .sum()
+    )
+
+    multi_od = (
+        summary_df[
+            "pareto_route_count"
+        ]
+        .gt(1)
+        .sum()
+    )
+
+
+    mean_pareto = (
+        summary_df[
+            "pareto_route_count"
+        ]
+        .mean()
+    )
+
+
+    median_pareto = (
+        summary_df[
+            "pareto_route_count"
+        ]
+        .median()
+    )
+
+
+    max_pareto = (
+        summary_df[
+            "pareto_route_count"
+        ]
+        .max()
+    )
+
+
+    print()
+    print("=" * 75)
+    print("PARETO SET SIZE DISTRIBUTION")
+    print("=" * 75)
+
+    print(
+        distribution_df.to_string(
+            index=False
+        )
+    )
+
+
+    print()
+    print("=" * 75)
+    print("OD PAIRS WITH MULTIPLE PARETO ROUTES")
+    print("=" * 75)
+
+
+    if len(multi_pareto_df) == 0:
+
+        print(
+            "No OD pair has multiple Pareto routes."
+        )
+
+    else:
+
+        print(
+
+            multi_pareto_df[
+                [
+                    "destination",
+                    "pareto_route_count",
+                    "fastest_travel_time_minutes",
+                    "minimum_transfers",
+                    "minimum_walking_minutes",
+                    "pareto_time_range_minutes",
+                    "pareto_walking_range_minutes"
+                ]
+            ]
+
+            .to_string(
+                index=False
+            )
+
+        )
+
+
+    print()
+    print("=" * 75)
+    print("KEY RESULT SUMMARY")
+    print("=" * 75)
+
+    print(
+        f"Total OD pairs: "
+        f"{total_od}"
+    )
+
+    print(
+        f"Single-Pareto OD pairs: "
+        f"{single_od} "
+        f"({single_od / total_od * 100:.2f}%)"
+    )
+
+    print(
+        f"Multi-Pareto OD pairs: "
+        f"{multi_od} "
+        f"({multi_od / total_od * 100:.2f}%)"
+    )
+
+    print(
+        f"Mean Pareto-set size: "
+        f"{mean_pareto:.3f}"
+    )
+
+    print(
+        f"Median Pareto-set size: "
+        f"{median_pareto:.3f}"
+    )
+
+    print(
+        f"Maximum Pareto-set size: "
+        f"{max_pareto}"
+    )
+
+
+    print()
+    print("=" * 75)
+    print("DESTINATIONS WITH MAXIMUM PARETO SET")
+    print("=" * 75)
+
+
+    print(
+
+        summary_df[
+            summary_df[
+                "pareto_route_count"
+            ]
+            ==
+            max_pareto
+        ][
+            [
+                "destination",
+                "pareto_route_count"
+            ]
+        ]
+
+        .to_string(
+            index=False
+        )
+
+    )
+
+
+    print()
+    print("=" * 75)
+    print("OUTPUT FILES")
+    print("=" * 75)
+
+    print(
+        f"Summary:      {SUMMARY_FILE}"
+    )
+
+    print(
+        f"Routes:       {ROUTES_FILE}"
+    )
+
+    print(
+        f"Distribution: {DISTRIBUTION_FILE}"
+    )
+
+    print(
+        f"Multi ODs:    {MULTI_FILE}"
+    )
+
+    print(
+        f"Multi routes: {MULTI_ROUTES_FILE}"
+    )
+
+    print()
+    print(
+        "Experiment completed successfully."
+    )
